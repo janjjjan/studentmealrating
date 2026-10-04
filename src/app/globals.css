@@ -542,7 +542,7 @@ button {
 @media (max-width: 640px) {
   .hero-title { font-size: 1.8rem; }
   .location-grid { grid-template-columns: 1fr; padding: 0 16px 40px 16px; }
-  .header-container { flex-wrap: wrap; }
+  .site-header { display: none; } /* na telefonu skrijemo zgornjo vrstico; vzdevek se vpiše v obrazcu za oceno */
 }
 
 /* ===== Dodatki: realni podatki, orodna vrstica, zemljevid ===== */
