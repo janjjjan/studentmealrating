@@ -27,6 +27,27 @@ function pinRating(loc: LocationWithDetails): number | null {
   return loc.avg_rating ?? null;
 }
 
+/** Lokali na popolnoma isti točki: zaradi vidnosti jih na zemljevidu razmaknemo v krog (~25 m). */
+function spreadPositions(locations: LocationWithDetails[]): Map<string, [number, number]> {
+  const groups = new Map<string, LocationWithDetails[]>();
+  for (const l of locations) {
+    if (l.latitude == null || l.longitude == null) continue;
+    const key = `${l.latitude.toFixed(5)},${l.longitude.toFixed(5)}`;
+    groups.set(key, [...(groups.get(key) || []), l]);
+  }
+  const out = new Map<string, [number, number]>();
+  for (const group of groups.values()) {
+    group.forEach((l, i) => {
+      if (group.length === 1) return out.set(l.id, [l.latitude!, l.longitude!]);
+      const angle = (2 * Math.PI * i) / group.length;
+      const dLat = 0.000225 * Math.sin(angle);
+      const dLng = (0.000225 * Math.cos(angle)) / Math.cos((l.latitude! * Math.PI) / 180);
+      out.set(l.id, [l.latitude! + dLat, l.longitude! + dLng]);
+    });
+  }
+  return out;
+}
+
 export default function MapView({ locations, onSelectLocation }: MapViewProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<L.Map | null>(null);
@@ -44,7 +65,7 @@ export default function MapView({ locations, onSelectLocation }: MapViewProps) {
     }).addTo(map);
     layerRef.current = L.markerClusterGroup({
       maxClusterRadius: 45,
-      spiderfyOnMaxZoom: true, // pri največjem zoomu se popolnoma skupaj ležeči pini razprejo
+      disableClusteringAtZoom: 17, // dovolj blizu: skupine izginejo in vidimo vse lokale
       showCoverageOnHover: false,
       iconCreateFunction: (cluster) =>
         L.divIcon({
@@ -66,6 +87,7 @@ export default function MapView({ locations, onSelectLocation }: MapViewProps) {
     if (!layer) return;
     layer.clearLayers();
 
+    const positions = spreadPositions(locations);
     for (const loc of locations) {
       if (loc.latitude == null || loc.longitude == null) continue;
       const rating = pinRating(loc);
@@ -97,7 +119,7 @@ export default function MapView({ locations, onSelectLocation }: MapViewProps) {
         <button type="button">Prikaži meni &amp; oceni</button>`;
       popup.querySelector('button')!.addEventListener('click', () => onSelectRef.current(loc));
 
-      L.marker([loc.latitude, loc.longitude], { icon, title: loc.name }).bindPopup(popup).addTo(layer);
+      L.marker(positions.get(loc.id)!, { icon, title: loc.name }).bindPopup(popup).addTo(layer);
     }
   }, [locations]);
 
