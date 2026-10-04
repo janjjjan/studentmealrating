@@ -1,3 +1,5 @@
+Tole je največji vibecode ever....
+
 # Študentska prehrana – zemljevid, meniji in ocene
 
 Next.js aplikacija z vsemi lokali s [studentska-prehrana.si](https://www.studentska-prehrana.si/sl/restaurant):
