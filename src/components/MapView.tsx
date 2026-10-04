@@ -47,11 +47,22 @@ export default function MapView({ locations, onSelectLocation, selectedCity }: M
         zoomControl: true,
       });
 
-      // Dark Mode Map tiles from CartoDB / OpenStreetMap
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+      // Configurable Map Tile Layer (Mapbox API token support with OpenStreetMap fallback)
+      const mapboxToken = process.env.NEXT_PUBLIC_MAPBOX_TOKEN;
+      const tileUrl = mapboxToken
+        ? `https://api.mapbox.com/styles/v1/mapbox/dark-v11/tiles/{z}/{x}/{y}?access_token=${mapboxToken}`
+        : 'https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png';
+
+      const tileAttribution = mapboxToken
+        ? 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, &copy; <a href="https://www.mapbox.com/">Mapbox</a>'
+        : '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>';
+
+      L.tileLayer(tileUrl, {
+        attribution: tileAttribution,
         subdomains: 'abcd',
         maxZoom: 19,
+        tileSize: mapboxToken ? 512 : 256,
+        zoomOffset: mapboxToken ? -1 : 0,
       }).addTo(map);
 
       mapInstanceRef.current = map;
