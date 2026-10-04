@@ -109,28 +109,6 @@ export default function MapView({ locations, onSelectLocation, selectedCity }: M
   return (
     <div style={{ position: 'relative', width: '100%' }}>
       <div ref={containerRef} className="map-container" />
-
-      <div className="map-legend">
-        <div style={{ fontWeight: 700, marginBottom: '6px', fontSize: '0.82rem', color: '#9ca3af' }}>Legenda ocen</div>
-        {(
-          [
-            ['top', '★ ≥ 4.7', 'Vrhunsko'],
-            ['good', '★ 4.3 – 4.6', 'Zelo dobro'],
-            ['avg', '★ < 4.3', 'Povprečno'],
-            ['none', 'brez ocene', ''],
-          ] as const
-        ).map(([tier, range, text]) => (
-          <div key={tier} style={{ display: 'flex', alignItems: 'center', gap: '8px', marginTop: 4 }}>
-            <span style={{ width: 10, height: 10, borderRadius: '50%', background: TIER_COLORS[tier], display: 'inline-block' }} />
-            <span>
-              <b>{range}</b> {text && `(${text})`}
-            </span>
-          </div>
-        ))}
-        <div style={{ marginTop: 6, fontSize: '0.72rem', color: '#6b7280', maxWidth: 190 }}>
-          Ocene uporabnikov; kjer jih še ni, ocena s studentska-prehrana.si.
-        </div>
-      </div>
     </div>
   );
 }

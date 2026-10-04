@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useMemo, useCallback } from 'react';
-import { Search, Filter, Map as MapIcon, LayoutGrid } from 'lucide-react';
+import { Search, Filter, SlidersHorizontal, Map as MapIcon, LayoutGrid } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import { DailyMenu, LocationWithDetails, Review } from '@/lib/supabase/types';
 import { initialLocations, loadDetails, withStats, type DataSource } from '@/lib/data';
@@ -30,9 +30,10 @@ export default function Home() {
   const [dataSource, setDataSource] = useState<DataSource | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCity, setSelectedCity] = useState('Vsi');
+  const [filtersOpen, setFiltersOpen] = useState(false);
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [sortBy, setSortBy] = useState<'rating' | 'price' | 'name'>('rating');
-  const [viewMode, setViewMode] = useState<'grid' | 'map'>('grid');
+  const [viewMode, setViewMode] = useState<'grid' | 'map'>('map');
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
   const [activeMenuId, setActiveMenuId] = useState<string | null>(null);
@@ -147,37 +148,46 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="filter-tabs tag-filters">
-          {allTags.map(([tag, n]) => (
-            <button
-              key={tag}
-              className={`filter-tab ${selectedTags.includes(tag) ? 'active' : ''}`}
-              onClick={() => toggleTag(tag)}
-              aria-pressed={selectedTags.includes(tag)}
-            >
-              {tag} <span style={{ opacity: 0.6 }}>({n})</span>
-            </button>
-          ))}
-          {selectedTags.length > 0 && (
-            <button className="filter-tab" onClick={() => setSelectedTags([])}>
-              Počisti filtre
-            </button>
-          )}
-        </div>
-
         <div className="toolbar">
           <span className="result-count">
             {filteredLocations.length} {filteredLocations.length === 1 ? 'lokal' : 'lokalov'}
           </span>
 
-          <div className="view-toggle">
-            <button className={viewMode === 'grid' ? 'active' : ''} onClick={() => setViewMode('grid')}>
-              <LayoutGrid size={15} />
-              <span>Seznam</span>
+          <div className="filter-menu">
+            <button
+              className={`btn-secondary filter-menu-btn ${selectedTags.length ? 'has-filters' : ''}`}
+              onClick={() => setFiltersOpen((o) => !o)}
+              aria-expanded={filtersOpen}
+            >
+              <SlidersHorizontal size={15} />
+              <span>Filtri{selectedTags.length ? ` (${selectedTags.length})` : ''}</span>
             </button>
+            {filtersOpen && (
+              <div className="filter-panel">
+                {allTags.map(([tag, n]) => (
+                  <label key={tag} className="filter-option">
+                    <input type="checkbox" checked={selectedTags.includes(tag)} onChange={() => toggleTag(tag)} />
+                    <span>{tag}</span>
+                    <span className="filter-count">{n}</span>
+                  </label>
+                ))}
+                {selectedTags.length > 0 && (
+                  <button className="filter-clear" onClick={() => setSelectedTags([])}>
+                    Počisti filtre
+                  </button>
+                )}
+              </div>
+            )}
+          </div>
+
+          <div className="view-toggle">
             <button className={viewMode === 'map' ? 'active' : ''} onClick={() => setViewMode('map')}>
               <MapIcon size={15} />
               <span>Zemljevid</span>
+            </button>
+            <button className={viewMode === 'grid' ? 'active' : ''} onClick={() => setViewMode('grid')}>
+              <LayoutGrid size={15} />
+              <span>Seznam</span>
             </button>
           </div>
 
