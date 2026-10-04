@@ -16,8 +16,7 @@ const MapView = dynamic(() => import('@/components/MapView'), {
   loading: () => <div className="map-container map-loading">Nalagam zemljevid …</div>,
 });
 
-const MAIN_CITIES = ['Ljubljana', 'Maribor', 'Koper', 'Celje', 'Kranj', 'Novo mesto'];
-const CITY_TABS = ['Vsi', ...MAIN_CITIES, 'Ostalo'];
+const MAX_SUBSIDY = 4; // zgornji konec drsnika = brez omejitve
 const PAGE_SIZE = 60;
 const TAG_ORDER = ['Brezmesno', 'Odprt ob vikendih', 'Solatni bar', 'Dostava', 'Dostop za invalide', 'Pizza'];
 
@@ -29,7 +28,7 @@ export default function Home() {
   const [locations, setLocations] = useState<LocationWithDetails[]>(initialLocations);
   const [dataSource, setDataSource] = useState<DataSource | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
-  const [selectedCity, setSelectedCity] = useState('Vsi');
+  const [maxSubsidy, setMaxSubsidy] = useState(MAX_SUBSIDY);
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [sortBy, setSortBy] = useState<'rating' | 'price' | 'name'>('rating');
@@ -48,7 +47,9 @@ export default function Home() {
       .catch((err) => setDataSource({ kind: 'error', message: err instanceof Error ? err.message : String(err) }));
   }, []);
 
-  useEffect(() => setVisibleCount(PAGE_SIZE), [searchQuery, selectedCity, selectedTags, sortBy]);
+  useEffect(() => setVisibleCount(PAGE_SIZE), [searchQuery, maxSubsidy, selectedTags, sortBy]);
+
+  const activeFilters = selectedTags.length + (maxSubsidy < MAX_SUBSIDY ? 1 : 0);
 
   const toggleTag = (tag: string) =>
     setSelectedTags((prev) => (prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]));
@@ -74,10 +75,7 @@ export default function Home() {
     const q = normalize(searchQuery.trim());
     return locations
       .filter((loc) => {
-        const matchCity =
-          selectedCity === 'Vsi' ||
-          (selectedCity === 'Ostalo' ? !MAIN_CITIES.includes(loc.city) : loc.city === selectedCity);
-        if (!matchCity) return false;
+        if (maxSubsidy < MAX_SUBSIDY && (loc.subsidy_price ?? 0) > maxSubsidy) return false;
         if (selectedTags.some((t) => !loc.features.includes(t))) return false;
         if (!q) return true;
         return (
@@ -95,7 +93,7 @@ export default function Home() {
         const rb = b.avg_rating ?? 0;
         return rb - ra || b.review_count - a.review_count || a.name.localeCompare(b.name, 'sl');
       });
-  }, [locations, searchQuery, selectedCity, selectedTags, sortBy]);
+  }, [locations, searchQuery, maxSubsidy, selectedTags, sortBy]);
 
   const activeMenuLocation = locations.find((l) => l.id === activeMenuId) || null;
   const activeReviewLocation = locations.find((l) => l.id === activeReviewId) || null;
@@ -136,18 +134,6 @@ export default function Home() {
           <p className="search-hint">Iskanje po jedeh deluje za lokale, katerih današnji meni je že naložen.</p>
         )}
 
-        <div className="filter-tabs">
-          {CITY_TABS.map((city) => (
-            <button
-              key={city}
-              className={`filter-tab ${selectedCity === city ? 'active' : ''}`}
-              onClick={() => setSelectedCity(city)}
-            >
-              {city}
-            </button>
-          ))}
-        </div>
-
         <div className="toolbar">
           <span className="result-count">
             {filteredLocations.length} {filteredLocations.length === 1 ? 'lokal' : 'lokalov'}
@@ -155,15 +141,29 @@ export default function Home() {
 
           <div className="filter-menu">
             <button
-              className={`btn-secondary filter-menu-btn ${selectedTags.length ? 'has-filters' : ''}`}
+              className={`btn-secondary filter-menu-btn ${activeFilters ? 'has-filters' : ''}`}
               onClick={() => setFiltersOpen((o) => !o)}
               aria-expanded={filtersOpen}
             >
               <SlidersHorizontal size={15} />
-              <span>Filtri{selectedTags.length ? ` (${selectedTags.length})` : ''}</span>
+              <span>Filtri{activeFilters ? ` (${activeFilters})` : ''}</span>
             </button>
             {filtersOpen && (
               <div className="filter-panel">
+                <div className="filter-price">
+                  <div className="filter-price-label">
+                    <span>Največje doplačilo</span>
+                    <b>{maxSubsidy < MAX_SUBSIDY ? `do ${maxSubsidy.toFixed(1).replace('.', ',')} €` : 'ni omejitve'}</b>
+                  </div>
+                  <input
+                    type="range"
+                    min={0}
+                    max={MAX_SUBSIDY}
+                    step={0.1}
+                    value={maxSubsidy}
+                    onChange={(e) => setMaxSubsidy(Number(e.target.value))}
+                  />
+                </div>
                 {allTags.map(([tag, n]) => (
                   <label key={tag} className="filter-option">
                     <input type="checkbox" checked={selectedTags.includes(tag)} onChange={() => toggleTag(tag)} />
@@ -171,8 +171,14 @@ export default function Home() {
                     <span className="filter-count">{n}</span>
                   </label>
                 ))}
-                {selectedTags.length > 0 && (
-                  <button className="filter-clear" onClick={() => setSelectedTags([])}>
+                {activeFilters > 0 && (
+                  <button
+                    className="filter-clear"
+                    onClick={() => {
+                      setSelectedTags([]);
+                      setMaxSubsidy(MAX_SUBSIDY);
+                    }}
+                  >
                     Počisti filtre
                   </button>
                 )}
@@ -204,7 +210,7 @@ export default function Home() {
 
       <section className="results-section">
         {viewMode === 'map' ? (
-          <MapView locations={filteredLocations} selectedCity={selectedCity} onSelectLocation={openMenu} />
+          <MapView locations={filteredLocations} onSelectLocation={openMenu} />
         ) : (
           <>
             <div className="location-grid" style={{ padding: 0 }}>

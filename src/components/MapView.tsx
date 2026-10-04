@@ -9,7 +9,6 @@ import { ratingTier, TIER_COLORS, formatEur } from '@/lib/data';
 interface MapViewProps {
   locations: LocationWithDetails[];
   onSelectLocation: (loc: LocationWithDetails) => void;
-  selectedCity: string;
 }
 
 const SLOVENIA: L.LatLngBoundsExpression = [
@@ -26,7 +25,7 @@ function pinRating(loc: LocationWithDetails): number | null {
   return loc.avg_rating ?? null;
 }
 
-export default function MapView({ locations, onSelectLocation, selectedCity }: MapViewProps) {
+export default function MapView({ locations, onSelectLocation }: MapViewProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<L.Map | null>(null);
   const layerRef = useRef<L.LayerGroup | null>(null);
@@ -89,22 +88,6 @@ export default function MapView({ locations, onSelectLocation, selectedCity }: M
       L.marker([loc.latitude, loc.longitude], { icon, title: loc.name }).bindPopup(popup).addTo(layer);
     }
   }, [locations]);
-
-  // ob spremembi kraja prilagodi pogled na lokale v tem kraju
-  useEffect(() => {
-    const map = mapRef.current;
-    if (!map) return;
-    if (selectedCity === 'Vsi') {
-      map.flyToBounds(SLOVENIA, { duration: 0.8 });
-      return;
-    }
-    const pts = locations
-      .filter((l) => l.latitude != null && l.longitude != null)
-      .map((l) => [l.latitude!, l.longitude!] as [number, number]);
-    if (pts.length) map.flyToBounds(L.latLngBounds(pts), { padding: [40, 40], maxZoom: 15, duration: 0.8 });
-    // samo ob menjavi kraja, ne ob vsakem tipkanju v iskalnik
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [selectedCity]);
 
   return (
     <div style={{ position: 'relative', width: '100%' }}>
