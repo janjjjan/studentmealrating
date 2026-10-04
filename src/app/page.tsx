@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Search, Sparkles, Filter, ShieldCheck, PlusCircle } from 'lucide-react';
+import { Search, Filter } from 'lucide-react';
 import { User } from '@supabase/supabase-js';
 import { createClient } from '@/lib/supabase/client';
 import { LocationWithDetails, Review } from '@/lib/supabase/types';
@@ -26,25 +26,16 @@ export default function Home() {
   const [activeMenuLocation, setActiveMenuLocation] = useState<LocationWithDetails | null>(null);
   const [activeReviewLocation, setActiveReviewLocation] = useState<LocationWithDetails | null>(null);
 
-  // Supabase Auth listener & initial fetch
+  // Initial fetch from Supabase if connected
   useEffect(() => {
     const supabase = createClient();
 
-    // Get current user
     supabase.auth.getUser().then(({ data }) => {
       if (data?.user) {
         setUser(data.user);
       }
     });
 
-    // Listen for auth state changes (e.g. login via Google redirect)
-    const { data: authListener } = supabase.auth.onAuthStateChange(
-      (_event, session) => {
-        setUser(session?.user ?? null);
-      }
-    );
-
-    // Fetch locations & daily menus from Supabase
     const loadSupabaseData = async () => {
       try {
         const { data: locsData, error: locsError } = await supabase
@@ -56,17 +47,15 @@ export default function Home() {
           `);
 
         if (locsError || !locsData || locsData.length === 0) {
-          console.log('Supabase check: No remote rows found or DB setup pending. Using demo dataset.');
+          console.log('Supabase check: Using dataset.');
           return;
         }
 
-        // Map Supabase rows to our interface
         const mappedLocations: LocationWithDetails[] = locsData.map((loc: any) => {
           const reviews = loc.reviews || [];
           const totalRating = reviews.reduce((sum: number, r: any) => sum + (r.rating || 0), 0);
           const avgRating = reviews.length > 0 ? totalRating / reviews.length : undefined;
 
-          // Find today's daily menu
           const todayStr = new Date().toISOString().split('T')[0];
           const todayMenu = loc.daily_menus?.find((m: any) => m.menu_date === todayStr) || loc.daily_menus?.[0];
 
@@ -95,10 +84,6 @@ export default function Home() {
     };
 
     loadSupabaseData();
-
-    return () => {
-      authListener.subscription.unsubscribe();
-    };
   }, []);
 
   const handleLogout = async () => {
@@ -163,7 +148,7 @@ export default function Home() {
           Najboljše ocene <span style={{ color: '#10b981' }}>študentskih bonov</span> v Sloveniji
         </h1>
         <p className="hero-subtitle">
-          Pregledujte dneve menije, primerjajte doplačila in preberite pristna mnenja študentov.
+          Pregledujte dneve menije, primerjajte doplačila in napišite svoje mnenje v manj kot 5 sekundah!
         </p>
 
         {/* Search Input */}
@@ -264,10 +249,6 @@ export default function Home() {
         user={user}
         onClose={() => setActiveReviewLocation(null)}
         onAddReview={handleAddReview}
-        onOpenAuthModal={() => {
-          setActiveReviewLocation(null);
-          setIsAuthModalOpen(true);
-        }}
       />
     </main>
   );

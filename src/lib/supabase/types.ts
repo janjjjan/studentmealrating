@@ -19,11 +19,12 @@ export interface DailyMenu {
 export interface Review {
   id: string;
   location_id: string;
-  user_id: string;
+  user_id?: string;
   rating: number; // 1 to 5
   comment: string | null;
   created_at: string;
-  user_email?: string; // Optional joined user info
+  user_email?: string; // Optional user info
+  author_name?: string; // Student nickname/name
 }
 
 export interface LocationWithDetails extends Location {
