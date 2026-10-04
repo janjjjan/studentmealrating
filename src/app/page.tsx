@@ -1,7 +1,8 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { Search, Filter } from 'lucide-react';
+import { Search, Filter, Map, LayoutGrid } from 'lucide-react';
+import dynamic from 'next/dynamic';
 import { User } from '@supabase/supabase-js';
 import { createClient } from '@/lib/supabase/client';
 import { LocationWithDetails, Review } from '@/lib/supabase/types';
@@ -14,12 +15,23 @@ import { ReviewModal } from '@/components/ReviewModal';
 import { DailyMenuModal } from '@/components/DailyMenuModal';
 import { SqlSeedBanner } from '@/components/SqlSeedBanner';
 
+// Dynamic import for Leaflet map component (CSR only)
+const MapView = dynamic(() => import('@/components/MapView'), {
+  ssr: false,
+  loading: () => (
+    <div style={{ height: '480px', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'rgba(19, 25, 39, 0.75)', borderRadius: '16px', color: '#10b981' }}>
+      Nalaganje zemljevida lokalov...
+    </div>
+  ),
+});
+
 export default function Home() {
   const [user, setUser] = useState<User | null>(null);
   const [locations, setLocations] = useState<LocationWithDetails[]>(INITIAL_LOCATIONS);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCity, setSelectedCity] = useState('Vsi');
   const [sortBy, setSortBy] = useState<'rating' | 'price'>('rating');
+  const [viewMode, setViewMode] = useState<'grid' | 'map'>('grid');
 
   // Modal states
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
@@ -47,7 +59,7 @@ export default function Home() {
           `);
 
         if (locsError || !locsData || locsData.length === 0) {
-          console.log('Supabase check: Using dataset.');
+          console.log('Supabase check: Using scraped dataset.');
           return;
         }
 
@@ -69,7 +81,10 @@ export default function Home() {
             opening_hours: loc.opening_hours,
             city: loc.address?.includes('Ljubljana') ? 'Ljubljana' :
                   loc.address?.includes('Maribor') ? 'Maribor' :
-                  loc.address?.includes('Koper') ? 'Koper' : 'Ostalo',
+                  loc.address?.includes('Koper') ? 'Koper' :
+                  loc.address?.includes('Celje') ? 'Celje' :
+                  loc.address?.includes('Kranj') ? 'Kranj' :
+                  loc.address?.includes('Novo mesto') ? 'Novo mesto' : 'Ostalo',
             avg_rating: avgRating,
             review_count: reviews.length,
             daily_menu: todayMenu,
@@ -114,7 +129,7 @@ export default function Home() {
   // Filter & Sort Logic
   const filteredLocations = locations
     .filter((loc) => {
-      const matchCity = selectedCity === 'Vsi' || (loc.address && loc.address.toLowerCase().includes(selectedCity.toLowerCase()));
+      const matchCity = selectedCity === 'Vsi' || (loc.address && loc.address.toLowerCase().includes(selectedCity.toLowerCase())) || (loc.city && loc.city.toLowerCase() === selectedCity.toLowerCase());
       const query = searchQuery.toLowerCase();
       const matchQuery =
         loc.name.toLowerCase().includes(query) ||
@@ -131,7 +146,7 @@ export default function Home() {
       }
     });
 
-  const cities = ['Vsi', 'Ljubljana', 'Maribor', 'Koper'];
+  const cities = ['Vsi', 'Ljubljana', 'Maribor', 'Koper', 'Celje', 'Kranj', 'Novo mesto'];
 
   return (
     <main style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
@@ -145,10 +160,10 @@ export default function Home() {
       {/* Hero Header */}
       <section className="hero-section">
         <h1 className="hero-title">
-          Najboljše ocene <span style={{ color: '#10b981' }}>študentskih bonov</span> v Sloveniji
+          Zemljevid in ocene <span style={{ color: '#10b981' }}>študentskih bonov</span>
         </h1>
         <p className="hero-subtitle">
-          Pregledujte dneve menije, primerjajte doplačila in napišite svoje mnenje v manj kot 5 sekundah!
+          Podatki pridobljeni neposredno iz studentska-prehrana.si. Najdite lokal na zemljevidu in preverite današnji meni!
         </p>
 
         {/* Search Input */}
@@ -157,13 +172,13 @@ export default function Home() {
           <input
             type="text"
             className="search-input"
-            placeholder="Išči po restavracijah, jedeh (npr. dunajski, burrito, pizza)..."
+            placeholder="Išči po restavracijah, jedeh (npr. falafel, čevapi, pizza, burger)..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
           />
         </div>
 
-        {/* City Filter Pills & Sort options */}
+        {/* City Filter Pills, View Mode & Sort options */}
         <div className="filter-tabs">
           {cities.map((city) => (
             <button
@@ -175,8 +190,48 @@ export default function Home() {
             </button>
           ))}
 
+          {/* View Toggle (Grid vs Map) */}
+          <div style={{ marginLeft: '16px', display: 'flex', background: 'rgba(255,255,255,0.06)', borderRadius: '9999px', padding: '3px' }}>
+            <button
+              onClick={() => setViewMode('grid')}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '6px',
+                padding: '6px 14px',
+                borderRadius: '9999px',
+                background: viewMode === 'grid' ? '#10b981' : 'transparent',
+                color: viewMode === 'grid' ? 'white' : '#9ca3af',
+                fontSize: '0.85rem',
+                fontWeight: 600,
+                transition: 'all 0.2s ease'
+              }}
+            >
+              <LayoutGrid size={15} />
+              <span>Seznam</span>
+            </button>
+            <button
+              onClick={() => setViewMode('map')}
+              style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '6px',
+                padding: '6px 14px',
+                borderRadius: '9999px',
+                background: viewMode === 'map' ? '#10b981' : 'transparent',
+                color: viewMode === 'map' ? 'white' : '#9ca3af',
+                fontSize: '0.85rem',
+                fontWeight: 600,
+                transition: 'all 0.2s ease'
+              }}
+            >
+              <Map size={15} />
+              <span>Zemljevid</span>
+            </button>
+          </div>
+
           <div style={{ marginLeft: '12px', display: 'flex', alignItems: 'center', gap: '8px' }}>
-            <span style={{ fontSize: '0.82rem', color: '#9ca3af' }}>Sortiraj po:</span>
+            <span style={{ fontSize: '0.82rem', color: '#9ca3af' }}>Sortiraj:</span>
             <select
               value={sortBy}
               onChange={(e) => setSortBy(e.target.value as any)}
@@ -201,21 +256,30 @@ export default function Home() {
       {/* Supabase SQL Helper Banner */}
       <SqlSeedBanner />
 
-      {/* Main Location Grid */}
-      <section className="location-grid">
-        {filteredLocations.map((location) => (
-          <LocationCard
-            key={location.id}
-            location={location}
-            onOpenMenuModal={(loc) => setActiveMenuLocation(loc)}
-            onOpenReviewModal={(loc) => setActiveReviewLocation(loc)}
+      {/* Map View or Grid View */}
+      <section style={{ maxWidth: '1280px', width: '100%', margin: '0 auto', padding: '0 24px 60px 24px' }}>
+        {viewMode === 'map' ? (
+          <MapView
+            locations={filteredLocations}
+            selectedCity={selectedCity}
+            onSelectLocation={(loc) => setActiveMenuLocation(loc)}
           />
-        ))}
+        ) : (
+          <div className="location-grid" style={{ padding: 0 }}>
+            {filteredLocations.map((location) => (
+              <LocationCard
+                key={location.id}
+                location={location}
+                onOpenMenuModal={(loc) => setActiveMenuLocation(loc)}
+                onOpenReviewModal={(loc) => setActiveReviewLocation(loc)}
+              />
+            ))}
+          </div>
+        )}
 
         {filteredLocations.length === 0 && (
           <div
             style={{
-              gridColumn: '1 / -1',
               textAlign: 'center',
               padding: '60px 20px',
               background: 'rgba(255, 255, 255, 0.02)',
@@ -224,7 +288,7 @@ export default function Home() {
             }}
           >
             <Filter size={36} color="#6b7280" style={{ margin: '0 auto 12px auto' }} />
-            <h3 style={{ fontSize: '1.2rem', color: 'white', marginBottom: '6px' }}>Ni najdenih lokacij za vaše iskanje</h3>
+            <h3 style={{ fontSize: '1.2rem', color: 'white', marginBottom: '6px' }}>Ni najdenih lokalov za vaše iskanje</h3>
             <p style={{ color: '#9ca3af', fontSize: '0.9rem' }}>
               Poskusite spremeniti iskalni niz ali izbrati drug kraj.
             </p>
