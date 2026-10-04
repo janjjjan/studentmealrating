@@ -134,9 +134,19 @@ def write_outputs(rows: list[dict]) -> None:
 
     cols = ["id", "name", "address", "city", "latitude", "longitude", "meal_price",
             "subsidy_price", "opening_hours", "notice", "features", "site_rating"]
+    with open("supabase/schema.sql", encoding="utf-8") as f:
+        schema = f.read().rstrip()
     lines = [
         "-- Lokali s studentska-prehrana.si (ustvaril scrape_and_generate_sql.py).",
-        "-- Najprej enkrat zaženi supabase/schema.sql, nato to datoteko (lahko večkrat).",
+        "-- Samostojna skripta: najprej ustvari tabele (supabase/schema.sql), nato vstavi vse lokale.",
+        "-- POZOR: izbriše in ponovno ustvari tabele locations, daily_menus in reviews.",
+        "-- Zaženi v Supabase → SQL Editor → New query → Run.",
+        "",
+        schema,
+        "",
+        "-- ---------------------------------------------------------------------",
+        "-- Lokali",
+        "-- ---------------------------------------------------------------------",
         f"insert into public.locations ({', '.join(cols)}) values",
     ]
     values = ["  (" + ", ".join(sql_str(r[c]) for c in cols) + ")" for r in rows]

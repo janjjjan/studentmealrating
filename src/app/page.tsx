@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useEffect, useMemo, useCallback } from 'react';
-import { Search, Filter, Map, LayoutGrid } from 'lucide-react';
+import { Search, Filter, Map as MapIcon, LayoutGrid } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import { DailyMenu, LocationWithDetails, Review } from '@/lib/supabase/types';
 import { initialLocations, loadDetails, withStats, type DataSource } from '@/lib/data';
@@ -19,6 +19,7 @@ const MapView = dynamic(() => import('@/components/MapView'), {
 const MAIN_CITIES = ['Ljubljana', 'Maribor', 'Koper', 'Celje', 'Kranj', 'Novo mesto'];
 const CITY_TABS = ['Vsi', ...MAIN_CITIES, 'Ostalo'];
 const PAGE_SIZE = 60;
+const TAG_ORDER = ['Brezmesno', 'Odprt ob vikendih', 'Solatni bar', 'Dostava', 'Dostop za invalide', 'Pizza'];
 
 function normalize(s: string): string {
   return s.toLocaleLowerCase('sl').normalize('NFD').replace(/[̀-ͯ]/g, '');
@@ -29,6 +30,7 @@ export default function Home() {
   const [dataSource, setDataSource] = useState<DataSource | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCity, setSelectedCity] = useState('Vsi');
+  const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [sortBy, setSortBy] = useState<'rating' | 'price' | 'name'>('rating');
   const [viewMode, setViewMode] = useState<'grid' | 'map'>('grid');
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
@@ -45,7 +47,17 @@ export default function Home() {
       .catch((err) => setDataSource({ kind: 'error', message: err instanceof Error ? err.message : String(err) }));
   }, []);
 
-  useEffect(() => setVisibleCount(PAGE_SIZE), [searchQuery, selectedCity, sortBy]);
+  useEffect(() => setVisibleCount(PAGE_SIZE), [searchQuery, selectedCity, selectedTags, sortBy]);
+
+  const toggleTag = (tag: string) =>
+    setSelectedTags((prev) => (prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]));
+
+  const allTags = useMemo(() => {
+    const counts = new Map<string, number>();
+    for (const l of locations) for (const f of l.features) counts.set(f, (counts.get(f) || 0) + 1);
+    const rank = (t: string) => (TAG_ORDER.includes(t) ? TAG_ORDER.indexOf(t) : TAG_ORDER.length);
+    return [...counts.entries()].sort((a, b) => rank(a[0]) - rank(b[0]) || b[1] - a[1]);
+  }, [locations]);
 
   const handleAddReview = useCallback((locationId: string, review: Review) => {
     setLocations((prev) =>
@@ -65,6 +77,7 @@ export default function Home() {
           selectedCity === 'Vsi' ||
           (selectedCity === 'Ostalo' ? !MAIN_CITIES.includes(loc.city) : loc.city === selectedCity);
         if (!matchCity) return false;
+        if (selectedTags.some((t) => !loc.features.includes(t))) return false;
         if (!q) return true;
         return (
           normalize(loc.name).includes(q) ||
@@ -77,11 +90,11 @@ export default function Home() {
       .sort((a, b) => {
         if (sortBy === 'price') return (a.subsidy_price ?? 99) - (b.subsidy_price ?? 99) || a.name.localeCompare(b.name, 'sl');
         if (sortBy === 'name') return a.name.localeCompare(b.name, 'sl');
-        const ra = a.avg_rating ?? a.site_rating ?? 0;
-        const rb = b.avg_rating ?? b.site_rating ?? 0;
+        const ra = a.avg_rating ?? 0;
+        const rb = b.avg_rating ?? 0;
         return rb - ra || b.review_count - a.review_count || a.name.localeCompare(b.name, 'sl');
       });
-  }, [locations, searchQuery, selectedCity, sortBy]);
+  }, [locations, searchQuery, selectedCity, selectedTags, sortBy]);
 
   const activeMenuLocation = locations.find((l) => l.id === activeMenuId) || null;
   const activeReviewLocation = locations.find((l) => l.id === activeReviewId) || null;
@@ -134,6 +147,24 @@ export default function Home() {
           ))}
         </div>
 
+        <div className="filter-tabs tag-filters">
+          {allTags.map(([tag, n]) => (
+            <button
+              key={tag}
+              className={`filter-tab ${selectedTags.includes(tag) ? 'active' : ''}`}
+              onClick={() => toggleTag(tag)}
+              aria-pressed={selectedTags.includes(tag)}
+            >
+              {tag} <span style={{ opacity: 0.6 }}>({n})</span>
+            </button>
+          ))}
+          {selectedTags.length > 0 && (
+            <button className="filter-tab" onClick={() => setSelectedTags([])}>
+              Počisti filtre
+            </button>
+          )}
+        </div>
+
         <div className="toolbar">
           <span className="result-count">
             {filteredLocations.length} {filteredLocations.length === 1 ? 'lokal' : 'lokalov'}
@@ -145,7 +176,7 @@ export default function Home() {
               <span>Seznam</span>
             </button>
             <button className={viewMode === 'map' ? 'active' : ''} onClick={() => setViewMode('map')}>
-              <Map size={15} />
+              <MapIcon size={15} />
               <span>Zemljevid</span>
             </button>
           </div>

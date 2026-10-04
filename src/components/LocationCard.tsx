@@ -54,11 +54,6 @@ export function LocationCard({ location, onOpenMenuModal, onOpenReviewModal }: L
               <span>Še brez ocen</span>
             </div>
           )}
-          {location.site_rating != null && (
-            <span className="site-rating" title="Ocena na studentska-prehrana.si">
-              ★ {location.site_rating} na SP
-            </span>
-          )}
         </div>
 
         {firstHoursLine && (

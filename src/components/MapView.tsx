@@ -21,9 +21,9 @@ function esc(s: string | null | undefined): string {
   return (s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]!);
 }
 
-/** Ocena za barvo pina: povprečje uporabnikov, sicer ocena s studentska-prehrana.si. */
+/** Ocena za barvo pina: samo povprečje ocen uporabnikov. */
 function pinRating(loc: LocationWithDetails): number | null {
-  return loc.avg_rating ?? loc.site_rating ?? null;
+  return loc.avg_rating ?? null;
 }
 
 export default function MapView({ locations, onSelectLocation, selectedCity }: MapViewProps) {
@@ -72,9 +72,7 @@ export default function MapView({ locations, onSelectLocation, selectedCity }: M
       const ratingText =
         loc.review_count > 0
           ? `★ ${loc.avg_rating!.toFixed(1)} (${loc.review_count} ${loc.review_count === 1 ? 'ocena' : 'ocen'})`
-          : loc.site_rating != null
-            ? `★ ${loc.site_rating} na studentska-prehrana.si`
-            : 'Še brez ocen';
+          : 'Še brez ocen';
 
       const popup = document.createElement('div');
       popup.className = 'map-popup';
