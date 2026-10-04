@@ -19,6 +19,10 @@ export function AuthModal({ isOpen, onClose }: AuthModalProps) {
     try {
       setLoading(true);
       const supabase = createClient();
+      if (!supabase) {
+        alert('Supabase ni nastavljen (.env.local).');
+        return;
+      }
       const origin = typeof window !== 'undefined' ? window.location.origin : '';
       
       const { error } = await supabase.auth.signInWithOAuth({

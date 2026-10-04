@@ -1,6069 +1,1409 @@
--- ========================================================
--- SUPABASE SQL SEED SCRIPT FOR ALL 355 REAL STUDENTSKA PREHRANA LOCATIONS
--- Generated automatically by Python Scraper
--- ========================================================
-
-
-CREATE TABLE IF NOT EXISTS locations (
-  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  name TEXT NOT NULL,
-  address TEXT,
-  latitude DOUBLE PRECISION,
-  longitude DOUBLE PRECISION,
-  subsidy_price NUMERIC(4,2),
-  opening_hours TEXT
-);
-
-CREATE TABLE IF NOT EXISTS daily_menus (
-  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  location_id UUID REFERENCES locations(id) ON DELETE CASCADE,
-  menu_date DATE NOT NULL DEFAULT CURRENT_DATE,
-  dishes TEXT[] NOT NULL
-);
-
-CREATE TABLE IF NOT EXISTS reviews (
-  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
-  location_id UUID REFERENCES locations(id) ON DELETE CASCADE,
-  user_id UUID REFERENCES auth.users(id) ON DELETE CASCADE,
-  rating INTEGER CHECK (rating BETWEEN 1 AND 5),
-  comment TEXT,
-  created_at TIMESTAMP WITH TIME ZONE DEFAULT NOW()
-);
-
-DELETE FROM daily_menus;
-DELETE FROM locations;
-
-
--- Location: ABI FALAFEL
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001478', 'ABI FALAFEL', 'Ljubljana, 1000 Ljubljana', 46.063, 14.517, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001478', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Aga kebab
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003316', 'Aga kebab', 'Ljubljana, 1000 Ljubljana', 46.076, 14.534, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003316', CURRENT_DATE, ARRAY[
-    'Meni 1: Classic Beef Burger z ocvrtim krompirčkom in mešano solato',
-    'Meni 2: Chicken Burger s svežo solato in omako',
-    'Meni 3: Falafel ali Vegi Burger s krompirčkom, sadje'
-  ]);
-
-
--- Location: Ajda burgers &amp; more BTC
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002999', 'Ajda burgers &amp; more BTC', 'Ljubljana, 1000 Ljubljana', 46.089, 14.511, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002999', CURRENT_DATE, ARRAY[
-    'Meni 1: Classic Beef Burger z ocvrtim krompirčkom in mešano solato',
-    'Meni 2: Chicken Burger s svežo solato in omako',
-    'Meni 3: Falafel ali Vegi Burger s krompirčkom, sadje'
-  ]);
-
-
--- Location: Ajda burgers &amp; more postaja
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002549', 'Ajda burgers &amp; more postaja', 'Ljubljana, 1000 Ljubljana', 46.062, 14.528, 4.10, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002549', CURRENT_DATE, ARRAY[
-    'Meni 1: Classic Beef Burger z ocvrtim krompirčkom in mešano solato',
-    'Meni 2: Chicken Burger s svežo solato in omako',
-    'Meni 3: Falafel ali Vegi Burger s krompirčkom, sadje'
-  ]);
-
-
--- Location: AL YASMIN arabska restavracija
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003347', 'AL YASMIN arabska restavracija', 'Ljubljana, 1000 Ljubljana', 46.075, 14.505, 4.25, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003347', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: ART kavarna Odeon
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003332', 'ART kavarna Odeon', 'Ljubljana, 1000 Ljubljana', 46.088, 14.522, 4.40, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003332', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Avokado
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003275', 'Avokado', 'Ljubljana, 1000 Ljubljana', 46.061, 14.539, 4.55, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003275', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Azijska restavracija Han
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002147', 'Azijska restavracija Han', 'Ljubljana, 1000 Ljubljana', 46.074, 14.516, 3.50, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002147', CURRENT_DATE, ARRAY[
-    'Meni 1: Hrustljavi piščanec v sladko-kisli omaki, pražen riž, zelenjavna juha',
-    'Meni 2: Praženi rezanci z zelenjavo in tofujem, solata',
-    'Meni 3: Pekinška raca z rižem, pomladni zavitki'
-  ]);
-
-
--- Location: Bar Moment
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003042', 'Bar Moment', 'Ljubljana, 1000 Ljubljana', 46.087, 14.533, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003042', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Baščaršija Koper Carpacciov trg
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003207', 'Baščaršija Koper Carpacciov trg', 'Koper, 6000 Koper', 45.55, 13.74, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003207', CURRENT_DATE, ARRAY[
-    'Meni 1: Veliki čevapčiči (10x), vroča lepinja, čebula, zeljnata solata, jabolko',
-    'Meni 2: Srednji čevapi s kajmakom in lepinjo, solata',
-    'Meni 3: Telečja čorba z domačim kruhom, jabolko'
-  ]);
-
-
--- Location: Baščaršija Ljubljana Trubarjeva
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003259', 'Baščaršija Ljubljana Trubarjeva', 'Ljubljana, 1000 Ljubljana', 46.073, 14.527, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003259', CURRENT_DATE, ARRAY[
-    'Meni 1: Veliki čevapčiči (10x), vroča lepinja, čebula, zeljnata solata, jabolko',
-    'Meni 2: Srednji čevapi s kajmakom in lepinjo, solata',
-    'Meni 3: Telečja čorba z domačim kruhom, jabolko'
-  ]);
-
-
--- Location: Baščaršija Maribor Gosposvetska
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003237', 'Baščaršija Maribor Gosposvetska', 'Maribor, 2000 Maribor', 46.562, 15.658, 4.10, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003237', CURRENT_DATE, ARRAY[
-    'Meni 1: Veliki čevapčiči (10x), vroča lepinja, čebula, zeljnata solata, jabolko',
-    'Meni 2: Srednji čevapi s kajmakom in lepinjo, solata',
-    'Meni 3: Telečja čorba z domačim kruhom, jabolko'
-  ]);
-
-
--- Location: Biotehniški izobraževalni center Ljubljana
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002102', 'Biotehniški izobraževalni center Ljubljana', 'Ljubljana, 1000 Ljubljana', 46.059, 14.521, 4.25, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002102', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Biotehniški izobraževalni center Ljubljana
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002103', 'Biotehniški izobraževalni center Ljubljana', 'Ljubljana, 1000 Ljubljana', 46.072, 14.538, 4.40, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002103', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Bistro Arty
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002862', 'Bistro Arty', 'Ljubljana, 1000 Ljubljana', 46.085, 14.515, 4.55, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002862', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Bistro Luft
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003331', 'Bistro Luft', 'Ljubljana, 1000 Ljubljana', 46.058, 14.532, 3.50, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003331', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Bistro Situla
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003280', 'Bistro Situla', 'Ljubljana, 1000 Ljubljana', 46.071, 14.509, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003280', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Bistro Slovely
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003221', 'Bistro Slovely', 'Ljubljana, 1000 Ljubljana', 46.084, 14.526, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003221', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: BISTRO VILLA DOMUS
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002821', 'BISTRO VILLA DOMUS', 'Ljubljana, 1000 Ljubljana', 46.057, 14.503, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002821', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Bohor
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001645', 'Bohor', 'Ljubljana, 1000 Ljubljana', 46.07, 14.52, 4.10, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001645', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Bolnišnična restavracija Splošne bolnišnice Jesenice
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003109', 'Bolnišnična restavracija Splošne bolnišnice Jesenice', 'Kranj, 4000 Kranj', 46.237, 14.361, 4.25, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003109', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Burek Olimpija Rimska
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003173', 'Burek Olimpija Rimska', 'Ljubljana, 1000 Ljubljana', 46.056, 14.514, 4.40, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003173', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: BURGER TIME
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003067', 'BURGER TIME', 'Ljubljana, 1000 Ljubljana', 46.069, 14.531, 4.55, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003067', CURRENT_DATE, ARRAY[
-    'Meni 1: Classic Beef Burger z ocvrtim krompirčkom in mešano solato',
-    'Meni 2: Chicken Burger s svežo solato in omako',
-    'Meni 3: Falafel ali Vegi Burger s krompirčkom, sadje'
-  ]);
-
-
--- Location: Cantante cafe Tabor
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001161', 'Cantante cafe Tabor', 'Ljubljana, 1000 Ljubljana', 46.082, 14.508, 3.50, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001161', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Cantante cafe Tabor - DOSTAVA
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001673', 'Cantante cafe Tabor - DOSTAVA', 'Ljubljana, 1000 Ljubljana', 46.055, 14.525, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001673', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Cantina QUE PASA
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003176', 'Cantina QUE PASA', 'Ljubljana, 1000 Ljubljana', 46.068, 14.502, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003176', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Cappuccino Svetilnik Izola
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003375', 'Cappuccino Svetilnik Izola', 'Koper, 6000 Koper', 45.557, 13.741, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003375', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Chutys Europark Maribor
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003171', 'Chutys Europark Maribor', 'Maribor, 2000 Maribor', 46.558, 15.662, 4.10, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003171', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: City grill
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001568', 'City grill', 'Ljubljana, 1000 Ljubljana', 46.067, 14.513, 4.25, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001568', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: City grill - DOSTAVA
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001569', 'City grill - DOSTAVA', 'Ljubljana, 1000 Ljubljana', 46.08, 14.53, 4.40, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001569', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Čevabdžinica Sarajevo84
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003114', 'Čevabdžinica Sarajevo84', 'Ljubljana, 1000 Ljubljana', 46.053, 14.507, 4.55, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003114', CURRENT_DATE, ARRAY[
-    'Meni 1: Veliki čevapčiči (10x), vroča lepinja, čebula, zeljnata solata, jabolko',
-    'Meni 2: Srednji čevapi s kajmakom in lepinjo, solata',
-    'Meni 3: Telečja čorba z domačim kruhom, jabolko'
-  ]);
-
-
--- Location: Čevabdžinica Sarajevo84 (Tomažičev trg)
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003234', 'Čevabdžinica Sarajevo84 (Tomažičev trg)', 'Ljubljana, 1000 Ljubljana', 46.066, 14.524, 3.50, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003234', CURRENT_DATE, ARRAY[
-    'Meni 1: Veliki čevapčiči (10x), vroča lepinja, čebula, zeljnata solata, jabolko',
-    'Meni 2: Srednji čevapi s kajmakom in lepinjo, solata',
-    'Meni 3: Telečja čorba z domačim kruhom, jabolko'
-  ]);
-
-
--- Location: Čewapi Citypark Ljubljana
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003286', 'Čewapi Citypark Ljubljana', 'Ljubljana, 1000 Ljubljana', 46.079, 14.501, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003286', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Čewapi Ljubljana Center
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003285', 'Čewapi Ljubljana Center', 'Ljubljana, 1000 Ljubljana', 46.052, 14.518, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003285', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: DA BU DA, Azijska restavracija
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001485', 'DA BU DA, Azijska restavracija', 'Ljubljana, 1000 Ljubljana', 46.065, 14.535, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001485', CURRENT_DATE, ARRAY[
-    'Meni 1: Hrustljavi piščanec v sladko-kisli omaki, pražen riž, zelenjavna juha',
-    'Meni 2: Praženi rezanci z zelenjavo in tofujem, solata',
-    'Meni 3: Pekinška raca z rižem, pomladni zavitki'
-  ]);
-
-
--- Location: Das ist Valter Kranj
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002326', 'Das ist Valter Kranj', 'Kranj, 4000 Kranj', 46.242, 14.366, 4.10, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002326', CURRENT_DATE, ARRAY[
-    'Meni 1: Veliki čevapčiči (10x), vroča lepinja, čebula, zeljnata solata, jabolko',
-    'Meni 2: Srednji čevapi s kajmakom in lepinjo, solata',
-    'Meni 3: Telečja čorba z domačim kruhom, jabolko'
-  ]);
-
-
--- Location: Das ist Valter Ljubljana center
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002951', 'Das ist Valter Ljubljana center', 'Ljubljana, 1000 Ljubljana', 46.051, 14.529, 4.25, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002951', CURRENT_DATE, ARRAY[
-    'Meni 1: Veliki čevapčiči (10x), vroča lepinja, čebula, zeljnata solata, jabolko',
-    'Meni 2: Srednji čevapi s kajmakom in lepinjo, solata',
-    'Meni 3: Telečja čorba z domačim kruhom, jabolko'
-  ]);
-
-
--- Location: Das ist Valter Ljubljana Šmartinska
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002131', 'Das ist Valter Ljubljana Šmartinska', 'Ljubljana, 1000 Ljubljana', 46.064, 14.506, 4.40, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002131', CURRENT_DATE, ARRAY[
-    'Meni 1: Veliki čevapčiči (10x), vroča lepinja, čebula, zeljnata solata, jabolko',
-    'Meni 2: Srednji čevapi s kajmakom in lepinjo, solata',
-    'Meni 3: Telečja čorba z domačim kruhom, jabolko'
-  ]);
-
-
--- Location: Das ist Valter Škofja Loka
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002252', 'Das ist Valter Škofja Loka', 'Kranj, 4000 Kranj', 46.243, 14.359, 4.55, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002252', CURRENT_DATE, ARRAY[
-    'Meni 1: Veliki čevapčiči (10x), vroča lepinja, čebula, zeljnata solata, jabolko',
-    'Meni 2: Srednji čevapi s kajmakom in lepinjo, solata',
-    'Meni 3: Telečja čorba z domačim kruhom, jabolko'
-  ]);
-
-
--- Location: Dijaški dom
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003145', 'Dijaški dom', 'Ljubljana, 1000 Ljubljana', 46.05, 14.5, 3.50, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003145', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Dijaški dom Lizike Jančar
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001090', 'Dijaški dom Lizike Jančar', 'Ljubljana, 1000 Ljubljana', 46.063, 14.517, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001090', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Dijaški dom Poljane
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001502', 'Dijaški dom Poljane', 'Ljubljana, 1000 Ljubljana', 46.076, 14.534, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001502', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Dijaški dom Tabor
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002111', 'Dijaški dom Tabor', 'Ljubljana, 1000 Ljubljana', 46.089, 14.511, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002111', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Dijaški dom Vič
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001314', 'Dijaški dom Vič', 'Ljubljana, 1000 Ljubljana', 46.062, 14.528, 4.10, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001314', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Dijaški in študentski dom Novo mesto
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001501', 'Dijaški in študentski dom Novo mesto', 'Novo mesto, 8000 Novo mesto', 45.805, 15.185, 4.25, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001501', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Do kosti Pizzeria Chianti
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003381', 'Do kosti Pizzeria Chianti', 'Ljubljana, 1000 Ljubljana', 46.088, 14.522, 4.40, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003381', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Dobra hiša
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002552', 'Dobra hiša', 'Ljubljana, 1000 Ljubljana', 46.061, 14.539, 4.55, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002552', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Dobra hiša Rudnik
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002298', 'Dobra hiša Rudnik', 'Ljubljana, 1000 Ljubljana', 46.074, 14.516, 3.50, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002298', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Dobrote vzhoda
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001578', 'Dobrote vzhoda', 'Ljubljana, 1000 Ljubljana', 46.087, 14.533, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001578', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Dodo Pizza Koper
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003370', 'Dodo Pizza Koper', 'Koper, 6000 Koper', 45.55, 13.74, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003370', CURRENT_DATE, ARRAY[
-    'Meni 1: Pizza Margherita (pelati, mocarela, bazilika), mešana solata, sadje',
-    'Meni 2: Pizza Klasika (šunka, sir, gobe), mešana solata',
-    'Meni 3: Veganska pizza s pečenimi jajčevci in bučkami, solata'
-  ]);
-
-
--- Location: Dodo Pizza Ljubljana-Bežigrad
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003350', 'Dodo Pizza Ljubljana-Bežigrad', 'Ljubljana, 1000 Ljubljana', 46.073, 14.527, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003350', CURRENT_DATE, ARRAY[
-    'Meni 1: Pizza Margherita (pelati, mocarela, bazilika), mešana solata, sadje',
-    'Meni 2: Pizza Klasika (šunka, sir, gobe), mešana solata',
-    'Meni 3: Veganska pizza s pečenimi jajčevci in bučkami, solata'
-  ]);
-
-
--- Location: Dodo Pizza Ljubljana-center
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003349', 'Dodo Pizza Ljubljana-center', 'Ljubljana, 1000 Ljubljana', 46.086, 14.504, 4.10, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003349', CURRENT_DATE, ARRAY[
-    'Meni 1: Pizza Margherita (pelati, mocarela, bazilika), mešana solata, sadje',
-    'Meni 2: Pizza Klasika (šunka, sir, gobe), mešana solata',
-    'Meni 3: Veganska pizza s pečenimi jajčevci in bučkami, solata'
-  ]);
-
-
--- Location: Dodo Pizza ljubljana-Fužine
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003351', 'Dodo Pizza ljubljana-Fužine', 'Ljubljana, 1000 Ljubljana', 46.059, 14.521, 4.25, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003351', CURRENT_DATE, ARRAY[
-    'Meni 1: Pizza Margherita (pelati, mocarela, bazilika), mešana solata, sadje',
-    'Meni 2: Pizza Klasika (šunka, sir, gobe), mešana solata',
-    'Meni 3: Veganska pizza s pečenimi jajčevci in bučkami, solata'
-  ]);
-
-
--- Location: Domača pekarna Bežigrad
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003191', 'Domača pekarna Bežigrad', 'Ljubljana, 1000 Ljubljana', 46.072, 14.538, 4.40, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003191', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: EASY BEER
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003369', 'EASY BEER', 'Ljubljana, 1000 Ljubljana', 46.085, 14.515, 4.55, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003369', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Eda restavracija
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003243', 'Eda restavracija', 'Ljubljana, 1000 Ljubljana', 46.058, 14.532, 3.50, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003243', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Ej babi
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003399', 'Ej babi', 'Ljubljana, 1000 Ljubljana', 46.071, 14.509, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003399', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Fari&#39;s
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003292', 'Fari&#39;s', 'Ljubljana, 1000 Ljubljana', 46.084, 14.526, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003292', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Fari&#39;s
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002589', 'Fari&#39;s', 'Ljubljana, 1000 Ljubljana', 46.057, 14.503, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002589', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Fast food &amp; pekarna PLAVA LAGUNA
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003192', 'Fast food &amp; pekarna PLAVA LAGUNA', 'Ljubljana, 1000 Ljubljana', 46.07, 14.52, 4.10, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003192', CURRENT_DATE, ARRAY[
-    'Meni 1: Classic Beef Burger z ocvrtim krompirčkom in mešano solato',
-    'Meni 2: Chicken Burger s svežo solato in omako',
-    'Meni 3: Falafel ali Vegi Burger s krompirčkom, sadje'
-  ]);
-
-
--- Location: Fast food Ajda
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003282', 'Fast food Ajda', 'Ljubljana, 1000 Ljubljana', 46.083, 14.537, 4.25, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003282', CURRENT_DATE, ARRAY[
-    'Meni 1: Classic Beef Burger z ocvrtim krompirčkom in mešano solato',
-    'Meni 2: Chicken Burger s svežo solato in omako',
-    'Meni 3: Falafel ali Vegi Burger s krompirčkom, sadje'
-  ]);
-
-
--- Location: Fast food LEON
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003382', 'Fast food LEON', 'Ljubljana, 1000 Ljubljana', 46.056, 14.514, 4.40, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003382', CURRENT_DATE, ARRAY[
-    'Meni 1: Classic Beef Burger z ocvrtim krompirčkom in mešano solato',
-    'Meni 2: Chicken Burger s svežo solato in omako',
-    'Meni 3: Falafel ali Vegi Burger s krompirčkom, sadje'
-  ]);
-
-
--- Location: Fast food Magic
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003158', 'Fast food Magic', 'Ljubljana, 1000 Ljubljana', 46.069, 14.531, 4.55, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003158', CURRENT_DATE, ARRAY[
-    'Meni 1: Classic Beef Burger z ocvrtim krompirčkom in mešano solato',
-    'Meni 2: Chicken Burger s svežo solato in omako',
-    'Meni 3: Falafel ali Vegi Burger s krompirčkom, sadje'
-  ]);
-
-
--- Location: FAST FOOD PRI ŠTUKU
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003391', 'FAST FOOD PRI ŠTUKU', 'Ljubljana, 1000 Ljubljana', 46.082, 14.508, 3.50, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003391', CURRENT_DATE, ARRAY[
-    'Meni 1: Classic Beef Burger z ocvrtim krompirčkom in mešano solato',
-    'Meni 2: Chicken Burger s svežo solato in omako',
-    'Meni 3: Falafel ali Vegi Burger s krompirčkom, sadje'
-  ]);
-
-
--- Location: Fast food Slast
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003165', 'Fast food Slast', 'Ljubljana, 1000 Ljubljana', 46.055, 14.525, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003165', CURRENT_DATE, ARRAY[
-    'Meni 1: Classic Beef Burger z ocvrtim krompirčkom in mešano solato',
-    'Meni 2: Chicken Burger s svežo solato in omako',
-    'Meni 3: Falafel ali Vegi Burger s krompirčkom, sadje'
-  ]);
-
-
--- Location: FOOD POINT NINETY NINE
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003335', 'FOOD POINT NINETY NINE', 'Ljubljana, 1000 Ljubljana', 46.068, 14.502, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003335', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Forum
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002849', 'Forum', 'Ljubljana, 1000 Ljubljana', 46.081, 14.519, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002849', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Galaksija Trebnje
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003291', 'Galaksija Trebnje', 'Novo mesto, 8000 Novo mesto', 45.8, 15.178, 4.10, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003291', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Garač - Restavracija &quot;M&quot;
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002591', 'Garač - Restavracija &quot;M&quot;', 'Ljubljana, 1000 Ljubljana', 46.067, 14.513, 4.25, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002591', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Gaudi &amp; Naan
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003308', 'Gaudi &amp; Naan', 'Ljubljana, 1000 Ljubljana', 46.08, 14.53, 4.40, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003308', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Gig Bar &amp; Burger
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003223', 'Gig Bar &amp; Burger', 'Ljubljana, 1000 Ljubljana', 46.053, 14.507, 4.55, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003223', CURRENT_DATE, ARRAY[
-    'Meni 1: Classic Beef Burger z ocvrtim krompirčkom in mešano solato',
-    'Meni 2: Chicken Burger s svežo solato in omako',
-    'Meni 3: Falafel ali Vegi Burger s krompirčkom, sadje'
-  ]);
-
-
--- Location: Gostilna Godec
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003352', 'Gostilna Godec', 'Ljubljana, 1000 Ljubljana', 46.066, 14.524, 3.50, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003352', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Gostilna in picerija Guliver
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003299', 'Gostilna in picerija Guliver', 'Ljubljana, 1000 Ljubljana', 46.079, 14.501, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003299', CURRENT_DATE, ARRAY[
-    'Meni 1: Pizza Margherita (pelati, mocarela, bazilika), mešana solata, sadje',
-    'Meni 2: Pizza Klasika (šunka, sir, gobe), mešana solata',
-    'Meni 3: Veganska pizza s pečenimi jajčevci in bučkami, solata'
-  ]);
-
-
--- Location: Gostilna in picerija Guliver - dostava
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003300', 'Gostilna in picerija Guliver - dostava', 'Ljubljana, 1000 Ljubljana', 46.052, 14.518, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003300', CURRENT_DATE, ARRAY[
-    'Meni 1: Pizza Margherita (pelati, mocarela, bazilika), mešana solata, sadje',
-    'Meni 2: Pizza Klasika (šunka, sir, gobe), mešana solata',
-    'Meni 3: Veganska pizza s pečenimi jajčevci in bučkami, solata'
-  ]);
-
-
--- Location: Gostilna in picerija JERNEJEV HRAM
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002411', 'Gostilna in picerija JERNEJEV HRAM', 'Ljubljana, 1000 Ljubljana', 46.065, 14.535, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002411', CURRENT_DATE, ARRAY[
-    'Meni 1: Pizza Margherita (pelati, mocarela, bazilika), mešana solata, sadje',
-    'Meni 2: Pizza Klasika (šunka, sir, gobe), mešana solata',
-    'Meni 3: Veganska pizza s pečenimi jajčevci in bučkami, solata'
-  ]);
-
-
--- Location: Gostilna in Pizzerija Kovač
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003294', 'Gostilna in Pizzerija Kovač', 'Ljubljana, 1000 Ljubljana', 46.078, 14.512, 4.10, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003294', CURRENT_DATE, ARRAY[
-    'Meni 1: Pizza Margherita (pelati, mocarela, bazilika), mešana solata, sadje',
-    'Meni 2: Pizza Klasika (šunka, sir, gobe), mešana solata',
-    'Meni 3: Veganska pizza s pečenimi jajčevci in bučkami, solata'
-  ]);
-
-
--- Location: Gostilna Pod Škalcami
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002543', 'Gostilna Pod Škalcami', 'Ljubljana, 1000 Ljubljana', 46.051, 14.529, 4.25, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002543', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Gostilna pod Škalcami - DOSTAVA
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002346', 'Gostilna pod Škalcami - DOSTAVA', 'Ljubljana, 1000 Ljubljana', 46.064, 14.506, 4.40, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002346', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Gostilna Stara Brajda
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003123', 'Gostilna Stara Brajda', 'Ljubljana, 1000 Ljubljana', 46.077, 14.523, 4.55, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003123', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Gostilna Štorklja
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003126', 'Gostilna Štorklja', 'Ljubljana, 1000 Ljubljana', 46.05, 14.5, 3.50, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003126', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Gostilna Zlati lev
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001123', 'Gostilna Zlati lev', 'Ljubljana, 1000 Ljubljana', 46.063, 14.517, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001123', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Gostilnica in pivnica Kratochwill
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002185', 'Gostilnica in pivnica Kratochwill', 'Ljubljana, 1000 Ljubljana', 46.076, 14.534, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002185', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Gostilnica in pivnica Vič
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003060', 'Gostilnica in pivnica Vič', 'Ljubljana, 1000 Ljubljana', 46.089, 14.511, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003060', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Gostilnica in pizzerija Kratochwill
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001834', 'Gostilnica in pizzerija Kratochwill', 'Ljubljana, 1000 Ljubljana', 46.062, 14.528, 4.10, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001834', CURRENT_DATE, ARRAY[
-    'Meni 1: Pizza Margherita (pelati, mocarela, bazilika), mešana solata, sadje',
-    'Meni 2: Pizza Klasika (šunka, sir, gobe), mešana solata',
-    'Meni 3: Veganska pizza s pečenimi jajčevci in bučkami, solata'
-  ]);
-
-
--- Location: Gostilnica in pizzerija Kratochwill
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001835', 'Gostilnica in pizzerija Kratochwill', 'Ljubljana, 1000 Ljubljana', 46.075, 14.505, 4.25, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001835', CURRENT_DATE, ARRAY[
-    'Meni 1: Pizza Margherita (pelati, mocarela, bazilika), mešana solata, sadje',
-    'Meni 2: Pizza Klasika (šunka, sir, gobe), mešana solata',
-    'Meni 3: Veganska pizza s pečenimi jajčevci in bučkami, solata'
-  ]);
-
-
--- Location: GOSTILNICA KENIK
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003394', 'GOSTILNICA KENIK', 'Ljubljana, 1000 Ljubljana', 46.088, 14.522, 4.40, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003394', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Gostilnica Meta in Bazilika
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002995', 'Gostilnica Meta in Bazilika', 'Ljubljana, 1000 Ljubljana', 46.061, 14.539, 4.55, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002995', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Gostilnica Namanova
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001213', 'Gostilnica Namanova', 'Ljubljana, 1000 Ljubljana', 46.074, 14.516, 3.50, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001213', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Gostišče LOKA
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003305', 'Gostišče LOKA', 'Ljubljana, 1000 Ljubljana', 46.087, 14.533, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003305', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Gostišče na trgu - Hiša kulinarike
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001847', 'Gostišče na trgu - Hiša kulinarike', 'Ljubljana, 1000 Ljubljana', 46.06, 14.51, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001847', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Grashka Deli
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003354', 'Grashka Deli', 'Ljubljana, 1000 Ljubljana', 46.073, 14.527, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003354', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Gurmanski hram
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001188', 'Gurmanski hram', 'Ljubljana, 1000 Ljubljana', 46.086, 14.504, 4.10, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001188', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Gurmanski hram - DOSTAVA
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001189', 'Gurmanski hram - DOSTAVA', 'Ljubljana, 1000 Ljubljana', 46.059, 14.521, 4.25, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001189', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Halo Katra - dostava
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002355', 'Halo Katra - dostava', 'Ljubljana, 1000 Ljubljana', 46.072, 14.538, 4.40, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002355', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Halo Pinki - dostava
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001514', 'Halo Pinki - dostava', 'Ljubljana, 1000 Ljubljana', 46.085, 14.515, 4.55, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001514', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Halo Shaolin - dostava
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003366', 'Halo Shaolin - dostava', 'Ljubljana, 1000 Ljubljana', 46.058, 14.532, 3.50, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003366', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Hiša pod gradom
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002668', 'Hiša pod gradom', 'Ljubljana, 1000 Ljubljana', 46.071, 14.509, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002668', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Hit wok
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002430', 'Hit wok', 'Ljubljana, 1000 Ljubljana', 46.084, 14.526, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002430', CURRENT_DATE, ARRAY[
-    'Meni 1: Hrustljavi piščanec v sladko-kisli omaki, pražen riž, zelenjavna juha',
-    'Meni 2: Praženi rezanci z zelenjavo in tofujem, solata',
-    'Meni 3: Pekinška raca z rižem, pomladni zavitki'
-  ]);
-
-
--- Location: Hotel restavracija Prunk
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003373', 'Hotel restavracija Prunk', 'Ljubljana, 1000 Ljubljana', 46.057, 14.503, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003373', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: HotSpot bar&amp;bistro
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002846', 'HotSpot bar&amp;bistro', 'Ljubljana, 1000 Ljubljana', 46.07, 14.52, 4.10, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002846', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: HUDA .
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003197', 'HUDA .', 'Ljubljana, 1000 Ljubljana', 46.083, 14.537, 4.25, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003197', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: IT`S WOK O`CLOCK
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003387', 'IT`S WOK O`CLOCK', 'Ljubljana, 1000 Ljubljana', 46.056, 14.514, 4.40, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003387', CURRENT_DATE, ARRAY[
-    'Meni 1: Hrustljavi piščanec v sladko-kisli omaki, pražen riž, zelenjavna juha',
-    'Meni 2: Praženi rezanci z zelenjavo in tofujem, solata',
-    'Meni 3: Pekinška raca z rižem, pomladni zavitki'
-  ]);
-
-
--- Location: JOE PENA&#180;S, mehiška restavracija
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003256', 'JOE PENA&#180;S, mehiška restavracija', 'Ljubljana, 1000 Ljubljana', 46.069, 14.531, 4.55, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003256', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: K16
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003238', 'K16', 'Ljubljana, 1000 Ljubljana', 46.082, 14.508, 3.50, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003238', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Kampus food
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003302', 'Kampus food', 'Ljubljana, 1000 Ljubljana', 46.055, 14.525, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003302', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: KAPITAL
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002581', 'KAPITAL', 'Ljubljana, 1000 Ljubljana', 46.068, 14.502, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002581', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Kitajska restavracija AZIJA
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002644', 'Kitajska restavracija AZIJA', 'Ljubljana, 1000 Ljubljana', 46.081, 14.519, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002644', CURRENT_DATE, ARRAY[
-    'Meni 1: Hrustljavi piščanec v sladko-kisli omaki, pražen riž, zelenjavna juha',
-    'Meni 2: Praženi rezanci z zelenjavo in tofujem, solata',
-    'Meni 3: Pekinška raca z rižem, pomladni zavitki'
-  ]);
-
-
--- Location: Kitajska restavracija Beli labod 2
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003264', 'Kitajska restavracija Beli labod 2', 'Ljubljana, 1000 Ljubljana', 46.054, 14.536, 4.10, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003264', CURRENT_DATE, ARRAY[
-    'Meni 1: Hrustljavi piščanec v sladko-kisli omaki, pražen riž, zelenjavna juha',
-    'Meni 2: Praženi rezanci z zelenjavo in tofujem, solata',
-    'Meni 3: Pekinška raca z rižem, pomladni zavitki'
-  ]);
-
-
--- Location: Kitajska restavracija Cesarska hiša
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002264', 'Kitajska restavracija Cesarska hiša', 'Ljubljana, 1000 Ljubljana', 46.067, 14.513, 4.25, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002264', CURRENT_DATE, ARRAY[
-    'Meni 1: Hrustljavi piščanec v sladko-kisli omaki, pražen riž, zelenjavna juha',
-    'Meni 2: Praženi rezanci z zelenjavo in tofujem, solata',
-    'Meni 3: Pekinška raca z rižem, pomladni zavitki'
-  ]);
-
-
--- Location: Kitajska restavracija Dva zmaja
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002635', 'Kitajska restavracija Dva zmaja', 'Ljubljana, 1000 Ljubljana', 46.08, 14.53, 4.40, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002635', CURRENT_DATE, ARRAY[
-    'Meni 1: Hrustljavi piščanec v sladko-kisli omaki, pražen riž, zelenjavna juha',
-    'Meni 2: Praženi rezanci z zelenjavo in tofujem, solata',
-    'Meni 3: Pekinška raca z rižem, pomladni zavitki'
-  ]);
-
-
--- Location: Kitajska restavracija Han
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002950', 'Kitajska restavracija Han', 'Ljubljana, 1000 Ljubljana', 46.053, 14.507, 4.55, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002950', CURRENT_DATE, ARRAY[
-    'Meni 1: Hrustljavi piščanec v sladko-kisli omaki, pražen riž, zelenjavna juha',
-    'Meni 2: Praženi rezanci z zelenjavo in tofujem, solata',
-    'Meni 3: Pekinška raca z rižem, pomladni zavitki'
-  ]);
-
-
--- Location: Kitajska restavracija Han - Aleja
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003118', 'Kitajska restavracija Han - Aleja', 'Ljubljana, 1000 Ljubljana', 46.066, 14.524, 3.50, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003118', CURRENT_DATE, ARRAY[
-    'Meni 1: Hrustljavi piščanec v sladko-kisli omaki, pražen riž, zelenjavna juha',
-    'Meni 2: Praženi rezanci z zelenjavo in tofujem, solata',
-    'Meni 3: Pekinška raca z rižem, pomladni zavitki'
-  ]);
-
-
--- Location: Kitajska restavracija Leteča zvezda
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002841', 'Kitajska restavracija Leteča zvezda', 'Ljubljana, 1000 Ljubljana', 46.079, 14.501, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002841', CURRENT_DATE, ARRAY[
-    'Meni 1: Hrustljavi piščanec v sladko-kisli omaki, pražen riž, zelenjavna juha',
-    'Meni 2: Praženi rezanci z zelenjavo in tofujem, solata',
-    'Meni 3: Pekinška raca z rižem, pomladni zavitki'
-  ]);
-
-
--- Location: Kitajska restavracija Leteča zvezda - dostava
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002842', 'Kitajska restavracija Leteča zvezda - dostava', 'Ljubljana, 1000 Ljubljana', 46.052, 14.518, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002842', CURRENT_DATE, ARRAY[
-    'Meni 1: Hrustljavi piščanec v sladko-kisli omaki, pražen riž, zelenjavna juha',
-    'Meni 2: Praženi rezanci z zelenjavo in tofujem, solata',
-    'Meni 3: Pekinška raca z rižem, pomladni zavitki'
-  ]);
-
-
--- Location: Kitajska restavracija Ming Zhu
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002933', 'Kitajska restavracija Ming Zhu', 'Ljubljana, 1000 Ljubljana', 46.065, 14.535, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002933', CURRENT_DATE, ARRAY[
-    'Meni 1: Hrustljavi piščanec v sladko-kisli omaki, pražen riž, zelenjavna juha',
-    'Meni 2: Praženi rezanci z zelenjavo in tofujem, solata',
-    'Meni 3: Pekinška raca z rižem, pomladni zavitki'
-  ]);
-
-
--- Location: Kitajska restavracija NANKING
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001415', 'Kitajska restavracija NANKING', 'Ljubljana, 1000 Ljubljana', 46.078, 14.512, 4.10, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001415', CURRENT_DATE, ARRAY[
-    'Meni 1: Hrustljavi piščanec v sladko-kisli omaki, pražen riž, zelenjavna juha',
-    'Meni 2: Praženi rezanci z zelenjavo in tofujem, solata',
-    'Meni 3: Pekinška raca z rižem, pomladni zavitki'
-  ]);
-
-
--- Location: Kitajska restavracija Novi Šanghai
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001346', 'Kitajska restavracija Novi Šanghai', 'Ljubljana, 1000 Ljubljana', 46.051, 14.529, 4.25, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001346', CURRENT_DATE, ARRAY[
-    'Meni 1: Hrustljavi piščanec v sladko-kisli omaki, pražen riž, zelenjavna juha',
-    'Meni 2: Praženi rezanci z zelenjavo in tofujem, solata',
-    'Meni 3: Pekinška raca z rižem, pomladni zavitki'
-  ]);
-
-
--- Location: Kitajska restavracija Šang Hai
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002446', 'Kitajska restavracija Šang Hai', 'Ljubljana, 1000 Ljubljana', 46.064, 14.506, 4.40, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002446', CURRENT_DATE, ARRAY[
-    'Meni 1: Hrustljavi piščanec v sladko-kisli omaki, pražen riž, zelenjavna juha',
-    'Meni 2: Praženi rezanci z zelenjavo in tofujem, solata',
-    'Meni 3: Pekinška raca z rižem, pomladni zavitki'
-  ]);
-
-
--- Location: Kitajska restavracija Zlata srna
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002761', 'Kitajska restavracija Zlata srna', 'Ljubljana, 1000 Ljubljana', 46.077, 14.523, 4.55, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002761', CURRENT_DATE, ARRAY[
-    'Meni 1: Hrustljavi piščanec v sladko-kisli omaki, pražen riž, zelenjavna juha',
-    'Meni 2: Praženi rezanci z zelenjavo in tofujem, solata',
-    'Meni 3: Pekinška raca z rižem, pomladni zavitki'
-  ]);
-
-
--- Location: Kitajska restavracija Zlata srna - DOSTAVA
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002762', 'Kitajska restavracija Zlata srna - DOSTAVA', 'Ljubljana, 1000 Ljubljana', 46.05, 14.5, 3.50, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002762', CURRENT_DATE, ARRAY[
-    'Meni 1: Hrustljavi piščanec v sladko-kisli omaki, pražen riž, zelenjavna juha',
-    'Meni 2: Praženi rezanci z zelenjavo in tofujem, solata',
-    'Meni 3: Pekinška raca z rižem, pomladni zavitki'
-  ]);
-
-
--- Location: Kitajska restavracija Zvezda
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001165', 'Kitajska restavracija Zvezda', 'Ljubljana, 1000 Ljubljana', 46.063, 14.517, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001165', CURRENT_DATE, ARRAY[
-    'Meni 1: Hrustljavi piščanec v sladko-kisli omaki, pražen riž, zelenjavna juha',
-    'Meni 2: Praženi rezanci z zelenjavo in tofujem, solata',
-    'Meni 3: Pekinška raca z rižem, pomladni zavitki'
-  ]);
-
-
--- Location: Kitajska restavracja Cesarska hiša-DOSTAVA
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002265', 'Kitajska restavracja Cesarska hiša-DOSTAVA', 'Ljubljana, 1000 Ljubljana', 46.076, 14.534, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002265', CURRENT_DATE, ARRAY[
-    'Meni 1: Hrustljavi piščanec v sladko-kisli omaki, pražen riž, zelenjavna juha',
-    'Meni 2: Praženi rezanci z zelenjavo in tofujem, solata',
-    'Meni 3: Pekinška raca z rižem, pomladni zavitki'
-  ]);
-
-
--- Location: Kitajski dvor
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001610', 'Kitajski dvor', 'Ljubljana, 1000 Ljubljana', 46.089, 14.511, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001610', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Kitajski dvor
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001911', 'Kitajski dvor', 'Ljubljana, 1000 Ljubljana', 46.062, 14.528, 4.10, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001911', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Kitajski dvor - dostava
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002117', 'Kitajski dvor - dostava', 'Ljubljana, 1000 Ljubljana', 46.075, 14.505, 4.25, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002117', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Kitajski dvor - DOSTAVA
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001164', 'Kitajski dvor - DOSTAVA', 'Ljubljana, 1000 Ljubljana', 46.088, 14.522, 4.40, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001164', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Kitajsko mesto
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001838', 'Kitajsko mesto', 'Ljubljana, 1000 Ljubljana', 46.061, 14.539, 4.55, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001838', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Kitajsko mesto - dostava
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002772', 'Kitajsko mesto - dostava', 'Ljubljana, 1000 Ljubljana', 46.074, 14.516, 3.50, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002772', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Klopčič
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001422', 'Klopčič', 'Ljubljana, 1000 Ljubljana', 46.087, 14.533, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001422', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: KLUBAR GASTROPUB
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003140', 'KLUBAR GASTROPUB', 'Ljubljana, 1000 Ljubljana', 46.06, 14.51, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003140', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Kozlovna Poštna
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003121', 'Kozlovna Poštna', 'Ljubljana, 1000 Ljubljana', 46.073, 14.527, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003121', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Leonard
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002145', 'Leonard', 'Ljubljana, 1000 Ljubljana', 46.086, 14.504, 4.10, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002145', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Leteča zvezda
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002844', 'Leteča zvezda', 'Ljubljana, 1000 Ljubljana', 46.059, 14.521, 4.25, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002844', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: LIPCA - INDEKS
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002726', 'LIPCA - INDEKS', 'Ljubljana, 1000 Ljubljana', 46.072, 14.538, 4.40, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002726', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Lokal P8
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003297', 'Lokal P8', 'Ljubljana, 1000 Ljubljana', 46.085, 14.515, 4.55, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003297', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Loving Hut
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002331', 'Loving Hut', 'Ljubljana, 1000 Ljubljana', 46.058, 14.532, 3.50, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002331', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: LUNCH BOX
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003322', 'LUNCH BOX', 'Ljubljana, 1000 Ljubljana', 46.071, 14.509, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003322', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: MAGMAX
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003368', 'MAGMAX', 'Ljubljana, 1000 Ljubljana', 46.084, 14.526, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003368', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: MANGO SNACKS
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003327', 'MANGO SNACKS', 'Ljubljana, 1000 Ljubljana', 46.057, 14.503, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003327', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: MC PANDA
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003205', 'MC PANDA', 'Ljubljana, 1000 Ljubljana', 46.07, 14.52, 4.10, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003205', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: McDonald s restavracija - Murska Sobota
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003122', 'McDonald s restavracija - Murska Sobota', 'Ljubljana, 1000 Ljubljana', 46.083, 14.537, 4.25, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003122', CURRENT_DATE, ARRAY[
-    'Meni 1: Big Mac + mali krompirček + mešana solata + sadje',
-    'Meni 2: McChicken + mali krompirček + mešana solata',
-    'Meni 3: McNuggets (6 kosov) + omaka + krompirček + solata'
-  ]);
-
-
--- Location: McDonald&#180;s restavracija - Swaty
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001182', 'McDonald&#180;s restavracija - Swaty', 'Ljubljana, 1000 Ljubljana', 46.056, 14.514, 4.40, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001182', CURRENT_DATE, ARRAY[
-    'Meni 1: Big Mac + mali krompirček + mešana solata + sadje',
-    'Meni 2: McChicken + mali krompirček + mešana solata',
-    'Meni 3: McNuggets (6 kosov) + omaka + krompirček + solata'
-  ]);
-
-
--- Location: McDonald&#180;s restavracija Europark
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001185', 'McDonald&#180;s restavracija Europark', 'Ljubljana, 1000 Ljubljana', 46.069, 14.531, 4.55, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001185', CURRENT_DATE, ARRAY[
-    'Meni 1: Big Mac + mali krompirček + mešana solata + sadje',
-    'Meni 2: McChicken + mali krompirček + mešana solata',
-    'Meni 3: McNuggets (6 kosov) + omaka + krompirček + solata'
-  ]);
-
-
--- Location: McDonald&#180;s restavracija Ptujska
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001184', 'McDonald&#180;s restavracija Ptujska', 'Ljubljana, 1000 Ljubljana', 46.082, 14.508, 3.50, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001184', CURRENT_DATE, ARRAY[
-    'Meni 1: Big Mac + mali krompirček + mešana solata + sadje',
-    'Meni 2: McChicken + mali krompirček + mešana solata',
-    'Meni 3: McNuggets (6 kosov) + omaka + krompirček + solata'
-  ]);
-
-
--- Location: McDonald&#180;s restavracija Studenci
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003270', 'McDonald&#180;s restavracija Studenci', 'Ljubljana, 1000 Ljubljana', 46.055, 14.525, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003270', CURRENT_DATE, ARRAY[
-    'Meni 1: Big Mac + mali krompirček + mešana solata + sadje',
-    'Meni 2: McChicken + mali krompirček + mešana solata',
-    'Meni 3: McNuggets (6 kosov) + omaka + krompirček + solata'
-  ]);
-
-
--- Location: McDonald&#180;s restavracija Velenje
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001179', 'McDonald&#180;s restavracija Velenje', 'Ljubljana, 1000 Ljubljana', 46.068, 14.502, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001179', CURRENT_DATE, ARRAY[
-    'Meni 1: Big Mac + mali krompirček + mešana solata + sadje',
-    'Meni 2: McChicken + mali krompirček + mešana solata',
-    'Meni 3: McNuggets (6 kosov) + omaka + krompirček + solata'
-  ]);
-
-
--- Location: McDonald&#39;s Petrol Maribor
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003326', 'McDonald&#39;s Petrol Maribor', 'Maribor, 2000 Maribor', 46.577, 15.643, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003326', CURRENT_DATE, ARRAY[
-    'Meni 1: Big Mac + mali krompirček + mešana solata + sadje',
-    'Meni 2: McChicken + mali krompirček + mešana solata',
-    'Meni 3: McNuggets (6 kosov) + omaka + krompirček + solata'
-  ]);
-
-
--- Location: McDonald&#39;s restavracij - Odiseja
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001380', 'McDonald&#39;s restavracij - Odiseja', 'Ljubljana, 1000 Ljubljana', 46.054, 14.536, 4.10, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001380', CURRENT_DATE, ARRAY[
-    'Meni 1: Big Mac + mali krompirček + mešana solata + sadje',
-    'Meni 2: McChicken + mali krompirček + mešana solata',
-    'Meni 3: McNuggets (6 kosov) + omaka + krompirček + solata'
-  ]);
-
-
--- Location: McDonald&#39;s restavracija - ALEJA
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003107', 'McDonald&#39;s restavracija - ALEJA', 'Ljubljana, 1000 Ljubljana', 46.067, 14.513, 4.25, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003107', CURRENT_DATE, ARRAY[
-    'Meni 1: Big Mac + mali krompirček + mešana solata + sadje',
-    'Meni 2: McChicken + mali krompirček + mešana solata',
-    'Meni 3: McNuggets (6 kosov) + omaka + krompirček + solata'
-  ]);
-
-
--- Location: McDonald&#39;s restavracija - Barje jug
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003246', 'McDonald&#39;s restavracija - Barje jug', 'Ljubljana, 1000 Ljubljana', 46.08, 14.53, 4.40, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003246', CURRENT_DATE, ARRAY[
-    'Meni 1: Big Mac + mali krompirček + mešana solata + sadje',
-    'Meni 2: McChicken + mali krompirček + mešana solata',
-    'Meni 3: McNuggets (6 kosov) + omaka + krompirček + solata'
-  ]);
-
-
--- Location: McDonald&#39;s restavracija - Barje sever
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003247', 'McDonald&#39;s restavracija - Barje sever', 'Ljubljana, 1000 Ljubljana', 46.053, 14.507, 4.55, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003247', CURRENT_DATE, ARRAY[
-    'Meni 1: Big Mac + mali krompirček + mešana solata + sadje',
-    'Meni 2: McChicken + mali krompirček + mešana solata',
-    'Meni 3: McNuggets (6 kosov) + omaka + krompirček + solata'
-  ]);
-
-
--- Location: McDonald&#39;s restavracija - Cankarjeva
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003189', 'McDonald&#39;s restavracija - Cankarjeva', 'Ljubljana, 1000 Ljubljana', 46.066, 14.524, 3.50, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003189', CURRENT_DATE, ARRAY[
-    'Meni 1: Big Mac + mali krompirček + mešana solata + sadje',
-    'Meni 2: McChicken + mali krompirček + mešana solata',
-    'Meni 3: McNuggets (6 kosov) + omaka + krompirček + solata'
-  ]);
-
-
--- Location: McDonald&#39;s restavracija - Celje Drive
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002868', 'McDonald&#39;s restavracija - Celje Drive', 'Celje, 3000 Celje', 46.241, 15.269, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002868', CURRENT_DATE, ARRAY[
-    'Meni 1: Big Mac + mali krompirček + mešana solata + sadje',
-    'Meni 2: McChicken + mali krompirček + mešana solata',
-    'Meni 3: McNuggets (6 kosov) + omaka + krompirček + solata'
-  ]);
-
-
--- Location: McDonald&#39;s restavracija - Celovška
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001341', 'McDonald&#39;s restavracija - Celovška', 'Ljubljana, 1000 Ljubljana', 46.052, 14.518, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001341', CURRENT_DATE, ARRAY[
-    'Meni 1: Big Mac + mali krompirček + mešana solata + sadje',
-    'Meni 2: McChicken + mali krompirček + mešana solata',
-    'Meni 3: McNuggets (6 kosov) + omaka + krompirček + solata'
-  ]);
-
-
--- Location: McDonald&#39;s restavracija - Center
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001377', 'McDonald&#39;s restavracija - Center', 'Ljubljana, 1000 Ljubljana', 46.065, 14.535, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001377', CURRENT_DATE, ARRAY[
-    'Meni 1: Big Mac + mali krompirček + mešana solata + sadje',
-    'Meni 2: McChicken + mali krompirček + mešana solata',
-    'Meni 3: McNuggets (6 kosov) + omaka + krompirček + solata'
-  ]);
-
-
--- Location: McDonald&#39;s restavracija - Domžale
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001342', 'McDonald&#39;s restavracija - Domžale', 'Ljubljana, 1000 Ljubljana', 46.078, 14.512, 4.10, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001342', CURRENT_DATE, ARRAY[
-    'Meni 1: Big Mac + mali krompirček + mešana solata + sadje',
-    'Meni 2: McChicken + mali krompirček + mešana solata',
-    'Meni 3: McNuggets (6 kosov) + omaka + krompirček + solata'
-  ]);
-
-
--- Location: McDonald&#39;s restavracija - Kranj
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002866', 'McDonald&#39;s restavracija - Kranj', 'Kranj, 4000 Kranj', 46.249, 14.357, 4.25, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002866', CURRENT_DATE, ARRAY[
-    'Meni 1: Big Mac + mali krompirček + mešana solata + sadje',
-    'Meni 2: McChicken + mali krompirček + mešana solata',
-    'Meni 3: McNuggets (6 kosov) + omaka + krompirček + solata'
-  ]);
-
-
--- Location: McDonald&#39;s restavracija - Lesce
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003279', 'McDonald&#39;s restavracija - Lesce', 'Ljubljana, 1000 Ljubljana', 46.064, 14.506, 4.40, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003279', CURRENT_DATE, ARRAY[
-    'Meni 1: Big Mac + mali krompirček + mešana solata + sadje',
-    'Meni 2: McChicken + mali krompirček + mešana solata',
-    'Meni 3: McNuggets (6 kosov) + omaka + krompirček + solata'
-  ]);
-
-
--- Location: McDonald&#39;s restavracija - Novo mesto
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001381', 'McDonald&#39;s restavracija - Novo mesto', 'Novo mesto, 8000 Novo mesto', 45.815, 15.179, 4.55, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001381', CURRENT_DATE, ARRAY[
-    'Meni 1: Big Mac + mali krompirček + mešana solata + sadje',
-    'Meni 2: McChicken + mali krompirček + mešana solata',
-    'Meni 3: McNuggets (6 kosov) + omaka + krompirček + solata'
-  ]);
-
-
--- Location: McDonald&#39;s restavracija - Rudnik
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001536', 'McDonald&#39;s restavracija - Rudnik', 'Ljubljana, 1000 Ljubljana', 46.05, 14.5, 3.50, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001536', CURRENT_DATE, ARRAY[
-    'Meni 1: Big Mac + mali krompirček + mešana solata + sadje',
-    'Meni 2: McChicken + mali krompirček + mešana solata',
-    'Meni 3: McNuggets (6 kosov) + omaka + krompirček + solata'
-  ]);
-
-
--- Location: McDonald&#39;s restavracija - Supernova Rudnik
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003188', 'McDonald&#39;s restavracija - Supernova Rudnik', 'Ljubljana, 1000 Ljubljana', 46.063, 14.517, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003188', CURRENT_DATE, ARRAY[
-    'Meni 1: Big Mac + mali krompirček + mešana solata + sadje',
-    'Meni 2: McChicken + mali krompirček + mešana solata',
-    'Meni 3: McNuggets (6 kosov) + omaka + krompirček + solata'
-  ]);
-
-
--- Location: McDonald&#39;s restavracija - Šmartinka Drive
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003164', 'McDonald&#39;s restavracija - Šmartinka Drive', 'Ljubljana, 1000 Ljubljana', 46.076, 14.534, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003164', CURRENT_DATE, ARRAY[
-    'Meni 1: Big Mac + mali krompirček + mešana solata + sadje',
-    'Meni 2: McChicken + mali krompirček + mešana solata',
-    'Meni 3: McNuggets (6 kosov) + omaka + krompirček + solata'
-  ]);
-
-
--- Location: McDonald&#39;s restavracija - Žito
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001378', 'McDonald&#39;s restavracija - Žito', 'Ljubljana, 1000 Ljubljana', 46.089, 14.511, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001378', CURRENT_DATE, ARRAY[
-    'Meni 1: Big Mac + mali krompirček + mešana solata + sadje',
-    'Meni 2: McChicken + mali krompirček + mešana solata',
-    'Meni 3: McNuggets (6 kosov) + omaka + krompirček + solata'
-  ]);
-
-
--- Location: McDonald&#39;s restavracija Koper
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002253', 'McDonald&#39;s restavracija Koper', 'Koper, 6000 Koper', 45.544, 13.742, 4.10, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002253', CURRENT_DATE, ARRAY[
-    'Meni 1: Big Mac + mali krompirček + mešana solata + sadje',
-    'Meni 2: McChicken + mali krompirček + mešana solata',
-    'Meni 3: McNuggets (6 kosov) + omaka + krompirček + solata'
-  ]);
-
-
--- Location: McDonald&#39;s restavracija Nova Gorica
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002815', 'McDonald&#39;s restavracija Nova Gorica', 'Ljubljana, 1000 Ljubljana', 46.075, 14.505, 4.25, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002815', CURRENT_DATE, ARRAY[
-    'Meni 1: Big Mac + mali krompirček + mešana solata + sadje',
-    'Meni 2: McChicken + mali krompirček + mešana solata',
-    'Meni 3: McNuggets (6 kosov) + omaka + krompirček + solata'
-  ]);
-
-
--- Location: McDonald&#39;s Supernova Koper
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003330', 'McDonald&#39;s Supernova Koper', 'Koper, 6000 Koper', 45.546, 13.748, 4.40, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003330', CURRENT_DATE, ARRAY[
-    'Meni 1: Big Mac + mali krompirček + mešana solata + sadje',
-    'Meni 2: McChicken + mali krompirček + mešana solata',
-    'Meni 3: McNuggets (6 kosov) + omaka + krompirček + solata'
-  ]);
-
-
--- Location: ME GUSTA
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002648', 'ME GUSTA', 'Ljubljana, 1000 Ljubljana', 46.061, 14.539, 4.55, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002648', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Meating pub &amp; restavracija
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003138', 'Meating pub &amp; restavracija', 'Ljubljana, 1000 Ljubljana', 46.074, 14.516, 3.50, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003138', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Mehiška restavracija Imperio mexicano
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001407', 'Mehiška restavracija Imperio mexicano', 'Ljubljana, 1000 Ljubljana', 46.087, 14.533, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001407', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Menza BF
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002023', 'Menza BF', 'Ljubljana, 1000 Ljubljana', 46.06, 14.51, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002023', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Menza FE
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002521', 'Menza FE', 'Ljubljana, 1000 Ljubljana', 46.073, 14.527, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002521', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: MM PANDA
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002360', 'MM PANDA', 'Ljubljana, 1000 Ljubljana', 46.086, 14.504, 4.10, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002360', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Moj cmok
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003357', 'Moj cmok', 'Ljubljana, 1000 Ljubljana', 46.059, 14.521, 4.25, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003357', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Moji štruklji BTC
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003362', 'Moji štruklji BTC', 'Ljubljana, 1000 Ljubljana', 46.072, 14.538, 4.40, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003362', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Namaste Grab &amp; Go
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003290', 'Namaste Grab &amp; Go', 'Ljubljana, 1000 Ljubljana', 46.085, 14.515, 4.55, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003290', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Namaste Indian Express
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002828', 'Namaste Indian Express', 'Ljubljana, 1000 Ljubljana', 46.058, 14.532, 3.50, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002828', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: News Cafe
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002249', 'News Cafe', 'Ljubljana, 1000 Ljubljana', 46.071, 14.509, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002249', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Niam niam garden
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003359', 'Niam niam garden', 'Ljubljana, 1000 Ljubljana', 46.084, 14.526, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003359', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: NJAMY - dostava
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003167', 'NJAMY - dostava', 'Ljubljana, 1000 Ljubljana', 46.057, 14.503, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003167', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Norma 23
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003229', 'Norma 23', 'Ljubljana, 1000 Ljubljana', 46.07, 14.52, 4.10, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003229', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Okrepčevalnica - Diner kino gledališče Bežigrad
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002732', 'Okrepčevalnica - Diner kino gledališče Bežigrad', 'Ljubljana, 1000 Ljubljana', 46.083, 14.537, 4.25, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002732', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Okrepčevalnica - pizzerija Maks
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001683', 'Okrepčevalnica - pizzerija Maks', 'Ljubljana, 1000 Ljubljana', 46.056, 14.514, 4.40, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001683', CURRENT_DATE, ARRAY[
-    'Meni 1: Pizza Margherita (pelati, mocarela, bazilika), mešana solata, sadje',
-    'Meni 2: Pizza Klasika (šunka, sir, gobe), mešana solata',
-    'Meni 3: Veganska pizza s pečenimi jajčevci in bučkami, solata'
-  ]);
-
-
--- Location: Okrepčevalnica &quot;Medicinska fakulteta&quot;
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003397', 'Okrepčevalnica &quot;Medicinska fakulteta&quot;', 'Ljubljana, 1000 Ljubljana', 46.069, 14.531, 4.55, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003397', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Okrepčevalnica Ajda
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002944', 'Okrepčevalnica Ajda', 'Ljubljana, 1000 Ljubljana', 46.082, 14.508, 3.50, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002944', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Okrepčevalnica FERI
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002347', 'Okrepčevalnica FERI', 'Ljubljana, 1000 Ljubljana', 46.055, 14.525, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002347', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Okrepčevalnica HAM-HAM
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003342', 'Okrepčevalnica HAM-HAM', 'Ljubljana, 1000 Ljubljana', 46.068, 14.502, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003342', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Okrepčevalnica IZUM
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002652', 'Okrepčevalnica IZUM', 'Ljubljana, 1000 Ljubljana', 46.081, 14.519, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002652', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Okrepčevalnica Marijanca
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003200', 'Okrepčevalnica Marijanca', 'Ljubljana, 1000 Ljubljana', 46.054, 14.536, 4.10, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003200', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: OKREPČEVALNICA PINELA
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003333', 'OKREPČEVALNICA PINELA', 'Ljubljana, 1000 Ljubljana', 46.067, 14.513, 4.25, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003333', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Okrepčevalnica Rock Cafe
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003372', 'Okrepčevalnica Rock Cafe', 'Ljubljana, 1000 Ljubljana', 46.08, 14.53, 4.40, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003372', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: OLA ENKA
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001817', 'OLA ENKA', 'Ljubljana, 1000 Ljubljana', 46.053, 14.507, 4.55, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001817', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: O-LALA
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003296', 'O-LALA', 'Ljubljana, 1000 Ljubljana', 46.066, 14.524, 3.50, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003296', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: ON THAI Rudnik
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003318', 'ON THAI Rudnik', 'Ljubljana, 1000 Ljubljana', 46.079, 14.501, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003318', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: ON THAI Šiška
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003319', 'ON THAI Šiška', 'Ljubljana, 1000 Ljubljana', 46.052, 14.518, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003319', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: ORIENT EXPRESS, samopostrežna restavracija
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003169', 'ORIENT EXPRESS, samopostrežna restavracija', 'Ljubljana, 1000 Ljubljana', 46.065, 14.535, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003169', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Oštarija City center Celje
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003035', 'Oštarija City center Celje', 'Celje, 3000 Celje', 46.242, 15.268, 4.10, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003035', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Oštarija Rudolfswerth
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001471', 'Oštarija Rudolfswerth', 'Ljubljana, 1000 Ljubljana', 46.051, 14.529, 4.25, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001471', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: P8 - dostava
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003298', 'P8 - dostava', 'Ljubljana, 1000 Ljubljana', 46.064, 14.506, 4.40, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003298', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Palača SMELT
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002753', 'Palača SMELT', 'Ljubljana, 1000 Ljubljana', 46.077, 14.523, 4.55, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002753', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Papagayo
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002863', 'Papagayo', 'Ljubljana, 1000 Ljubljana', 46.05, 14.5, 3.50, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002863', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: PE Dijaški dom Celje
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002623', 'PE Dijaški dom Celje', 'Celje, 3000 Celje', 46.237, 15.273, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002623', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Pe Hiša kruha junior
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003392', 'Pe Hiša kruha junior', 'Ljubljana, 1000 Ljubljana', 46.076, 14.534, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003392', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: PE LUCKY STREET FOOD
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003390', 'PE LUCKY STREET FOOD', 'Ljubljana, 1000 Ljubljana', 46.089, 14.511, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003390', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: PE Marjetica
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001424', 'PE Marjetica', 'Ljubljana, 1000 Ljubljana', 46.062, 14.528, 4.10, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001424', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: PE Melty
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003346', 'PE Melty', 'Ljubljana, 1000 Ljubljana', 46.075, 14.505, 4.25, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003346', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Picerija Barjan
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003353', 'Picerija Barjan', 'Ljubljana, 1000 Ljubljana', 46.088, 14.522, 4.40, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003353', CURRENT_DATE, ARRAY[
-    'Meni 1: Pizza Margherita (pelati, mocarela, bazilika), mešana solata, sadje',
-    'Meni 2: Pizza Klasika (šunka, sir, gobe), mešana solata',
-    'Meni 3: Veganska pizza s pečenimi jajčevci in bučkami, solata'
-  ]);
-
-
--- Location: PICERIJA CITYBURGER
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002243', 'PICERIJA CITYBURGER', 'Ljubljana, 1000 Ljubljana', 46.061, 14.539, 4.55, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002243', CURRENT_DATE, ARRAY[
-    'Meni 1: Pizza Margherita (pelati, mocarela, bazilika), mešana solata, sadje',
-    'Meni 2: Pizza Klasika (šunka, sir, gobe), mešana solata',
-    'Meni 3: Veganska pizza s pečenimi jajčevci in bučkami, solata'
-  ]);
-
-
--- Location: Picerija ERA
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002551', 'Picerija ERA', 'Ljubljana, 1000 Ljubljana', 46.074, 14.516, 3.50, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002551', CURRENT_DATE, ARRAY[
-    'Meni 1: Pizza Margherita (pelati, mocarela, bazilika), mešana solata, sadje',
-    'Meni 2: Pizza Klasika (šunka, sir, gobe), mešana solata',
-    'Meni 3: Veganska pizza s pečenimi jajčevci in bučkami, solata'
-  ]);
-
-
--- Location: Picerija in pivnica KUFR
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003142', 'Picerija in pivnica KUFR', 'Ljubljana, 1000 Ljubljana', 46.087, 14.533, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003142', CURRENT_DATE, ARRAY[
-    'Meni 1: Pizza Margherita (pelati, mocarela, bazilika), mešana solata, sadje',
-    'Meni 2: Pizza Klasika (šunka, sir, gobe), mešana solata',
-    'Meni 3: Veganska pizza s pečenimi jajčevci in bučkami, solata'
-  ]);
-
-
--- Location: Picerija Pavon
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003281', 'Picerija Pavon', 'Ljubljana, 1000 Ljubljana', 46.06, 14.51, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003281', CURRENT_DATE, ARRAY[
-    'Meni 1: Pizza Margherita (pelati, mocarela, bazilika), mešana solata, sadje',
-    'Meni 2: Pizza Klasika (šunka, sir, gobe), mešana solata',
-    'Meni 3: Veganska pizza s pečenimi jajčevci in bučkami, solata'
-  ]);
-
-
--- Location: Picestavracija Boccaccio
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001794', 'Picestavracija Boccaccio', 'Ljubljana, 1000 Ljubljana', 46.073, 14.527, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001794', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Pisana skleda
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003361', 'Pisana skleda', 'Ljubljana, 1000 Ljubljana', 46.086, 14.504, 4.10, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003361', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Pizza SALAMON - dostava
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002595', 'Pizza SALAMON - dostava', 'Ljubljana, 1000 Ljubljana', 46.059, 14.521, 4.25, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002595', CURRENT_DATE, ARRAY[
-    'Meni 1: Pizza Margherita (pelati, mocarela, bazilika), mešana solata, sadje',
-    'Meni 2: Pizza Klasika (šunka, sir, gobe), mešana solata',
-    'Meni 3: Veganska pizza s pečenimi jajčevci in bučkami, solata'
-  ]);
-
-
--- Location: Pizzeria Briksen
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002308', 'Pizzeria Briksen', 'Ljubljana, 1000 Ljubljana', 46.072, 14.538, 4.40, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002308', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Pizzeria Favola
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003295', 'Pizzeria Favola', 'Ljubljana, 1000 Ljubljana', 46.085, 14.515, 4.55, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003295', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Pizzeria FoculuS
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001441', 'Pizzeria FoculuS', 'Ljubljana, 1000 Ljubljana', 46.058, 14.532, 3.50, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001441', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Pizzeria Fontana
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002284', 'Pizzeria Fontana', 'Ljubljana, 1000 Ljubljana', 46.071, 14.509, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002284', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Pizzeria Gusto
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003388', 'Pizzeria Gusto', 'Ljubljana, 1000 Ljubljana', 46.084, 14.526, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003388', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Pizzeria in oštarija Chianti
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003174', 'Pizzeria in oštarija Chianti', 'Ljubljana, 1000 Ljubljana', 46.057, 14.503, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003174', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Pizzeria in špageteria Al Capone
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001103', 'Pizzeria in špageteria Al Capone', 'Ljubljana, 1000 Ljubljana', 46.07, 14.52, 4.10, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001103', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Pizzeria in špagetteria Cubus
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001305', 'Pizzeria in špagetteria Cubus', 'Ljubljana, 1000 Ljubljana', 46.083, 14.537, 4.25, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001305', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Pizzeria Laterna
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001423', 'Pizzeria Laterna', 'Ljubljana, 1000 Ljubljana', 46.056, 14.514, 4.40, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001423', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Pizzeria Oliva
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003309', 'Pizzeria Oliva', 'Ljubljana, 1000 Ljubljana', 46.069, 14.531, 4.55, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003309', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Pizzeria Osmica
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002165', 'Pizzeria Osmica', 'Ljubljana, 1000 Ljubljana', 46.082, 14.508, 3.50, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002165', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Pizzeria Parma
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002375', 'Pizzeria Parma', 'Ljubljana, 1000 Ljubljana', 46.055, 14.525, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002375', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Pizzeria Šestinka
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001335', 'Pizzeria Šestinka', 'Ljubljana, 1000 Ljubljana', 46.068, 14.502, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001335', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Pizzerija Atrij d.o.o.
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001031', 'Pizzerija Atrij d.o.o.', 'Ljubljana, 1000 Ljubljana', 46.081, 14.519, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001031', CURRENT_DATE, ARRAY[
-    'Meni 1: Pizza Margherita (pelati, mocarela, bazilika), mešana solata, sadje',
-    'Meni 2: Pizza Klasika (šunka, sir, gobe), mešana solata',
-    'Meni 3: Veganska pizza s pečenimi jajčevci in bučkami, solata'
-  ]);
-
-
--- Location: Pizzerija Dimnik
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001716', 'Pizzerija Dimnik', 'Ljubljana, 1000 Ljubljana', 46.054, 14.536, 4.10, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001716', CURRENT_DATE, ARRAY[
-    'Meni 1: Pizza Margherita (pelati, mocarela, bazilika), mešana solata, sadje',
-    'Meni 2: Pizza Klasika (šunka, sir, gobe), mešana solata',
-    'Meni 3: Veganska pizza s pečenimi jajčevci in bučkami, solata'
-  ]);
-
-
--- Location: Pizzerija Dimnik - dostava
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001717', 'Pizzerija Dimnik - dostava', 'Ljubljana, 1000 Ljubljana', 46.067, 14.513, 4.25, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001717', CURRENT_DATE, ARRAY[
-    'Meni 1: Pizza Margherita (pelati, mocarela, bazilika), mešana solata, sadje',
-    'Meni 2: Pizza Klasika (šunka, sir, gobe), mešana solata',
-    'Meni 3: Veganska pizza s pečenimi jajčevci in bučkami, solata'
-  ]);
-
-
--- Location: Pizzerija in okrepčevalnica KONDOR
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001413', 'Pizzerija in okrepčevalnica KONDOR', 'Ljubljana, 1000 Ljubljana', 46.08, 14.53, 4.40, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001413', CURRENT_DATE, ARRAY[
-    'Meni 1: Pizza Margherita (pelati, mocarela, bazilika), mešana solata, sadje',
-    'Meni 2: Pizza Klasika (šunka, sir, gobe), mešana solata',
-    'Meni 3: Veganska pizza s pečenimi jajčevci in bučkami, solata'
-  ]);
-
-
--- Location: Pizzerija in špageterija Alcapone
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003116', 'Pizzerija in špageterija Alcapone', 'Ljubljana, 1000 Ljubljana', 46.053, 14.507, 4.55, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003116', CURRENT_DATE, ARRAY[
-    'Meni 1: Pizza Margherita (pelati, mocarela, bazilika), mešana solata, sadje',
-    'Meni 2: Pizza Klasika (šunka, sir, gobe), mešana solata',
-    'Meni 3: Veganska pizza s pečenimi jajčevci in bučkami, solata'
-  ]);
-
-
--- Location: Pizzerija Velun
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001176', 'Pizzerija Velun', 'Ljubljana, 1000 Ljubljana', 46.066, 14.524, 3.50, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001176', CURRENT_DATE, ARRAY[
-    'Meni 1: Pizza Margherita (pelati, mocarela, bazilika), mešana solata, sadje',
-    'Meni 2: Pizza Klasika (šunka, sir, gobe), mešana solata',
-    'Meni 3: Veganska pizza s pečenimi jajčevci in bučkami, solata'
-  ]);
-
-
--- Location: Prfect Meals - dostava
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003360', 'Prfect Meals - dostava', 'Ljubljana, 1000 Ljubljana', 46.079, 14.501, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003360', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Prometna šola Maribor
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001265', 'Prometna šola Maribor', 'Maribor, 2000 Maribor', 46.574, 15.646, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001265', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Pr&#39;picopeku
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003364', 'Pr&#39;picopeku', 'Ljubljana, 1000 Ljubljana', 46.065, 14.535, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003364', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Q TABOR
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002651', 'Q TABOR', 'Ljubljana, 1000 Ljubljana', 46.078, 14.512, 4.10, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002651', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija &amp; pub GOLD PUB
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003344', 'Restavracija &amp; pub GOLD PUB', 'Ljubljana, 1000 Ljubljana', 46.051, 14.529, 4.25, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003344', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija 123 DSU
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002187', 'Restavracija 123 DSU', 'Ljubljana, 1000 Ljubljana', 46.064, 14.506, 4.40, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002187', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija 123 Mega center 2
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002528', 'Restavracija 123 Mega center 2', 'Ljubljana, 1000 Ljubljana', 46.077, 14.523, 4.55, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002528', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija 123 Pristan Koper
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003339', 'Restavracija 123 Pristan Koper', 'Koper, 6000 Koper', 45.54, 13.73, 3.50, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003339', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija Allegria
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002164', 'Restavracija Allegria', 'Ljubljana, 1000 Ljubljana', 46.063, 14.517, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002164', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija Ancora
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002501', 'Restavracija Ancora', 'Ljubljana, 1000 Ljubljana', 46.076, 14.534, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002501', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija Azija
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002703', 'Restavracija Azija', 'Ljubljana, 1000 Ljubljana', 46.089, 14.511, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002703', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija Brejk
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002527', 'Restavracija Brejk', 'Ljubljana, 1000 Ljubljana', 46.062, 14.528, 4.10, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002527', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija Eat Smart 1
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002234', 'Restavracija Eat Smart 1', 'Ljubljana, 1000 Ljubljana', 46.075, 14.505, 4.25, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002234', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija Eat Smart 2
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003232', 'Restavracija Eat Smart 2', 'Ljubljana, 1000 Ljubljana', 46.088, 14.522, 4.40, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003232', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija Fany &amp; Mary
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001827', 'Restavracija Fany &amp; Mary', 'Ljubljana, 1000 Ljubljana', 46.061, 14.539, 4.55, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001827', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija Fresco
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002097', 'Restavracija Fresco', 'Ljubljana, 1000 Ljubljana', 46.074, 14.516, 3.50, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002097', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija FS, Fakulteta za strojništvo
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003134', 'Restavracija FS, Fakulteta za strojništvo', 'Ljubljana, 1000 Ljubljana', 46.087, 14.533, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003134', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija in maloprodaja Hermine Wech - Koroška perutnina
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003036', 'Restavracija in maloprodaja Hermine Wech - Koroška perutnina', 'Ljubljana, 1000 Ljubljana', 46.06, 14.51, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003036', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija in maloprodaja Hermine Wech - Koroška perutnina
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003038', 'Restavracija in maloprodaja Hermine Wech - Koroška perutnina', 'Ljubljana, 1000 Ljubljana', 46.073, 14.527, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003038', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija in pivnica Zvezda
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002343', 'Restavracija in pivnica Zvezda', 'Ljubljana, 1000 Ljubljana', 46.086, 14.504, 4.10, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002343', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija in prenočišča ČARDA
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003389', 'Restavracija in prenočišča ČARDA', 'Ljubljana, 1000 Ljubljana', 46.059, 14.521, 4.25, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003389', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija Interspar Celje
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001195', 'Restavracija Interspar Celje', 'Celje, 3000 Celje', 46.248, 15.262, 4.40, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001195', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija Interspar Citypark
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001369', 'Restavracija Interspar Citypark', 'Ljubljana, 1000 Ljubljana', 46.085, 14.515, 4.55, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001369', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija Interspar Koper
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001023', 'Restavracija Interspar Koper', 'Koper, 6000 Koper', 45.556, 13.738, 3.50, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001023', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija Interspar Kranj
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001198', 'Restavracija Interspar Kranj', 'Kranj, 4000 Kranj', 46.249, 14.357, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001198', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija Interspar Maribor Europark
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001194', 'Restavracija Interspar Maribor Europark', 'Maribor, 2000 Maribor', 46.568, 15.652, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001194', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija Interspar Maribor2 Supernova Qlandia
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001197', 'Restavracija Interspar Maribor2 Supernova Qlandia', 'Maribor, 2000 Maribor', 46.579, 15.641, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001197', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija Interspar Nova Gorica
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001025', 'Restavracija Interspar Nova Gorica', 'Ljubljana, 1000 Ljubljana', 46.07, 14.52, 4.10, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001025', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija Interspar Vič
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001370', 'Restavracija Interspar Vič', 'Ljubljana, 1000 Ljubljana', 46.083, 14.537, 4.25, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001370', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija Kitajska palača
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002040', 'Restavracija Kitajska palača', 'Ljubljana, 1000 Ljubljana', 46.056, 14.514, 4.40, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002040', CURRENT_DATE, ARRAY[
-    'Meni 1: Hrustljavi piščanec v sladko-kisli omaki, pražen riž, zelenjavna juha',
-    'Meni 2: Praženi rezanci z zelenjavo in tofujem, solata',
-    'Meni 3: Pekinška raca z rižem, pomladni zavitki'
-  ]);
-
-
--- Location: Restavracija Kitajska palača - DOSTAVA
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002775', 'Restavracija Kitajska palača - DOSTAVA', 'Ljubljana, 1000 Ljubljana', 46.069, 14.531, 4.55, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002775', CURRENT_DATE, ARRAY[
-    'Meni 1: Hrustljavi piščanec v sladko-kisli omaki, pražen riž, zelenjavna juha',
-    'Meni 2: Praženi rezanci z zelenjavo in tofujem, solata',
-    'Meni 3: Pekinška raca z rižem, pomladni zavitki'
-  ]);
-
-
--- Location: Restavracija klub Cankarjevega doma
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001768', 'Restavracija klub Cankarjevega doma', 'Ljubljana, 1000 Ljubljana', 46.082, 14.508, 3.50, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001768', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija Kolodvorska
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001263', 'Restavracija Kolodvorska', 'Ljubljana, 1000 Ljubljana', 46.055, 14.525, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001263', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija Kompliment
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003096', 'Restavracija Kompliment', 'Ljubljana, 1000 Ljubljana', 46.068, 14.502, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003096', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija Letališka
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001713', 'Restavracija Letališka', 'Ljubljana, 1000 Ljubljana', 46.081, 14.519, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001713', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija Mango
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002085', 'Restavracija Mango', 'Ljubljana, 1000 Ljubljana', 46.054, 14.536, 4.10, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002085', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija McDonalds - Citycenter Celje
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002649', 'Restavracija McDonalds - Citycenter Celje', 'Celje, 3000 Celje', 46.233, 15.277, 4.25, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002649', CURRENT_DATE, ARRAY[
-    'Meni 1: Big Mac + mali krompirček + mešana solata + sadje',
-    'Meni 2: McChicken + mali krompirček + mešana solata',
-    'Meni 3: McNuggets (6 kosov) + omaka + krompirček + solata'
-  ]);
-
-
--- Location: Restavracija McDonalds - Ptuj
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002759', 'Restavracija McDonalds - Ptuj', 'Ljubljana, 1000 Ljubljana', 46.08, 14.53, 4.40, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002759', CURRENT_DATE, ARRAY[
-    'Meni 1: Big Mac + mali krompirček + mešana solata + sadje',
-    'Meni 2: McChicken + mali krompirček + mešana solata',
-    'Meni 3: McNuggets (6 kosov) + omaka + krompirček + solata'
-  ]);
-
-
--- Location: Restavracija Mensana
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003144', 'Restavracija Mensana', 'Ljubljana, 1000 Ljubljana', 46.053, 14.507, 4.55, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003144', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija Menza IJS
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003236', 'Restavracija Menza IJS', 'Ljubljana, 1000 Ljubljana', 46.066, 14.524, 3.50, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003236', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija Modri kvadrat
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002721', 'Restavracija Modri kvadrat', 'Ljubljana, 1000 Ljubljana', 46.079, 14.501, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002721', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija Mozart
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001382', 'Restavracija Mozart', 'Ljubljana, 1000 Ljubljana', 46.052, 14.518, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001382', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija Mozart P.E. Ekonomska fakulteta
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003172', 'Restavracija Mozart P.E. Ekonomska fakulteta', 'Ljubljana, 1000 Ljubljana', 46.065, 14.535, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003172', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija Mr.Falafel
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003049', 'Restavracija Mr.Falafel', 'Ljubljana, 1000 Ljubljana', 46.078, 14.512, 4.10, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003049', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija OAZA Pef
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003179', 'Restavracija OAZA Pef', 'Ljubljana, 1000 Ljubljana', 46.051, 14.529, 4.25, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003179', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija Pergola
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003241', 'Restavracija Pergola', 'Ljubljana, 1000 Ljubljana', 46.064, 14.506, 4.40, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003241', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija PF, Pravna fakulteta
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003240', 'Restavracija PF, Pravna fakulteta', 'Ljubljana, 1000 Ljubljana', 46.077, 14.523, 4.55, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003240', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija Piano
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003396', 'Restavracija Piano', 'Ljubljana, 1000 Ljubljana', 46.05, 14.5, 3.50, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003396', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija pizza Bella Napoli
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003376', 'Restavracija pizza Bella Napoli', 'Ljubljana, 1000 Ljubljana', 46.063, 14.517, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003376', CURRENT_DATE, ARRAY[
-    'Meni 1: Pizza Margherita (pelati, mocarela, bazilika), mešana solata, sadje',
-    'Meni 2: Pizza Klasika (šunka, sir, gobe), mešana solata',
-    'Meni 3: Veganska pizza s pečenimi jajčevci in bučkami, solata'
-  ]);
-
-
--- Location: Restavracija Plečnikov hram
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001360', 'Restavracija Plečnikov hram', 'Ljubljana, 1000 Ljubljana', 46.076, 14.534, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001360', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija Prestige catering, GZS
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002180', 'Restavracija Prestige catering, GZS', 'Ljubljana, 1000 Ljubljana', 46.089, 14.511, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002180', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija Rdeče jabolko
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001321', 'Restavracija Rdeče jabolko', 'Ljubljana, 1000 Ljubljana', 46.062, 14.528, 4.10, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001321', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija sarajevskih jedi Valter Jesenice
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002884', 'Restavracija sarajevskih jedi Valter Jesenice', 'Kranj, 4000 Kranj', 46.245, 14.365, 4.25, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002884', CURRENT_DATE, ARRAY[
-    'Meni 1: Veliki čevapčiči (10x), vroča lepinja, čebula, zeljnata solata, jabolko',
-    'Meni 2: Srednji čevapi s kajmakom in lepinjo, solata',
-    'Meni 3: Telečja čorba z domačim kruhom, jabolko'
-  ]);
-
-
--- Location: Restavracija Splošne bolnišnice Novo mesto
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001298', 'Restavracija Splošne bolnišnice Novo mesto', 'Novo mesto, 8000 Novo mesto', 45.81, 15.176, 4.40, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001298', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija Vrtnica
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003156', 'Restavracija Vrtnica', 'Ljubljana, 1000 Ljubljana', 46.061, 14.539, 4.55, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003156', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija Zadružnik Kozje
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003324', 'Restavracija Zadružnik Kozje', 'Ljubljana, 1000 Ljubljana', 46.074, 14.516, 3.50, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003324', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija Zadružnik Šmarje
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003323', 'Restavracija Zadružnik Šmarje', 'Ljubljana, 1000 Ljubljana', 46.087, 14.533, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003323', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija Zeleni Park
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003336', 'Restavracija Zeleni Park', 'Ljubljana, 1000 Ljubljana', 46.06, 14.51, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003336', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Restavracija Zlata sreča
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002698', 'Restavracija Zlata sreča', 'Ljubljana, 1000 Ljubljana', 46.073, 14.527, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002698', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Rex
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003289', 'Rex', 'Ljubljana, 1000 Ljubljana', 46.086, 14.504, 4.10, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003289', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: RIKŠA CURRY&amp;WOK
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003220', 'RIKŠA CURRY&amp;WOK', 'Ljubljana, 1000 Ljubljana', 46.059, 14.521, 4.25, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003220', CURRENT_DATE, ARRAY[
-    'Meni 1: Hrustljavi piščanec v sladko-kisli omaki, pražen riž, zelenjavna juha',
-    'Meni 2: Praženi rezanci z zelenjavo in tofujem, solata',
-    'Meni 3: Pekinška raca z rižem, pomladni zavitki'
-  ]);
-
-
--- Location: Roza slon
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002739', 'Roza slon', 'Ljubljana, 1000 Ljubljana', 46.072, 14.538, 4.40, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002739', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Roza slon Bežigrad
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002859', 'Roza slon Bežigrad', 'Ljubljana, 1000 Ljubljana', 46.085, 14.515, 4.55, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002859', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Roza slon BTC
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003225', 'Roza slon BTC', 'Ljubljana, 1000 Ljubljana', 46.058, 14.532, 3.50, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003225', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Roza slon Vič
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003224', 'Roza slon Vič', 'Ljubljana, 1000 Ljubljana', 46.071, 14.509, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003224', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Ruby food
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003072', 'Ruby food', 'Ljubljana, 1000 Ljubljana', 46.084, 14.526, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003072', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Samopostrežna restavracija Stolpič
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002781', 'Samopostrežna restavracija Stolpič', 'Ljubljana, 1000 Ljubljana', 46.057, 14.503, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002781', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: SB Nova Gorica
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003340', 'SB Nova Gorica', 'Ljubljana, 1000 Ljubljana', 46.07, 14.52, 4.10, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003340', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Shaolin
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003365', 'Shaolin', 'Ljubljana, 1000 Ljubljana', 46.083, 14.537, 4.25, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003365', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Skriti kot - mestna gostilna
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001367', 'Skriti kot - mestna gostilna', 'Ljubljana, 1000 Ljubljana', 46.056, 14.514, 4.40, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001367', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Splošna bolnišnica Brežice
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003069', 'Splošna bolnišnica Brežice', 'Ljubljana, 1000 Ljubljana', 46.069, 14.531, 4.55, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003069', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Splošna bolnišnica Izola
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002641', 'Splošna bolnišnica Izola', 'Koper, 6000 Koper', 45.544, 13.742, 3.50, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002641', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Srednja šola Izola - Scuola media Isola
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002263', 'Srednja šola Izola - Scuola media Isola', 'Koper, 6000 Koper', 45.555, 13.735, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002263', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Stari Grill
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002569', 'Stari Grill', 'Ljubljana, 1000 Ljubljana', 46.068, 14.502, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002569', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Subway - Bavarc
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003265', 'Subway - Bavarc', 'Ljubljana, 1000 Ljubljana', 46.081, 14.519, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003265', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Subway - Center
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002714', 'Subway - Center', 'Ljubljana, 1000 Ljubljana', 46.054, 14.536, 4.10, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002714', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Subway Bežigrad
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002389', 'Subway Bežigrad', 'Ljubljana, 1000 Ljubljana', 46.067, 14.513, 4.25, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002389', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Subway BTC
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002988', 'Subway BTC', 'Ljubljana, 1000 Ljubljana', 46.08, 14.53, 4.40, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002988', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: SUBWAY KOPER
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003374', 'SUBWAY KOPER', 'Koper, 6000 Koper', 45.541, 13.733, 4.55, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003374', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Šavirma
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003363', 'Šavirma', 'Ljubljana, 1000 Ljubljana', 46.066, 14.524, 3.50, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003363', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Šeherezada
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002092', 'Šeherezada', 'Ljubljana, 1000 Ljubljana', 46.079, 14.501, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002092', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Šeherezada 2
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003159', 'Šeherezada 2', 'Ljubljana, 1000 Ljubljana', 46.052, 14.518, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003159', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: ŠENDTVIČ
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001841', 'ŠENDTVIČ', 'Ljubljana, 1000 Ljubljana', 46.065, 14.535, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001841', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Šiš okrepčevalnica
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003329', 'Šiš okrepčevalnica', 'Ljubljana, 1000 Ljubljana', 46.078, 14.512, 4.10, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003329', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Športni bar SLOVAN
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002523', 'Športni bar SLOVAN', 'Ljubljana, 1000 Ljubljana', 46.051, 14.529, 4.25, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002523', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Študentski dom Ljubljana - Restavracija
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002213', 'Študentski dom Ljubljana - Restavracija', 'Ljubljana, 1000 Ljubljana', 46.064, 14.506, 4.40, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002213', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Taverna Palermo
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003202', 'Taverna Palermo', 'Ljubljana, 1000 Ljubljana', 46.077, 14.523, 4.55, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003202', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Taverna Palermo - DOSTAVA
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003203', 'Taverna Palermo - DOSTAVA', 'Ljubljana, 1000 Ljubljana', 46.05, 14.5, 3.50, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003203', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: The Place
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003288', 'The Place', 'Ljubljana, 1000 Ljubljana', 46.063, 14.517, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003288', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Top Pizza
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003380', 'Top Pizza', 'Ljubljana, 1000 Ljubljana', 46.076, 14.534, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003380', CURRENT_DATE, ARRAY[
-    'Meni 1: Pizza Margherita (pelati, mocarela, bazilika), mešana solata, sadje',
-    'Meni 2: Pizza Klasika (šunka, sir, gobe), mešana solata',
-    'Meni 3: Veganska pizza s pečenimi jajčevci in bučkami, solata'
-  ]);
-
-
--- Location: Tvoj Chef Restavracija
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003253', 'Tvoj Chef Restavracija', 'Ljubljana, 1000 Ljubljana', 46.089, 14.511, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003253', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: U Sushi
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003398', 'U Sushi', 'Ljubljana, 1000 Ljubljana', 46.062, 14.528, 4.10, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003398', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: UFO
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001262', 'UFO', 'Ljubljana, 1000 Ljubljana', 46.075, 14.505, 4.25, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001262', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: URNEBES URBAN GRILL
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003328', 'URNEBES URBAN GRILL', 'Ljubljana, 1000 Ljubljana', 46.088, 14.522, 4.40, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003328', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Uršin bistro
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003226', 'Uršin bistro', 'Ljubljana, 1000 Ljubljana', 46.061, 14.539, 4.55, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003226', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Vegetarijanska in veganska restavracija Jamuna
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003356', 'Vegetarijanska in veganska restavracija Jamuna', 'Ljubljana, 1000 Ljubljana', 46.074, 14.516, 3.50, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003356', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Vegetarijanska restavracija Radha Govinda
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001339', 'Vegetarijanska restavracija Radha Govinda', 'Ljubljana, 1000 Ljubljana', 46.087, 14.533, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001339', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Vila de Casa Cafe
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003348', 'Vila de Casa Cafe', 'Ljubljana, 1000 Ljubljana', 46.06, 14.51, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003348', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Vino &amp; ribe Aleja
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003117', 'Vino &amp; ribe Aleja', 'Ljubljana, 1000 Ljubljana', 46.073, 14.527, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003117', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Vino &amp; ribe Rudnik
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003201', 'Vino &amp; ribe Rudnik', 'Ljubljana, 1000 Ljubljana', 46.086, 14.504, 4.10, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003201', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: VIVO D125
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002742', 'VIVO D125', 'Ljubljana, 1000 Ljubljana', 46.059, 14.521, 4.25, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002742', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Vrt bambus
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003304', 'Vrt bambus', 'Maribor, 2000 Maribor', 46.564, 15.656, 4.40, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003304', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: WHITE SWAN dumpling
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003386', 'WHITE SWAN dumpling', 'Ljubljana, 1000 Ljubljana', 46.085, 14.515, 4.55, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003386', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: WHITE SWAN fast food
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003384', 'WHITE SWAN fast food', 'Ljubljana, 1000 Ljubljana', 46.058, 14.532, 3.50, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003384', CURRENT_DATE, ARRAY[
-    'Meni 1: Classic Beef Burger z ocvrtim krompirčkom in mešano solato',
-    'Meni 2: Chicken Burger s svežo solato in omako',
-    'Meni 3: Falafel ali Vegi Burger s krompirčkom, sadje'
-  ]);
-
-
--- Location: WHITE SWAN fast food
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003383', 'WHITE SWAN fast food', 'Ljubljana, 1000 Ljubljana', 46.071, 14.509, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003383', CURRENT_DATE, ARRAY[
-    'Meni 1: Classic Beef Burger z ocvrtim krompirčkom in mešano solato',
-    'Meni 2: Chicken Burger s svežo solato in omako',
-    'Meni 3: Falafel ali Vegi Burger s krompirčkom, sadje'
-  ]);
-
-
--- Location: WHITE SWAN poke bowl
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003385', 'WHITE SWAN poke bowl', 'Ljubljana, 1000 Ljubljana', 46.084, 14.526, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003385', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: WOK MIX center
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003078', 'WOK MIX center', 'Ljubljana, 1000 Ljubljana', 46.057, 14.503, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003078', CURRENT_DATE, ARRAY[
-    'Meni 1: Hrustljavi piščanec v sladko-kisli omaki, pražen riž, zelenjavna juha',
-    'Meni 2: Praženi rezanci z zelenjavo in tofujem, solata',
-    'Meni 3: Pekinška raca z rižem, pomladni zavitki'
-  ]);
-
-
--- Location: Wok&amp;Roll
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003273', 'Wok&amp;Roll', 'Ljubljana, 1000 Ljubljana', 46.07, 14.52, 4.10, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003273', CURRENT_DATE, ARRAY[
-    'Meni 1: Hrustljavi piščanec v sladko-kisli omaki, pražen riž, zelenjavna juha',
-    'Meni 2: Praženi rezanci z zelenjavo in tofujem, solata',
-    'Meni 3: Pekinška raca z rižem, pomladni zavitki'
-  ]);
-
-
--- Location: WOOP! arena
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003345', 'WOOP! arena', 'Ljubljana, 1000 Ljubljana', 46.083, 14.537, 4.25, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003345', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Yimi azijska restavracija
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003355', 'Yimi azijska restavracija', 'Ljubljana, 1000 Ljubljana', 46.056, 14.514, 4.40, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003355', CURRENT_DATE, ARRAY[
-    'Meni 1: Hrustljavi piščanec v sladko-kisli omaki, pražen riž, zelenjavna juha',
-    'Meni 2: Praženi rezanci z zelenjavo in tofujem, solata',
-    'Meni 3: Pekinška raca z rižem, pomladni zavitki'
-  ]);
-
-
--- Location: Zamaro
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003254', 'Zamaro', 'Ljubljana, 1000 Ljubljana', 46.069, 14.531, 4.55, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003254', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Zbornica bar in žar
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002952', 'Zbornica bar in žar', 'Ljubljana, 1000 Ljubljana', 46.082, 14.508, 3.50, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002952', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Zmajevo mesto
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003303', 'Zmajevo mesto', 'Ljubljana, 1000 Ljubljana', 46.055, 14.525, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003303', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Znanstvena kavarna Mafija
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002993', 'Znanstvena kavarna Mafija', 'Ljubljana, 1000 Ljubljana', 46.068, 14.502, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002993', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Žito Celje Prešernova
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003325', 'Žito Celje Prešernova', 'Celje, 3000 Celje', 46.239, 15.271, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003325', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Žito Koper
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002009', 'Žito Koper', 'Koper, 6000 Koper', 45.548, 13.734, 4.10, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002009', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Žito Leon Štukelj Maribor
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002956', 'Žito Leon Štukelj Maribor', 'Maribor, 2000 Maribor', 46.579, 15.641, 4.25, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002956', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: ŽITO Ljubljana Bavarski dvor
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002771', 'ŽITO Ljubljana Bavarski dvor', 'Ljubljana, 1000 Ljubljana', 46.08, 14.53, 4.40, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002771', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: ŽITO Ljubljana Kolodvorska
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003320', 'ŽITO Ljubljana Kolodvorska', 'Ljubljana, 1000 Ljubljana', 46.053, 14.507, 4.55, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003320', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: ŽITO Ljubljana Vodnik
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000001791', 'ŽITO Ljubljana Vodnik', 'Ljubljana, 1000 Ljubljana', 46.066, 14.524, 3.50, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000001791', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: ŽITO Ljubljana železniška (kolodvor)
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002535', 'ŽITO Ljubljana železniška (kolodvor)', 'Ljubljana, 1000 Ljubljana', 46.079, 14.501, 3.65, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002535', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: Žito Maribor Trg revolucije
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000002322', 'Žito Maribor Trg revolucije', 'Maribor, 2000 Maribor', 46.574, 15.646, 3.80, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000002322', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
-
-
--- Location: ŽITO Postojna
-INSERT INTO locations (id, name, address, latitude, longitude, subsidy_price, opening_hours)
-VALUES ('a0000000-0000-0000-0000-000000003343', 'ŽITO Postojna', 'Ljubljana, 1000 Ljubljana', 46.065, 14.535, 3.95, 'Pon - Pet: 10:00 - 20:00')
-ON CONFLICT (id) DO UPDATE SET
-  name = EXCLUDED.name,
-  address = EXCLUDED.address,
-  subsidy_price = EXCLUDED.subsidy_price;
-
-
-INSERT INTO daily_menus (location_id, menu_date, dishes)
-VALUES ('a0000000-0000-0000-0000-000000003343', CURRENT_DATE, ARRAY[
-    'Meni 1: Dunajski piščančji zrezek, pražen krompir, sezonska solata, juha, jabolko',
-    'Meni 2: Gobov rižot z parmezanom, mešana solata, zelenjavna juha',
-    'Meni 3: Testenine v paradižnikovi omaki z baziliko, solata'
-  ]);
+-- Lokali s studentska-prehrana.si (ustvaril scrape_and_generate_sql.py).
+-- Najprej enkrat zaženi supabase/schema.sql, nato to datoteko (lahko večkrat).
+insert into public.locations (id, name, address, city, latitude, longitude, meal_price, subsidy_price, opening_hours, notice, features, site_rating) values
+  ('1478', 'ABI FALAFEL', 'Trubarjeva cesta 40, 1000 Ljubljana', 'Ljubljana', 46.052447, 14.510969, 9, 3.81, 'Ponedeljek: 11:00 - 21:00
+Torek: 11:00 - 21:00
+Sreda: 11:00 - 22:00
+Četrtek: 11:00 - 21:00
+Petek: 11:00 - 22:00
+Sobota: 11:00 - 22:00
+Nedelja: 11:00 - 22:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('3316', 'Aga kebab', 'Litijska cesta 140, 1000 Ljubljana', 'Ljubljana', 46.080483, 14.496259, 6.02, 0.83, 'Med tednom: 09:00 - 21:00
+Sobota: 09:00 - 21:00
+Nedelja: 09:00 - 21:00', null, array['Odprt ob vikendih']::text[], 5),
+  ('2999', 'Ajda burgers & more BTC', 'Šmartinska cesta 152, 1000 Ljubljana', 'Ljubljana', 46.068108, 14.542046, 8.89, 3.7, 'Med tednom: 09:00 - 22:00
+Sobota: 11:00 - 22:00
+Nedelja: 11:00 - 22:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('2549', 'Ajda burgers & more postaja', 'Trg OF 13, 1000 Ljubljana', 'Ljubljana', 46.057423, 14.509497, 7.59, 2.4, 'Med tednom: 08:00 - 22:00
+Sobota: 08:00 - 22:00
+Nedelja: 08:00 - 22:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('3347', 'AL YASMIN arabska restavracija', 'Slovenska cesta 56, 1000 Ljubljana', 'Ljubljana', 46.056163, 14.506251, 9, 3.81, 'Ponedeljek: 11:00 - 22:00
+Torek: 10:00 - 22:00
+Sreda: 10:00 - 22:00
+Četrtek: 10:00 - 22:00
+Petek: 10:00 - 22:00
+Sobota: 10:00 - 22:00
+Nedelja: 10:00 - 22:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('3332', 'ART kavarna Odeon', 'Ulica Prekomorskih brigad 4, 6310 Izola/Isola', 'Izola', 45.535471, 13.65936, 9, 3.81, 'Med tednom: 11:00 - 15:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Prava izbira']::text[], null),
+  ('3275', 'Avokado', 'Gortanov trg 4, 6000 Koper/Capodistria', 'Koper', 45.54622, 13.728149, 9, 3.81, 'Ponedeljek: 10:30 - 17:00
+Torek: 10:30 - 17:00
+Sreda: 10:30 - 17:00
+Četrtek: 10:30 - 17:00
+Petek: 10:30 - 14:30
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Celiakiji prijazni obroki']::text[], 4),
+  ('2147', 'Azijska restavracija Han', 'Kongresni trg 3, 1000 Ljubljana', 'Ljubljana', 46.050605, 14.504546, 9, 3.81, 'Med tednom: 11:00 - 21:00
+Sobota: 11:00 - 21:00
+Nedelja: Zaprto', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('3042', 'Bar Moment', 'Litostrojska cesta 44E, 1000 Ljubljana', 'Ljubljana', 46.078743, 14.495953, 8, 2.81, 'Med tednom: 10:00 - 16:30
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno']::text[], 5),
+  ('3207', 'Baščaršija Koper Carpacciov trg', 'Carpacciov trg 6, 6000 Koper/Capodistria', 'Koper', 45.547816, 13.725958, 9, 3.81, 'Med tednom: 11:00 - 22:00
+Sobota: 11:00 - 22:00
+Nedelja: 11:00 - 22:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('3259', 'Baščaršija Ljubljana Trubarjeva', 'Trubarjeva cesta 52, 1000 Ljubljana', 'Ljubljana', 46.05226, 14.512463, 9, 3.81, 'Med tednom: 10:00 - 22:00
+Sobota: 10:00 - 22:00
+Nedelja: 10:00 - 22:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('3237', 'Baščaršija Maribor Gosposvetska', 'Gosposvetska cesta 43c, 2000 Maribor', 'Maribor', 46.562084, 15.632309, 8.6, 3.41, 'Med tednom: 11:00 - 22:00
+Sobota: 11:00 - 22:00
+Nedelja: 11:00 - 22:00', null, array['Brezmesno','Celiakiji prijazni obroki','Odprt ob vikendih']::text[], 4),
+  ('2102', 'Biotehniški izobraževalni center Ljubljana', 'Ižanska cesta 10, 1000 Ljubljana', 'Ljubljana', 46.0397, 14.513031, 7.5, 2.31, 'Med tednom: 10:30 - 14:30
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Javni zavod']::text[], 4),
+  ('2103', 'Biotehniški izobraževalni center Ljubljana', 'Cesta v Mestni log 47, 1000 Ljubljana', 'Ljubljana', 46.036926, 14.49287, 7.5, 2.31, 'Med tednom: 10:30 - 14:30
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Javni zavod']::text[], 3),
+  ('2862', 'Bistro Arty', 'Slovenska ulica 20, 2000 Maribor', 'Maribor', 46.560381, 15.64577, 9, 3.81, 'Ponedeljek: 10:30 - 14:30
+Torek: 10:30 - 14:30
+Sreda: 10:30 - 14:30
+Četrtek: 10:30 - 14:30
+Petek: 10:30 - 14:30
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno']::text[], 4),
+  ('3331', 'Bistro Luft', 'Mirce 20, 5270 Ajdovščina', 'Ajdovščina', 45.883391, 13.892009, 9, 3.81, 'Med tednom: 10:00 - 14:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Dostop za invalide']::text[], 5),
+  ('3280', 'Bistro Situla', 'Dilančeva ulica 1, 8000 Novo mesto', 'Novo mesto', 45.804333, 15.170062, 9, 3.81, 'Med tednom: 10:00 - 14:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Dostop za invalide']::text[], 4),
+  ('3221', 'Bistro Slovely', 'Kardeljeva ploščad 5, 1000 Ljubljana', 'Ljubljana', 46.075583, 14.513194, 8.74, 3.55, 'Med tednom: 10:00 - 16:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Solatni bar']::text[], 5),
+  ('2821', 'BISTRO VILLA DOMUS', 'Vojkovo nabrežje 12, 6000 Koper/Capodistria', 'Koper', 45.545517, 13.733073, 8.19, 3, 'Ponedeljek: 11:00 - 17:00
+Torek: 11:00 - 17:00
+Sreda: 11:00 - 17:00
+Četrtek: 11:00 - 17:00
+Petek: 11:00 - 17:00
+Sobota: Zaprto
+Nedelja: Zaprto', 'Možnost prevzema, naročilo na 070 500 866.', array['Brezmesno','Dostop za invalide']::text[], 5),
+  ('1645', 'Bohor', 'Kidričeva ulica 23, 3250 Rogaška Slatina', 'Rogaška Slatina', 46.233861, 15.637723, 9, 3.81, 'Med tednom: 10:00 - 22:00
+Sobota: 10:00 - 22:00
+Nedelja: 10:00 - 22:00', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 4),
+  ('3109', 'Bolnišnična restavracija Splošne bolnišnice Jesenice', 'Cesta maršala Tita 112, 4270 Jesenice', 'Jesenice', 46.442878, 14.036959, 7, 1.81, 'Med tednom: 09:30 - 14:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Javni zavod']::text[], 5),
+  ('3173', 'Burek Olimpija Rimska', 'Rimska cesta 13, 1000 Ljubljana', 'Ljubljana', 46.047428, 14.499858, 5.19, 0, 'Med tednom: 09:00 - 21:00
+Sobota: 09:00 - 13:00
+Nedelja: Zaprto', null, array['Odprt ob vikendih']::text[], 4),
+  ('3067', 'BURGER TIME', 'Trubarjeva 47, 1000 Ljubljana', 'Ljubljana', 46.052523, 14.511786, 9, 3.81, 'Med tednom: 11:00 - 22:00
+Sobota: 12:00 - 22:00
+Nedelja: 12:00 - 22:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('1161', 'Cantante cafe Tabor', 'Ulica Pariške komune 37, 2000 Maribor', 'Maribor', 46.548452, 15.643061, 8.64, 3.45, 'Med tednom: 10:00 - 20:00
+Sobota: 12:00 - 20:00
+Nedelja: 12:00 - 20:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('1673', 'Cantante cafe Tabor - DOSTAVA', 'Ulica Pariške komune 37, 2000 Maribor', 'Maribor', 46.548452, 15.643061, 9, 3.81, 'Med tednom: 10:00 - 20:00
+Sobota: 12:00 - 20:00
+Nedelja: 12:00 - 20:00', null, array['Brezmesno','Dostava','Odprt ob vikendih']::text[], 4),
+  ('3176', 'Cantina QUE PASA', 'Trg osvobodilne fronte 13, 1000 Ljubljana', 'Ljubljana', 46.057423, 14.509497, 8.69, 3.5, 'Med tednom: 08:00 - 21:00
+Sobota: 08:00 - 21:00
+Nedelja: Zaprto', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('3375', 'Cappuccino Svetilnik Izola', 'Kopališka cesta 14, 6310 Izola/Isola', 'Izola', 45.541064, 13.656568, 9, 3.81, 'Med tednom: 12:00 - 17:00
+Sobota: 12:00 - 17:00
+Nedelja: 12:00 - 17:00', 'OBVESTILO: Cappuccino Svetilnik Izola bo v četrtek, 10. 9. 2026 zaprt.', array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 5),
+  ('3171', 'Chutys Europark Maribor', 'Pobreška cesta 18, 2000 Maribor', 'Maribor', 46.553781, 15.653292, 9, 3.81, 'Med tednom: 11:00 - 22:00
+Sobota: 12:00 - 22:00
+Nedelja: Zaprto', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 4),
+  ('1568', 'City grill', 'Slovenska 18, 2000 Maribor', 'Maribor', 46.560345, 15.645892, 8.14, 2.95, 'Ponedeljek: 09:00 - 19:30
+Torek: 09:00 - 19:30
+Sreda: 09:00 - 19:30
+Četrtek: 09:00 - 19:30
+Petek: 09:00 - 19:00
+Sobota: Zaprto
+Nedelja: Zaprto', 'Spremenjen delovni čas od 07.09. od 11.09.2026! - od 13.00 ure od 19.30 ure', array['Brezmesno','Dostop za invalide']::text[], 4),
+  ('1569', 'City grill - DOSTAVA', 'Slovenska 18, 2000 Maribor', 'Maribor', 46.560345, 15.645892, 8.34, 3.15, 'Ponedeljek: 09:00 - 19:00
+Torek: 09:00 - 19:00
+Sreda: 09:00 - 19:00
+Četrtek: 09:00 - 19:00
+Petek: 09:00 - 19:00
+Sobota: Zaprto
+Nedelja: Zaprto', 'Spremenjen delovni čas od 07.09. od 11.09.2026! - od 13.00 ure od 19.00 ure', array['Brezmesno','Dostava']::text[], 4),
+  ('3114', 'Čevabdžinica Sarajevo84', 'Gramšijev trg 8, 6000 Koper/Capodistria', 'Koper', 45.547224, 13.735446, 8.6, 3.41, 'Med tednom: 10:00 - 22:00
+Sobota: 12:00 - 22:00
+Nedelja: 12:00 - 22:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('3234', 'Čevabdžinica Sarajevo84 (Tomažičev trg)', 'Tomažičev trg 1, 6000 Koper/Capodistria', 'Koper', 45.546866, 13.726637, 8.6, 3.41, 'Med tednom: 10:00 - 22:00
+Sobota: 12:00 - 22:00
+Nedelja: 12:00 - 22:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('3286', 'Čewapi Citypark Ljubljana', 'Moskovskova ulica 4, 1000 Ljubljana', 'Ljubljana', 46.056947, 14.505752, 9, 3.81, 'Med tednom: 09:00 - 21:00
+Sobota: 09:00 - 21:00
+Nedelja: Zaprto', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 4),
+  ('3285', 'Čewapi Ljubljana Center', 'Cankarjeva 6, 1000 Ljubljana', 'Ljubljana', 46.052794, 14.502546, 9, 3.81, 'Med tednom: 10:00 - 22:00
+Sobota: 10:00 - 22:00
+Nedelja: 12:00 - 22:00', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 4),
+  ('1485', 'DA BU DA, Azijska restavracija', 'Šubičeva 1a, 1000 Ljubljana', 'Ljubljana', 46.051439, 14.50005, 9, 3.81, 'Med tednom: 11:00 - 21:00
+Sobota: 12:00 - 21:00
+Nedelja: 12:00 - 17:00', null, array['Brezmesno','Solatni bar','Odprt ob vikendih']::text[], 4),
+  ('2326', 'Das ist Valter Kranj', 'Cesta 1.maja 1a, 4000 Kranj', 'Kranj', 46.233399, 14.362068, 9, 3.81, 'Med tednom: 10:00 - 22:00
+Sobota: 12:00 - 22:00
+Nedelja: 12:00 - 22:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('2951', 'Das ist Valter Ljubljana center', 'Borštnikov trg 3, 1000 Ljubljana', 'Ljubljana', 46.047864, 14.499144, 9, 3.81, 'Med tednom: 10:00 - 22:00
+Sobota: 12:00 - 22:00
+Nedelja: 12:00 - 21:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('2131', 'Das ist Valter Ljubljana Šmartinska', 'Šmartinska cesta 3, 1000 Ljubljana', 'Ljubljana', 46.056282, 14.519282, 9, 3.81, 'Med tednom: 10:00 - 22:00
+Sobota: 12:00 - 22:00
+Nedelja: 12:00 - 22:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('2252', 'Das ist Valter Škofja Loka', 'Kidričeva cesta 8c, 4220 Škofja Loka', 'Škofja Loka', 46.167436, 14.310582, 9, 3.81, 'Med tednom: 10:00 - 22:00
+Sobota: 12:00 - 22:00
+Nedelja: 12:00 - 22:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('3145', 'Dijaški dom', 'Sončna pot 20, 6320 Portorož/Portorose', 'Portorož', 45.516957, 13.583556, 8.02, 2.83, 'Ponedeljek: 11:00 - 15:00
+Torek: 11:00 - 15:00
+Sreda: 11:00 - 15:00
+Četrtek: 11:00 - 15:00
+Petek: 10:00 - 14:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Solatni bar','Dostop za invalide']::text[], 4),
+  ('1090', 'Dijaški dom Lizike Jančar', 'Titova cesta 24a, 2000 Maribor', 'Maribor', 46.548709, 15.648838, 7, 1.81, 'Med tednom: 12:00 - 17:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Javni zavod']::text[], 4),
+  ('1502', 'Dijaški dom Poljane', 'Potočnikova ulica 3, 1000 Ljubljana', 'Ljubljana', 46.049237, 14.523332, 6.66, 1.47, 'Ponedeljek: 11:00 - 15:00
+Torek: 11:00 - 15:00
+Sreda: 11:00 - 15:00
+Četrtek: 11:00 - 15:00
+Petek: 11:00 - 15:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Javni zavod']::text[], 4),
+  ('2111', 'Dijaški dom Tabor', 'Kotnikova 4, 1000 Ljubljana', 'Ljubljana', 46.053416, 14.513773, 7.1, 1.91, 'Med tednom: 12:00 - 16:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Javni zavod']::text[], 5),
+  ('1314', 'Dijaški dom Vič', 'Gerbičeva 53, 1000 Ljubljana', 'Ljubljana', 46.039397, 14.488368, 7, 1.81, 'Ponedeljek: 11:30 - 16:30
+Torek: 11:30 - 16:30
+Sreda: 11:30 - 16:30
+Četrtek: 11:30 - 16:30
+Petek: 11:30 - 16:30
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Javni zavod']::text[], 5),
+  ('1501', 'Dijaški in študentski dom Novo mesto', 'Šegova ulica 115, 8000 Novo mesto', 'Novo mesto', 45.793596, 15.160149, 6.5, 1.31, 'Ponedeljek: 09:30 - 15:00
+Torek: 09:30 - 15:00
+Sreda: 09:30 - 15:00
+Četrtek: 09:30 - 15:00
+Petek: 09:30 - 14:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Javni zavod']::text[], 2),
+  ('3381', 'Do kosti Pizzeria Chianti', 'Rozmanova ulica 25, 8000 Novo mesto', 'Novo mesto', 45.805404, 15.165251, 9, 3.81, 'Med tednom: 09:30 - 19:00
+Sobota: 12:00 - 19:00
+Nedelja: Zaprto', null, array['Dostop za invalide','Odprt ob vikendih']::text[], 5),
+  ('2552', 'Dobra hiša', 'Stegne 11a, 1000 Ljubljana', 'Ljubljana', 46.08289, 14.487942, 9, 3.81, 'Med tednom: 09:30 - 15:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Solatni bar','Dostop za invalide']::text[], 5),
+  ('2298', 'Dobra hiša Rudnik', 'Jurčkova cesta 223, 1000 Ljubljana', 'Ljubljana', 46.021839, 14.535914, 9, 3.81, 'Med tednom: 10:00 - 20:00
+Sobota: 10:00 - 20:00
+Nedelja: Zaprto', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('1578', 'Dobrote vzhoda', 'Celovška cesta 69 a, 1000 Ljubljana', 'Ljubljana', 46.063533, 14.494655, 9, 3.81, 'Ponedeljek: 11:00 - 19:00
+Torek: Zaprto
+Sreda: 11:00 - 19:00
+Četrtek: 11:00 - 19:00
+Petek: 11:00 - 19:00
+Sobota: 12:00 - 20:00
+Nedelja: Zaprto', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('3370', 'Dodo Pizza Koper', 'Ljubljanska cesta 2a, 6000 Koper/Capodistria', 'Koper', 45.544249, 13.730856, 8.14, 2.95, 'Ponedeljek: 11:00 - 23:00
+Torek: 11:00 - 23:00
+Sreda: 11:00 - 23:00
+Četrtek: 11:00 - 23:00
+Petek: 11:00 - 00:00
+Sobota: 11:00 - 00:00
+Nedelja: 11:00 - 00:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('3350', 'Dodo Pizza Ljubljana-Bežigrad', 'Dunajska cesta 105, 1000 Ljubljana', 'Ljubljana', 46.073975, 14.510798, 8.14, 2.95, 'Med tednom: 09:00 - 22:00
+Sobota: 09:00 - 22:00
+Nedelja: 09:00 - 22:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('3349', 'Dodo Pizza Ljubljana-center', 'Ilirska ulica 4, 1000 Ljubljana', 'Ljubljana', 46.052871, 14.514374, 8.14, 2.95, 'Med tednom: 09:00 - 22:00
+Sobota: 09:00 - 22:00
+Nedelja: 09:00 - 22:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('3351', 'Dodo Pizza ljubljana-Fužine', 'Nove Fužine 45, 1000 Ljubljana', 'Ljubljana', 46.054872, 14.564704, 8.14, 2.95, 'Med tednom: 09:00 - 23:00
+Sobota: 09:00 - 23:00
+Nedelja: 09:00 - 23:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('3191', 'Domača pekarna Bežigrad', 'Dunajska cesta 113, 1000 Ljubljana', 'Ljubljana', 46.074803, 14.510908, 6.12, 0.93, 'Med tednom: 07:00 - 19:00
+Sobota: Zaprto
+Nedelja: 07:00 - 17:00', 'Od 20.7. do 23.7.26 lokal obratuje od 7.00 do 18.00 ure', array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('3369', 'EASY BEER', 'Ferrarska ulica 30, 6000 Koper/Capodistria', 'Koper', 45.547239, 13.738292, 9, 3.81, 'Med tednom: 10:00 - 21:00
+Sobota: 12:00 - 21:00
+Nedelja: 12:00 - 21:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('3243', 'Eda restavracija', 'Delpinova ulica 18b, 5000 Nova Gorica', 'Nova Gorica', 45.95533, 13.646006, 8, 2.81, 'Med tednom: 10:00 - 14:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Solatni bar','Dostop za invalide','Prava izbira']::text[], 4),
+  ('3399', 'Ej babi', 'Slovenska ulica 9, 2000 Maribor', 'Maribor', 46.560268, 15.646895, 9, 3.81, 'Ponedeljek: 10:00 - 18:00
+Torek: 10:00 - 18:00
+Sreda: 10:00 - 18:00
+Četrtek: 10:00 - 18:00
+Petek: 10:00 - 18:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno']::text[], 4),
+  ('3292', 'Fari''s', 'Adamič Lundrovo nabrežje 3, 1000 Ljubljana', 'Ljubljana', 46.051382, 14.508239, 9, 3.81, 'Med tednom: 10:00 - 00:00
+Sobota: 10:00 - 00:00
+Nedelja: 10:00 - 00:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('2589', 'Fari''s', 'Miklošičeva 34, 1000 Ljubljana', 'Ljubljana', 46.056776, 14.508371, 9, 3.81, 'Med tednom: 10:00 - 00:00
+Sobota: 10:00 - 00:00
+Nedelja: 10:00 - 00:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('3192', 'Fast food & pekarna PLAVA LAGUNA', 'Linhartova cesta 11, 1000 Ljubljana', 'Ljubljana', 46.064646, 14.510322, 6.12, 0.93, 'Med tednom: 07:00 - 19:00
+Sobota: Zaprto
+Nedelja: 07:00 - 17:00', 'Od 20.7. do 24.7.26 bo lokal odprto od 7.00 do 19.00', array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('3282', 'Fast food Ajda', 'Ajdovščina 2, 1000 Ljubljana', 'Ljubljana', 46.053568, 14.504556, 6.04, 0.85, 'Med tednom: 10:00 - 22:00
+Sobota: 10:00 - 22:00
+Nedelja: Zaprto', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('3382', 'Fast food LEON', 'Glinškova ploščad 2, 1000 Ljubljana', 'Ljubljana', 46.090176, 14.508991, 6.4, 1.21, 'Med tednom: 09:00 - 22:00
+Sobota: 09:00 - 22:00
+Nedelja: 09:00 - 22:00', null, array['Odprt ob vikendih']::text[], 5),
+  ('3158', 'Fast food Magic', 'Pristaniška ulica 2, 6000 Koper/Capodistria', 'Koper', 45.546133, 13.726002, 6.52, 1.33, 'Ponedeljek: 08:00 - 22:00
+Torek: 08:00 - 22:00
+Sreda: 08:00 - 22:00
+Četrtek: 08:00 - 22:00
+Petek: 08:00 - 22:00
+Sobota: 08:00 - 22:00
+Nedelja: 08:00 - 22:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('3391', 'FAST FOOD PRI ŠTUKU', 'Gosposvetska cesta 84, 2000 Maribor', 'Maribor', 46.563473, 15.627847, 7.64, 2.45, 'Ponedeljek: 09:00 - 23:59
+Torek: 09:00 - 23:59
+Sreda: 09:00 - 23:59
+Četrtek: 09:00 - 23:59
+Petek: 09:00 - 23:59
+Sobota: 09:00 - 23:59
+Nedelja: 11:00 - 23:59', 'Spremenjen delovni čas med prazniki: - 27.04., 01.05. in 02.05.2026 od 11.00 do 24.00 ure!', array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('3165', 'Fast food Slast', 'Slovenska cesta 51, 1000 Ljubljana', 'Ljubljana', 46.055613, 14.504863, 6.54, 1.35, 'Med tednom: 08:00 - 22:00
+Sobota: 08:00 - 22:00
+Nedelja: 08:00 - 22:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('3335', 'FOOD POINT NINETY NINE', 'Ferrarska ulica 5b, 6000 Koper/Capodistria', 'Koper', 45.544737, 13.733706, 6.64, 1.45, 'Med tednom: 10:00 - 22:00
+Sobota: 12:00 - 22:00
+Nedelja: 12:00 - 22:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('2849', 'Forum', 'Petkovškovo nabrežje 25, 1000 Ljubljana', 'Ljubljana', 46.052123, 14.509031, 9, 3.81, 'Med tednom: 11:00 - 21:00
+Sobota: 11:00 - 21:00
+Nedelja: 11:00 - 21:00', null, array['Brezmesno','Solatni bar','Odprt ob vikendih']::text[], 4),
+  ('3291', 'Galaksija Trebnje', 'Podjetniška ulica 13, 8210 Trebnje', 'Trebnje', 45.913802, 15.027029, 8.8, 3.61, 'Med tednom: 09:30 - 13:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Dostop za invalide']::text[], null),
+  ('2591', 'Garač - Restavracija "M"', 'Šolska cesta 2, 4220 Škofja Loka', 'Škofja Loka', 46.167946, 14.306667, 8.2, 3.01, 'Med tednom: 07:00 - 22:00
+Sobota: 08:00 - 22:00
+Nedelja: 10:00 - 22:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('3308', 'Gaudi & Naan', 'Trubarjeva 7, 1000 Ljubljana', 'Ljubljana', 46.052013, 14.507223, 9, 3.81, 'Med tednom: 11:00 - 20:00
+Sobota: Zaprto
+Nedelja: Zaprto', 'Lokal bo v času od 13.07. do 30.09.2026 obratoval od 11.00 do 16.00', '{}'::text[], 5),
+  ('3223', 'Gig Bar & Burger', 'Jurčkova cesta 223, 1000 Ljubljana', 'Ljubljana', 46.021839, 14.535914, 9, 3.81, 'Med tednom: 11:00 - 22:00
+Sobota: 11:00 - 22:00
+Nedelja: 14:00 - 22:00', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 4),
+  ('3352', 'Gostilna Godec', 'Paplerjeva ulica 12, 1353 Borovnica', 'Borovnica', 45.916368, 14.365227, 9, 3.81, 'Med tednom: 12:00 - 18:00
+Sobota: 12:00 - 18:00
+Nedelja: 12:00 - 18:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('3299', 'Gostilna in picerija Guliver', 'Vilharjeva 43, 1000 Ljubljana', 'Ljubljana', 46.060051, 14.519408, 9, 3.81, 'Med tednom: 09:00 - 21:00
+Sobota: 10:00 - 21:00
+Nedelja: 10:00 - 21:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('3300', 'Gostilna in picerija Guliver - dostava', 'Vilharjeva 43, 1000 Ljubljana', 'Ljubljana', 46.060051, 14.519408, 9, 3.81, 'Med tednom: 09:00 - 21:00
+Sobota: 10:00 - 21:00
+Nedelja: 10:00 - 21:00', null, array['Brezmesno','Dostava','Odprt ob vikendih']::text[], 4),
+  ('2411', 'Gostilna in picerija JERNEJEV HRAM', 'Ljubljanska cesta 22, 8000 Novo mesto', 'Novo mesto', 45.814286, 15.153627, 9, 3.81, 'Ponedeljek: Zaprto
+Torek: 10:30 - 18:00
+Sreda: 10:30 - 18:00
+Četrtek: 10:30 - 18:00
+Petek: 10:30 - 18:00
+Sobota: 11:00 - 16:00
+Nedelja: Zaprto', null, array['Brezmesno','Solatni bar','Dostop za invalide','Odprt ob vikendih']::text[], null),
+  ('3294', 'Gostilna in Pizzerija Kovač', 'Graška cesta 64, 1270 Litija', 'Litija', 46.065053, 14.817289, 9, 3.81, 'Ponedeljek: 09:30 - 14:00
+Torek: 09:30 - 14:00
+Sreda: 09:30 - 14:00
+Četrtek: 09:30 - 21:00
+Petek: 09:30 - 21:00
+Sobota: Zaprto
+Nedelja: 12:00 - 20:00', null, array['Solatni bar','Dostop za invalide','Odprt ob vikendih']::text[], null),
+  ('2543', 'Gostilna Pod Škalcami', 'Oplotniška cesta 5, 3210 Slovenske Konjice', 'Slovenske Konjice', 46.342454, 15.430227, 6.02, 0.83, 'Med tednom: 08:00 - 12:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno']::text[], 4),
+  ('2346', 'Gostilna pod Škalcami - DOSTAVA', 'Oplotniška cesta 5, 3210 Slovenske Konjice', 'Slovenske Konjice', 46.342454, 15.430227, 6.02, 0.83, 'Med tednom: 08:00 - 12:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Dostava']::text[], 5),
+  ('3123', 'Gostilna Stara Brajda', 'Travniška ulica 4, 3000 Celje', 'Celje', 46.245784, 15.267238, 8.54, 3.35, 'Med tednom: 10:00 - 16:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno']::text[], 5),
+  ('3126', 'Gostilna Štorklja', 'Šlajmerjeva 1a, 1000 Ljubljana', 'Ljubljana', 46.054102, 14.523948, 9, 3.81, 'Med tednom: 11:00 - 19:00
+Sobota: 12:00 - 17:00
+Nedelja: Zaprto', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('1123', 'Gostilna Zlati lev', 'Vodnikov trg 4, 2000 Maribor', 'Maribor', 46.557963, 15.640978, 8.14, 2.95, 'Med tednom: 09:00 - 21:00
+Sobota: 10:00 - 21:00
+Nedelja: 10:00 - 21:00', null, array['Brezmesno','Solatni bar','Odprt ob vikendih']::text[], 4),
+  ('2185', 'Gostilnica in pivnica Kratochwill', 'Kolodvorska ulica 14, 1000 Ljubljana', 'Ljubljana', 46.05648, 14.509971, 9, 3.81, 'Med tednom: 10:00 - 22:00
+Sobota: 11:00 - 22:00
+Nedelja: 11:00 - 22:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('3060', 'Gostilnica in pivnica Vič', 'Trg mladinskih delovnih brigad 8, 1000 Ljubljana', 'Ljubljana', 46.04716, 14.495591, 8.02, 2.83, 'Med tednom: 10:00 - 14:30
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno']::text[], 4),
+  ('1834', 'Gostilnica in pizzerija Kratochwill', 'Jurčkova 225, 1000 Ljubljana', 'Ljubljana', 46.020267, 14.536676, 9, 3.81, 'Med tednom: 10:00 - 22:00
+Sobota: 10:00 - 22:00
+Nedelja: Zaprto', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 4),
+  ('1835', 'Gostilnica in pizzerija Kratochwill', 'Šmartinska 152, 1000 Ljubljana', 'Ljubljana', 46.069308, 14.548477, 9, 3.81, 'Med tednom: 13:00 - 20:00
+Sobota: 13:00 - 20:00
+Nedelja: Zaprto', null, array['Dostop za invalide','Odprt ob vikendih']::text[], 4),
+  ('3394', 'GOSTILNICA KENIK', 'Strossmayerjeva ulica 11, 2000 Maribor', 'Maribor', 46.559385, 15.64162, 8.4, 3.21, 'Ponedeljek: 09:00 - 21:00
+Torek: 09:00 - 21:00
+Sreda: 09:00 - 21:00
+Četrtek: 09:00 - 21:00
+Petek: 09:00 - 21:00
+Sobota: 09:00 - 16:00
+Nedelja: 09:00 - 20:00', 'Spremenjen delovni čas od 13.7. do 17.7.2026 od 9-19 ure; 18.7.2026 od 9-15 ure; 19.7.2026 od 9-16 ure in od 20.7. - 23.7.2026 od 9-19 ure', array['Brezmesno','Solatni bar','Odprt ob vikendih']::text[], 5),
+  ('2995', 'Gostilnica Meta in Bazilika', 'Snežniška ulica 1, 1000 Ljubljana', 'Ljubljana', 46.047549, 14.499545, 9, 3.81, 'Ponedeljek: 10:00 - 17:00
+Torek: 10:00 - 17:00
+Sreda: 10:00 - 17:00
+Četrtek: 10:00 - 17:00
+Petek: 10:00 - 17:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Solatni bar']::text[], 4),
+  ('1213', 'Gostilnica Namanova', 'Podgorska cesta 2, 2380 Slovenj Gradec', 'Slovenj Gradec', 46.507254, 15.076403, 7.5, 2.31, 'Med tednom: 10:00 - 14:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Solatni bar','Dostop za invalide']::text[], 5),
+  ('3305', 'Gostišče LOKA', 'Župančičevo sprehajališče 2, 8000 Novo mesto', 'Novo mesto', 45.804674, 15.161668, 9, 3.81, 'Med tednom: 11:00 - 16:00
+Sobota: 12:00 - 16:00
+Nedelja: 12:00 - 16:00', null, array['Solatni bar','Dostop za invalide','Odprt ob vikendih']::text[], 4),
+  ('1847', 'Gostišče na trgu - Hiša kulinarike', 'Glavni trg 30, 8000 Novo mesto', 'Novo mesto', 45.803961, 15.169423, 9, 3.81, 'Med tednom: 09:00 - 15:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Javni zavod']::text[], 5),
+  ('3354', 'Grashka Deli', 'Trubarjeva cesta 72, 1000 Ljubljana', 'Ljubljana', 46.052106, 14.5072, 9, 3.81, 'Ponedeljek: 11:00 - 16:00
+Torek: 11:00 - 16:00
+Sreda: 11:00 - 16:00
+Četrtek: 11:00 - 16:00
+Petek: 11:00 - 16:00
+Sobota: 11:00 - 15:00
+Nedelja: Zaprto', 'V času od 23.06. do 31.09.2026 bo lokal obratoval: ponedeljek od 11.00 do 16.00 torek-petek od 11.00 do 18.00 sobota od 11.00 do 17.00', array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 5),
+  ('1188', 'Gurmanski hram', 'Zagrebška cesta 92, 2000 Maribor', 'Maribor', 46.526547, 15.669288, 8.59, 3.4, 'Med tednom: 10:00 - 15:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Solatni bar','Dostop za invalide']::text[], 4),
+  ('1189', 'Gurmanski hram - DOSTAVA', 'Zagrebška cesta 92, 2000 Maribor', 'Maribor', 46.526547, 15.669288, 8.79, 3.6, 'Med tednom: 10:00 - 15:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Dostava']::text[], 3),
+  ('2355', 'Halo Katra - dostava', 'Središka ulica 4, 1000 Ljubljana', 'Ljubljana', 46.061348, 14.527299, 9, 3.81, 'Med tednom: 10:00 - 21:00
+Sobota: 11:00 - 21:00
+Nedelja: 11:00 - 21:00', null, array['Brezmesno','Dostava','Študentske ugodnosti','Odprt ob vikendih']::text[], 4),
+  ('1514', 'Halo Pinki - dostava', 'Pod ježami 14, 1000 Ljubljana', 'Ljubljana', 46.057944, 14.528464, 9, 3.81, 'Ponedeljek: 10:00 - 20:00
+Torek: 10:00 - 20:00
+Sreda: 09:00 - 21:00
+Četrtek: 09:00 - 21:00
+Petek: 09:00 - 21:00
+Sobota: 11:00 - 21:00
+Nedelja: 11:00 - 21:00', 'dne 25.6.2026 bo lokal odprt od 11.00 do 21.00', array['Brezmesno','Dostava','Odprt ob vikendih']::text[], 4),
+  ('3366', 'Halo Shaolin - dostava', 'Hacquetova ulica 5, 1000 Ljubljana', 'Ljubljana', 46.060631, 14.514628, 9, 3.81, 'Med tednom: 10:00 - 21:30
+Sobota: 10:00 - 21:30
+Nedelja: 10:00 - 21:30', null, array['Brezmesno','Dostava','Odprt ob vikendih']::text[], 3),
+  ('2668', 'Hiša pod gradom', 'Streliška ulica 10, 1000 Ljubljana', 'Ljubljana', 46.049396, 14.511223, 9, 3.81, 'Med tednom: 11:00 - 16:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno']::text[], 4),
+  ('2430', 'Hit wok', 'Čopova 4, 1000 Ljubljana', 'Ljubljana', 46.051847, 14.505287, 9, 3.81, 'Med tednom: 10:00 - 22:00
+Sobota: 10:00 - 22:00
+Nedelja: 10:00 - 22:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('3373', 'Hotel restavracija Prunk', 'Partizanska cesta 117, 6210 Sežana', 'Sežana', 45.702021, 13.846827, 8, 2.81, 'Med tednom: 09:30 - 15:00
+Sobota: 12:00 - 22:00
+Nedelja: 12:00 - 22:00', null, array['Brezmesno','Solatni bar','Dostop za invalide','Odprt ob vikendih']::text[], 5),
+  ('2846', 'HotSpot bar&bistro', 'Kardeljeva ploščad 17, 1000 Ljubljana', 'Ljubljana', 46.074054, 14.516428, 9, 3.81, 'Med tednom: 10:00 - 15:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Solatni bar']::text[], 4),
+  ('3197', 'HUDA .', 'Cesta prvih borcev 7, 8250 Brežice', 'Brežice', 45.903039, 15.59233, 9, 3.81, 'Med tednom: 11:00 - 19:00
+Sobota: 11:00 - 19:00
+Nedelja: 11:00 - 19:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('3387', 'IT`S WOK O`CLOCK', 'Kotnikova ulica 5, 1000 Ljubljana', 'Ljubljana', 46.054288, 14.51254, 9, 3.81, 'Med tednom: 10:00 - 21:00
+Sobota: 11:00 - 21:00
+Nedelja: 11:00 - 21:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('3256', 'JOE PENA´S, mehiška restavracija', 'Cankarjeva cesta 6, 1000 Ljubljana', 'Ljubljana', 46.052794, 14.502546, 9, 3.81, 'Med tednom: 11:00 - 21:00
+Sobota: 11:00 - 21:00
+Nedelja: 12:00 - 21:00', null, array['Brezmesno','Solatni bar','Odprt ob vikendih']::text[], 4),
+  ('3238', 'K16', 'Aškerčeva cesta 2, 1000 Ljubljana', 'Ljubljana', 46.04672, 14.500197, 7.8, 2.61, 'Med tednom: 08:00 - 17:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Dostop za invalide']::text[], 5),
+  ('3302', 'Kampus food', 'Pivovarniška ulica 6, 1000 Ljubljana', 'Ljubljana', 46.058714, 14.501792, 8.64, 3.45, 'Med tednom: 11:00 - 15:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno']::text[], 4),
+  ('2581', 'KAPITAL', 'Kardeljeva ploščad 17, 1000 Ljubljana', 'Ljubljana', 46.074015, 14.516453, 5.19, 0, 'Med tednom: 08:00 - 17:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno']::text[], 5),
+  ('2644', 'Kitajska restavracija AZIJA', 'Gosposvetska ulica 1, 4000 Kranj', 'Kranj', 46.246117, 14.353085, 9, 3.81, 'Med tednom: 11:00 - 22:00
+Sobota: 11:00 - 22:00
+Nedelja: 11:00 - 22:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('3264', 'Kitajska restavracija Beli labod 2', 'Jurčkova cesta 7, 1000 Ljubljana', 'Ljubljana', 46.032584, 14.515178, 9, 3.81, 'Ponedeljek: Zaprto
+Torek: 11:00 - 22:00
+Sreda: 11:00 - 22:00
+Četrtek: 11:00 - 22:00
+Petek: 11:00 - 22:00
+Sobota: 11:00 - 22:00
+Nedelja: 11:00 - 22:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('2264', 'Kitajska restavracija Cesarska hiša', 'Ankaranska cesta 5B, 6000 Koper/Capodistria', 'Koper', 45.541507, 13.735879, 8.54, 3.35, 'Med tednom: 11:00 - 22:00
+Sobota: 11:00 - 22:00
+Nedelja: 11:00 - 22:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('2635', 'Kitajska restavracija Dva zmaja', 'Kersnikova 31, 3000 Celje', 'Celje', 46.2391, 15.263821, 9, 3.81, 'Med tednom: 11:00 - 22:00
+Sobota: 11:00 - 22:00
+Nedelja: 11:00 - 22:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('2950', 'Kitajska restavracija Han', 'Moskovska ulica 4, 1000 Ljubljana', 'Ljubljana', 46.07048, 14.550714, 9, 3.81, 'Med tednom: 11:00 - 21:00
+Sobota: 11:00 - 21:00
+Nedelja: Zaprto', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 4),
+  ('3118', 'Kitajska restavracija Han - Aleja', 'Rakuševa ulica 1, 1000 Ljubljana', 'Ljubljana', 46.07829, 14.483678, 9, 3.81, 'Med tednom: 11:00 - 21:00
+Sobota: 11:00 - 21:00
+Nedelja: 11:00 - 21:00', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 4),
+  ('2841', 'Kitajska restavracija Leteča zvezda', 'Cesta v mestni log 55, 1000 Ljubljana', 'Ljubljana', 46.036207, 14.489519, 8.72, 3.53, 'Med tednom: 10:00 - 22:00
+Sobota: 10:00 - 22:00
+Nedelja: Zaprto', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('2842', 'Kitajska restavracija Leteča zvezda - dostava', 'Cesta v mestni log 55, 1000 Ljubljana', 'Ljubljana', 46.036207, 14.489519, 9, 3.81, 'Med tednom: 10:00 - 22:00
+Sobota: 10:00 - 22:00
+Nedelja: 10:00 - 22:00', null, array['Brezmesno','Dostava','Odprt ob vikendih']::text[], 4),
+  ('2933', 'Kitajska restavracija Ming Zhu', 'Bazoviška ulica 6, 5000 Nova Gorica', 'Nova Gorica', 45.956308, 13.640135, 8.8, 3.61, 'Ponedeljek: Zaprto
+Torek: 10:00 - 22:00
+Sreda: 10:00 - 22:00
+Četrtek: 10:00 - 22:00
+Petek: 10:00 - 22:00
+Sobota: 10:00 - 22:00
+Nedelja: 10:00 - 22:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('1415', 'Kitajska restavracija NANKING', 'Mačkovec 6, 8000 Novo mesto', 'Novo mesto', 45.826439, 15.192367, 8.6, 3.41, 'Med tednom: 10:00 - 22:00
+Sobota: 11:00 - 22:00
+Nedelja: 11:00 - 22:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('1346', 'Kitajska restavracija Novi Šanghai', 'Kapitelska 5, 1000 Ljubljana', 'Ljubljana', 46.050863, 14.511475, 8.94, 3.75, 'Med tednom: 11:00 - 22:00
+Sobota: 12:00 - 17:00
+Nedelja: 12:00 - 22:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('2446', 'Kitajska restavracija Šang Hai', 'Delavska ulica 11, 4270 Jesenice', 'Jesenice', 46.433446, 14.063569, 8.8, 3.61, 'Ponedeljek: Zaprto
+Torek: 11:00 - 22:00
+Sreda: 11:00 - 22:00
+Četrtek: 11:00 - 22:00
+Petek: 11:00 - 22:00
+Sobota: 11:00 - 22:00
+Nedelja: 11:00 - 22:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('2761', 'Kitajska restavracija Zlata srna', 'Ulica Pohorskega bataljona 14, 2000 Maribor', 'Maribor', 46.554491, 15.6193, 8.34, 3.15, 'Med tednom: 10:30 - 22:00
+Sobota: 10:30 - 22:00
+Nedelja: 10:30 - 22:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('2762', 'Kitajska restavracija Zlata srna - DOSTAVA', 'Ulica Pohorskega bataljona 14, 2000 Maribor', 'Maribor', 46.554491, 15.6193, 9, 3.81, 'Med tednom: 11:00 - 21:00
+Sobota: 11:00 - 21:00
+Nedelja: 11:00 - 21:00', null, array['Brezmesno','Dostava','Odprt ob vikendih']::text[], 4),
+  ('1165', 'Kitajska restavracija Zvezda', 'Loška ulica 10, 2000 Maribor', 'Maribor', 46.556693, 15.650972, 8.69, 3.5, 'Ponedeljek: 10:00 - 21:00
+Torek: 10:00 - 21:00
+Sreda: 10:00 - 21:00
+Četrtek: 10:00 - 21:00
+Petek: 10:00 - 21:00
+Sobota: 11:00 - 22:00
+Nedelja: 11:00 - 20:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('2265', 'Kitajska restavracja Cesarska hiša-DOSTAVA', 'Ankaranska cesta 5B, 6000 Koper/Capodistria', 'Koper', 45.541507, 13.735879, 9, 3.81, 'Med tednom: 11:00 - 22:00
+Sobota: 11:00 - 22:00
+Nedelja: 11:00 - 22:00', null, array['Brezmesno','Dostava','Odprt ob vikendih']::text[], 5),
+  ('1610', 'Kitajski dvor', 'Dunajska cesta 29, 1000 Ljubljana', 'Ljubljana', 46.061737, 14.507618, 8, 2.81, 'Ponedeljek: Zaprto
+Torek: 10:00 - 21:00
+Sreda: 10:00 - 21:00
+Četrtek: 10:00 - 21:00
+Petek: 10:00 - 21:00
+Sobota: 11:00 - 21:00
+Nedelja: 11:00 - 21:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('1911', 'Kitajski dvor', 'Teharska cesta 35, 3000 Celje', 'Celje', 46.231573, 15.276256, 8, 2.81, 'Med tednom: 10:00 - 22:00
+Sobota: 10:00 - 22:00
+Nedelja: 10:00 - 22:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('2117', 'Kitajski dvor - dostava', 'Dunajska cesta 29, 1000 Ljubljana', 'Ljubljana', 46.062139, 14.507484, 9, 3.81, 'Ponedeljek: Zaprto
+Torek: 10:00 - 21:00
+Sreda: 10:00 - 21:00
+Četrtek: 10:00 - 21:00
+Petek: 10:00 - 21:00
+Sobota: 11:00 - 21:00
+Nedelja: 11:00 - 21:00', null, array['Brezmesno','Dostava','Odprt ob vikendih']::text[], 4),
+  ('1164', 'Kitajski dvor - DOSTAVA', 'Teharska cesta 35, 3000 Celje', 'Celje', 46.23141, 15.276144, 9, 3.81, 'Med tednom: 10:00 - 22:00
+Sobota: 10:00 - 22:00
+Nedelja: 10:00 - 22:00', null, array['Brezmesno','Dostava','Odprt ob vikendih']::text[], 4),
+  ('1838', 'Kitajsko mesto', 'Slamnikarjeva 1, 1230 Domžale', 'Domžale', 46.138201, 14.596938, 7.9, 2.71, 'Med tednom: 11:00 - 22:00
+Sobota: 11:00 - 22:00
+Nedelja: 11:00 - 22:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('2772', 'Kitajsko mesto - dostava', 'Slamnikarjeva 1, 1230 Domžale', 'Domžale', 46.138201, 14.596938, 8.9, 3.71, 'Med tednom: 11:00 - 22:00
+Sobota: 11:00 - 22:00
+Nedelja: 11:00 - 22:00', null, array['Brezmesno','Dostava','Odprt ob vikendih']::text[], 5),
+  ('1422', 'Klopčič', 'Litostrojska cesta 57, 1000 Ljubljana', 'Ljubljana', 46.081614, 14.492358, 7.5, 2.31, 'Med tednom: 08:00 - 14:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Solatni bar']::text[], 5),
+  ('3140', 'KLUBAR GASTROPUB', 'Slovenski trg 7, 4000 Kranj', 'Kranj', 46.242888, 14.355981, 8, 2.81, 'Med tednom: 10:00 - 19:00
+Sobota: 15:00 - 19:00
+Nedelja: Zaprto', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('3121', 'Kozlovna Poštna', 'Poštna ulica 12, 2000 Maribor', 'Maribor', 46.558597, 15.644979, 9, 3.81, 'Ponedeljek: 10:00 - 21:00
+Torek: 10:00 - 21:00
+Sreda: 10:00 - 21:00
+Četrtek: 10:00 - 21:00
+Petek: 10:00 - 18:00
+Sobota: 12:00 - 18:00
+Nedelja: Zaprto', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('2145', 'Leonard', 'Trg mladinskih delovnih brigad 12, 1000 Ljubljana', 'Ljubljana', 46.047955, 14.496292, 5.19, 0, 'Med tednom: 08:00 - 22:00
+Sobota: 08:00 - 19:00
+Nedelja: 08:00 - 19:00', 'dne 31.7.2026 bo lokal odprt do 17.00 ure', array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('2844', 'Leteča zvezda', 'Kvedrova cesta 5a, 1000 Ljubljana', 'Ljubljana', 46.070312, 14.541963, 7.5, 2.31, 'Med tednom: 11:00 - 22:00
+Sobota: 12:00 - 22:00
+Nedelja: 12:00 - 22:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('2726', 'LIPCA - INDEKS', 'Borštnikov trg 3a, 1000 Ljubljana', 'Ljubljana', 46.047896, 14.498774, 5.19, 0, 'Med tednom: 08:00 - 21:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno']::text[], 4),
+  ('3297', 'Lokal P8', 'Plemljeva 8, 1210 Ljubljana - Šentvid', 'Ljubljana', 46.103792, 14.458945, 9, 3.81, 'Med tednom: 10:00 - 21:00
+Sobota: 10:00 - 21:00
+Nedelja: 10:00 - 21:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 3),
+  ('2331', 'Loving Hut', 'Gosposvetska cesta 43a, 2000 Maribor', 'Maribor', 46.561508, 15.63406, 8.02, 2.83, 'Med tednom: 11:00 - 19:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno']::text[], 5),
+  ('3322', 'LUNCH BOX', 'Gosposvetska cesta 19, 2000 Maribor', 'Maribor', 46.560759, 15.63923, 5.19, 0, 'Ponedeljek: 08:00 - 16:00
+Torek: 08:00 - 16:00
+Sreda: 08:00 - 16:00
+Četrtek: 08:00 - 16:00
+Petek: 07:00 - 15:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Solatni bar']::text[], 5),
+  ('3368', 'MAGMAX', 'Industrijska cesta 11, 5000 Nova Gorica', 'Nova Gorica', 45.953111, 13.669412, 8, 2.81, 'Med tednom: 11:00 - 15:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Solatni bar','Dostop za invalide']::text[], null),
+  ('3327', 'MANGO SNACKS', 'Gosposvetska cesta 83, 2000 Maribor', 'Maribor', 46.562874, 15.627126, 5.19, 0, 'Ponedeljek: 08:00 - 14:00
+Torek: 08:00 - 14:00
+Sreda: 08:00 - 14:00
+Četrtek: 08:00 - 14:00
+Petek: 08:00 - 12:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno']::text[], 4),
+  ('3205', 'MC PANDA', 'Ulica Vita Kraigherja 5, 2000 Maribor', 'Maribor', 46.55875, 15.650541, 5.19, 0, 'Med tednom: 09:00 - 22:00
+Sobota: 09:00 - 22:00
+Nedelja: Zaprto', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('3122', 'McDonald s restavracija - Murska Sobota', 'Nemčavci 1d, 9000 Murska Sobota', 'Murska Sobota', 46.669498, 16.177526, 7.8, 2.61, 'Med tednom: 08:00 - 23:59
+Sobota: 08:00 - 23:59
+Nedelja: 08:00 - 23:59', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 4),
+  ('1182', 'McDonald´s restavracija - Swaty', 'Tržaška 6, 2000 Maribor', 'Maribor', 46.541756, 15.64776, 7.8, 2.61, 'Ponedeljek: 07:00 - 23:59
+Torek: 07:00 - 23:59
+Sreda: 07:00 - 23:59
+Četrtek: 07:00 - 23:59
+Petek: 07:00 - 23:59
+Sobota: 07:00 - 23:59
+Nedelja: 07:00 - 23:59', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 4),
+  ('1185', 'McDonald´s restavracija Europark', 'Pobreška 18, 2000 Maribor', 'Maribor', 46.553815, 15.65149, 7.8, 2.61, 'Ponedeljek: 09:00 - 21:00
+Torek: 09:00 - 21:00
+Sreda: 09:00 - 21:00
+Četrtek: 09:00 - 21:00
+Petek: 09:00 - 21:00
+Sobota: 08:00 - 21:00
+Nedelja: Zaprto', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 5),
+  ('1184', 'McDonald´s restavracija Ptujska', 'Ptujska 106, 2000 Maribor', 'Maribor', 46.534907, 15.662209, 7.8, 2.61, 'Med tednom: 07:00 - 23:59
+Sobota: 07:00 - 23:59
+Nedelja: 07:00 - 23:59', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 4),
+  ('3270', 'McDonald´s restavracija Studenci', 'Ulica Jožeta Košarja 2, 2000 Maribor', 'Maribor', 46.531553, 15.677394, 7.8, 2.61, 'Ponedeljek: 08:00 - 23:59
+Torek: 08:00 - 23:59
+Sreda: 08:00 - 23:59
+Četrtek: 08:00 - 23:59
+Petek: 08:00 - 23:59
+Sobota: 08:00 - 23:59
+Nedelja: 08:00 - 23:59', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 5),
+  ('1179', 'McDonald´s restavracija Velenje', 'Kidričeva 2b, 3320 Velenje', 'Velenje', 46.359961, 15.119805, 7.8, 2.61, 'Ponedeljek: 08:00 - 23:59
+Torek: 08:00 - 23:59
+Sreda: 08:00 - 23:59
+Četrtek: 08:00 - 23:59
+Petek: 08:00 - 23:59
+Sobota: 08:00 - 23:59
+Nedelja: 08:00 - 23:59', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 4),
+  ('3326', 'McDonald''s Petrol Maribor', 'Na Polju 24, 2000 Maribor', 'Maribor', 46.533455, 15.699382, 7.8, 2.61, 'Med tednom: 07:00 - 23:59
+Sobota: 07:00 - 23:59
+Nedelja: 07:00 - 23:59', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 3),
+  ('1380', 'McDonald''s restavracij - Odiseja', 'Moskovska ulica 11, 1000 Ljubljana', 'Ljubljana', 46.06947, 14.547376, 7.8, 2.61, 'Med tednom: 07:00 - 23:59
+Sobota: 07:00 - 23:59
+Nedelja: 07:00 - 23:59', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 4),
+  ('3107', 'McDonald''s restavracija - ALEJA', 'Rakuševa ulica 1, 1000 Ljubljana', 'Ljubljana', 46.07829, 14.483678, 7.8, 2.61, 'Med tednom: 10:00 - 22:00
+Sobota: 10:00 - 22:00
+Nedelja: 11:00 - 17:00', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 4),
+  ('3246', 'McDonald''s restavracija - Barje jug', 'Cesta dveh cesarjev 73, 1000 Ljubljana', 'Ljubljana', 46.028873, 14.478429, 7.8, 2.61, 'Ponedeljek: 07:00 - 23:00
+Torek: 07:00 - 23:00
+Sreda: 07:00 - 23:00
+Četrtek: 07:00 - 23:00
+Petek: 07:00 - 23:59
+Sobota: 07:00 - 23:59
+Nedelja: 07:00 - 23:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('3247', 'McDonald''s restavracija - Barje sever', 'Cesta dveh cesarjev 71, 1000 Ljubljana', 'Ljubljana', 46.029154, 14.481882, 7.8, 2.61, 'Ponedeljek: 07:00 - 23:00
+Torek: 07:00 - 23:00
+Sreda: 07:00 - 23:00
+Četrtek: 07:00 - 23:00
+Petek: 07:00 - 23:59
+Sobota: 07:00 - 23:59
+Nedelja: 07:00 - 23:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('3189', 'McDonald''s restavracija - Cankarjeva', 'Cankarjeva cesta 4, 1000 Ljubljana', 'Ljubljana', 46.052715, 14.502896, 7.8, 2.61, 'Med tednom: 07:00 - 23:00
+Sobota: 07:00 - 23:00
+Nedelja: 07:00 - 23:00', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 4),
+  ('2868', 'McDonald''s restavracija - Celje Drive', 'Mariborska cesta 164, 3000 Celje', 'Celje', 46.247996, 15.280446, 7.8, 2.61, 'Ponedeljek: 07:00 - 23:59
+Torek: 07:00 - 23:59
+Sreda: 07:00 - 23:59
+Četrtek: 07:00 - 23:59
+Petek: 07:00 - 23:59
+Sobota: 07:00 - 23:59
+Nedelja: 07:00 - 23:59', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 3),
+  ('1341', 'McDonald''s restavracija - Celovška', 'Celovška cesta 170, 1000 Ljubljana', 'Ljubljana', 46.074961, 14.484671, 7.8, 2.61, 'Med tednom: 08:00 - 23:59
+Sobota: 08:00 - 23:59
+Nedelja: 09:00 - 23:59', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 4),
+  ('1377', 'McDonald''s restavracija - Center', 'Čopova 14, 1000 Ljubljana', 'Ljubljana', 46.052001, 14.504882, 7.8, 2.61, 'Med tednom: 08:00 - 23:59
+Sobota: 08:00 - 23:59
+Nedelja: 08:00 - 23:59', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('1342', 'McDonald''s restavracija - Domžale', 'Breznikova 15, 1230 Domžale', 'Domžale', 46.14684, 14.597511, 7.8, 2.61, 'Med tednom: 09:00 - 23:59
+Sobota: 09:00 - 23:59
+Nedelja: 09:00 - 23:00', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 4),
+  ('2866', 'McDonald''s restavracija - Kranj', 'Cesta Boštjana Hladnika 7, 4000 Kranj', 'Kranj', 46.232304, 14.369412, 7.8, 2.61, 'Ponedeljek: 08:00 - 23:59
+Torek: 08:00 - 23:59
+Sreda: 08:00 - 23:59
+Četrtek: 08:00 - 23:59
+Petek: 08:00 - 23:59
+Sobota: 08:00 - 23:59
+Nedelja: 08:00 - 23:59', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 4),
+  ('3279', 'McDonald''s restavracija - Lesce', 'Hraška cesta 21a, 4248 Lesce', 'Lesce', 46.361208, 14.160096, 7.8, 2.61, 'Med tednom: 07:00 - 23:59
+Sobota: 07:00 - 23:59
+Nedelja: 07:00 - 23:59', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 3),
+  ('1381', 'McDonald''s restavracija - Novo mesto', 'Ljubljanska 24, 8000 Novo mesto', 'Novo mesto', 45.814805, 15.154172, 7.8, 2.61, 'Med tednom: 08:00 - 23:59
+Sobota: 08:00 - 23:59
+Nedelja: 08:00 - 23:59', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 5),
+  ('1536', 'McDonald''s restavracija - Rudnik', 'Premrlova ulica 12, 1000 Ljubljana', 'Ljubljana', 46.017517, 14.530072, 7.8, 2.61, 'Med tednom: 08:00 - 23:59
+Sobota: 08:00 - 23:59
+Nedelja: 08:00 - 23:59', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 4),
+  ('3188', 'McDonald''s restavracija - Supernova Rudnik', 'Jurčkova cesta 223, 1000 Ljubljana', 'Ljubljana', 46.021839, 14.535914, 7.8, 2.61, 'Med tednom: 08:00 - 22:00
+Sobota: 08:00 - 22:00
+Nedelja: 08:00 - 22:00', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 4),
+  ('3164', 'McDonald''s restavracija - Šmartinka Drive', 'Šmartinska 147, 1000 Ljubljana', 'Ljubljana', 46.069479, 14.540809, 7.8, 2.61, 'Med tednom: 08:00 - 22:00
+Sobota: 08:00 - 22:00
+Nedelja: 08:00 - 22:00', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 4),
+  ('1378', 'McDonald''s restavracija - Žito', 'Moskovska ulica 1, 1000 Ljubljana', 'Ljubljana', 46.069478, 14.547387, 7.8, 2.61, 'Med tednom: 08:00 - 22:00
+Sobota: 08:00 - 22:00
+Nedelja: 08:00 - 22:00', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 4),
+  ('2253', 'McDonald''s restavracija Koper', 'Ankaranska 4, 6000 Koper/Capodistria', 'Koper', 45.541492, 13.73655, 7.8, 2.61, 'Med tednom: 08:00 - 23:59
+Sobota: 08:00 - 23:59
+Nedelja: 08:00 - 23:59', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 4),
+  ('2815', 'McDonald''s restavracija Nova Gorica', 'Vojkova cesta 111, 5000 Nova Gorica', 'Nova Gorica', 45.954703, 13.653513, 7.8, 2.61, 'Med tednom: 08:00 - 23:59
+Sobota: 08:00 - 23:59
+Nedelja: 09:00 - 23:59', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 5),
+  ('3330', 'McDonald''s Supernova Koper', 'Dolinska cesta 1a, 6000 Koper/Capodistria', 'Koper', 45.530774, 13.731828, 7.8, 2.61, 'Ponedeljek: 08:00 - 23:00
+Torek: 08:00 - 23:00
+Sreda: 08:00 - 23:00
+Četrtek: 08:00 - 23:00
+Petek: 08:00 - 00:00
+Sobota: 08:00 - 00:00
+Nedelja: 08:00 - 23:00', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 3),
+  ('2648', 'ME GUSTA', 'Jezdarska ulica 8b (vhod v lokal iz Žitne ulice 4), 2000 Maribor', 'Maribor', 46.551372, 15.640921, 7, 1.81, 'Med tednom: 08:00 - 18:00
+Sobota: Zaprto
+Nedelja: Zaprto', 'Skrajšan delovni čas med poletjem: od 13.07.2026 do 31.08.2026 od 08.00 do 16.00 ure!', array['Brezmesno']::text[], 5),
+  ('3138', 'Meating pub & restavracija', 'Mlinska ulica 2, 2000 Maribor', 'Maribor', 46.560361, 15.655375, 8.6, 3.41, 'Med tednom: 10:00 - 16:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno']::text[], 3),
+  ('1407', 'Mehiška restavracija Imperio mexicano', 'Moskovska ulica 4, 1000 Ljubljana', 'Ljubljana', 46.070237, 14.549039, 9, 3.81, 'Med tednom: 10:00 - 21:00
+Sobota: 10:00 - 21:00
+Nedelja: Zaprto', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 5),
+  ('2023', 'Menza BF', 'Večna pot 111, 1000 Ljubljana', 'Ljubljana', 46.051236, 14.469969, 8.2, 3.01, 'Med tednom: 10:30 - 14:30
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Dostop za invalide']::text[], 4),
+  ('2521', 'Menza FE', 'Tržaška cesta 25, 1000 Ljubljana', 'Ljubljana', 46.044899, 14.489231, 8.2, 3.01, 'Med tednom: 10:30 - 14:30
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Dostop za invalide']::text[], 5),
+  ('2360', 'MM PANDA', 'Koroška cesta 9, 2000 Maribor', 'Maribor', 46.557664, 15.643214, 7.24, 2.05, 'Ponedeljek: 09:00 - 23:00
+Torek: 09:00 - 23:00
+Sreda: 09:00 - 23:00
+Četrtek: 09:00 - 23:00
+Petek: 09:00 - 23:59
+Sobota: 15:00 - 23:59
+Nedelja: 15:00 - 23:00', null, array['Brezmesno','Solatni bar','Odprt ob vikendih']::text[], 5),
+  ('3357', 'Moj cmok', 'Pogačarjev trg 1, 1000 Ljubljana', 'Ljubljana', 46.051198, 14.508511, 9, 3.81, 'Ponedeljek: Zaprto
+Torek: 10:00 - 15:00
+Sreda: 10:00 - 15:00
+Četrtek: 10:00 - 15:00
+Petek: 10:00 - 15:00
+Sobota: 10:00 - 15:00
+Nedelja: Zaprto', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 4),
+  ('3362', 'Moji štruklji BTC', 'Italijanska ulica 7, 1000 Ljubljana', 'Ljubljana', 46.063985, 14.5444, 9, 3.81, 'Ponedeljek: 14:00 - 19:30
+Torek: 14:00 - 19:30
+Sreda: 14:00 - 19:30
+Četrtek: 14:00 - 19:30
+Petek: 12:00 - 19:30
+Sobota: 09:00 - 13:00
+Nedelja: Zaprto', 'V času od 08.06. do 16.08.2026 bo lokal odprt od PON. do PET. od 12.30. do 16.30, v SOB. od 09.00 do 13.00', array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 5),
+  ('3290', 'Namaste Grab & Go', 'Tomšičeva 2, 1000 Ljubljana', 'Ljubljana', 46.052288, 14.502739, 7, 1.81, 'Med tednom: 10:00 - 18:00
+Sobota: 10:00 - 18:00
+Nedelja: Zaprto', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('2828', 'Namaste Indian Express', 'Trubarjeva ulica 31, 1000 Ljubljana', 'Ljubljana', 46.052474, 14.509783, 8, 2.81, 'Med tednom: 11:00 - 19:00
+Sobota: 11:00 - 19:00
+Nedelja: 11:00 - 19:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('2249', 'News Cafe', 'Obala 4F, 6320 Portorož/Portorose', 'Portorož', 45.514839, 13.571944, 9, 3.81, 'Med tednom: 12:00 - 20:00
+Sobota: 12:00 - 20:00
+Nedelja: 12:00 - 20:00', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 5),
+  ('3359', 'Niam niam garden', 'Trubarjeva cesta 50, 1000 Ljubljana', 'Ljubljana', 46.052298, 14.512259, 9, 3.81, 'Ponedeljek: Zaprto
+Torek: 12:00 - 16:00
+Sreda: 12:00 - 16:00
+Četrtek: 12:00 - 16:00
+Petek: 12:00 - 16:00
+Sobota: 12:00 - 16:00
+Nedelja: 12:00 - 16:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('3167', 'NJAMY - dostava', 'Šorlijeva 12, 4000 Kranj', 'Kranj', 46.251947, 14.35727, 9, 3.81, 'Med tednom: 09:00 - 22:00
+Sobota: 09:00 - 22:00
+Nedelja: Zaprto', null, array['Brezmesno','Dostava','Odprt ob vikendih']::text[], 4),
+  ('3229', 'Norma 23', 'Adamič-Lundrovo nabrežje 1, 1000 Ljubljana', 'Ljubljana', 46.051056, 14.506566, 9, 3.81, 'Ponedeljek: 09:00 - 19:00
+Torek: 09:00 - 19:00
+Sreda: 09:00 - 19:00
+Četrtek: 09:00 - 19:00
+Petek: 09:00 - 16:00
+Sobota: 09:00 - 19:00
+Nedelja: 09:00 - 17:00', null, array['Brezmesno','Dostop za invalide','Celiakiji prijazni obroki','Odprt ob vikendih']::text[], 4),
+  ('2732', 'Okrepčevalnica - Diner kino gledališče Bežigrad', 'Linhartova 11, 1000 Ljubljana', 'Ljubljana', 46.064646, 14.510322, 8.62, 3.43, 'Med tednom: 10:00 - 21:00
+Sobota: 15:00 - 21:00
+Nedelja: 15:00 - 21:00', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 5),
+  ('1683', 'Okrepčevalnica - pizzerija Maks', 'Dunajska cesta 111, 1000 Ljubljana', 'Ljubljana', 46.074506, 14.511379, 7.9, 2.71, 'Med tednom: 09:00 - 19:00
+Sobota: Zaprto
+Nedelja: Zaprto', 'V obdobju od 18.8. do 29.8.25 bo kuhinja obratovala le do 15.00 ure', array['Brezmesno','Dostop za invalide']::text[], 4),
+  ('3397', 'Okrepčevalnica "Medicinska fakulteta"', 'Taborska ulica 8, 2000 Maribor', 'Maribor', 46.554862, 15.646944, 5.19, 0, 'Ponedeljek: 08:00 - 12:00
+Torek: 08:00 - 12:00
+Sreda: 08:00 - 12:00
+Četrtek: 08:00 - 12:00
+Petek: 08:00 - 12:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Dostop za invalide']::text[], 5),
+  ('2944', 'Okrepčevalnica Ajda', 'Ajdovščina 4, 1000 Ljubljana', 'Ljubljana', 46.053364, 14.505204, 8.14, 2.95, 'Med tednom: 09:30 - 20:00
+Sobota: 11:00 - 19:00
+Nedelja: Zaprto', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('2347', 'Okrepčevalnica FERI', 'Smetanova ulica 17, 2000 Maribor', 'Maribor', 46.559488, 15.639272, 5.19, 0, 'Med tednom: 08:00 - 12:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Dostop za invalide']::text[], 5),
+  ('3342', 'Okrepčevalnica HAM-HAM', 'Celjska cesta 3, 3252 Rogatec', 'Rogatec', 46.224141, 15.700568, 9, 3.81, 'Med tednom: 10:00 - 22:00
+Sobota: 10:00 - 22:00
+Nedelja: 11:00 - 22:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 3),
+  ('2652', 'Okrepčevalnica IZUM', 'Prešernova 17, 2000 Maribor', 'Maribor', 46.563605, 15.651434, 8.14, 2.95, 'Med tednom: 10:00 - 14:30
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Dostop za invalide']::text[], 5),
+  ('3200', 'Okrepčevalnica Marijanca', 'Večna pot 113, 1000 Ljubljana', 'Ljubljana', 46.051477, 14.480277, 6.76, 1.57, 'Med tednom: 10:00 - 15:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Dostop za invalide']::text[], 4),
+  ('3333', 'OKREPČEVALNICA PINELA', 'Obala 99, 6320 Portorož/Portorose', 'Portorož', 45.506889, 13.600407, 9, 3.81, 'Med tednom: 10:00 - 16:00
+Sobota: 10:00 - 16:00
+Nedelja: Zaprto', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('3372', 'Okrepčevalnica Rock Cafe', 'Ukmarjev trg 5, 6000 Koper/Capodistria', 'Koper', 45.54894, 13.725289, 9, 3.81, 'Med tednom: 10:00 - 22:00
+Sobota: 10:00 - 22:00
+Nedelja: 10:00 - 22:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('1817', 'OLA ENKA', 'Baragova ulica 16, 1000 Ljubljana', 'Ljubljana', 46.075976, 14.517009, 9, 3.81, 'Med tednom: 08:00 - 17:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno']::text[], 5),
+  ('3296', 'O-LALA', 'Tržaška cesta 18, 1000 Ljubljana', 'Ljubljana', 46.045694, 14.489593, 9, 3.81, 'Med tednom: 11:00 - 22:00
+Sobota: Zaprto
+Nedelja: 12:00 - 22:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('3318', 'ON THAI Rudnik', 'Jurčkova cesta 225, 1000 Ljubljana', 'Ljubljana', 46.020267, 14.536676, 8.52, 3.33, 'Med tednom: 11:00 - 18:00
+Sobota: 11:00 - 18:00
+Nedelja: Zaprto', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('3319', 'ON THAI Šiška', 'Cesta ljubljanske brigade 33, 1000 Ljubljana', 'Ljubljana', 46.088354, 14.477177, 8.52, 3.33, 'Med tednom: 11:00 - 19:30
+Sobota: 11:00 - 18:30
+Nedelja: Zaprto', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 4),
+  ('3169', 'ORIENT EXPRESS, samopostrežna restavracija', 'Kolodvorska 11, 1000 Ljubljana', 'Ljubljana', 46.056613, 14.509415, 8.1, 2.91, 'Med tednom: 10:00 - 14:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno']::text[], 5),
+  ('3035', 'Oštarija City center Celje', 'Mariborska cesta 100, 3000 Celje', 'Celje', 46.241903, 15.277407, 9, 3.81, 'Med tednom: 11:00 - 20:30
+Sobota: 11:00 - 20:30
+Nedelja: Zaprto', null, array['Brezmesno','Solatni bar','Dostop za invalide','Odprt ob vikendih']::text[], 5),
+  ('1471', 'Oštarija Rudolfswerth', 'Kandijska cesta 35, 8000 Novo mesto', 'Novo mesto', 45.800214, 15.174038, 8.4, 3.21, 'Med tednom: 10:00 - 14:00
+Sobota: 10:00 - 14:00
+Nedelja: Zaprto', null, array['Brezmesno','Odprt ob vikendih']::text[], 3),
+  ('3298', 'P8 - dostava', 'Plemeljeva 8, 1210 Ljubljana - Šentvid', 'Ljubljana', 46.103792, 14.458945, 9, 3.81, 'Med tednom: 10:00 - 21:00
+Sobota: 10:00 - 21:00
+Nedelja: 10:00 - 21:00', null, array['Brezmesno','Dostava','Odprt ob vikendih']::text[], 4),
+  ('2753', 'Palača SMELT', 'Dunajska 160, 1000 Ljubljana', 'Ljubljana', 46.082788, 14.513967, 7.96, 2.77, 'Med tednom: 11:00 - 14:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Solatni bar']::text[], 4),
+  ('2863', 'Papagayo', 'Gosposka ulica 6, 2000 Maribor', 'Maribor', 46.557861, 15.646434, 9, 3.81, 'Ponedeljek: 11:00 - 21:30
+Torek: 11:00 - 21:30
+Sreda: 11:00 - 21:30
+Četrtek: 11:00 - 21:30
+Petek: 11:00 - 22:00
+Sobota: 11:00 - 22:00
+Nedelja: Zaprto', null, array['Brezmesno','Solatni bar','Odprt ob vikendih']::text[], 4),
+  ('2623', 'PE Dijaški dom Celje', 'Ljubljanska cesta 21, 3000 Celje', 'Celje', 46.232765, 15.256535, 8, 2.81, 'Ponedeljek: 11:00 - 15:00
+Torek: 11:00 - 15:00
+Sreda: 11:00 - 15:00
+Četrtek: 11:00 - 15:00
+Petek: 11:00 - 15:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Javni zavod']::text[], 4),
+  ('3392', 'Pe Hiša kruha junior', 'Tyrševa 2, 2000 Maribor', 'Maribor', 46.560519, 15.646765, 5.19, 0, 'Ponedeljek: 09:00 - 15:00
+Torek: 09:00 - 15:00
+Sreda: 09:00 - 15:00
+Četrtek: 09:00 - 15:00
+Petek: 09:00 - 15:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Dostop za invalide']::text[], 5),
+  ('3390', 'PE LUCKY STREET FOOD', 'Vetrinjska ulica 9a, 2000 Maribor', 'Maribor', 46.557787, 15.647978, 6.2, 1.01, 'Ponedeljek: 10:00 - 18:00
+Torek: 10:00 - 18:00
+Sreda: 10:00 - 18:00
+Četrtek: 10:00 - 18:00
+Petek: 10:00 - 18:00
+Sobota: 11:00 - 18:00
+Nedelja: Zaprto', '15/2', array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('1424', 'PE Marjetica', 'Tobačna ulica 5, 1000 Ljubljana', 'Ljubljana', 46.04933, 14.49386, 7.58, 2.39, 'Med tednom: 10:00 - 15:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno']::text[], 5),
+  ('3346', 'PE Melty', 'Kardeljeva ploščad 5, 1000 Ljubljana', 'Ljubljana', 46.074128, 14.514221, 5.19, 0, 'Ponedeljek: 07:00 - 17:00
+Torek: 07:00 - 17:00
+Sreda: 07:00 - 17:00
+Četrtek: 07:00 - 17:00
+Petek: 07:00 - 15:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno']::text[], 4),
+  ('3353', 'Picerija Barjan', 'Cesta v mestni log 55, 1000 Ljubljana', 'Ljubljana', 46.036154, 14.489593, 9, 3.81, 'Med tednom: 10:00 - 16:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Dostop za invalide']::text[], 3),
+  ('2243', 'PICERIJA CITYBURGER', 'Ankaranska 7, 6000 Koper/Capodistria', 'Koper', 45.545824, 13.740398, 9, 3.81, 'Med tednom: 12:00 - 21:00
+Sobota: 12:00 - 21:00
+Nedelja: 12:00 - 21:00', null, array['Brezmesno','Dostop za invalide','Študentske ugodnosti','Odprt ob vikendih']::text[], 4),
+  ('2551', 'Picerija ERA', 'Pod Trško goro 83, 8000 Novo mesto', 'Novo mesto', 45.822527, 15.184241, 8.8, 3.61, 'Med tednom: 09:00 - 21:00
+Sobota: 09:00 - 21:00
+Nedelja: Zaprto', null, array['Brezmesno','Solatni bar','Odprt ob vikendih']::text[], 4),
+  ('3142', 'Picerija in pivnica KUFR', 'Glavni trg 43, 2380 Slovenj Gradec', 'Slovenj Gradec', 46.508474, 15.078219, 8, 2.81, 'Med tednom: 10:00 - 21:00
+Sobota: 10:00 - 21:00
+Nedelja: 10:00 - 21:00', null, array['Brezmesno','Solatni bar','Dostop za invalide','Odprt ob vikendih']::text[], 4),
+  ('3281', 'Picerija Pavon', 'Njegoševa ulica 6k, 1000 Ljubljana', 'Ljubljana', 46.053443, 14.519521, 9, 3.81, 'Med tednom: 10:00 - 15:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Solatni bar','Dostop za invalide']::text[], null),
+  ('1794', 'Picestavracija Boccaccio', 'Celovška cesta 249, 1000 Ljubljana', 'Ljubljana', 46.080806, 14.478609, 9, 3.81, 'Med tednom: 12:00 - 20:00
+Sobota: 12:00 - 20:00
+Nedelja: 12:00 - 20:00', null, array['Brezmesno','Pizza','Odprt ob vikendih']::text[], 4),
+  ('3361', 'Pisana skleda', 'Zemljemerska ulica 7, 1000 Ljubljana', 'Ljubljana', 46.047347, 14.517206, 9, 3.81, 'Med tednom: 11:00 - 15:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno']::text[], 5),
+  ('2595', 'Pizza SALAMON - dostava', 'Vilharjeva 43, 1000 Ljubljana', 'Ljubljana', 46.030071, 14.532449, 9, 3.81, 'Med tednom: 09:00 - 21:00
+Sobota: 10:00 - 21:00
+Nedelja: 10:00 - 21:00', null, array['Brezmesno','Dostava','Odprt ob vikendih']::text[], 4),
+  ('2308', 'Pizzeria Briksen', 'Ljubljanska cesta 5, 4260 Bled', 'Bled', 46.368334, 14.111119, 9, 3.81, 'Med tednom: 11:00 - 21:00
+Sobota: 11:00 - 21:00
+Nedelja: 11:00 - 21:00', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 4),
+  ('3295', 'Pizzeria Favola', 'Dunajska cesta 129, 1000 Ljubljana', 'Ljubljana', 46.077594, 14.5119, 9, 3.81, 'Med tednom: 12:30 - 18:00
+Sobota: Zaprto
+Nedelja: Zaprto', 'dne 31.12.25 bo lokal odprt do 14.00', array['Dostop za invalide','Celiakiji prijazni obroki']::text[], 4),
+  ('1441', 'Pizzeria FoculuS', 'Gregorčičeva ulica 3, 1000 Ljubljana', 'Ljubljana', 46.047926, 14.502138, 9, 3.81, 'Med tednom: 11:00 - 18:00
+Sobota: 11:00 - 18:00
+Nedelja: 11:00 - 18:00', null, array['Brezmesno','Solatni bar','Študentske ugodnosti','Celiakiji prijazni obroki','Pizza','Odprt ob vikendih']::text[], 5),
+  ('2284', 'Pizzeria Fontana', 'Dalmatinova ulica 2, 8270 Krško', 'Krško', 45.963862, 15.486192, 9, 3.81, 'Med tednom: 09:00 - 22:00
+Sobota: 11:00 - 22:00
+Nedelja: 12:00 - 22:00', null, array['Brezmesno','Solatni bar','Dostop za invalide','Odprt ob vikendih']::text[], 5),
+  ('3388', 'Pizzeria Gusto', 'Trg osvobodilne fronte 14, 1000 Ljubljana', 'Ljubljana', 46.057446, 14.508947, 8.99, 3.8, 'Med tednom: 14:00 - 19:00
+Sobota: 14:00 - 19:00
+Nedelja: 14:00 - 19:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('3174', 'Pizzeria in oštarija Chianti', 'Rakuševa cesta 1, 1000 Ljubljana', 'Ljubljana', 46.07829, 14.483678, 9, 3.81, 'Med tednom: 11:00 - 20:00
+Sobota: 16:00 - 20:00
+Nedelja: 15:00 - 19:00', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 4),
+  ('1103', 'Pizzeria in špageteria Al Capone', 'Pobreška cesta 18, 2000 Maribor', 'Maribor', 46.553751, 15.651964, 9, 3.81, 'Med tednom: 09:00 - 21:00
+Sobota: 09:00 - 21:00
+Nedelja: Zaprto', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 3),
+  ('1305', 'Pizzeria in špagetteria Cubus', 'Podbevškova ulica 11, 8000 Novo mesto', 'Novo mesto', 45.804309, 15.196019, 7.6, 2.41, 'Med tednom: 09:00 - 21:30
+Sobota: 12:00 - 21:30
+Nedelja: 12:00 - 21:30', null, array['Odprt ob vikendih']::text[], 5),
+  ('1423', 'Pizzeria Laterna', 'Tržaška 79a, 1000 Ljubljana', 'Ljubljana', 46.042523, 14.479298, 9, 3.81, 'Med tednom: 10:00 - 21:30
+Sobota: 12:30 - 21:00
+Nedelja: 12:30 - 20:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('3309', 'Pizzeria Oliva', 'Litijska cesta 38, 1000 Ljubljana', 'Ljubljana', 46.047074, 14.544928, 9, 3.81, 'Med tednom: 11:30 - 20:00
+Sobota: 13:30 - 20:00
+Nedelja: 12:30 - 20:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('2165', 'Pizzeria Osmica', 'Nazorjeva ulica 8, 1000 Ljubljana', 'Ljubljana', 46.05273, 14.504587, 9, 3.81, 'Med tednom: 11:00 - 21:00
+Sobota: 12:00 - 21:00
+Nedelja: Zaprto', null, array['Brezmesno','Študentske ugodnosti','Pizza','Odprt ob vikendih']::text[], 4),
+  ('2375', 'Pizzeria Parma', 'Trg republike 2, 1000 Ljubljana', 'Ljubljana', 46.05005, 14.500465, 8.8, 3.61, 'Med tednom: 11:00 - 21:00
+Sobota: 11:00 - 21:00
+Nedelja: Zaprto', null, array['Študentske ugodnosti','Celiakiji prijazni obroki','Pizza','Odprt ob vikendih']::text[], 4),
+  ('1335', 'Pizzeria Šestinka', 'Miklošičeva cesta 22, 1000 Ljubljana', 'Ljubljana', 46.054449, 14.507249, 5.19, 0, 'Med tednom: 10:00 - 00:00
+Sobota: 12:00 - 00:00
+Nedelja: 12:00 - 00:00', null, array['Brezmesno','Pizza','Odprt ob vikendih']::text[], 4),
+  ('1031', 'Pizzerija Atrij d.o.o.', 'Čevljarska 8, 6000 Koper/Capodistria', 'Koper', 45.547525, 13.729441, 8.42, 3.23, 'Med tednom: 11:00 - 21:00
+Sobota: 11:00 - 21:00
+Nedelja: Zaprto', null, array['Brezmesno','Solatni bar','Odprt ob vikendih']::text[], 5),
+  ('1716', 'Pizzerija Dimnik', 'Obrtniška cesta 1, 1420 Trbovlje', 'Trbovlje', 46.154984, 15.05118, 9, 3.81, 'Med tednom: 09:00 - 20:00
+Sobota: 12:00 - 20:00
+Nedelja: 17:00 - 21:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('1717', 'Pizzerija Dimnik - dostava', 'Obrtniška cesta 1, 1420 Trbovlje', 'Trbovlje', 46.154984, 15.05118, 9, 3.81, 'Med tednom: 09:00 - 20:00
+Sobota: 12:00 - 20:00
+Nedelja: 17:00 - 21:00', null, array['Brezmesno','Dostava','Odprt ob vikendih']::text[], 4),
+  ('1413', 'Pizzerija in okrepčevalnica KONDOR', 'Cesta v Mestni log 55, 1000 Ljubljana', 'Ljubljana', 46.036678, 14.489586, 8.5, 3.31, 'Ponedeljek: 10:00 - 17:00
+Torek: 10:00 - 17:00
+Sreda: 10:00 - 17:00
+Četrtek: 10:00 - 17:00
+Petek: 10:00 - 17:00
+Sobota: 10:00 - 15:00
+Nedelja: Zaprto', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 4),
+  ('3116', 'Pizzerija in špageterija Alcapone', 'Moskovska ulica 4, 1000 Ljubljana', 'Ljubljana', 46.068108, 14.542046, 9, 3.81, 'Med tednom: 11:00 - 20:00
+Sobota: 11:00 - 20:00
+Nedelja: Zaprto', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 3),
+  ('1176', 'Pizzerija Velun', 'Šalek 24 a, 3320 Velenje', 'Velenje', 46.362191, 15.125862, 8.2, 3.01, 'Med tednom: 11:00 - 22:00
+Sobota: 12:00 - 22:00
+Nedelja: 12:00 - 22:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('3360', 'Prfect Meals - dostava', 'Študljanska 20, 1230 Domžale', 'Domžale', 46.126047, 14.600046, 7.9, 2.71, 'Med tednom: 11:00 - 15:00
+Sobota: 11:00 - 15:00
+Nedelja: 11:00 - 15:00', null, array['Brezmesno','Dostava','Celiakiji prijazni obroki','Odprt ob vikendih']::text[], null),
+  ('1265', 'Prometna šola Maribor', 'Preradovičeva ulica 33, 2000 Maribor', 'Maribor', 46.553867, 15.624584, 7, 1.81, 'Ponedeljek: 10:30 - 16:00
+Torek: 10:30 - 16:00
+Sreda: 10:30 - 16:00
+Četrtek: 10:30 - 16:00
+Petek: 10:30 - 15:30
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Celiakiji prijazni obroki','Javni zavod']::text[], 5),
+  ('3364', 'Pr''picopeku', 'Rimska cesta 17, 1000 Ljubljana', 'Ljubljana', 46.047555, 14.499063, 7.02, 1.83, 'Ponedeljek: Zaprto
+Torek: 11:30 - 22:30
+Sreda: 11:30 - 22:30
+Četrtek: 11:30 - 22:30
+Petek: 11:30 - 22:30
+Sobota: 17:00 - 22:30
+Nedelja: Zaprto', 'Lokal 25.8.2026 obratuje od 15.00 do 22.30', array['Odprt ob vikendih']::text[], 4),
+  ('2651', 'Q TABOR', 'Gorkega ulica 45, 2000 Maribor', 'Maribor', 46.549958, 15.638503, 9, 3.81, 'Ponedeljek: 08:00 - 21:00
+Torek: 08:00 - 21:00
+Sreda: 08:00 - 21:00
+Četrtek: 08:00 - 21:00
+Petek: 08:00 - 21:00
+Sobota: 08:00 - 21:00
+Nedelja: 08:00 - 20:00', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 4),
+  ('3344', 'Restavracija & pub GOLD PUB', 'koroška cesta 61, 2360 Radlje ob Dravi', 'Radlje ob Dravi', 46.615453, 15.212909, 9, 3.81, 'Med tednom: 09:00 - 22:00
+Sobota: 12:00 - 22:00
+Nedelja: 12:00 - 22:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('2187', 'Restavracija 123 DSU', 'Litostrojska 54, 1000 Ljubljana', 'Ljubljana', 46.082321, 14.496419, 6.8, 1.61, 'Med tednom: 10:00 - 14:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Solatni bar','Študentske ugodnosti']::text[], 4),
+  ('2528', 'Restavracija 123 Mega center 2', 'Verovškova ulica 55a, 1000 Ljubljana', 'Ljubljana', 46.063855, 14.495797, 6.8, 1.61, 'Med tednom: 10:00 - 14:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Solatni bar','Dostop za invalide','Študentske ugodnosti']::text[], 5),
+  ('3339', 'Restavracija 123 Pristan Koper', 'Vojkovo nabrežje 32, 6000 Koper/Capodistria', 'Koper', 45.548204, 13.737768, 6.8, 1.61, 'Med tednom: 10:00 - 14:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Solatni bar','Študentske ugodnosti']::text[], 5),
+  ('2164', 'Restavracija Allegria', 'Nazorjeva ulica 8, 1000 Ljubljana', 'Ljubljana', 46.05273, 14.504587, 9, 3.81, 'Med tednom: 11:00 - 21:00
+Sobota: 12:00 - 21:00
+Nedelja: Zaprto', null, array['Brezmesno','Študentske ugodnosti','Odprt ob vikendih']::text[], 4),
+  ('2501', 'Restavracija Ancora', 'Jurčičeva ulica 7, 2000 Maribor', 'Maribor', 46.559191, 15.647374, 8.72, 3.53, 'Med tednom: 10:00 - 21:00
+Sobota: 11:00 - 21:00
+Nedelja: 16:00 - 21:00', null, array['Brezmesno','Dostop za invalide','Prava izbira','Odprt ob vikendih']::text[], 5),
+  ('2703', 'Restavracija Azija', 'Ptujska cesta 131 , 2000 Maribor', 'Maribor', 46.531126, 15.670116, 9, 3.81, 'Ponedeljek: 11:00 - 21:00
+Torek: 11:00 - 21:00
+Sreda: 11:00 - 21:00
+Četrtek: 11:00 - 21:00
+Petek: 12:00 - 21:00
+Sobota: 12:00 - 21:00
+Nedelja: 12:00 - 21:00', null, array['Brezmesno','Solatni bar','Odprt ob vikendih']::text[], 5),
+  ('2527', 'Restavracija Brejk', 'Dunajska cesta 22, 1000 Ljubljana', 'Ljubljana', 46.062035, 14.509368, 9, 3.81, 'Med tednom: 10:30 - 15:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Solatni bar']::text[], 4),
+  ('2234', 'Restavracija Eat Smart 1', 'Koroška cesta 46, 2000 Maribor', 'Maribor', 46.559488, 15.639272, 8.19, 3, 'Med tednom: 10:00 - 15:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Prava izbira']::text[], 5),
+  ('3232', 'Restavracija Eat Smart 2', 'Koroška cesta 80, 2000 Maribor', 'Maribor', 46.559548, 15.633803, 8.19, 3, 'Med tednom: 10:00 - 21:00
+Sobota: Zaprto
+Nedelja: Zaprto', 'Sprememba obratovalnega časa od 13.07.2026 do 27.09.2026 bo restavracija obratovala od 9.00 do 16.00 ure.', array['Brezmesno','Dostop za invalide']::text[], 5),
+  ('1827', 'Restavracija Fany & Mary', 'Petkovškovo nabrežje 19, 1000 Ljubljana', 'Ljubljana', 46.052045, 14.508341, 9, 3.81, 'Med tednom: 09:00 - 19:00
+Sobota: 09:00 - 19:00
+Nedelja: 09:00 - 19:00', null, array['Brezmesno','Celiakiji prijazni obroki','Pizza','Odprt ob vikendih']::text[], 4),
+  ('2097', 'Restavracija Fresco', 'Slovenska cesta 51, 1000 Ljubljana', 'Ljubljana', 46.055613, 14.504863, 8.99, 3.8, 'Med tednom: 10:00 - 21:00
+Sobota: 10:00 - 21:00
+Nedelja: 10:00 - 21:00', null, array['Brezmesno','Solatni bar','Odprt ob vikendih']::text[], 5),
+  ('3134', 'Restavracija FS, Fakulteta za strojništvo', 'Aškerčeva ulica 6, 1000 Ljubljana', 'Ljubljana', 46.046858, 14.498428, 8.62, 3.43, 'Ponedeljek: 10:30 - 14:30
+Torek: 10:30 - 14:30
+Sreda: 10:30 - 14:30
+Četrtek: 10:30 - 14:30
+Petek: 10:00 - 14:00
+Sobota: Zaprto
+Nedelja: Zaprto', 'od 13.7. do 17.6.2026 bo lokal obratoval do 14.00', array['Brezmesno','Dostop za invalide']::text[], 4),
+  ('3036', 'Restavracija in maloprodaja Hermine Wech - Koroška perutnina', 'Gačnikova pot 2, 2390 Ravne na Koroškem', 'Ravne na Koroškem', 46.544365, 14.962754, 7.8, 2.61, 'Med tednom: 08:00 - 18:00
+Sobota: 08:00 - 14:00
+Nedelja: Zaprto', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 5),
+  ('3038', 'Restavracija in maloprodaja Hermine Wech - Koroška perutnina', 'Ozare, 2380 Slovenj Gradec', 'Slovenj Gradec', 46.507585, 15.076816, 7.8, 2.61, 'Med tednom: 08:00 - 17:00
+Sobota: 08:00 - 14:00
+Nedelja: Zaprto', null, array['Brezmesno','Solatni bar','Dostop za invalide','Odprt ob vikendih']::text[], 2),
+  ('2343', 'Restavracija in pivnica Zvezda', 'Trg zmage 8, 9000 Murska Sobota', 'Murska Sobota', 46.660916, 16.164826, 8.5, 3.31, 'Med tednom: 10:00 - 20:00
+Sobota: 10:00 - 20:00
+Nedelja: Zaprto', null, array['Brezmesno','Solatni bar','Dostop za invalide','Odprt ob vikendih']::text[], 5),
+  ('3389', 'Restavracija in prenočišča ČARDA', 'Nemčavci 39c, 9221 Martjanci', 'Martjanci', 46.672667, 16.178896, 9, 3.81, 'Ponedeljek: 10:00 - 15:00
+Torek: 10:00 - 15:00
+Sreda: 10:00 - 15:00
+Četrtek: 10:00 - 15:00
+Petek: 10:00 - 15:00
+Sobota: 10:00 - 15:00
+Nedelja: Zaprto', '12/2', array['Brezmesno','Solatni bar','Odprt ob vikendih']::text[], 5),
+  ('1195', 'Restavracija Interspar Celje', 'Mariborska 100, 3000 Celje', 'Celje', 46.241757, 15.276116, 8.76, 3.57, 'Med tednom: 10:00 - 18:00
+Sobota: 10:00 - 18:00
+Nedelja: Zaprto', null, array['Brezmesno','Solatni bar','Dostop za invalide','Študentske ugodnosti','Prava izbira','Odprt ob vikendih']::text[], 4),
+  ('1369', 'Restavracija Interspar Citypark', 'Šmartinska 152g, 1000 Ljubljana', 'Ljubljana', 46.070237, 14.549039, 8.76, 3.57, 'Med tednom: 10:00 - 18:00
+Sobota: 10:00 - 18:00
+Nedelja: Zaprto', null, array['Brezmesno','Solatni bar','Dostop za invalide','Študentske ugodnosti','Prava izbira','Odprt ob vikendih']::text[], 4),
+  ('1023', 'Restavracija Interspar Koper', 'Ankaranska cesta 3A, 6000 Koper/Capodistria', 'Koper', 45.543218, 13.741023, 8.76, 3.57, 'Med tednom: 10:00 - 18:00
+Sobota: 10:00 - 18:00
+Nedelja: Zaprto', null, array['Brezmesno','Solatni bar','Dostop za invalide','Študentske ugodnosti','Prava izbira','Odprt ob vikendih']::text[], 5),
+  ('1198', 'Restavracija Interspar Kranj', 'Cesta 1.maja 77, 4000 Kranj', 'Kranj', 46.231797, 14.364596, 8.76, 3.57, 'Med tednom: 10:00 - 18:00
+Sobota: 10:00 - 18:00
+Nedelja: Zaprto', null, array['Brezmesno','Solatni bar','Dostop za invalide','Študentske ugodnosti','Prava izbira','Odprt ob vikendih']::text[], 5),
+  ('1194', 'Restavracija Interspar Maribor Europark', 'Pobreška 18, 2000 Maribor', 'Maribor', 46.554734, 15.65348, 8.76, 3.57, 'Med tednom: 10:00 - 18:00
+Sobota: 10:00 - 18:00
+Nedelja: Zaprto', 'Nedelja zaprto.', array['Brezmesno','Solatni bar','Dostop za invalide','Študentske ugodnosti','Prava izbira','Odprt ob vikendih']::text[], 5),
+  ('1197', 'Restavracija Interspar Maribor2 Supernova Qlandia', 'Cesta Proletarskih brigad 100, 2000 Maribor', 'Maribor', 46.546433, 15.618417, 8.76, 3.57, 'Med tednom: 10:00 - 18:00
+Sobota: 10:00 - 18:00
+Nedelja: Zaprto', null, array['Brezmesno','Solatni bar','Dostop za invalide','Študentske ugodnosti','Prava izbira','Odprt ob vikendih']::text[], 5),
+  ('1025', 'Restavracija Interspar Nova Gorica', 'Cesta 25. junija 1a, 5000 Nova Gorica', 'Nova Gorica', 45.955509, 13.657204, 8.76, 3.57, 'Med tednom: 10:00 - 18:00
+Sobota: 10:00 - 18:00
+Nedelja: Zaprto', null, array['Brezmesno','Solatni bar','Dostop za invalide','Študentske ugodnosti','Prava izbira','Odprt ob vikendih']::text[], 5),
+  ('1370', 'Restavracija Interspar Vič', 'Jamova 105, 1000 Ljubljana', 'Ljubljana', 46.039678, 14.476703, 8.76, 3.57, 'Med tednom: 10:00 - 18:00
+Sobota: 10:00 - 18:00
+Nedelja: Zaprto', null, array['Brezmesno','Solatni bar','Dostop za invalide','Študentske ugodnosti','Prava izbira','Odprt ob vikendih']::text[], 5),
+  ('2040', 'Restavracija Kitajska palača', 'Focheva ulica 41, 2000 Maribor', 'Maribor', 46.545366, 15.643939, 8.3, 3.11, 'Ponedeljek: 11:00 - 21:00
+Torek: 11:00 - 21:00
+Sreda: 11:00 - 21:00
+Četrtek: 11:00 - 21:00
+Petek: 11:00 - 21:00
+Sobota: 11:00 - 21:00
+Nedelja: 11:00 - 21:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('2775', 'Restavracija Kitajska palača - DOSTAVA', 'Focheva ulica 41, 2000 Maribor', 'Maribor', 46.545366, 15.643939, 9, 3.81, 'Ponedeljek: 11:00 - 21:00
+Torek: 11:00 - 21:00
+Sreda: 11:00 - 21:00
+Četrtek: 11:00 - 21:00
+Petek: 11:00 - 21:00
+Sobota: 11:00 - 21:00
+Nedelja: 11:00 - 21:00', null, array['Brezmesno','Dostava','Odprt ob vikendih']::text[], 4),
+  ('1768', 'Restavracija klub Cankarjevega doma', 'Prešernova cesta 10, 1000 Ljubljana', 'Ljubljana', 46.050043, 14.498836, 9, 3.81, 'Med tednom: 10:00 - 14:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Solatni bar','Dostop za invalide']::text[], 5),
+  ('1263', 'Restavracija Kolodvorska', 'Cesta talcev 37, 3320 Velenje', 'Velenje', 46.363364, 15.103754, 9, 3.81, 'Med tednom: 09:00 - 17:00
+Sobota: 09:00 - 15:00
+Nedelja: Zaprto', null, array['Brezmesno','Solatni bar','Dostop za invalide','Odprt ob vikendih']::text[], 5),
+  ('3096', 'Restavracija Kompliment', 'Kidričeva cesta 75, 4220 Škofja Loka', 'Škofja Loka', 46.170667, 14.342255, 9, 3.81, 'Med tednom: 09:00 - 14:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Solatni bar']::text[], 5),
+  ('1713', 'Restavracija Letališka', 'Letališka cesta 15, 1000 Ljubljana', 'Ljubljana', 46.061963, 14.552553, 6.8, 1.61, 'Med tednom: 10:00 - 14:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Solatni bar','Študentske ugodnosti']::text[], 5),
+  ('2085', 'Restavracija Mango', 'Turnerjeva ulica 17, 2000 Maribor', 'Maribor', 46.563169, 15.629657, 8.44, 3.25, 'Ponedeljek: 11:00 - 21:00
+Torek: 11:00 - 21:00
+Sreda: 11:00 - 21:00
+Četrtek: 11:00 - 21:00
+Petek: 11:00 - 21:00
+Sobota: 11:00 - 20:00
+Nedelja: Zaprto', 'Sprememba delovnega časa do 31.10.: - odprto do 17.00 ure!', array['Brezmesno','Solatni bar','Odprt ob vikendih']::text[], 5),
+  ('2649', 'Restavracija McDonalds - Citycenter Celje', 'Mariborska cesta 100, 3000 Celje', 'Celje', 46.241903, 15.277407, 7.8, 2.61, 'Ponedeljek: 09:00 - 21:00
+Torek: 09:00 - 21:00
+Sreda: 09:00 - 21:00
+Četrtek: 09:00 - 21:00
+Petek: 09:00 - 21:00
+Sobota: 08:00 - 21:00
+Nedelja: Zaprto', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 4),
+  ('2759', 'Restavracija McDonalds - Ptuj', 'Ormoška cesta 3, 2250 Ptuj', 'Ptuj', 46.418896, 15.877108, 7.8, 2.61, 'Med tednom: 08:00 - 23:59
+Sobota: 08:00 - 23:59
+Nedelja: 08:00 - 23:59', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 4),
+  ('3144', 'Restavracija Mensana', 'Slomškova ulica 49, 9000 Murska Sobota', 'Murska Sobota', 46.657991, 16.163853, 8.2, 3.01, 'Med tednom: 10:00 - 15:00
+Sobota: Zaprto
+Nedelja: Zaprto', 'Skrajšan delovni čas 31.12.2024, do 13.00 ure!', array['Brezmesno','Dostop za invalide']::text[], 5),
+  ('3236', 'Restavracija Menza IJS', 'Jamova cesta 39, 1000 Ljubljana', 'Ljubljana', 46.042839, 14.487633, 8.2, 3.01, 'Med tednom: 10:30 - 14:30
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Dostop za invalide']::text[], 4),
+  ('2721', 'Restavracija Modri kvadrat', 'Davčna ulica 1, 1000 Ljubljana', 'Ljubljana', 46.065008, 14.526828, 8.5, 3.31, 'Med tednom: 09:00 - 14:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Solatni bar','Dostop za invalide']::text[], 4),
+  ('1382', 'Restavracija Mozart', 'Stegne 7, 1000 Ljubljana', 'Ljubljana', 46.081649, 14.486736, 8.5, 3.31, 'Med tednom: 09:00 - 15:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Dostop za invalide']::text[], 5),
+  ('3172', 'Restavracija Mozart P.E. Ekonomska fakulteta', 'Kardeljeva ploščad 17, 1000 Ljubljana', 'Ljubljana', 46.074017, 14.516449, 8.5, 3.31, 'Med tednom: 07:00 - 15:30
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Dostop za invalide']::text[], 4),
+  ('3049', 'Restavracija Mr.Falafel', 'Gosposka ulica 30, 2000 Maribor', 'Maribor', 46.559862, 15.646785, 9, 3.81, 'Med tednom: 11:00 - 21:00
+Sobota: 11:00 - 21:00
+Nedelja: 11:00 - 18:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('3179', 'Restavracija OAZA Pef', 'Kardeljeva ploščad 16, 1000 Ljubljana', 'Ljubljana', 46.075416, 14.517989, 7.99, 2.8, 'Med tednom: 10:30 - 15:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Študentske ugodnosti']::text[], 5),
+  ('3241', 'Restavracija Pergola', 'Tomažičeva ulica 10, 6310 Izola/Isola', 'Izola', 45.532802, 13.651023, 8.4, 3.21, 'Ponedeljek: 08:00 - 21:00
+Torek: 08:00 - 21:00
+Sreda: 08:00 - 21:00
+Četrtek: 08:00 - 21:00
+Petek: 08:00 - 21:00
+Sobota: 08:00 - 21:00
+Nedelja: 08:00 - 21:00', null, array['Brezmesno','Solatni bar','Odprt ob vikendih']::text[], 5),
+  ('3240', 'Restavracija PF, Pravna fakulteta', 'Poljanski nasip 2, 1000 Ljubljana', 'Ljubljana', 46.051525, 14.511099, 8.62, 3.43, 'Ponedeljek: 10:30 - 15:00
+Torek: 10:30 - 15:00
+Sreda: 10:30 - 15:00
+Četrtek: 10:30 - 15:00
+Petek: 10:00 - 14:00
+Sobota: Zaprto
+Nedelja: Zaprto', 'od 13.7. do 17.6.2026 bo lokal obratoval do 14.00', array['Brezmesno','Dostop za invalide']::text[], 4),
+  ('3396', 'Restavracija Piano', 'Koroška cesta 160, 2000 Maribor', 'Maribor', 46.563898, 15.623931, 8.24, 3.05, 'Ponedeljek: 10:00 - 15:30
+Torek: 10:00 - 15:30
+Sreda: 10:00 - 15:30
+Četrtek: 10:00 - 15:30
+Petek: 10:00 - 14:30
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Solatni bar']::text[], 4),
+  ('3376', 'Restavracija pizza Bella Napoli', 'Moskovska ulica 11, 1000 Ljubljana', 'Ljubljana', 46.065363, 14.55022, 9, 3.81, 'Med tednom: 11:00 - 20:30
+Sobota: 11:00 - 20:30
+Nedelja: 11:00 - 20:30', null, array['Dostop za invalide','Odprt ob vikendih']::text[], 5),
+  ('1360', 'Restavracija Plečnikov hram', 'Trg francoske revolucije 2, 1000 Ljubljana', 'Ljubljana', 46.047078, 14.503406, 8.8, 3.61, 'Med tednom: 09:00 - 18:00
+Sobota: 11:00 - 15:00
+Nedelja: Zaprto', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('2180', 'Restavracija Prestige catering, GZS', 'Dimičeva ulica 13, 1000 Ljubljana', 'Ljubljana', 46.07159, 14.514827, 7.74, 2.55, 'Med tednom: 10:00 - 14:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Solatni bar','Dostop za invalide','Prava izbira']::text[], 5),
+  ('1321', 'Restavracija Rdeče jabolko', 'Tržaška 116, 1000 Ljubljana', 'Ljubljana', 46.039898, 14.473018, 9, 3.81, 'Ponedeljek: Zaprto
+Torek: 12:00 - 22:00
+Sreda: 12:00 - 22:00
+Četrtek: 12:00 - 22:00
+Petek: 12:00 - 22:00
+Sobota: 12:00 - 22:00
+Nedelja: 12:00 - 22:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('2884', 'Restavracija sarajevskih jedi Valter Jesenice', 'Cesta Maršala Tita 106, 4270 Jesenice', 'Jesenice', 46.441619, 14.039078, 9, 3.81, 'Med tednom: 10:00 - 22:00
+Sobota: 12:00 - 22:00
+Nedelja: 12:00 - 22:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('1298', 'Restavracija Splošne bolnišnice Novo mesto', 'Šmihelska cesta 1, 8000 Novo mesto', 'Novo mesto', 45.800237, 15.163002, 7, 1.81, 'Med tednom: 09:00 - 15:00
+Sobota: 13:00 - 14:30
+Nedelja: 13:00 - 14:30', null, array['Javni zavod','Odprt ob vikendih']::text[], 5),
+  ('3156', 'Restavracija Vrtnica', 'Kidričeva ulica 11, 5000 Nova Gorica', 'Nova Gorica', 45.957599, 13.648926, 8.02, 2.83, 'Med tednom: 10:00 - 15:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Solatni bar']::text[], 5),
+  ('3324', 'Restavracija Zadružnik Kozje', 'Kozje 141a, 3260 Kozje', 'Kozje', 46.073321, 15.559672, 7.22, 2.03, 'Med tednom: 09:00 - 13:00
+Sobota: 09:00 - 12:00
+Nedelja: Zaprto', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 4),
+  ('3323', 'Restavracija Zadružnik Šmarje', 'Obrtniška ulica 3, 3240 Šmarje pri Jelšah', 'Šmarje pri Jelšah', 46.22989, 15.523991, 7.22, 2.03, 'Med tednom: 09:00 - 15:00
+Sobota: 09:00 - 13:00
+Nedelja: Zaprto', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('3336', 'Restavracija Zeleni Park', 'Cesta Zore Perello - Godina 2, 6000 Koper/Capodistria', 'Koper', 45.544774, 13.726931, 9, 3.81, 'Ponedeljek: 12:00 - 16:30
+Torek: 12:00 - 16:30
+Sreda: 12:00 - 16:30
+Četrtek: 12:00 - 16:30
+Petek: 12:00 - 16:30
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno']::text[], 5),
+  ('2698', 'Restavracija Zlata sreča', 'Metelkova ulica 29, 2000 Maribor', 'Maribor', 46.543881, 15.638065, 8.16, 2.97, 'Med tednom: 11:00 - 21:00
+Sobota: 14:00 - 21:00
+Nedelja: 14:00 - 21:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('3289', 'Rex', 'Dunajska cesta 123, 1000 Ljubljana', 'Ljubljana', 46.075941, 14.509468, 9, 3.81, 'Med tednom: 10:00 - 22:00
+Sobota: 12:00 - 22:00
+Nedelja: Zaprto', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('3220', 'RIKŠA CURRY&WOK', 'Resljeva cesta 1, 1000 Ljubljana', 'Ljubljana', 46.052316, 14.510093, 9, 3.81, 'Med tednom: 12:00 - 20:30
+Sobota: 12:00 - 20:30
+Nedelja: 12:00 - 20:30', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('2739', 'Roza slon', 'Trg OF 14, 1000 Ljubljana', 'Ljubljana', 46.057443, 14.508752, 7.82, 2.63, 'Ponedeljek: 13:00 - 22:00
+Torek: 13:00 - 22:00
+Sreda: 13:00 - 22:00
+Četrtek: 13:00 - 22:00
+Petek: 13:00 - 22:00
+Sobota: 12:00 - 20:00
+Nedelja: Zaprto', null, array['Odprt ob vikendih']::text[], 5),
+  ('2859', 'Roza slon Bežigrad', 'Dunajska 115, 1000 Ljubljana', 'Ljubljana', 46.07502, 14.51101, 7.82, 2.63, 'Med tednom: 13:00 - 22:00
+Sobota: 12:00 - 20:00
+Nedelja: Zaprto', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('3225', 'Roza slon BTC', 'Kajuhova 32/R, 1000 Ljubljana', 'Ljubljana', 46.057764, 14.54034, 7.82, 2.63, 'Med tednom: 11:00 - 17:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno']::text[], 5),
+  ('3224', 'Roza slon Vič', 'Tržaška cesta 116, 1000 Ljubljana', 'Ljubljana', 46.039997, 14.472476, 7.82, 2.63, 'Med tednom: 10:00 - 17:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno']::text[], 5),
+  ('3072', 'Ruby food', 'Igriška ulica 5, 1000 Ljubljana', 'Ljubljana', 46.048082, 14.499302, 8.14, 2.95, 'Ponedeljek: 10:30 - 16:00
+Torek: 10:30 - 16:00
+Sreda: 10:30 - 16:00
+Četrtek: 10:30 - 16:00
+Petek: 10:30 - 16:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno']::text[], 5),
+  ('2781', 'Samopostrežna restavracija Stolpič', 'Mariborska cesta 7, 3000 Celje', 'Celje', 46.233737, 15.267788, 8, 2.81, 'Med tednom: 09:00 - 14:30
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno']::text[], 4),
+  ('3340', 'SB Nova Gorica', 'Ulica padlih borcev 13a, 5290 Šempeter pri Gorici', 'Šempeter pri Gorici', 45.929296, 13.642009, 8, 2.81, 'Med tednom: 11:00 - 16:00
+Sobota: 11:30 - 12:30
+Nedelja: 11:30 - 12:30', null, array['Brezmesno','Celiakiji prijazni obroki','Javni zavod','Odprt ob vikendih']::text[], 5),
+  ('3365', 'Shaolin', 'Hacquetova ulica 5, 1000 Ljubljana', 'Ljubljana', 46.060631, 14.514628, 9, 3.81, 'Med tednom: 10:00 - 22:00
+Sobota: 10:00 - 22:00
+Nedelja: 10:00 - 22:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('1367', 'Skriti kot - mestna gostilna', 'Ajdovščina 4, 1000 Ljubljana', 'Ljubljana', 46.053703, 14.504993, 9, 3.81, 'Ponedeljek: 10:30 - 18:00
+Torek: 10:30 - 18:00
+Sreda: 10:30 - 18:00
+Četrtek: 10:30 - 18:00
+Petek: 10:30 - 17:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Solatni bar']::text[], 5),
+  ('3069', 'Splošna bolnišnica Brežice', 'Černelčeva cesta 15, 8250 Brežice', 'Brežice', 45.90849, 15.593572, 9, 3.81, 'Med tednom: 10:00 - 14:00
+Sobota: 10:00 - 14:00
+Nedelja: 10:00 - 14:00', null, array['Javni zavod','Odprt ob vikendih']::text[], 5),
+  ('2641', 'Splošna bolnišnica Izola', 'Polje 40, 6310 Izola/Isola', 'Izola', 45.544424, 13.687097, 8, 2.81, 'Med tednom: 12:00 - 16:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Javni zavod']::text[], 5),
+  ('2263', 'Srednja šola Izola - Scuola media Isola', 'Prekomorskih brigad 7, 6310 Izola/Isola', 'Izola', 45.535212, 13.658361, 8, 2.81, 'Med tednom: 11:30 - 15:30
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Javni zavod']::text[], 5),
+  ('2569', 'Stari Grill', 'Glavni trg 5, 2000 Maribor', 'Maribor', 46.557368, 15.645041, 8.2, 3.01, 'Med tednom: 09:00 - 20:00
+Sobota: 09:00 - 20:00
+Nedelja: Zaprto', null, array['Brezmesno','Solatni bar','Odprt ob vikendih']::text[], 4),
+  ('3265', 'Subway - Bavarc', 'Slovenska cesta 56, 1000 Ljubljana', 'Ljubljana', 46.056163, 14.506251, 7.24, 2.05, 'Med tednom: 08:00 - 23:00
+Sobota: 09:00 - 23:00
+Nedelja: 09:00 - 23:00', null, array['Brezmesno','Celiakiji prijazni obroki','Odprt ob vikendih']::text[], 4),
+  ('2714', 'Subway - Center', 'Slovenska cesta 1, 1000 Ljubljana', 'Ljubljana', 46.046919, 14.500933, 7.24, 2.05, 'Med tednom: 08:00 - 23:00
+Sobota: 09:00 - 23:00
+Nedelja: 09:00 - 23:00', null, array['Brezmesno','Celiakiji prijazni obroki','Odprt ob vikendih']::text[], 4),
+  ('2389', 'Subway Bežigrad', 'Dunajska cesta 107, 1000 Ljubljana', 'Ljubljana', 46.058966, 14.506465, 7.1, 1.91, 'Med tednom: 08:00 - 22:00
+Sobota: 09:00 - 22:00
+Nedelja: 09:00 - 22:00', null, array['Brezmesno','Celiakiji prijazni obroki','Odprt ob vikendih']::text[], 4),
+  ('2988', 'Subway BTC', 'Ameriška ulica 13, 1000 Ljubljana', 'Ljubljana', 46.068108, 14.542046, 7.1, 1.91, 'Med tednom: 08:00 - 21:00
+Sobota: 09:00 - 21:00
+Nedelja: Zaprto', null, array['Brezmesno','Celiakiji prijazni obroki','Odprt ob vikendih']::text[], 4),
+  ('3374', 'SUBWAY KOPER', 'Ankaranska cesta 2, 6000 Koper/Capodistria', 'Koper', 45.539983, 13.735618, 7.1, 1.91, 'Med tednom: 10:00 - 21:00
+Sobota: 10:00 - 21:00
+Nedelja: Zaprto', null, array['Brezmesno','Dostop za invalide','Celiakiji prijazni obroki','Odprt ob vikendih']::text[], 4),
+  ('3363', 'Šavirma', 'Štefanova ulica 5, 1000 Ljubljana', 'Ljubljana', 46.053295, 14.502894, 5.19, 0, 'Ponedeljek: 11:00 - 22:00
+Torek: 10:00 - 22:00
+Sreda: 10:00 - 22:00
+Četrtek: 10:00 - 22:00
+Petek: 10:00 - 22:00
+Sobota: 10:00 - 22:00
+Nedelja: Zaprto', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('2092', 'Šeherezada', 'Trubarjeva cesta 31, 1000 Ljubljana', 'Ljubljana', 46.052526, 14.509833, 7.74, 2.55, 'Med tednom: 08:00 - 22:00
+Sobota: 08:00 - 22:00
+Nedelja: 10:00 - 22:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('3159', 'Šeherezada 2', 'Slovenska cesta 55, 1000 Ljubljana', 'Ljubljana', 46.056384, 14.50506, 7.74, 2.55, 'Med tednom: 08:00 - 22:00
+Sobota: 08:00 - 22:00
+Nedelja: 10:00 - 22:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('1841', 'ŠENDTVIČ', 'Prušnikova ulica 87, 1210 Ljubljana - Šentvid', 'Ljubljana', 46.096536, 14.466339, 9, 3.81, 'Med tednom: 09:00 - 17:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno']::text[], 4),
+  ('3329', 'Šiš okrepčevalnica', 'Usnjarska ulica 5, 2000 Maribor', 'Maribor', 46.556561, 15.647053, 8.52, 3.33, 'Ponedeljek: 10:00 - 22:00
+Torek: 10:00 - 22:00
+Sreda: 10:00 - 22:00
+Četrtek: 10:00 - 22:00
+Petek: 10:00 - 23:00
+Sobota: 11:00 - 23:00
+Nedelja: 11:00 - 23:00', null, array['Brezmesno','Celiakiji prijazni obroki','Odprt ob vikendih']::text[], 4),
+  ('2523', 'Športni bar SLOVAN', 'Gortanova 21, 1000 Ljubljana', 'Ljubljana', 46.050359, 14.533207, 6.9, 1.71, 'Med tednom: 07:00 - 19:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno']::text[], 4),
+  ('2213', 'Študentski dom Ljubljana - Restavracija', 'Svetčeva ulica 9, 1000 Ljubljana', 'Ljubljana', 46.051935, 14.487097, 8, 2.81, 'Med tednom: 11:00 - 17:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Prava izbira','Javni zavod']::text[], 4),
+  ('3202', 'Taverna Palermo', 'Ulica Heroja Nandeta 31, 2000 Maribor', 'Maribor', 46.532658, 15.673326, 8.76, 3.57, 'Ponedeljek: 09:30 - 16:30
+Torek: 09:30 - 16:30
+Sreda: 09:30 - 16:30
+Četrtek: 09:30 - 16:30
+Petek: 09:30 - 19:00
+Sobota: 11:00 - 19:00
+Nedelja: Zaprto', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('3203', 'Taverna Palermo - DOSTAVA', 'Ulica Heroja Nandeta 31, 2000 Maribor', 'Maribor', 46.532658, 15.673326, 8.76, 3.57, 'Ponedeljek: 10:00 - 16:00
+Torek: 10:00 - 16:00
+Sreda: 10:00 - 16:00
+Četrtek: 10:00 - 16:00
+Petek: 10:00 - 19:00
+Sobota: 11:00 - 19:00
+Nedelja: Zaprto', null, array['Brezmesno','Dostava','Odprt ob vikendih']::text[], 4),
+  ('3288', 'The Place', 'Plečnikov trg 1, 1000 Ljubljana', 'Ljubljana', 46.05027, 14.502339, 9, 3.81, 'Ponedeljek: 12:00 - 22:00
+Torek: 12:00 - 22:00
+Sreda: 12:00 - 22:00
+Četrtek: 12:00 - 22:00
+Petek: 12:00 - 22:00
+Sobota: Zaprto
+Nedelja: Zaprto', 'V času od 10.7. do 11.09.2026 bo lokal odprt od 12.00 do 16.00 ure', array['Brezmesno']::text[], 3),
+  ('3380', 'Top Pizza', 'Igriška ulica 5, 1000 Ljubljana', 'Ljubljana', 46.047986, 14.499489, 8, 2.81, 'Med tednom: 10:00 - 21:00
+Sobota: 13:30 - 21:00
+Nedelja: 13:30 - 21:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('3253', 'Tvoj Chef Restavracija', 'Cesta 9. avgusta 8c, 1410 Zagorje ob Savi', 'Zagorje ob Savi', 46.134422, 14.99528, 9, 3.81, 'Ponedeljek: 08:00 - 15:00
+Torek: 08:00 - 21:00
+Sreda: 08:00 - 21:00
+Četrtek: 08:00 - 21:00
+Petek: 08:00 - 21:00
+Sobota: 12:00 - 21:00
+Nedelja: Zaprto', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('3398', 'U Sushi', 'Tržaška cesta 65, 2000 Maribor', 'Maribor', 46.52439, 15.650164, 9, 3.81, 'Ponedeljek: 12:00 - 21:00
+Torek: 12:00 - 21:00
+Sreda: 12:00 - 21:00
+Četrtek: 12:00 - 21:00
+Petek: 12:00 - 21:00
+Sobota: 12:00 - 21:00
+Nedelja: 12:00 - 21:00', null, array['Dostop za invalide','Odprt ob vikendih']::text[], 5),
+  ('1262', 'UFO', 'Svetčeva ulica 14, 1000 Ljubljana', 'Ljubljana', 46.051198, 14.486788, 8.19, 3, 'Ponedeljek: 11:00 - 22:00
+Torek: 11:00 - 22:00
+Sreda: 11:00 - 22:00
+Četrtek: 11:00 - 22:00
+Petek: 11:00 - 17:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno']::text[], 4),
+  ('3328', 'URNEBES URBAN GRILL', 'Koroška cesta 20, 2000 Maribor', 'Maribor', 46.558041, 15.642565, 8, 2.81, 'Ponedeljek: 10:00 - 22:00
+Torek: 10:00 - 22:00
+Sreda: 10:00 - 22:00
+Četrtek: 10:00 - 22:00
+Petek: 10:00 - 22:00
+Sobota: 13:00 - 22:00
+Nedelja: 14:00 - 22:00', 'Spremenjen delovni čas od 07.09. do 27.09: - v ponedeljek od 17.00 do 22.00 ure. - od torka do četrtka od 09.00 do 14.30 ure in od 17.00 do 22.00 - v petek od 09.00 do 14.30 in od 17.00 do 23.00!', array['Odprt ob vikendih']::text[], 5),
+  ('3226', 'Uršin bistro', 'Poljanska 22, 1000 Ljubljana', 'Ljubljana', 46.049579, 14.516821, 8.8, 3.61, 'Ponedeljek: 08:00 - 17:00
+Torek: 08:00 - 17:00
+Sreda: 08:00 - 17:00
+Četrtek: 08:00 - 17:00
+Petek: 08:00 - 15:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno']::text[], 4),
+  ('3356', 'Vegetarijanska in veganska restavracija Jamuna', 'Ajdovščina 4, 1000 Ljubljana', 'Ljubljana', 46.053552, 14.505284, 9, 3.81, 'Med tednom: 11:00 - 18:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Solatni bar']::text[], 5),
+  ('1339', 'Vegetarijanska restavracija Radha Govinda', 'Žibretova 23, 1000 Ljubljana', 'Ljubljana', 46.062892, 14.498973, 9, 3.81, 'Med tednom: 11:00 - 18:00
+Sobota: 11:00 - 18:00
+Nedelja: Zaprto', null, array['Brezmesno','Solatni bar','Odprt ob vikendih']::text[], 5),
+  ('3348', 'Vila de Casa Cafe', 'Gosarjeva ulica 5, 1000 Ljubljana', 'Ljubljana', 46.074607, 14.515152, 9, 3.81, 'Med tednom: 08:00 - 18:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Dostop za invalide']::text[], 4),
+  ('3117', 'Vino & ribe Aleja', 'Rakuševa ulica 1, 1000 Ljubljana', 'Ljubljana', 46.07829, 14.483678, 9, 3.81, 'Med tednom: 11:00 - 21:00
+Sobota: 11:00 - 21:00
+Nedelja: 12:00 - 18:00', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 4),
+  ('3201', 'Vino & ribe Rudnik', 'Jurčkova cesta 223, 1000 Ljubljana', 'Ljubljana', 46.021839, 14.535914, 9, 3.81, 'Med tednom: 11:00 - 21:00
+Sobota: 11:00 - 21:00
+Nedelja: 12:00 - 18:00', null, array['Brezmesno','Dostop za invalide','Odprt ob vikendih']::text[], 3),
+  ('2742', 'VIVO D125', 'Dunajska cesta 125, 1000 Ljubljana', 'Ljubljana', 46.076453, 14.511536, 9, 3.81, 'Med tednom: 10:00 - 14:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno']::text[], 4),
+  ('3304', 'Vrt bambus', 'Podutiška cesta 56, 1000 Ljubljana', 'Ljubljana', 46.071066, 14.470603, 9, 3.81, 'Ponedeljek: 11:00 - 20:00
+Torek: 11:00 - 20:00
+Sreda: 11:00 - 20:00
+Četrtek: 11:00 - 20:00
+Petek: 11:00 - 20:00
+Sobota: 11:00 - 20:00
+Nedelja: 11:00 - 20:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('3386', 'WHITE SWAN dumpling', 'Slovenska cesta 3, 1000 Ljubljana', 'Ljubljana', 46.047233, 14.501062, 9, 3.81, 'Med tednom: 11:00 - 22:00
+Sobota: 11:00 - 22:00
+Nedelja: Zaprto', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('3384', 'WHITE SWAN fast food', 'Dunajska cesta 107, 1000 Ljubljana', 'Ljubljana', 46.074318, 14.510871, 9, 3.81, 'Med tednom: 10:00 - 22:00
+Sobota: 10:00 - 22:00
+Nedelja: Zaprto', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('3383', 'WHITE SWAN fast food', 'Kolodvorska ulica 20, 1000 Ljubljana', 'Ljubljana', 46.056892, 14.51043, 9, 3.81, 'Med tednom: 11:00 - 22:00
+Sobota: 11:00 - 22:00
+Nedelja: Zaprto', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('3385', 'WHITE SWAN poke bowl', 'Miklošičeva cesta 22, 1000 Ljubljana', 'Ljubljana', 46.054636, 14.507515, 9, 3.81, 'Med tednom: 11:00 - 22:00
+Sobota: 11:00 - 22:00
+Nedelja: Zaprto', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('3078', 'WOK MIX center', 'Vetrinjska ulic 15, 2000 Maribor', 'Maribor', 46.55937, 15.647724, 7.14, 1.95, 'Med tednom: 10:00 - 20:00
+Sobota: 10:00 - 20:00
+Nedelja: Zaprto', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('3273', 'Wok&Roll', 'Mariborska cesta 1, 3000 Celje', 'Celje', 46.232335, 15.266587, 9, 3.81, 'Ponedeljek: 11:00 - 18:00
+Torek: 11:00 - 18:00
+Sreda: 11:00 - 18:00
+Četrtek: 11:00 - 18:00
+Petek: 11:00 - 18:00
+Sobota: 12:00 - 16:00
+Nedelja: Zaprto', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('3345', 'WOOP! arena', 'Moskovska ulica 10, 1000 Ljubljana', 'Ljubljana', 46.06548, 14.547961, 9, 3.81, 'Ponedeljek: 11:00 - 15:00
+Torek: 11:00 - 19:00
+Sreda: 11:00 - 19:00
+Četrtek: 11:00 - 19:00
+Petek: 11:00 - 19:00
+Sobota: 11:00 - 19:00
+Nedelja: Zaprto', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('3355', 'Yimi azijska restavracija', 'Slovenska cesta 55, 1000 Ljubljana', 'Ljubljana', 46.056112, 14.505015, 9, 3.81, 'Med tednom: 11:00 - 23:59
+Sobota: 17:00 - 22:00
+Nedelja: 17:00 - 22:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('3254', 'Zamaro', 'Topniška ulica 29a, 1000 Ljubljana', 'Ljubljana', 46.067636, 14.511347, 7.74, 2.55, 'Med tednom: 11:30 - 15:30
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Solatni bar','Dostop za invalide']::text[], 5),
+  ('2952', 'Zbornica bar in žar', 'Rimska cesta 13, 1000 Ljubljana', 'Ljubljana', 46.047428, 14.499858, 9, 3.81, 'Med tednom: 12:00 - 21:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno']::text[], 4),
+  ('3303', 'Zmajevo mesto', 'Šentjernejska cesta 6, 8000 Novo mesto', 'Novo mesto', 45.799646, 15.182162, 8, 2.81, 'Ponedeljek: Zaprto
+Torek: 11:00 - 22:00
+Sreda: 11:00 - 22:00
+Četrtek: 11:00 - 22:00
+Petek: 11:00 - 22:00
+Sobota: 11:00 - 22:00
+Nedelja: 11:00 - 22:00', null, array['Brezmesno','Odprt ob vikendih']::text[], 4),
+  ('2993', 'Znanstvena kavarna Mafija', 'Jadranska ulica 21, 1000 Ljubljana', 'Ljubljana', 46.04196, 14.48993, 5.19, 0, 'Med tednom: 07:00 - 15:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno','Dostop za invalide']::text[], 4),
+  ('3325', 'Žito Celje Prešernova', 'Prešernova ulica 25, 3000 Celje', 'Celje', 46.229278, 15.262349, 5.19, 0, 'Med tednom: 07:00 - 16:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno']::text[], 5),
+  ('2009', 'Žito Koper', 'Pristaniška ulica 2, 6000 Koper/Capodistria', 'Koper', 45.546168, 13.725994, 5.19, 0, 'Ponedeljek: 07:00 - 15:00
+Torek: 07:00 - 15:00
+Sreda: 07:00 - 15:00
+Četrtek: 07:00 - 15:00
+Petek: 07:00 - 15:00
+Sobota: 07:00 - 13:00
+Nedelja: Zaprto', null, array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('2956', 'Žito Leon Štukelj Maribor', 'Trg Leona Štuklja 1, 2000 Maribor', 'Maribor', 46.559239, 15.648421, 5.19, 0, 'Med tednom: 07:00 - 17:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno']::text[], 4),
+  ('2771', 'ŽITO Ljubljana Bavarski dvor', 'Slovenska cesta 58, 1000 Ljubljana', 'Ljubljana', 46.056911, 14.505859, 5.19, 0, 'Med tednom: 07:00 - 19:00
+Sobota: 07:00 - 12:00
+Nedelja: Zaprto', 'na dan 31.12.2025 do lokal odprt 16.00', array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('3320', 'ŽITO Ljubljana Kolodvorska', 'Kolodvorska 3, 1000 Ljubljana', 'Ljubljana', 46.054898, 14.508774, 5.19, 0, 'Med tednom: 07:00 - 18:00
+Sobota: 07:00 - 12:00
+Nedelja: Zaprto', 'Dne 31.12.2025 bo lokal odprt do 15.00 ure', array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('1791', 'ŽITO Ljubljana Vodnik', 'Vodnikov trg 5, 1000 Ljubljana', 'Ljubljana', 46.050612, 14.509226, 5.19, 0, 'Med tednom: 07:00 - 15:00
+Sobota: 07:00 - 14:00
+Nedelja: Zaprto', 'Dne 05.12.2025 bo lokal odprt z skrajšanim delovni časom do 13.00.', array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('2535', 'ŽITO Ljubljana železniška (kolodvor)', 'Trg OF 7, 1000 Ljubljana', 'Ljubljana', 46.057994, 14.511482, 5.19, 0, 'Med tednom: 07:00 - 19:00
+Sobota: 07:00 - 12:00
+Nedelja: Zaprto', 'Dne 31.12.2025 bo lokal odprt do 16.00 ure', array['Brezmesno','Odprt ob vikendih']::text[], 5),
+  ('2322', 'Žito Maribor Trg revolucije', 'Trg revolucije 2, 2000 Maribor', 'Maribor', 46.554224, 15.64617, 5.19, 0, 'Med tednom: 07:00 - 16:00
+Sobota: Zaprto
+Nedelja: Zaprto', null, array['Brezmesno']::text[], 4),
+  ('3343', 'ŽITO Postojna', 'Novi trg 7B, 6230 Postojna', 'Postojna', 45.773493, 14.212328, 5.19, 0, 'Med tednom: 07:00 - 14:30
+Sobota: Zaprto
+Nedelja: Zaprto', 'Od 29.06. do 22.08.2026 bo lokal obratoval samo do 14.00 ure.', array['Brezmesno']::text[], 5)
+on conflict (id) do update set name = excluded.name, address = excluded.address, city = excluded.city, latitude = excluded.latitude, longitude = excluded.longitude, meal_price = excluded.meal_price, subsidy_price = excluded.subsidy_price, opening_hours = excluded.opening_hours, notice = excluded.notice, features = excluded.features, site_rating = excluded.site_rating, updated_at = now();

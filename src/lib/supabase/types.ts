@@ -1,35 +1,38 @@
+/** Lokal iz imenika studentska-prehrana.si (src/data/locations.json ali tabela `locations`). */
 export interface Location {
-  id: string;
+  id: string; // ID lokala na studentska-prehrana.si (npr. "1478")
   name: string;
   address: string | null;
+  city: string;
   latitude: number | null;
   longitude: number | null;
-  subsidy_price: number | null; // e.g. 3.50
-  opening_hours: string | null;
-  city?: string;
+  meal_price: number | null; // polna cena obroka v EUR
+  subsidy_price: number | null; // doplačilo študenta v EUR
+  opening_hours: string | null; // vrstice ločene z \n
+  notice?: string | null; // opomba lokala (spremenjen delovni čas ipd.)
+  features: string[]; // npr. "Brezmesno", "Dostava", "Solatni bar"
+  site_rating: number | null; // ocena (1–5) na studentska-prehrana.si
 }
 
 export interface DailyMenu {
-  id: string;
   location_id: string;
-  menu_date: string; // ISO format YYYY-MM-DD
-  dishes: string[]; // array of meal options
+  menu_date: string; // YYYY-MM-DD
+  dishes: string[];
 }
 
 export interface Review {
   id: string;
   location_id: string;
-  user_id?: string;
-  rating: number; // 1 to 5
+  author_name: string;
+  rating: number; // 1–5
   comment: string | null;
   created_at: string;
-  user_email?: string; // Optional user info
-  author_name?: string; // Student nickname/name
+  local_only?: boolean; // shranjeno samo v tem brskalniku (Supabase ni povezan)
 }
 
 export interface LocationWithDetails extends Location {
   daily_menu?: DailyMenu | null;
-  reviews?: Review[];
-  avg_rating?: number;
-  review_count?: number;
+  reviews: Review[];
+  avg_rating?: number; // povprečje ocen uporabnikov te aplikacije
+  review_count: number;
 }

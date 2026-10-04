@@ -1,64 +1,72 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { Utensils, User as UserIcon, Edit3 } from 'lucide-react';
-import { User } from '@supabase/supabase-js';
+import { useState } from 'react';
+import { Utensils, User as UserIcon, Edit3, Check } from 'lucide-react';
+import { useNickname } from '@/lib/nickname';
 
-interface HeaderProps {
-  user: User | null;
-  onOpenAuthModal: () => void;
-  onLogout: () => void;
-}
+export function Header() {
+  const [nickname, setNickname] = useNickname();
+  const [editing, setEditing] = useState(false);
+  const [draft, setDraft] = useState('');
 
-export function Header({ user, onOpenAuthModal, onLogout }: HeaderProps) {
-  const [nickname, setNickname] = useState('');
+  const startEdit = () => {
+    setDraft(nickname);
+    setEditing(true);
+  };
 
-  useEffect(() => {
-    const stored = localStorage.getItem('student_reviewer_name');
-    if (stored) {
-      setNickname(stored);
-    }
-  }, []);
-
-  const handlePromptNickname = () => {
-    const newName = prompt('Vnesite vaše ime oz. vzdevek za pisanje ocen:', nickname || 'Študent');
-    if (newName && newName.trim()) {
-      setNickname(newName.trim());
-      localStorage.setItem('student_reviewer_name', newName.trim());
-    }
+  const save = () => {
+    setNickname(draft);
+    setEditing(false);
   };
 
   return (
     <header className="site-header">
       <div className="header-container">
-        {/* Logo & Branding */}
         <div className="logo-group">
           <div className="logo-icon">
             <Utensils size={22} />
           </div>
           <div className="logo-text">
             <h1>Študentska Prehrana</h1>
-            <span>Ocene Boni & Meniji</span>
+            <span>Ocene bonov &amp; meniji</span>
           </div>
         </div>
 
-        {/* User Profile / Nickname Badge */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
-          <button
-            onClick={handlePromptNickname}
+        {editing ? (
+          <form
             className="user-profile-badge"
-            style={{ cursor: 'pointer' }}
-            title="Spremenci svoj vzdevek za ocenjevanje"
+            onSubmit={(e) => {
+              e.preventDefault();
+              save();
+            }}
           >
             <div className="user-avatar">
               <UserIcon size={16} />
             </div>
-            <span style={{ fontSize: '0.88rem', fontWeight: 600, color: '#f3f4f6' }}>
-              {nickname ? nickname : 'Nastavi Ime'}
-            </span>
+            <input
+              autoFocus
+              className="nickname-input"
+              value={draft}
+              maxLength={40}
+              placeholder="Vaš vzdevek"
+              onChange={(e) => setDraft(e.target.value)}
+              onBlur={save}
+              onKeyDown={(e) => e.key === 'Escape' && setEditing(false)}
+              aria-label="Vzdevek za ocenjevanje"
+            />
+            <button type="submit" aria-label="Shrani vzdevek" style={{ color: '#10b981', display: 'flex' }}>
+              <Check size={16} />
+            </button>
+          </form>
+        ) : (
+          <button onClick={startEdit} className="user-profile-badge" title="Spremeni svoj vzdevek za ocenjevanje">
+            <div className="user-avatar">
+              <UserIcon size={16} />
+            </div>
+            <span className="nickname-label">{nickname || 'Nastavi vzdevek'}</span>
             <Edit3 size={14} color="#10b981" />
           </button>
-        </div>
+        )}
       </div>
     </header>
   );

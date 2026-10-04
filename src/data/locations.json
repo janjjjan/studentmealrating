@@ -1,0 +1,6168 @@
+[
+ {
+  "id": "1478",
+  "name": "ABI FALAFEL",
+  "address": "Trubarjeva cesta 40, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.052447,
+  "longitude": 14.510969,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Ponedeljek: 11:00 - 21:00\nTorek: 11:00 - 21:00\nSreda: 11:00 - 22:00\nČetrtek: 11:00 - 21:00\nPetek: 11:00 - 22:00\nSobota: 11:00 - 22:00\nNedelja: 11:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3316",
+  "name": "Aga kebab",
+  "address": "Litijska cesta 140, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.080483,
+  "longitude": 14.496259,
+  "meal_price": 6.02,
+  "subsidy_price": 0.83,
+  "opening_hours": "Med tednom: 09:00 - 21:00\nSobota: 09:00 - 21:00\nNedelja: 09:00 - 21:00",
+  "notice": null,
+  "features": [
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2999",
+  "name": "Ajda burgers & more BTC",
+  "address": "Šmartinska cesta 152, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.068108,
+  "longitude": 14.542046,
+  "meal_price": 8.89,
+  "subsidy_price": 3.7,
+  "opening_hours": "Med tednom: 09:00 - 22:00\nSobota: 11:00 - 22:00\nNedelja: 11:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2549",
+  "name": "Ajda burgers & more postaja",
+  "address": "Trg OF 13, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.057423,
+  "longitude": 14.509497,
+  "meal_price": 7.59,
+  "subsidy_price": 2.4,
+  "opening_hours": "Med tednom: 08:00 - 22:00\nSobota: 08:00 - 22:00\nNedelja: 08:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3347",
+  "name": "AL YASMIN arabska restavracija",
+  "address": "Slovenska cesta 56, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.056163,
+  "longitude": 14.506251,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Ponedeljek: 11:00 - 22:00\nTorek: 10:00 - 22:00\nSreda: 10:00 - 22:00\nČetrtek: 10:00 - 22:00\nPetek: 10:00 - 22:00\nSobota: 10:00 - 22:00\nNedelja: 10:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3332",
+  "name": "ART kavarna Odeon",
+  "address": "Ulica Prekomorskih brigad 4, 6310 Izola/Isola",
+  "city": "Izola",
+  "latitude": 45.535471,
+  "longitude": 13.65936,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 11:00 - 15:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Prava izbira"
+  ],
+  "site_rating": null
+ },
+ {
+  "id": "3275",
+  "name": "Avokado",
+  "address": "Gortanov trg 4, 6000 Koper/Capodistria",
+  "city": "Koper",
+  "latitude": 45.54622,
+  "longitude": 13.728149,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Ponedeljek: 10:30 - 17:00\nTorek: 10:30 - 17:00\nSreda: 10:30 - 17:00\nČetrtek: 10:30 - 17:00\nPetek: 10:30 - 14:30\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Celiakiji prijazni obroki"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2147",
+  "name": "Azijska restavracija Han",
+  "address": "Kongresni trg 3, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.050605,
+  "longitude": 14.504546,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 11:00 - 21:00\nSobota: 11:00 - 21:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3042",
+  "name": "Bar Moment",
+  "address": "Litostrojska cesta 44E, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.078743,
+  "longitude": 14.495953,
+  "meal_price": 8,
+  "subsidy_price": 2.81,
+  "opening_hours": "Med tednom: 10:00 - 16:30\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3207",
+  "name": "Baščaršija Koper Carpacciov trg",
+  "address": "Carpacciov trg 6, 6000 Koper/Capodistria",
+  "city": "Koper",
+  "latitude": 45.547816,
+  "longitude": 13.725958,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 11:00 - 22:00\nSobota: 11:00 - 22:00\nNedelja: 11:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3259",
+  "name": "Baščaršija Ljubljana Trubarjeva",
+  "address": "Trubarjeva cesta 52, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.05226,
+  "longitude": 14.512463,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 10:00 - 22:00\nSobota: 10:00 - 22:00\nNedelja: 10:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3237",
+  "name": "Baščaršija Maribor Gosposvetska",
+  "address": "Gosposvetska cesta 43c, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.562084,
+  "longitude": 15.632309,
+  "meal_price": 8.6,
+  "subsidy_price": 3.41,
+  "opening_hours": "Med tednom: 11:00 - 22:00\nSobota: 11:00 - 22:00\nNedelja: 11:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Celiakiji prijazni obroki",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2102",
+  "name": "Biotehniški izobraževalni center Ljubljana",
+  "address": "Ižanska cesta 10, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.0397,
+  "longitude": 14.513031,
+  "meal_price": 7.5,
+  "subsidy_price": 2.31,
+  "opening_hours": "Med tednom: 10:30 - 14:30\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Javni zavod"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2103",
+  "name": "Biotehniški izobraževalni center Ljubljana",
+  "address": "Cesta v Mestni log 47, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.036926,
+  "longitude": 14.49287,
+  "meal_price": 7.5,
+  "subsidy_price": 2.31,
+  "opening_hours": "Med tednom: 10:30 - 14:30\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Javni zavod"
+  ],
+  "site_rating": 3
+ },
+ {
+  "id": "2862",
+  "name": "Bistro Arty",
+  "address": "Slovenska ulica 20, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.560381,
+  "longitude": 15.64577,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Ponedeljek: 10:30 - 14:30\nTorek: 10:30 - 14:30\nSreda: 10:30 - 14:30\nČetrtek: 10:30 - 14:30\nPetek: 10:30 - 14:30\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3331",
+  "name": "Bistro Luft",
+  "address": "Mirce 20, 5270 Ajdovščina",
+  "city": "Ajdovščina",
+  "latitude": 45.883391,
+  "longitude": 13.892009,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 10:00 - 14:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3280",
+  "name": "Bistro Situla",
+  "address": "Dilančeva ulica 1, 8000 Novo mesto",
+  "city": "Novo mesto",
+  "latitude": 45.804333,
+  "longitude": 15.170062,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 10:00 - 14:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3221",
+  "name": "Bistro Slovely",
+  "address": "Kardeljeva ploščad 5, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.075583,
+  "longitude": 14.513194,
+  "meal_price": 8.74,
+  "subsidy_price": 3.55,
+  "opening_hours": "Med tednom: 10:00 - 16:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2821",
+  "name": "BISTRO VILLA DOMUS",
+  "address": "Vojkovo nabrežje 12, 6000 Koper/Capodistria",
+  "city": "Koper",
+  "latitude": 45.545517,
+  "longitude": 13.733073,
+  "meal_price": 8.19,
+  "subsidy_price": 3,
+  "opening_hours": "Ponedeljek: 11:00 - 17:00\nTorek: 11:00 - 17:00\nSreda: 11:00 - 17:00\nČetrtek: 11:00 - 17:00\nPetek: 11:00 - 17:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": "Možnost prevzema, naročilo na 070 500 866.",
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "1645",
+  "name": "Bohor",
+  "address": "Kidričeva ulica 23, 3250 Rogaška Slatina",
+  "city": "Rogaška Slatina",
+  "latitude": 46.233861,
+  "longitude": 15.637723,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 10:00 - 22:00\nSobota: 10:00 - 22:00\nNedelja: 10:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3109",
+  "name": "Bolnišnična restavracija Splošne bolnišnice Jesenice",
+  "address": "Cesta maršala Tita 112, 4270 Jesenice",
+  "city": "Jesenice",
+  "latitude": 46.442878,
+  "longitude": 14.036959,
+  "meal_price": 7,
+  "subsidy_price": 1.81,
+  "opening_hours": "Med tednom: 09:30 - 14:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Javni zavod"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3173",
+  "name": "Burek Olimpija Rimska",
+  "address": "Rimska cesta 13, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.047428,
+  "longitude": 14.499858,
+  "meal_price": 5.19,
+  "subsidy_price": 0,
+  "opening_hours": "Med tednom: 09:00 - 21:00\nSobota: 09:00 - 13:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3067",
+  "name": "BURGER TIME",
+  "address": "Trubarjeva 47, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.052523,
+  "longitude": 14.511786,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 11:00 - 22:00\nSobota: 12:00 - 22:00\nNedelja: 12:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "1161",
+  "name": "Cantante cafe Tabor",
+  "address": "Ulica Pariške komune 37, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.548452,
+  "longitude": 15.643061,
+  "meal_price": 8.64,
+  "subsidy_price": 3.45,
+  "opening_hours": "Med tednom: 10:00 - 20:00\nSobota: 12:00 - 20:00\nNedelja: 12:00 - 20:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "1673",
+  "name": "Cantante cafe Tabor - DOSTAVA",
+  "address": "Ulica Pariške komune 37, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.548452,
+  "longitude": 15.643061,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 10:00 - 20:00\nSobota: 12:00 - 20:00\nNedelja: 12:00 - 20:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostava",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3176",
+  "name": "Cantina QUE PASA",
+  "address": "Trg osvobodilne fronte 13, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.057423,
+  "longitude": 14.509497,
+  "meal_price": 8.69,
+  "subsidy_price": 3.5,
+  "opening_hours": "Med tednom: 08:00 - 21:00\nSobota: 08:00 - 21:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3375",
+  "name": "Cappuccino Svetilnik Izola",
+  "address": "Kopališka cesta 14, 6310 Izola/Isola",
+  "city": "Izola",
+  "latitude": 45.541064,
+  "longitude": 13.656568,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 12:00 - 17:00\nSobota: 12:00 - 17:00\nNedelja: 12:00 - 17:00",
+  "notice": "OBVESTILO: Cappuccino Svetilnik Izola bo v četrtek, 10. 9. 2026 zaprt.",
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3171",
+  "name": "Chutys Europark Maribor",
+  "address": "Pobreška cesta 18, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.553781,
+  "longitude": 15.653292,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 11:00 - 22:00\nSobota: 12:00 - 22:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "1568",
+  "name": "City grill",
+  "address": "Slovenska 18, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.560345,
+  "longitude": 15.645892,
+  "meal_price": 8.14,
+  "subsidy_price": 2.95,
+  "opening_hours": "Ponedeljek: 09:00 - 19:30\nTorek: 09:00 - 19:30\nSreda: 09:00 - 19:30\nČetrtek: 09:00 - 19:30\nPetek: 09:00 - 19:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": "Spremenjen delovni čas od 07.09. od 11.09.2026! - od 13.00 ure od 19.30 ure",
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "1569",
+  "name": "City grill - DOSTAVA",
+  "address": "Slovenska 18, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.560345,
+  "longitude": 15.645892,
+  "meal_price": 8.34,
+  "subsidy_price": 3.15,
+  "opening_hours": "Ponedeljek: 09:00 - 19:00\nTorek: 09:00 - 19:00\nSreda: 09:00 - 19:00\nČetrtek: 09:00 - 19:00\nPetek: 09:00 - 19:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": "Spremenjen delovni čas od 07.09. od 11.09.2026! - od 13.00 ure od 19.00 ure",
+  "features": [
+   "Brezmesno",
+   "Dostava"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3114",
+  "name": "Čevabdžinica Sarajevo84",
+  "address": "Gramšijev trg 8, 6000 Koper/Capodistria",
+  "city": "Koper",
+  "latitude": 45.547224,
+  "longitude": 13.735446,
+  "meal_price": 8.6,
+  "subsidy_price": 3.41,
+  "opening_hours": "Med tednom: 10:00 - 22:00\nSobota: 12:00 - 22:00\nNedelja: 12:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3234",
+  "name": "Čevabdžinica Sarajevo84 (Tomažičev trg)",
+  "address": "Tomažičev trg 1, 6000 Koper/Capodistria",
+  "city": "Koper",
+  "latitude": 45.546866,
+  "longitude": 13.726637,
+  "meal_price": 8.6,
+  "subsidy_price": 3.41,
+  "opening_hours": "Med tednom: 10:00 - 22:00\nSobota: 12:00 - 22:00\nNedelja: 12:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3286",
+  "name": "Čewapi Citypark Ljubljana",
+  "address": "Moskovskova ulica 4, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.056947,
+  "longitude": 14.505752,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 09:00 - 21:00\nSobota: 09:00 - 21:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3285",
+  "name": "Čewapi Ljubljana Center",
+  "address": "Cankarjeva 6, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.052794,
+  "longitude": 14.502546,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 10:00 - 22:00\nSobota: 10:00 - 22:00\nNedelja: 12:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "1485",
+  "name": "DA BU DA, Azijska restavracija",
+  "address": "Šubičeva 1a, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.051439,
+  "longitude": 14.50005,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 11:00 - 21:00\nSobota: 12:00 - 21:00\nNedelja: 12:00 - 17:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2326",
+  "name": "Das ist Valter Kranj",
+  "address": "Cesta 1.maja 1a, 4000 Kranj",
+  "city": "Kranj",
+  "latitude": 46.233399,
+  "longitude": 14.362068,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 10:00 - 22:00\nSobota: 12:00 - 22:00\nNedelja: 12:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2951",
+  "name": "Das ist Valter Ljubljana center",
+  "address": "Borštnikov trg 3, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.047864,
+  "longitude": 14.499144,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 10:00 - 22:00\nSobota: 12:00 - 22:00\nNedelja: 12:00 - 21:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2131",
+  "name": "Das ist Valter Ljubljana Šmartinska",
+  "address": "Šmartinska cesta 3, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.056282,
+  "longitude": 14.519282,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 10:00 - 22:00\nSobota: 12:00 - 22:00\nNedelja: 12:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2252",
+  "name": "Das ist Valter Škofja Loka",
+  "address": "Kidričeva cesta 8c, 4220 Škofja Loka",
+  "city": "Škofja Loka",
+  "latitude": 46.167436,
+  "longitude": 14.310582,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 10:00 - 22:00\nSobota: 12:00 - 22:00\nNedelja: 12:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3145",
+  "name": "Dijaški dom",
+  "address": "Sončna pot 20, 6320 Portorož/Portorose",
+  "city": "Portorož",
+  "latitude": 45.516957,
+  "longitude": 13.583556,
+  "meal_price": 8.02,
+  "subsidy_price": 2.83,
+  "opening_hours": "Ponedeljek: 11:00 - 15:00\nTorek: 11:00 - 15:00\nSreda: 11:00 - 15:00\nČetrtek: 11:00 - 15:00\nPetek: 10:00 - 14:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar",
+   "Dostop za invalide"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "1090",
+  "name": "Dijaški dom Lizike Jančar",
+  "address": "Titova cesta 24a, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.548709,
+  "longitude": 15.648838,
+  "meal_price": 7,
+  "subsidy_price": 1.81,
+  "opening_hours": "Med tednom: 12:00 - 17:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Javni zavod"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "1502",
+  "name": "Dijaški dom Poljane",
+  "address": "Potočnikova ulica 3, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.049237,
+  "longitude": 14.523332,
+  "meal_price": 6.66,
+  "subsidy_price": 1.47,
+  "opening_hours": "Ponedeljek: 11:00 - 15:00\nTorek: 11:00 - 15:00\nSreda: 11:00 - 15:00\nČetrtek: 11:00 - 15:00\nPetek: 11:00 - 15:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Javni zavod"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2111",
+  "name": "Dijaški dom Tabor",
+  "address": "Kotnikova 4, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.053416,
+  "longitude": 14.513773,
+  "meal_price": 7.1,
+  "subsidy_price": 1.91,
+  "opening_hours": "Med tednom: 12:00 - 16:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Javni zavod"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "1314",
+  "name": "Dijaški dom Vič",
+  "address": "Gerbičeva 53, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.039397,
+  "longitude": 14.488368,
+  "meal_price": 7,
+  "subsidy_price": 1.81,
+  "opening_hours": "Ponedeljek: 11:30 - 16:30\nTorek: 11:30 - 16:30\nSreda: 11:30 - 16:30\nČetrtek: 11:30 - 16:30\nPetek: 11:30 - 16:30\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Javni zavod"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "1501",
+  "name": "Dijaški in študentski dom Novo mesto",
+  "address": "Šegova ulica 115, 8000 Novo mesto",
+  "city": "Novo mesto",
+  "latitude": 45.793596,
+  "longitude": 15.160149,
+  "meal_price": 6.5,
+  "subsidy_price": 1.31,
+  "opening_hours": "Ponedeljek: 09:30 - 15:00\nTorek: 09:30 - 15:00\nSreda: 09:30 - 15:00\nČetrtek: 09:30 - 15:00\nPetek: 09:30 - 14:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Javni zavod"
+  ],
+  "site_rating": 2
+ },
+ {
+  "id": "3381",
+  "name": "Do kosti Pizzeria Chianti",
+  "address": "Rozmanova ulica 25, 8000 Novo mesto",
+  "city": "Novo mesto",
+  "latitude": 45.805404,
+  "longitude": 15.165251,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 09:30 - 19:00\nSobota: 12:00 - 19:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2552",
+  "name": "Dobra hiša",
+  "address": "Stegne 11a, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.08289,
+  "longitude": 14.487942,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 09:30 - 15:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Solatni bar",
+   "Dostop za invalide"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2298",
+  "name": "Dobra hiša Rudnik",
+  "address": "Jurčkova cesta 223, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.021839,
+  "longitude": 14.535914,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 10:00 - 20:00\nSobota: 10:00 - 20:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "1578",
+  "name": "Dobrote vzhoda",
+  "address": "Celovška cesta 69 a, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.063533,
+  "longitude": 14.494655,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Ponedeljek: 11:00 - 19:00\nTorek: Zaprto\nSreda: 11:00 - 19:00\nČetrtek: 11:00 - 19:00\nPetek: 11:00 - 19:00\nSobota: 12:00 - 20:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3370",
+  "name": "Dodo Pizza Koper",
+  "address": "Ljubljanska cesta 2a, 6000 Koper/Capodistria",
+  "city": "Koper",
+  "latitude": 45.544249,
+  "longitude": 13.730856,
+  "meal_price": 8.14,
+  "subsidy_price": 2.95,
+  "opening_hours": "Ponedeljek: 11:00 - 23:00\nTorek: 11:00 - 23:00\nSreda: 11:00 - 23:00\nČetrtek: 11:00 - 23:00\nPetek: 11:00 - 00:00\nSobota: 11:00 - 00:00\nNedelja: 11:00 - 00:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3350",
+  "name": "Dodo Pizza Ljubljana-Bežigrad",
+  "address": "Dunajska cesta 105, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.073975,
+  "longitude": 14.510798,
+  "meal_price": 8.14,
+  "subsidy_price": 2.95,
+  "opening_hours": "Med tednom: 09:00 - 22:00\nSobota: 09:00 - 22:00\nNedelja: 09:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3349",
+  "name": "Dodo Pizza Ljubljana-center",
+  "address": "Ilirska ulica 4, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.052871,
+  "longitude": 14.514374,
+  "meal_price": 8.14,
+  "subsidy_price": 2.95,
+  "opening_hours": "Med tednom: 09:00 - 22:00\nSobota: 09:00 - 22:00\nNedelja: 09:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3351",
+  "name": "Dodo Pizza ljubljana-Fužine",
+  "address": "Nove Fužine 45, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.054872,
+  "longitude": 14.564704,
+  "meal_price": 8.14,
+  "subsidy_price": 2.95,
+  "opening_hours": "Med tednom: 09:00 - 23:00\nSobota: 09:00 - 23:00\nNedelja: 09:00 - 23:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3191",
+  "name": "Domača pekarna Bežigrad",
+  "address": "Dunajska cesta 113, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.074803,
+  "longitude": 14.510908,
+  "meal_price": 6.12,
+  "subsidy_price": 0.93,
+  "opening_hours": "Med tednom: 07:00 - 19:00\nSobota: Zaprto\nNedelja: 07:00 - 17:00",
+  "notice": "Od 20.7. do 23.7.26 lokal obratuje od 7.00 do 18.00 ure",
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3369",
+  "name": "EASY BEER",
+  "address": "Ferrarska ulica 30, 6000 Koper/Capodistria",
+  "city": "Koper",
+  "latitude": 45.547239,
+  "longitude": 13.738292,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 10:00 - 21:00\nSobota: 12:00 - 21:00\nNedelja: 12:00 - 21:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3243",
+  "name": "Eda restavracija",
+  "address": "Delpinova ulica 18b, 5000 Nova Gorica",
+  "city": "Nova Gorica",
+  "latitude": 45.95533,
+  "longitude": 13.646006,
+  "meal_price": 8,
+  "subsidy_price": 2.81,
+  "opening_hours": "Med tednom: 10:00 - 14:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Solatni bar",
+   "Dostop za invalide",
+   "Prava izbira"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3399",
+  "name": "Ej babi",
+  "address": "Slovenska ulica 9, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.560268,
+  "longitude": 15.646895,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Ponedeljek: 10:00 - 18:00\nTorek: 10:00 - 18:00\nSreda: 10:00 - 18:00\nČetrtek: 10:00 - 18:00\nPetek: 10:00 - 18:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3292",
+  "name": "Fari's",
+  "address": "Adamič Lundrovo nabrežje 3, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.051382,
+  "longitude": 14.508239,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 10:00 - 00:00\nSobota: 10:00 - 00:00\nNedelja: 10:00 - 00:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2589",
+  "name": "Fari's",
+  "address": "Miklošičeva 34, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.056776,
+  "longitude": 14.508371,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 10:00 - 00:00\nSobota: 10:00 - 00:00\nNedelja: 10:00 - 00:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3192",
+  "name": "Fast food & pekarna PLAVA LAGUNA",
+  "address": "Linhartova cesta 11, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.064646,
+  "longitude": 14.510322,
+  "meal_price": 6.12,
+  "subsidy_price": 0.93,
+  "opening_hours": "Med tednom: 07:00 - 19:00\nSobota: Zaprto\nNedelja: 07:00 - 17:00",
+  "notice": "Od 20.7. do 24.7.26 bo lokal odprto od 7.00 do 19.00",
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3282",
+  "name": "Fast food Ajda",
+  "address": "Ajdovščina 2, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.053568,
+  "longitude": 14.504556,
+  "meal_price": 6.04,
+  "subsidy_price": 0.85,
+  "opening_hours": "Med tednom: 10:00 - 22:00\nSobota: 10:00 - 22:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3382",
+  "name": "Fast food LEON",
+  "address": "Glinškova ploščad 2, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.090176,
+  "longitude": 14.508991,
+  "meal_price": 6.4,
+  "subsidy_price": 1.21,
+  "opening_hours": "Med tednom: 09:00 - 22:00\nSobota: 09:00 - 22:00\nNedelja: 09:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3158",
+  "name": "Fast food Magic",
+  "address": "Pristaniška ulica 2, 6000 Koper/Capodistria",
+  "city": "Koper",
+  "latitude": 45.546133,
+  "longitude": 13.726002,
+  "meal_price": 6.52,
+  "subsidy_price": 1.33,
+  "opening_hours": "Ponedeljek: 08:00 - 22:00\nTorek: 08:00 - 22:00\nSreda: 08:00 - 22:00\nČetrtek: 08:00 - 22:00\nPetek: 08:00 - 22:00\nSobota: 08:00 - 22:00\nNedelja: 08:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3391",
+  "name": "FAST FOOD PRI ŠTUKU",
+  "address": "Gosposvetska cesta 84, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.563473,
+  "longitude": 15.627847,
+  "meal_price": 7.64,
+  "subsidy_price": 2.45,
+  "opening_hours": "Ponedeljek: 09:00 - 23:59\nTorek: 09:00 - 23:59\nSreda: 09:00 - 23:59\nČetrtek: 09:00 - 23:59\nPetek: 09:00 - 23:59\nSobota: 09:00 - 23:59\nNedelja: 11:00 - 23:59",
+  "notice": "Spremenjen delovni čas med prazniki: - 27.04., 01.05. in 02.05.2026 od 11.00 do 24.00 ure!",
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3165",
+  "name": "Fast food Slast",
+  "address": "Slovenska cesta 51, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.055613,
+  "longitude": 14.504863,
+  "meal_price": 6.54,
+  "subsidy_price": 1.35,
+  "opening_hours": "Med tednom: 08:00 - 22:00\nSobota: 08:00 - 22:00\nNedelja: 08:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3335",
+  "name": "FOOD POINT NINETY NINE",
+  "address": "Ferrarska ulica 5b, 6000 Koper/Capodistria",
+  "city": "Koper",
+  "latitude": 45.544737,
+  "longitude": 13.733706,
+  "meal_price": 6.64,
+  "subsidy_price": 1.45,
+  "opening_hours": "Med tednom: 10:00 - 22:00\nSobota: 12:00 - 22:00\nNedelja: 12:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2849",
+  "name": "Forum",
+  "address": "Petkovškovo nabrežje 25, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.052123,
+  "longitude": 14.509031,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 11:00 - 21:00\nSobota: 11:00 - 21:00\nNedelja: 11:00 - 21:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3291",
+  "name": "Galaksija Trebnje",
+  "address": "Podjetniška ulica 13, 8210 Trebnje",
+  "city": "Trebnje",
+  "latitude": 45.913802,
+  "longitude": 15.027029,
+  "meal_price": 8.8,
+  "subsidy_price": 3.61,
+  "opening_hours": "Med tednom: 09:30 - 13:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Dostop za invalide"
+  ],
+  "site_rating": null
+ },
+ {
+  "id": "2591",
+  "name": "Garač - Restavracija \"M\"",
+  "address": "Šolska cesta 2, 4220 Škofja Loka",
+  "city": "Škofja Loka",
+  "latitude": 46.167946,
+  "longitude": 14.306667,
+  "meal_price": 8.2,
+  "subsidy_price": 3.01,
+  "opening_hours": "Med tednom: 07:00 - 22:00\nSobota: 08:00 - 22:00\nNedelja: 10:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3308",
+  "name": "Gaudi & Naan",
+  "address": "Trubarjeva 7, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.052013,
+  "longitude": 14.507223,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 11:00 - 20:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": "Lokal bo v času od 13.07. do 30.09.2026 obratoval od 11.00 do 16.00",
+  "features": [],
+  "site_rating": 5
+ },
+ {
+  "id": "3223",
+  "name": "Gig Bar & Burger",
+  "address": "Jurčkova cesta 223, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.021839,
+  "longitude": 14.535914,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 11:00 - 22:00\nSobota: 11:00 - 22:00\nNedelja: 14:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3352",
+  "name": "Gostilna Godec",
+  "address": "Paplerjeva ulica 12, 1353 Borovnica",
+  "city": "Borovnica",
+  "latitude": 45.916368,
+  "longitude": 14.365227,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 12:00 - 18:00\nSobota: 12:00 - 18:00\nNedelja: 12:00 - 18:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3299",
+  "name": "Gostilna in picerija Guliver",
+  "address": "Vilharjeva 43, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.060051,
+  "longitude": 14.519408,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 09:00 - 21:00\nSobota: 10:00 - 21:00\nNedelja: 10:00 - 21:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3300",
+  "name": "Gostilna in picerija Guliver - dostava",
+  "address": "Vilharjeva 43, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.060051,
+  "longitude": 14.519408,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 09:00 - 21:00\nSobota: 10:00 - 21:00\nNedelja: 10:00 - 21:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostava",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2411",
+  "name": "Gostilna in picerija JERNEJEV HRAM",
+  "address": "Ljubljanska cesta 22, 8000 Novo mesto",
+  "city": "Novo mesto",
+  "latitude": 45.814286,
+  "longitude": 15.153627,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Ponedeljek: Zaprto\nTorek: 10:30 - 18:00\nSreda: 10:30 - 18:00\nČetrtek: 10:30 - 18:00\nPetek: 10:30 - 18:00\nSobota: 11:00 - 16:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": null
+ },
+ {
+  "id": "3294",
+  "name": "Gostilna in Pizzerija Kovač",
+  "address": "Graška cesta 64, 1270 Litija",
+  "city": "Litija",
+  "latitude": 46.065053,
+  "longitude": 14.817289,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Ponedeljek: 09:30 - 14:00\nTorek: 09:30 - 14:00\nSreda: 09:30 - 14:00\nČetrtek: 09:30 - 21:00\nPetek: 09:30 - 21:00\nSobota: Zaprto\nNedelja: 12:00 - 20:00",
+  "notice": null,
+  "features": [
+   "Solatni bar",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": null
+ },
+ {
+  "id": "2543",
+  "name": "Gostilna Pod Škalcami",
+  "address": "Oplotniška cesta 5, 3210 Slovenske Konjice",
+  "city": "Slovenske Konjice",
+  "latitude": 46.342454,
+  "longitude": 15.430227,
+  "meal_price": 6.02,
+  "subsidy_price": 0.83,
+  "opening_hours": "Med tednom: 08:00 - 12:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2346",
+  "name": "Gostilna pod Škalcami - DOSTAVA",
+  "address": "Oplotniška cesta 5, 3210 Slovenske Konjice",
+  "city": "Slovenske Konjice",
+  "latitude": 46.342454,
+  "longitude": 15.430227,
+  "meal_price": 6.02,
+  "subsidy_price": 0.83,
+  "opening_hours": "Med tednom: 08:00 - 12:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostava"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3123",
+  "name": "Gostilna Stara Brajda",
+  "address": "Travniška ulica 4, 3000 Celje",
+  "city": "Celje",
+  "latitude": 46.245784,
+  "longitude": 15.267238,
+  "meal_price": 8.54,
+  "subsidy_price": 3.35,
+  "opening_hours": "Med tednom: 10:00 - 16:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3126",
+  "name": "Gostilna Štorklja",
+  "address": "Šlajmerjeva 1a, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.054102,
+  "longitude": 14.523948,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 11:00 - 19:00\nSobota: 12:00 - 17:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "1123",
+  "name": "Gostilna Zlati lev",
+  "address": "Vodnikov trg 4, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.557963,
+  "longitude": 15.640978,
+  "meal_price": 8.14,
+  "subsidy_price": 2.95,
+  "opening_hours": "Med tednom: 09:00 - 21:00\nSobota: 10:00 - 21:00\nNedelja: 10:00 - 21:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2185",
+  "name": "Gostilnica in pivnica Kratochwill",
+  "address": "Kolodvorska ulica 14, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.05648,
+  "longitude": 14.509971,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 10:00 - 22:00\nSobota: 11:00 - 22:00\nNedelja: 11:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3060",
+  "name": "Gostilnica in pivnica Vič",
+  "address": "Trg mladinskih delovnih brigad 8, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.04716,
+  "longitude": 14.495591,
+  "meal_price": 8.02,
+  "subsidy_price": 2.83,
+  "opening_hours": "Med tednom: 10:00 - 14:30\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "1834",
+  "name": "Gostilnica in pizzerija Kratochwill",
+  "address": "Jurčkova 225, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.020267,
+  "longitude": 14.536676,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 10:00 - 22:00\nSobota: 10:00 - 22:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "1835",
+  "name": "Gostilnica in pizzerija Kratochwill",
+  "address": "Šmartinska 152, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.069308,
+  "longitude": 14.548477,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 13:00 - 20:00\nSobota: 13:00 - 20:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3394",
+  "name": "GOSTILNICA KENIK",
+  "address": "Strossmayerjeva ulica 11, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.559385,
+  "longitude": 15.64162,
+  "meal_price": 8.4,
+  "subsidy_price": 3.21,
+  "opening_hours": "Ponedeljek: 09:00 - 21:00\nTorek: 09:00 - 21:00\nSreda: 09:00 - 21:00\nČetrtek: 09:00 - 21:00\nPetek: 09:00 - 21:00\nSobota: 09:00 - 16:00\nNedelja: 09:00 - 20:00",
+  "notice": "Spremenjen delovni čas od 13.7. do 17.7.2026 od 9-19 ure; 18.7.2026 od 9-15 ure; 19.7.2026 od 9-16 ure in od 20.7. - 23.7.2026 od 9-19 ure",
+  "features": [
+   "Brezmesno",
+   "Solatni bar",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2995",
+  "name": "Gostilnica Meta in Bazilika",
+  "address": "Snežniška ulica 1, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.047549,
+  "longitude": 14.499545,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Ponedeljek: 10:00 - 17:00\nTorek: 10:00 - 17:00\nSreda: 10:00 - 17:00\nČetrtek: 10:00 - 17:00\nPetek: 10:00 - 17:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "1213",
+  "name": "Gostilnica Namanova",
+  "address": "Podgorska cesta 2, 2380 Slovenj Gradec",
+  "city": "Slovenj Gradec",
+  "latitude": 46.507254,
+  "longitude": 15.076403,
+  "meal_price": 7.5,
+  "subsidy_price": 2.31,
+  "opening_hours": "Med tednom: 10:00 - 14:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar",
+   "Dostop za invalide"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3305",
+  "name": "Gostišče LOKA",
+  "address": "Župančičevo sprehajališče 2, 8000 Novo mesto",
+  "city": "Novo mesto",
+  "latitude": 45.804674,
+  "longitude": 15.161668,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 11:00 - 16:00\nSobota: 12:00 - 16:00\nNedelja: 12:00 - 16:00",
+  "notice": null,
+  "features": [
+   "Solatni bar",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "1847",
+  "name": "Gostišče na trgu - Hiša kulinarike",
+  "address": "Glavni trg 30, 8000 Novo mesto",
+  "city": "Novo mesto",
+  "latitude": 45.803961,
+  "longitude": 15.169423,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 09:00 - 15:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Javni zavod"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3354",
+  "name": "Grashka Deli",
+  "address": "Trubarjeva cesta 72, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.052106,
+  "longitude": 14.5072,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Ponedeljek: 11:00 - 16:00\nTorek: 11:00 - 16:00\nSreda: 11:00 - 16:00\nČetrtek: 11:00 - 16:00\nPetek: 11:00 - 16:00\nSobota: 11:00 - 15:00\nNedelja: Zaprto",
+  "notice": "V času od 23.06. do 31.09.2026 bo lokal obratoval: ponedeljek od 11.00 do 16.00 torek-petek od 11.00 do 18.00 sobota od 11.00 do 17.00",
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "1188",
+  "name": "Gurmanski hram",
+  "address": "Zagrebška cesta 92, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.526547,
+  "longitude": 15.669288,
+  "meal_price": 8.59,
+  "subsidy_price": 3.4,
+  "opening_hours": "Med tednom: 10:00 - 15:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar",
+   "Dostop za invalide"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "1189",
+  "name": "Gurmanski hram - DOSTAVA",
+  "address": "Zagrebška cesta 92, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.526547,
+  "longitude": 15.669288,
+  "meal_price": 8.79,
+  "subsidy_price": 3.6,
+  "opening_hours": "Med tednom: 10:00 - 15:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostava"
+  ],
+  "site_rating": 3
+ },
+ {
+  "id": "2355",
+  "name": "Halo Katra - dostava",
+  "address": "Središka ulica 4, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.061348,
+  "longitude": 14.527299,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 10:00 - 21:00\nSobota: 11:00 - 21:00\nNedelja: 11:00 - 21:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostava",
+   "Študentske ugodnosti",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "1514",
+  "name": "Halo Pinki - dostava",
+  "address": "Pod ježami 14, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.057944,
+  "longitude": 14.528464,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Ponedeljek: 10:00 - 20:00\nTorek: 10:00 - 20:00\nSreda: 09:00 - 21:00\nČetrtek: 09:00 - 21:00\nPetek: 09:00 - 21:00\nSobota: 11:00 - 21:00\nNedelja: 11:00 - 21:00",
+  "notice": "dne 25.6.2026 bo lokal odprt od 11.00 do 21.00",
+  "features": [
+   "Brezmesno",
+   "Dostava",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3366",
+  "name": "Halo Shaolin - dostava",
+  "address": "Hacquetova ulica 5, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.060631,
+  "longitude": 14.514628,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 10:00 - 21:30\nSobota: 10:00 - 21:30\nNedelja: 10:00 - 21:30",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostava",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 3
+ },
+ {
+  "id": "2668",
+  "name": "Hiša pod gradom",
+  "address": "Streliška ulica 10, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.049396,
+  "longitude": 14.511223,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 11:00 - 16:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2430",
+  "name": "Hit wok",
+  "address": "Čopova 4, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.051847,
+  "longitude": 14.505287,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 10:00 - 22:00\nSobota: 10:00 - 22:00\nNedelja: 10:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3373",
+  "name": "Hotel restavracija Prunk",
+  "address": "Partizanska cesta 117, 6210 Sežana",
+  "city": "Sežana",
+  "latitude": 45.702021,
+  "longitude": 13.846827,
+  "meal_price": 8,
+  "subsidy_price": 2.81,
+  "opening_hours": "Med tednom: 09:30 - 15:00\nSobota: 12:00 - 22:00\nNedelja: 12:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2846",
+  "name": "HotSpot bar&bistro",
+  "address": "Kardeljeva ploščad 17, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.074054,
+  "longitude": 14.516428,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 10:00 - 15:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3197",
+  "name": "HUDA .",
+  "address": "Cesta prvih borcev 7, 8250 Brežice",
+  "city": "Brežice",
+  "latitude": 45.903039,
+  "longitude": 15.59233,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 11:00 - 19:00\nSobota: 11:00 - 19:00\nNedelja: 11:00 - 19:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3387",
+  "name": "IT`S WOK O`CLOCK",
+  "address": "Kotnikova ulica 5, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.054288,
+  "longitude": 14.51254,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 10:00 - 21:00\nSobota: 11:00 - 21:00\nNedelja: 11:00 - 21:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3256",
+  "name": "JOE PENA´S, mehiška restavracija",
+  "address": "Cankarjeva cesta 6, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.052794,
+  "longitude": 14.502546,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 11:00 - 21:00\nSobota: 11:00 - 21:00\nNedelja: 12:00 - 21:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3238",
+  "name": "K16",
+  "address": "Aškerčeva cesta 2, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.04672,
+  "longitude": 14.500197,
+  "meal_price": 7.8,
+  "subsidy_price": 2.61,
+  "opening_hours": "Med tednom: 08:00 - 17:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Dostop za invalide"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3302",
+  "name": "Kampus food",
+  "address": "Pivovarniška ulica 6, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.058714,
+  "longitude": 14.501792,
+  "meal_price": 8.64,
+  "subsidy_price": 3.45,
+  "opening_hours": "Med tednom: 11:00 - 15:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2581",
+  "name": "KAPITAL",
+  "address": "Kardeljeva ploščad 17, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.074015,
+  "longitude": 14.516453,
+  "meal_price": 5.19,
+  "subsidy_price": 0,
+  "opening_hours": "Med tednom: 08:00 - 17:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2644",
+  "name": "Kitajska restavracija AZIJA",
+  "address": "Gosposvetska ulica 1, 4000 Kranj",
+  "city": "Kranj",
+  "latitude": 46.246117,
+  "longitude": 14.353085,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 11:00 - 22:00\nSobota: 11:00 - 22:00\nNedelja: 11:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3264",
+  "name": "Kitajska restavracija Beli labod 2",
+  "address": "Jurčkova cesta 7, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.032584,
+  "longitude": 14.515178,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Ponedeljek: Zaprto\nTorek: 11:00 - 22:00\nSreda: 11:00 - 22:00\nČetrtek: 11:00 - 22:00\nPetek: 11:00 - 22:00\nSobota: 11:00 - 22:00\nNedelja: 11:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2264",
+  "name": "Kitajska restavracija Cesarska hiša",
+  "address": "Ankaranska cesta 5B, 6000 Koper/Capodistria",
+  "city": "Koper",
+  "latitude": 45.541507,
+  "longitude": 13.735879,
+  "meal_price": 8.54,
+  "subsidy_price": 3.35,
+  "opening_hours": "Med tednom: 11:00 - 22:00\nSobota: 11:00 - 22:00\nNedelja: 11:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2635",
+  "name": "Kitajska restavracija Dva zmaja",
+  "address": "Kersnikova 31, 3000 Celje",
+  "city": "Celje",
+  "latitude": 46.2391,
+  "longitude": 15.263821,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 11:00 - 22:00\nSobota: 11:00 - 22:00\nNedelja: 11:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2950",
+  "name": "Kitajska restavracija Han",
+  "address": "Moskovska ulica 4, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.07048,
+  "longitude": 14.550714,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 11:00 - 21:00\nSobota: 11:00 - 21:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3118",
+  "name": "Kitajska restavracija Han - Aleja",
+  "address": "Rakuševa ulica 1, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.07829,
+  "longitude": 14.483678,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 11:00 - 21:00\nSobota: 11:00 - 21:00\nNedelja: 11:00 - 21:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2841",
+  "name": "Kitajska restavracija Leteča zvezda",
+  "address": "Cesta v mestni log 55, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.036207,
+  "longitude": 14.489519,
+  "meal_price": 8.72,
+  "subsidy_price": 3.53,
+  "opening_hours": "Med tednom: 10:00 - 22:00\nSobota: 10:00 - 22:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2842",
+  "name": "Kitajska restavracija Leteča zvezda - dostava",
+  "address": "Cesta v mestni log 55, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.036207,
+  "longitude": 14.489519,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 10:00 - 22:00\nSobota: 10:00 - 22:00\nNedelja: 10:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostava",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2933",
+  "name": "Kitajska restavracija Ming Zhu",
+  "address": "Bazoviška ulica 6, 5000 Nova Gorica",
+  "city": "Nova Gorica",
+  "latitude": 45.956308,
+  "longitude": 13.640135,
+  "meal_price": 8.8,
+  "subsidy_price": 3.61,
+  "opening_hours": "Ponedeljek: Zaprto\nTorek: 10:00 - 22:00\nSreda: 10:00 - 22:00\nČetrtek: 10:00 - 22:00\nPetek: 10:00 - 22:00\nSobota: 10:00 - 22:00\nNedelja: 10:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "1415",
+  "name": "Kitajska restavracija NANKING",
+  "address": "Mačkovec 6, 8000 Novo mesto",
+  "city": "Novo mesto",
+  "latitude": 45.826439,
+  "longitude": 15.192367,
+  "meal_price": 8.6,
+  "subsidy_price": 3.41,
+  "opening_hours": "Med tednom: 10:00 - 22:00\nSobota: 11:00 - 22:00\nNedelja: 11:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "1346",
+  "name": "Kitajska restavracija Novi Šanghai",
+  "address": "Kapitelska 5, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.050863,
+  "longitude": 14.511475,
+  "meal_price": 8.94,
+  "subsidy_price": 3.75,
+  "opening_hours": "Med tednom: 11:00 - 22:00\nSobota: 12:00 - 17:00\nNedelja: 12:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2446",
+  "name": "Kitajska restavracija Šang Hai",
+  "address": "Delavska ulica 11, 4270 Jesenice",
+  "city": "Jesenice",
+  "latitude": 46.433446,
+  "longitude": 14.063569,
+  "meal_price": 8.8,
+  "subsidy_price": 3.61,
+  "opening_hours": "Ponedeljek: Zaprto\nTorek: 11:00 - 22:00\nSreda: 11:00 - 22:00\nČetrtek: 11:00 - 22:00\nPetek: 11:00 - 22:00\nSobota: 11:00 - 22:00\nNedelja: 11:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2761",
+  "name": "Kitajska restavracija Zlata srna",
+  "address": "Ulica Pohorskega bataljona 14, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.554491,
+  "longitude": 15.6193,
+  "meal_price": 8.34,
+  "subsidy_price": 3.15,
+  "opening_hours": "Med tednom: 10:30 - 22:00\nSobota: 10:30 - 22:00\nNedelja: 10:30 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2762",
+  "name": "Kitajska restavracija Zlata srna - DOSTAVA",
+  "address": "Ulica Pohorskega bataljona 14, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.554491,
+  "longitude": 15.6193,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 11:00 - 21:00\nSobota: 11:00 - 21:00\nNedelja: 11:00 - 21:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostava",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "1165",
+  "name": "Kitajska restavracija Zvezda",
+  "address": "Loška ulica 10, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.556693,
+  "longitude": 15.650972,
+  "meal_price": 8.69,
+  "subsidy_price": 3.5,
+  "opening_hours": "Ponedeljek: 10:00 - 21:00\nTorek: 10:00 - 21:00\nSreda: 10:00 - 21:00\nČetrtek: 10:00 - 21:00\nPetek: 10:00 - 21:00\nSobota: 11:00 - 22:00\nNedelja: 11:00 - 20:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2265",
+  "name": "Kitajska restavracja Cesarska hiša-DOSTAVA",
+  "address": "Ankaranska cesta 5B, 6000 Koper/Capodistria",
+  "city": "Koper",
+  "latitude": 45.541507,
+  "longitude": 13.735879,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 11:00 - 22:00\nSobota: 11:00 - 22:00\nNedelja: 11:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostava",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "1610",
+  "name": "Kitajski dvor",
+  "address": "Dunajska cesta 29, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.061737,
+  "longitude": 14.507618,
+  "meal_price": 8,
+  "subsidy_price": 2.81,
+  "opening_hours": "Ponedeljek: Zaprto\nTorek: 10:00 - 21:00\nSreda: 10:00 - 21:00\nČetrtek: 10:00 - 21:00\nPetek: 10:00 - 21:00\nSobota: 11:00 - 21:00\nNedelja: 11:00 - 21:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "1911",
+  "name": "Kitajski dvor",
+  "address": "Teharska cesta 35, 3000 Celje",
+  "city": "Celje",
+  "latitude": 46.231573,
+  "longitude": 15.276256,
+  "meal_price": 8,
+  "subsidy_price": 2.81,
+  "opening_hours": "Med tednom: 10:00 - 22:00\nSobota: 10:00 - 22:00\nNedelja: 10:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2117",
+  "name": "Kitajski dvor - dostava",
+  "address": "Dunajska cesta 29, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.062139,
+  "longitude": 14.507484,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Ponedeljek: Zaprto\nTorek: 10:00 - 21:00\nSreda: 10:00 - 21:00\nČetrtek: 10:00 - 21:00\nPetek: 10:00 - 21:00\nSobota: 11:00 - 21:00\nNedelja: 11:00 - 21:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostava",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "1164",
+  "name": "Kitajski dvor - DOSTAVA",
+  "address": "Teharska cesta 35, 3000 Celje",
+  "city": "Celje",
+  "latitude": 46.23141,
+  "longitude": 15.276144,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 10:00 - 22:00\nSobota: 10:00 - 22:00\nNedelja: 10:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostava",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "1838",
+  "name": "Kitajsko mesto",
+  "address": "Slamnikarjeva 1, 1230 Domžale",
+  "city": "Domžale",
+  "latitude": 46.138201,
+  "longitude": 14.596938,
+  "meal_price": 7.9,
+  "subsidy_price": 2.71,
+  "opening_hours": "Med tednom: 11:00 - 22:00\nSobota: 11:00 - 22:00\nNedelja: 11:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2772",
+  "name": "Kitajsko mesto - dostava",
+  "address": "Slamnikarjeva 1, 1230 Domžale",
+  "city": "Domžale",
+  "latitude": 46.138201,
+  "longitude": 14.596938,
+  "meal_price": 8.9,
+  "subsidy_price": 3.71,
+  "opening_hours": "Med tednom: 11:00 - 22:00\nSobota: 11:00 - 22:00\nNedelja: 11:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostava",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "1422",
+  "name": "Klopčič",
+  "address": "Litostrojska cesta 57, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.081614,
+  "longitude": 14.492358,
+  "meal_price": 7.5,
+  "subsidy_price": 2.31,
+  "opening_hours": "Med tednom: 08:00 - 14:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Solatni bar"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3140",
+  "name": "KLUBAR GASTROPUB",
+  "address": "Slovenski trg 7, 4000 Kranj",
+  "city": "Kranj",
+  "latitude": 46.242888,
+  "longitude": 14.355981,
+  "meal_price": 8,
+  "subsidy_price": 2.81,
+  "opening_hours": "Med tednom: 10:00 - 19:00\nSobota: 15:00 - 19:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3121",
+  "name": "Kozlovna Poštna",
+  "address": "Poštna ulica 12, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.558597,
+  "longitude": 15.644979,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Ponedeljek: 10:00 - 21:00\nTorek: 10:00 - 21:00\nSreda: 10:00 - 21:00\nČetrtek: 10:00 - 21:00\nPetek: 10:00 - 18:00\nSobota: 12:00 - 18:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2145",
+  "name": "Leonard",
+  "address": "Trg mladinskih delovnih brigad 12, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.047955,
+  "longitude": 14.496292,
+  "meal_price": 5.19,
+  "subsidy_price": 0,
+  "opening_hours": "Med tednom: 08:00 - 22:00\nSobota: 08:00 - 19:00\nNedelja: 08:00 - 19:00",
+  "notice": "dne 31.7.2026 bo lokal odprt do 17.00 ure",
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2844",
+  "name": "Leteča zvezda",
+  "address": "Kvedrova cesta 5a, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.070312,
+  "longitude": 14.541963,
+  "meal_price": 7.5,
+  "subsidy_price": 2.31,
+  "opening_hours": "Med tednom: 11:00 - 22:00\nSobota: 12:00 - 22:00\nNedelja: 12:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2726",
+  "name": "LIPCA - INDEKS",
+  "address": "Borštnikov trg 3a, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.047896,
+  "longitude": 14.498774,
+  "meal_price": 5.19,
+  "subsidy_price": 0,
+  "opening_hours": "Med tednom: 08:00 - 21:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3297",
+  "name": "Lokal P8",
+  "address": "Plemljeva 8, 1210 Ljubljana - Šentvid",
+  "city": "Ljubljana",
+  "latitude": 46.103792,
+  "longitude": 14.458945,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 10:00 - 21:00\nSobota: 10:00 - 21:00\nNedelja: 10:00 - 21:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 3
+ },
+ {
+  "id": "2331",
+  "name": "Loving Hut",
+  "address": "Gosposvetska cesta 43a, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.561508,
+  "longitude": 15.63406,
+  "meal_price": 8.02,
+  "subsidy_price": 2.83,
+  "opening_hours": "Med tednom: 11:00 - 19:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3322",
+  "name": "LUNCH BOX",
+  "address": "Gosposvetska cesta 19, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.560759,
+  "longitude": 15.63923,
+  "meal_price": 5.19,
+  "subsidy_price": 0,
+  "opening_hours": "Ponedeljek: 08:00 - 16:00\nTorek: 08:00 - 16:00\nSreda: 08:00 - 16:00\nČetrtek: 08:00 - 16:00\nPetek: 07:00 - 15:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3368",
+  "name": "MAGMAX",
+  "address": "Industrijska cesta 11, 5000 Nova Gorica",
+  "city": "Nova Gorica",
+  "latitude": 45.953111,
+  "longitude": 13.669412,
+  "meal_price": 8,
+  "subsidy_price": 2.81,
+  "opening_hours": "Med tednom: 11:00 - 15:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar",
+   "Dostop za invalide"
+  ],
+  "site_rating": null
+ },
+ {
+  "id": "3327",
+  "name": "MANGO SNACKS",
+  "address": "Gosposvetska cesta 83, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.562874,
+  "longitude": 15.627126,
+  "meal_price": 5.19,
+  "subsidy_price": 0,
+  "opening_hours": "Ponedeljek: 08:00 - 14:00\nTorek: 08:00 - 14:00\nSreda: 08:00 - 14:00\nČetrtek: 08:00 - 14:00\nPetek: 08:00 - 12:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3205",
+  "name": "MC PANDA",
+  "address": "Ulica Vita Kraigherja 5, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.55875,
+  "longitude": 15.650541,
+  "meal_price": 5.19,
+  "subsidy_price": 0,
+  "opening_hours": "Med tednom: 09:00 - 22:00\nSobota: 09:00 - 22:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3122",
+  "name": "McDonald s restavracija - Murska Sobota",
+  "address": "Nemčavci 1d, 9000 Murska Sobota",
+  "city": "Murska Sobota",
+  "latitude": 46.669498,
+  "longitude": 16.177526,
+  "meal_price": 7.8,
+  "subsidy_price": 2.61,
+  "opening_hours": "Med tednom: 08:00 - 23:59\nSobota: 08:00 - 23:59\nNedelja: 08:00 - 23:59",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "1182",
+  "name": "McDonald´s restavracija - Swaty",
+  "address": "Tržaška 6, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.541756,
+  "longitude": 15.64776,
+  "meal_price": 7.8,
+  "subsidy_price": 2.61,
+  "opening_hours": "Ponedeljek: 07:00 - 23:59\nTorek: 07:00 - 23:59\nSreda: 07:00 - 23:59\nČetrtek: 07:00 - 23:59\nPetek: 07:00 - 23:59\nSobota: 07:00 - 23:59\nNedelja: 07:00 - 23:59",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "1185",
+  "name": "McDonald´s restavracija Europark",
+  "address": "Pobreška 18, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.553815,
+  "longitude": 15.65149,
+  "meal_price": 7.8,
+  "subsidy_price": 2.61,
+  "opening_hours": "Ponedeljek: 09:00 - 21:00\nTorek: 09:00 - 21:00\nSreda: 09:00 - 21:00\nČetrtek: 09:00 - 21:00\nPetek: 09:00 - 21:00\nSobota: 08:00 - 21:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "1184",
+  "name": "McDonald´s restavracija Ptujska",
+  "address": "Ptujska 106, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.534907,
+  "longitude": 15.662209,
+  "meal_price": 7.8,
+  "subsidy_price": 2.61,
+  "opening_hours": "Med tednom: 07:00 - 23:59\nSobota: 07:00 - 23:59\nNedelja: 07:00 - 23:59",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3270",
+  "name": "McDonald´s restavracija Studenci",
+  "address": "Ulica Jožeta Košarja 2, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.531553,
+  "longitude": 15.677394,
+  "meal_price": 7.8,
+  "subsidy_price": 2.61,
+  "opening_hours": "Ponedeljek: 08:00 - 23:59\nTorek: 08:00 - 23:59\nSreda: 08:00 - 23:59\nČetrtek: 08:00 - 23:59\nPetek: 08:00 - 23:59\nSobota: 08:00 - 23:59\nNedelja: 08:00 - 23:59",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "1179",
+  "name": "McDonald´s restavracija Velenje",
+  "address": "Kidričeva 2b, 3320 Velenje",
+  "city": "Velenje",
+  "latitude": 46.359961,
+  "longitude": 15.119805,
+  "meal_price": 7.8,
+  "subsidy_price": 2.61,
+  "opening_hours": "Ponedeljek: 08:00 - 23:59\nTorek: 08:00 - 23:59\nSreda: 08:00 - 23:59\nČetrtek: 08:00 - 23:59\nPetek: 08:00 - 23:59\nSobota: 08:00 - 23:59\nNedelja: 08:00 - 23:59",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3326",
+  "name": "McDonald's Petrol Maribor",
+  "address": "Na Polju 24, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.533455,
+  "longitude": 15.699382,
+  "meal_price": 7.8,
+  "subsidy_price": 2.61,
+  "opening_hours": "Med tednom: 07:00 - 23:59\nSobota: 07:00 - 23:59\nNedelja: 07:00 - 23:59",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 3
+ },
+ {
+  "id": "1380",
+  "name": "McDonald's restavracij - Odiseja",
+  "address": "Moskovska ulica 11, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.06947,
+  "longitude": 14.547376,
+  "meal_price": 7.8,
+  "subsidy_price": 2.61,
+  "opening_hours": "Med tednom: 07:00 - 23:59\nSobota: 07:00 - 23:59\nNedelja: 07:00 - 23:59",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3107",
+  "name": "McDonald's restavracija - ALEJA",
+  "address": "Rakuševa ulica 1, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.07829,
+  "longitude": 14.483678,
+  "meal_price": 7.8,
+  "subsidy_price": 2.61,
+  "opening_hours": "Med tednom: 10:00 - 22:00\nSobota: 10:00 - 22:00\nNedelja: 11:00 - 17:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3246",
+  "name": "McDonald's restavracija - Barje jug",
+  "address": "Cesta dveh cesarjev 73, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.028873,
+  "longitude": 14.478429,
+  "meal_price": 7.8,
+  "subsidy_price": 2.61,
+  "opening_hours": "Ponedeljek: 07:00 - 23:00\nTorek: 07:00 - 23:00\nSreda: 07:00 - 23:00\nČetrtek: 07:00 - 23:00\nPetek: 07:00 - 23:59\nSobota: 07:00 - 23:59\nNedelja: 07:00 - 23:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3247",
+  "name": "McDonald's restavracija - Barje sever",
+  "address": "Cesta dveh cesarjev 71, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.029154,
+  "longitude": 14.481882,
+  "meal_price": 7.8,
+  "subsidy_price": 2.61,
+  "opening_hours": "Ponedeljek: 07:00 - 23:00\nTorek: 07:00 - 23:00\nSreda: 07:00 - 23:00\nČetrtek: 07:00 - 23:00\nPetek: 07:00 - 23:59\nSobota: 07:00 - 23:59\nNedelja: 07:00 - 23:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3189",
+  "name": "McDonald's restavracija - Cankarjeva",
+  "address": "Cankarjeva cesta 4, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.052715,
+  "longitude": 14.502896,
+  "meal_price": 7.8,
+  "subsidy_price": 2.61,
+  "opening_hours": "Med tednom: 07:00 - 23:00\nSobota: 07:00 - 23:00\nNedelja: 07:00 - 23:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2868",
+  "name": "McDonald's restavracija - Celje Drive",
+  "address": "Mariborska cesta 164, 3000 Celje",
+  "city": "Celje",
+  "latitude": 46.247996,
+  "longitude": 15.280446,
+  "meal_price": 7.8,
+  "subsidy_price": 2.61,
+  "opening_hours": "Ponedeljek: 07:00 - 23:59\nTorek: 07:00 - 23:59\nSreda: 07:00 - 23:59\nČetrtek: 07:00 - 23:59\nPetek: 07:00 - 23:59\nSobota: 07:00 - 23:59\nNedelja: 07:00 - 23:59",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 3
+ },
+ {
+  "id": "1341",
+  "name": "McDonald's restavracija - Celovška",
+  "address": "Celovška cesta 170, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.074961,
+  "longitude": 14.484671,
+  "meal_price": 7.8,
+  "subsidy_price": 2.61,
+  "opening_hours": "Med tednom: 08:00 - 23:59\nSobota: 08:00 - 23:59\nNedelja: 09:00 - 23:59",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "1377",
+  "name": "McDonald's restavracija - Center",
+  "address": "Čopova 14, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.052001,
+  "longitude": 14.504882,
+  "meal_price": 7.8,
+  "subsidy_price": 2.61,
+  "opening_hours": "Med tednom: 08:00 - 23:59\nSobota: 08:00 - 23:59\nNedelja: 08:00 - 23:59",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "1342",
+  "name": "McDonald's restavracija - Domžale",
+  "address": "Breznikova 15, 1230 Domžale",
+  "city": "Domžale",
+  "latitude": 46.14684,
+  "longitude": 14.597511,
+  "meal_price": 7.8,
+  "subsidy_price": 2.61,
+  "opening_hours": "Med tednom: 09:00 - 23:59\nSobota: 09:00 - 23:59\nNedelja: 09:00 - 23:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2866",
+  "name": "McDonald's restavracija - Kranj",
+  "address": "Cesta Boštjana Hladnika 7, 4000 Kranj",
+  "city": "Kranj",
+  "latitude": 46.232304,
+  "longitude": 14.369412,
+  "meal_price": 7.8,
+  "subsidy_price": 2.61,
+  "opening_hours": "Ponedeljek: 08:00 - 23:59\nTorek: 08:00 - 23:59\nSreda: 08:00 - 23:59\nČetrtek: 08:00 - 23:59\nPetek: 08:00 - 23:59\nSobota: 08:00 - 23:59\nNedelja: 08:00 - 23:59",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3279",
+  "name": "McDonald's restavracija - Lesce",
+  "address": "Hraška cesta 21a, 4248 Lesce",
+  "city": "Lesce",
+  "latitude": 46.361208,
+  "longitude": 14.160096,
+  "meal_price": 7.8,
+  "subsidy_price": 2.61,
+  "opening_hours": "Med tednom: 07:00 - 23:59\nSobota: 07:00 - 23:59\nNedelja: 07:00 - 23:59",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 3
+ },
+ {
+  "id": "1381",
+  "name": "McDonald's restavracija - Novo mesto",
+  "address": "Ljubljanska 24, 8000 Novo mesto",
+  "city": "Novo mesto",
+  "latitude": 45.814805,
+  "longitude": 15.154172,
+  "meal_price": 7.8,
+  "subsidy_price": 2.61,
+  "opening_hours": "Med tednom: 08:00 - 23:59\nSobota: 08:00 - 23:59\nNedelja: 08:00 - 23:59",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "1536",
+  "name": "McDonald's restavracija - Rudnik",
+  "address": "Premrlova ulica 12, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.017517,
+  "longitude": 14.530072,
+  "meal_price": 7.8,
+  "subsidy_price": 2.61,
+  "opening_hours": "Med tednom: 08:00 - 23:59\nSobota: 08:00 - 23:59\nNedelja: 08:00 - 23:59",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3188",
+  "name": "McDonald's restavracija - Supernova Rudnik",
+  "address": "Jurčkova cesta 223, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.021839,
+  "longitude": 14.535914,
+  "meal_price": 7.8,
+  "subsidy_price": 2.61,
+  "opening_hours": "Med tednom: 08:00 - 22:00\nSobota: 08:00 - 22:00\nNedelja: 08:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3164",
+  "name": "McDonald's restavracija - Šmartinka Drive",
+  "address": "Šmartinska 147, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.069479,
+  "longitude": 14.540809,
+  "meal_price": 7.8,
+  "subsidy_price": 2.61,
+  "opening_hours": "Med tednom: 08:00 - 22:00\nSobota: 08:00 - 22:00\nNedelja: 08:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "1378",
+  "name": "McDonald's restavracija - Žito",
+  "address": "Moskovska ulica 1, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.069478,
+  "longitude": 14.547387,
+  "meal_price": 7.8,
+  "subsidy_price": 2.61,
+  "opening_hours": "Med tednom: 08:00 - 22:00\nSobota: 08:00 - 22:00\nNedelja: 08:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2253",
+  "name": "McDonald's restavracija Koper",
+  "address": "Ankaranska 4, 6000 Koper/Capodistria",
+  "city": "Koper",
+  "latitude": 45.541492,
+  "longitude": 13.73655,
+  "meal_price": 7.8,
+  "subsidy_price": 2.61,
+  "opening_hours": "Med tednom: 08:00 - 23:59\nSobota: 08:00 - 23:59\nNedelja: 08:00 - 23:59",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2815",
+  "name": "McDonald's restavracija Nova Gorica",
+  "address": "Vojkova cesta 111, 5000 Nova Gorica",
+  "city": "Nova Gorica",
+  "latitude": 45.954703,
+  "longitude": 13.653513,
+  "meal_price": 7.8,
+  "subsidy_price": 2.61,
+  "opening_hours": "Med tednom: 08:00 - 23:59\nSobota: 08:00 - 23:59\nNedelja: 09:00 - 23:59",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3330",
+  "name": "McDonald's Supernova Koper",
+  "address": "Dolinska cesta 1a, 6000 Koper/Capodistria",
+  "city": "Koper",
+  "latitude": 45.530774,
+  "longitude": 13.731828,
+  "meal_price": 7.8,
+  "subsidy_price": 2.61,
+  "opening_hours": "Ponedeljek: 08:00 - 23:00\nTorek: 08:00 - 23:00\nSreda: 08:00 - 23:00\nČetrtek: 08:00 - 23:00\nPetek: 08:00 - 00:00\nSobota: 08:00 - 00:00\nNedelja: 08:00 - 23:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 3
+ },
+ {
+  "id": "2648",
+  "name": "ME GUSTA",
+  "address": "Jezdarska ulica 8b (vhod v lokal iz Žitne ulice 4), 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.551372,
+  "longitude": 15.640921,
+  "meal_price": 7,
+  "subsidy_price": 1.81,
+  "opening_hours": "Med tednom: 08:00 - 18:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": "Skrajšan delovni čas med poletjem: od 13.07.2026 do 31.08.2026 od 08.00 do 16.00 ure!",
+  "features": [
+   "Brezmesno"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3138",
+  "name": "Meating pub & restavracija",
+  "address": "Mlinska ulica 2, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.560361,
+  "longitude": 15.655375,
+  "meal_price": 8.6,
+  "subsidy_price": 3.41,
+  "opening_hours": "Med tednom: 10:00 - 16:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno"
+  ],
+  "site_rating": 3
+ },
+ {
+  "id": "1407",
+  "name": "Mehiška restavracija Imperio mexicano",
+  "address": "Moskovska ulica 4, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.070237,
+  "longitude": 14.549039,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 10:00 - 21:00\nSobota: 10:00 - 21:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2023",
+  "name": "Menza BF",
+  "address": "Večna pot 111, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.051236,
+  "longitude": 14.469969,
+  "meal_price": 8.2,
+  "subsidy_price": 3.01,
+  "opening_hours": "Med tednom: 10:30 - 14:30\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2521",
+  "name": "Menza FE",
+  "address": "Tržaška cesta 25, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.044899,
+  "longitude": 14.489231,
+  "meal_price": 8.2,
+  "subsidy_price": 3.01,
+  "opening_hours": "Med tednom: 10:30 - 14:30\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2360",
+  "name": "MM PANDA",
+  "address": "Koroška cesta 9, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.557664,
+  "longitude": 15.643214,
+  "meal_price": 7.24,
+  "subsidy_price": 2.05,
+  "opening_hours": "Ponedeljek: 09:00 - 23:00\nTorek: 09:00 - 23:00\nSreda: 09:00 - 23:00\nČetrtek: 09:00 - 23:00\nPetek: 09:00 - 23:59\nSobota: 15:00 - 23:59\nNedelja: 15:00 - 23:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3357",
+  "name": "Moj cmok",
+  "address": "Pogačarjev trg 1, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.051198,
+  "longitude": 14.508511,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Ponedeljek: Zaprto\nTorek: 10:00 - 15:00\nSreda: 10:00 - 15:00\nČetrtek: 10:00 - 15:00\nPetek: 10:00 - 15:00\nSobota: 10:00 - 15:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3362",
+  "name": "Moji štruklji BTC",
+  "address": "Italijanska ulica 7, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.063985,
+  "longitude": 14.5444,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Ponedeljek: 14:00 - 19:30\nTorek: 14:00 - 19:30\nSreda: 14:00 - 19:30\nČetrtek: 14:00 - 19:30\nPetek: 12:00 - 19:30\nSobota: 09:00 - 13:00\nNedelja: Zaprto",
+  "notice": "V času od 08.06. do 16.08.2026 bo lokal odprt od PON. do PET. od 12.30. do 16.30, v SOB. od 09.00 do 13.00",
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3290",
+  "name": "Namaste Grab & Go",
+  "address": "Tomšičeva 2, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.052288,
+  "longitude": 14.502739,
+  "meal_price": 7,
+  "subsidy_price": 1.81,
+  "opening_hours": "Med tednom: 10:00 - 18:00\nSobota: 10:00 - 18:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2828",
+  "name": "Namaste Indian Express",
+  "address": "Trubarjeva ulica 31, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.052474,
+  "longitude": 14.509783,
+  "meal_price": 8,
+  "subsidy_price": 2.81,
+  "opening_hours": "Med tednom: 11:00 - 19:00\nSobota: 11:00 - 19:00\nNedelja: 11:00 - 19:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2249",
+  "name": "News Cafe",
+  "address": "Obala 4F, 6320 Portorož/Portorose",
+  "city": "Portorož",
+  "latitude": 45.514839,
+  "longitude": 13.571944,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 12:00 - 20:00\nSobota: 12:00 - 20:00\nNedelja: 12:00 - 20:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3359",
+  "name": "Niam niam garden",
+  "address": "Trubarjeva cesta 50, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.052298,
+  "longitude": 14.512259,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Ponedeljek: Zaprto\nTorek: 12:00 - 16:00\nSreda: 12:00 - 16:00\nČetrtek: 12:00 - 16:00\nPetek: 12:00 - 16:00\nSobota: 12:00 - 16:00\nNedelja: 12:00 - 16:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3167",
+  "name": "NJAMY - dostava",
+  "address": "Šorlijeva 12, 4000 Kranj",
+  "city": "Kranj",
+  "latitude": 46.251947,
+  "longitude": 14.35727,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 09:00 - 22:00\nSobota: 09:00 - 22:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostava",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3229",
+  "name": "Norma 23",
+  "address": "Adamič-Lundrovo nabrežje 1, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.051056,
+  "longitude": 14.506566,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Ponedeljek: 09:00 - 19:00\nTorek: 09:00 - 19:00\nSreda: 09:00 - 19:00\nČetrtek: 09:00 - 19:00\nPetek: 09:00 - 16:00\nSobota: 09:00 - 19:00\nNedelja: 09:00 - 17:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Celiakiji prijazni obroki",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2732",
+  "name": "Okrepčevalnica - Diner kino gledališče Bežigrad",
+  "address": "Linhartova 11, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.064646,
+  "longitude": 14.510322,
+  "meal_price": 8.62,
+  "subsidy_price": 3.43,
+  "opening_hours": "Med tednom: 10:00 - 21:00\nSobota: 15:00 - 21:00\nNedelja: 15:00 - 21:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "1683",
+  "name": "Okrepčevalnica - pizzerija Maks",
+  "address": "Dunajska cesta 111, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.074506,
+  "longitude": 14.511379,
+  "meal_price": 7.9,
+  "subsidy_price": 2.71,
+  "opening_hours": "Med tednom: 09:00 - 19:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": "V obdobju od 18.8. do 29.8.25 bo kuhinja obratovala le do 15.00 ure",
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3397",
+  "name": "Okrepčevalnica \"Medicinska fakulteta\"",
+  "address": "Taborska ulica 8, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.554862,
+  "longitude": 15.646944,
+  "meal_price": 5.19,
+  "subsidy_price": 0,
+  "opening_hours": "Ponedeljek: 08:00 - 12:00\nTorek: 08:00 - 12:00\nSreda: 08:00 - 12:00\nČetrtek: 08:00 - 12:00\nPetek: 08:00 - 12:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Dostop za invalide"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2944",
+  "name": "Okrepčevalnica Ajda",
+  "address": "Ajdovščina 4, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.053364,
+  "longitude": 14.505204,
+  "meal_price": 8.14,
+  "subsidy_price": 2.95,
+  "opening_hours": "Med tednom: 09:30 - 20:00\nSobota: 11:00 - 19:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2347",
+  "name": "Okrepčevalnica FERI",
+  "address": "Smetanova ulica 17, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.559488,
+  "longitude": 15.639272,
+  "meal_price": 5.19,
+  "subsidy_price": 0,
+  "opening_hours": "Med tednom: 08:00 - 12:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3342",
+  "name": "Okrepčevalnica HAM-HAM",
+  "address": "Celjska cesta 3, 3252 Rogatec",
+  "city": "Rogatec",
+  "latitude": 46.224141,
+  "longitude": 15.700568,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 10:00 - 22:00\nSobota: 10:00 - 22:00\nNedelja: 11:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 3
+ },
+ {
+  "id": "2652",
+  "name": "Okrepčevalnica IZUM",
+  "address": "Prešernova 17, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.563605,
+  "longitude": 15.651434,
+  "meal_price": 8.14,
+  "subsidy_price": 2.95,
+  "opening_hours": "Med tednom: 10:00 - 14:30\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3200",
+  "name": "Okrepčevalnica Marijanca",
+  "address": "Večna pot 113, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.051477,
+  "longitude": 14.480277,
+  "meal_price": 6.76,
+  "subsidy_price": 1.57,
+  "opening_hours": "Med tednom: 10:00 - 15:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3333",
+  "name": "OKREPČEVALNICA PINELA",
+  "address": "Obala 99, 6320 Portorož/Portorose",
+  "city": "Portorož",
+  "latitude": 45.506889,
+  "longitude": 13.600407,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 10:00 - 16:00\nSobota: 10:00 - 16:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3372",
+  "name": "Okrepčevalnica Rock Cafe",
+  "address": "Ukmarjev trg 5, 6000 Koper/Capodistria",
+  "city": "Koper",
+  "latitude": 45.54894,
+  "longitude": 13.725289,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 10:00 - 22:00\nSobota: 10:00 - 22:00\nNedelja: 10:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "1817",
+  "name": "OLA ENKA",
+  "address": "Baragova ulica 16, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.075976,
+  "longitude": 14.517009,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 08:00 - 17:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3296",
+  "name": "O-LALA",
+  "address": "Tržaška cesta 18, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.045694,
+  "longitude": 14.489593,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 11:00 - 22:00\nSobota: Zaprto\nNedelja: 12:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3318",
+  "name": "ON THAI Rudnik",
+  "address": "Jurčkova cesta 225, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.020267,
+  "longitude": 14.536676,
+  "meal_price": 8.52,
+  "subsidy_price": 3.33,
+  "opening_hours": "Med tednom: 11:00 - 18:00\nSobota: 11:00 - 18:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3319",
+  "name": "ON THAI Šiška",
+  "address": "Cesta ljubljanske brigade 33, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.088354,
+  "longitude": 14.477177,
+  "meal_price": 8.52,
+  "subsidy_price": 3.33,
+  "opening_hours": "Med tednom: 11:00 - 19:30\nSobota: 11:00 - 18:30\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3169",
+  "name": "ORIENT EXPRESS, samopostrežna restavracija",
+  "address": "Kolodvorska 11, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.056613,
+  "longitude": 14.509415,
+  "meal_price": 8.1,
+  "subsidy_price": 2.91,
+  "opening_hours": "Med tednom: 10:00 - 14:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3035",
+  "name": "Oštarija City center Celje",
+  "address": "Mariborska cesta 100, 3000 Celje",
+  "city": "Celje",
+  "latitude": 46.241903,
+  "longitude": 15.277407,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 11:00 - 20:30\nSobota: 11:00 - 20:30\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "1471",
+  "name": "Oštarija Rudolfswerth",
+  "address": "Kandijska cesta 35, 8000 Novo mesto",
+  "city": "Novo mesto",
+  "latitude": 45.800214,
+  "longitude": 15.174038,
+  "meal_price": 8.4,
+  "subsidy_price": 3.21,
+  "opening_hours": "Med tednom: 10:00 - 14:00\nSobota: 10:00 - 14:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 3
+ },
+ {
+  "id": "3298",
+  "name": "P8 - dostava",
+  "address": "Plemeljeva 8, 1210 Ljubljana - Šentvid",
+  "city": "Ljubljana",
+  "latitude": 46.103792,
+  "longitude": 14.458945,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 10:00 - 21:00\nSobota: 10:00 - 21:00\nNedelja: 10:00 - 21:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostava",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2753",
+  "name": "Palača SMELT",
+  "address": "Dunajska 160, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.082788,
+  "longitude": 14.513967,
+  "meal_price": 7.96,
+  "subsidy_price": 2.77,
+  "opening_hours": "Med tednom: 11:00 - 14:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2863",
+  "name": "Papagayo",
+  "address": "Gosposka ulica 6, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.557861,
+  "longitude": 15.646434,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Ponedeljek: 11:00 - 21:30\nTorek: 11:00 - 21:30\nSreda: 11:00 - 21:30\nČetrtek: 11:00 - 21:30\nPetek: 11:00 - 22:00\nSobota: 11:00 - 22:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2623",
+  "name": "PE Dijaški dom Celje",
+  "address": "Ljubljanska cesta 21, 3000 Celje",
+  "city": "Celje",
+  "latitude": 46.232765,
+  "longitude": 15.256535,
+  "meal_price": 8,
+  "subsidy_price": 2.81,
+  "opening_hours": "Ponedeljek: 11:00 - 15:00\nTorek: 11:00 - 15:00\nSreda: 11:00 - 15:00\nČetrtek: 11:00 - 15:00\nPetek: 11:00 - 15:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Javni zavod"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3392",
+  "name": "Pe Hiša kruha junior",
+  "address": "Tyrševa 2, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.560519,
+  "longitude": 15.646765,
+  "meal_price": 5.19,
+  "subsidy_price": 0,
+  "opening_hours": "Ponedeljek: 09:00 - 15:00\nTorek: 09:00 - 15:00\nSreda: 09:00 - 15:00\nČetrtek: 09:00 - 15:00\nPetek: 09:00 - 15:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Dostop za invalide"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3390",
+  "name": "PE LUCKY STREET FOOD",
+  "address": "Vetrinjska ulica 9a, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.557787,
+  "longitude": 15.647978,
+  "meal_price": 6.2,
+  "subsidy_price": 1.01,
+  "opening_hours": "Ponedeljek: 10:00 - 18:00\nTorek: 10:00 - 18:00\nSreda: 10:00 - 18:00\nČetrtek: 10:00 - 18:00\nPetek: 10:00 - 18:00\nSobota: 11:00 - 18:00\nNedelja: Zaprto",
+  "notice": "15/2",
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "1424",
+  "name": "PE Marjetica",
+  "address": "Tobačna ulica 5, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.04933,
+  "longitude": 14.49386,
+  "meal_price": 7.58,
+  "subsidy_price": 2.39,
+  "opening_hours": "Med tednom: 10:00 - 15:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3346",
+  "name": "PE Melty",
+  "address": "Kardeljeva ploščad 5, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.074128,
+  "longitude": 14.514221,
+  "meal_price": 5.19,
+  "subsidy_price": 0,
+  "opening_hours": "Ponedeljek: 07:00 - 17:00\nTorek: 07:00 - 17:00\nSreda: 07:00 - 17:00\nČetrtek: 07:00 - 17:00\nPetek: 07:00 - 15:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3353",
+  "name": "Picerija Barjan",
+  "address": "Cesta v mestni log 55, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.036154,
+  "longitude": 14.489593,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 10:00 - 16:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide"
+  ],
+  "site_rating": 3
+ },
+ {
+  "id": "2243",
+  "name": "PICERIJA CITYBURGER",
+  "address": "Ankaranska 7, 6000 Koper/Capodistria",
+  "city": "Koper",
+  "latitude": 45.545824,
+  "longitude": 13.740398,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 12:00 - 21:00\nSobota: 12:00 - 21:00\nNedelja: 12:00 - 21:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Študentske ugodnosti",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2551",
+  "name": "Picerija ERA",
+  "address": "Pod Trško goro 83, 8000 Novo mesto",
+  "city": "Novo mesto",
+  "latitude": 45.822527,
+  "longitude": 15.184241,
+  "meal_price": 8.8,
+  "subsidy_price": 3.61,
+  "opening_hours": "Med tednom: 09:00 - 21:00\nSobota: 09:00 - 21:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3142",
+  "name": "Picerija in pivnica KUFR",
+  "address": "Glavni trg 43, 2380 Slovenj Gradec",
+  "city": "Slovenj Gradec",
+  "latitude": 46.508474,
+  "longitude": 15.078219,
+  "meal_price": 8,
+  "subsidy_price": 2.81,
+  "opening_hours": "Med tednom: 10:00 - 21:00\nSobota: 10:00 - 21:00\nNedelja: 10:00 - 21:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3281",
+  "name": "Picerija Pavon",
+  "address": "Njegoševa ulica 6k, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.053443,
+  "longitude": 14.519521,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 10:00 - 15:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar",
+   "Dostop za invalide"
+  ],
+  "site_rating": null
+ },
+ {
+  "id": "1794",
+  "name": "Picestavracija Boccaccio",
+  "address": "Celovška cesta 249, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.080806,
+  "longitude": 14.478609,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 12:00 - 20:00\nSobota: 12:00 - 20:00\nNedelja: 12:00 - 20:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Pizza",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3361",
+  "name": "Pisana skleda",
+  "address": "Zemljemerska ulica 7, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.047347,
+  "longitude": 14.517206,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 11:00 - 15:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2595",
+  "name": "Pizza SALAMON - dostava",
+  "address": "Vilharjeva 43, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.030071,
+  "longitude": 14.532449,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 09:00 - 21:00\nSobota: 10:00 - 21:00\nNedelja: 10:00 - 21:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostava",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2308",
+  "name": "Pizzeria Briksen",
+  "address": "Ljubljanska cesta 5, 4260 Bled",
+  "city": "Bled",
+  "latitude": 46.368334,
+  "longitude": 14.111119,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 11:00 - 21:00\nSobota: 11:00 - 21:00\nNedelja: 11:00 - 21:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3295",
+  "name": "Pizzeria Favola",
+  "address": "Dunajska cesta 129, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.077594,
+  "longitude": 14.5119,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 12:30 - 18:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": "dne 31.12.25 bo lokal odprt do 14.00",
+  "features": [
+   "Dostop za invalide",
+   "Celiakiji prijazni obroki"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "1441",
+  "name": "Pizzeria FoculuS",
+  "address": "Gregorčičeva ulica 3, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.047926,
+  "longitude": 14.502138,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 11:00 - 18:00\nSobota: 11:00 - 18:00\nNedelja: 11:00 - 18:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar",
+   "Študentske ugodnosti",
+   "Celiakiji prijazni obroki",
+   "Pizza",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2284",
+  "name": "Pizzeria Fontana",
+  "address": "Dalmatinova ulica 2, 8270 Krško",
+  "city": "Krško",
+  "latitude": 45.963862,
+  "longitude": 15.486192,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 09:00 - 22:00\nSobota: 11:00 - 22:00\nNedelja: 12:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3388",
+  "name": "Pizzeria Gusto",
+  "address": "Trg osvobodilne fronte 14, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.057446,
+  "longitude": 14.508947,
+  "meal_price": 8.99,
+  "subsidy_price": 3.8,
+  "opening_hours": "Med tednom: 14:00 - 19:00\nSobota: 14:00 - 19:00\nNedelja: 14:00 - 19:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3174",
+  "name": "Pizzeria in oštarija Chianti",
+  "address": "Rakuševa cesta 1, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.07829,
+  "longitude": 14.483678,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 11:00 - 20:00\nSobota: 16:00 - 20:00\nNedelja: 15:00 - 19:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "1103",
+  "name": "Pizzeria in špageteria Al Capone",
+  "address": "Pobreška cesta 18, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.553751,
+  "longitude": 15.651964,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 09:00 - 21:00\nSobota: 09:00 - 21:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 3
+ },
+ {
+  "id": "1305",
+  "name": "Pizzeria in špagetteria Cubus",
+  "address": "Podbevškova ulica 11, 8000 Novo mesto",
+  "city": "Novo mesto",
+  "latitude": 45.804309,
+  "longitude": 15.196019,
+  "meal_price": 7.6,
+  "subsidy_price": 2.41,
+  "opening_hours": "Med tednom: 09:00 - 21:30\nSobota: 12:00 - 21:30\nNedelja: 12:00 - 21:30",
+  "notice": null,
+  "features": [
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "1423",
+  "name": "Pizzeria Laterna",
+  "address": "Tržaška 79a, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.042523,
+  "longitude": 14.479298,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 10:00 - 21:30\nSobota: 12:30 - 21:00\nNedelja: 12:30 - 20:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3309",
+  "name": "Pizzeria Oliva",
+  "address": "Litijska cesta 38, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.047074,
+  "longitude": 14.544928,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 11:30 - 20:00\nSobota: 13:30 - 20:00\nNedelja: 12:30 - 20:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2165",
+  "name": "Pizzeria Osmica",
+  "address": "Nazorjeva ulica 8, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.05273,
+  "longitude": 14.504587,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 11:00 - 21:00\nSobota: 12:00 - 21:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Študentske ugodnosti",
+   "Pizza",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2375",
+  "name": "Pizzeria Parma",
+  "address": "Trg republike 2, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.05005,
+  "longitude": 14.500465,
+  "meal_price": 8.8,
+  "subsidy_price": 3.61,
+  "opening_hours": "Med tednom: 11:00 - 21:00\nSobota: 11:00 - 21:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Študentske ugodnosti",
+   "Celiakiji prijazni obroki",
+   "Pizza",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "1335",
+  "name": "Pizzeria Šestinka",
+  "address": "Miklošičeva cesta 22, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.054449,
+  "longitude": 14.507249,
+  "meal_price": 5.19,
+  "subsidy_price": 0,
+  "opening_hours": "Med tednom: 10:00 - 00:00\nSobota: 12:00 - 00:00\nNedelja: 12:00 - 00:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Pizza",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "1031",
+  "name": "Pizzerija Atrij d.o.o.",
+  "address": "Čevljarska 8, 6000 Koper/Capodistria",
+  "city": "Koper",
+  "latitude": 45.547525,
+  "longitude": 13.729441,
+  "meal_price": 8.42,
+  "subsidy_price": 3.23,
+  "opening_hours": "Med tednom: 11:00 - 21:00\nSobota: 11:00 - 21:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "1716",
+  "name": "Pizzerija Dimnik",
+  "address": "Obrtniška cesta 1, 1420 Trbovlje",
+  "city": "Trbovlje",
+  "latitude": 46.154984,
+  "longitude": 15.05118,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 09:00 - 20:00\nSobota: 12:00 - 20:00\nNedelja: 17:00 - 21:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "1717",
+  "name": "Pizzerija Dimnik - dostava",
+  "address": "Obrtniška cesta 1, 1420 Trbovlje",
+  "city": "Trbovlje",
+  "latitude": 46.154984,
+  "longitude": 15.05118,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 09:00 - 20:00\nSobota: 12:00 - 20:00\nNedelja: 17:00 - 21:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostava",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "1413",
+  "name": "Pizzerija in okrepčevalnica KONDOR",
+  "address": "Cesta v Mestni log 55, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.036678,
+  "longitude": 14.489586,
+  "meal_price": 8.5,
+  "subsidy_price": 3.31,
+  "opening_hours": "Ponedeljek: 10:00 - 17:00\nTorek: 10:00 - 17:00\nSreda: 10:00 - 17:00\nČetrtek: 10:00 - 17:00\nPetek: 10:00 - 17:00\nSobota: 10:00 - 15:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3116",
+  "name": "Pizzerija in špageterija Alcapone",
+  "address": "Moskovska ulica 4, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.068108,
+  "longitude": 14.542046,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 11:00 - 20:00\nSobota: 11:00 - 20:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 3
+ },
+ {
+  "id": "1176",
+  "name": "Pizzerija Velun",
+  "address": "Šalek 24 a, 3320 Velenje",
+  "city": "Velenje",
+  "latitude": 46.362191,
+  "longitude": 15.125862,
+  "meal_price": 8.2,
+  "subsidy_price": 3.01,
+  "opening_hours": "Med tednom: 11:00 - 22:00\nSobota: 12:00 - 22:00\nNedelja: 12:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3360",
+  "name": "Prfect Meals - dostava",
+  "address": "Študljanska 20, 1230 Domžale",
+  "city": "Domžale",
+  "latitude": 46.126047,
+  "longitude": 14.600046,
+  "meal_price": 7.9,
+  "subsidy_price": 2.71,
+  "opening_hours": "Med tednom: 11:00 - 15:00\nSobota: 11:00 - 15:00\nNedelja: 11:00 - 15:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostava",
+   "Celiakiji prijazni obroki",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": null
+ },
+ {
+  "id": "1265",
+  "name": "Prometna šola Maribor",
+  "address": "Preradovičeva ulica 33, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.553867,
+  "longitude": 15.624584,
+  "meal_price": 7,
+  "subsidy_price": 1.81,
+  "opening_hours": "Ponedeljek: 10:30 - 16:00\nTorek: 10:30 - 16:00\nSreda: 10:30 - 16:00\nČetrtek: 10:30 - 16:00\nPetek: 10:30 - 15:30\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Celiakiji prijazni obroki",
+   "Javni zavod"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3364",
+  "name": "Pr'picopeku",
+  "address": "Rimska cesta 17, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.047555,
+  "longitude": 14.499063,
+  "meal_price": 7.02,
+  "subsidy_price": 1.83,
+  "opening_hours": "Ponedeljek: Zaprto\nTorek: 11:30 - 22:30\nSreda: 11:30 - 22:30\nČetrtek: 11:30 - 22:30\nPetek: 11:30 - 22:30\nSobota: 17:00 - 22:30\nNedelja: Zaprto",
+  "notice": "Lokal 25.8.2026 obratuje od 15.00 do 22.30",
+  "features": [
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2651",
+  "name": "Q TABOR",
+  "address": "Gorkega ulica 45, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.549958,
+  "longitude": 15.638503,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Ponedeljek: 08:00 - 21:00\nTorek: 08:00 - 21:00\nSreda: 08:00 - 21:00\nČetrtek: 08:00 - 21:00\nPetek: 08:00 - 21:00\nSobota: 08:00 - 21:00\nNedelja: 08:00 - 20:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3344",
+  "name": "Restavracija & pub GOLD PUB",
+  "address": "koroška cesta 61, 2360 Radlje ob Dravi",
+  "city": "Radlje ob Dravi",
+  "latitude": 46.615453,
+  "longitude": 15.212909,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 09:00 - 22:00\nSobota: 12:00 - 22:00\nNedelja: 12:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2187",
+  "name": "Restavracija 123 DSU",
+  "address": "Litostrojska 54, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.082321,
+  "longitude": 14.496419,
+  "meal_price": 6.8,
+  "subsidy_price": 1.61,
+  "opening_hours": "Med tednom: 10:00 - 14:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Solatni bar",
+   "Študentske ugodnosti"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2528",
+  "name": "Restavracija 123 Mega center 2",
+  "address": "Verovškova ulica 55a, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.063855,
+  "longitude": 14.495797,
+  "meal_price": 6.8,
+  "subsidy_price": 1.61,
+  "opening_hours": "Med tednom: 10:00 - 14:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Solatni bar",
+   "Dostop za invalide",
+   "Študentske ugodnosti"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3339",
+  "name": "Restavracija 123 Pristan Koper",
+  "address": "Vojkovo nabrežje 32, 6000 Koper/Capodistria",
+  "city": "Koper",
+  "latitude": 45.548204,
+  "longitude": 13.737768,
+  "meal_price": 6.8,
+  "subsidy_price": 1.61,
+  "opening_hours": "Med tednom: 10:00 - 14:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar",
+   "Študentske ugodnosti"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2164",
+  "name": "Restavracija Allegria",
+  "address": "Nazorjeva ulica 8, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.05273,
+  "longitude": 14.504587,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 11:00 - 21:00\nSobota: 12:00 - 21:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Študentske ugodnosti",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2501",
+  "name": "Restavracija Ancora",
+  "address": "Jurčičeva ulica 7, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.559191,
+  "longitude": 15.647374,
+  "meal_price": 8.72,
+  "subsidy_price": 3.53,
+  "opening_hours": "Med tednom: 10:00 - 21:00\nSobota: 11:00 - 21:00\nNedelja: 16:00 - 21:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Prava izbira",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2703",
+  "name": "Restavracija Azija",
+  "address": "Ptujska cesta 131 , 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.531126,
+  "longitude": 15.670116,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Ponedeljek: 11:00 - 21:00\nTorek: 11:00 - 21:00\nSreda: 11:00 - 21:00\nČetrtek: 11:00 - 21:00\nPetek: 12:00 - 21:00\nSobota: 12:00 - 21:00\nNedelja: 12:00 - 21:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2527",
+  "name": "Restavracija Brejk",
+  "address": "Dunajska cesta 22, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.062035,
+  "longitude": 14.509368,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 10:30 - 15:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2234",
+  "name": "Restavracija Eat Smart 1",
+  "address": "Koroška cesta 46, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.559488,
+  "longitude": 15.639272,
+  "meal_price": 8.19,
+  "subsidy_price": 3,
+  "opening_hours": "Med tednom: 10:00 - 15:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Prava izbira"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3232",
+  "name": "Restavracija Eat Smart 2",
+  "address": "Koroška cesta 80, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.559548,
+  "longitude": 15.633803,
+  "meal_price": 8.19,
+  "subsidy_price": 3,
+  "opening_hours": "Med tednom: 10:00 - 21:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": "Sprememba obratovalnega časa od 13.07.2026 do 27.09.2026 bo restavracija obratovala od 9.00 do 16.00 ure.",
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "1827",
+  "name": "Restavracija Fany & Mary",
+  "address": "Petkovškovo nabrežje 19, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.052045,
+  "longitude": 14.508341,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 09:00 - 19:00\nSobota: 09:00 - 19:00\nNedelja: 09:00 - 19:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Celiakiji prijazni obroki",
+   "Pizza",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2097",
+  "name": "Restavracija Fresco",
+  "address": "Slovenska cesta 51, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.055613,
+  "longitude": 14.504863,
+  "meal_price": 8.99,
+  "subsidy_price": 3.8,
+  "opening_hours": "Med tednom: 10:00 - 21:00\nSobota: 10:00 - 21:00\nNedelja: 10:00 - 21:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3134",
+  "name": "Restavracija FS, Fakulteta za strojništvo",
+  "address": "Aškerčeva ulica 6, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.046858,
+  "longitude": 14.498428,
+  "meal_price": 8.62,
+  "subsidy_price": 3.43,
+  "opening_hours": "Ponedeljek: 10:30 - 14:30\nTorek: 10:30 - 14:30\nSreda: 10:30 - 14:30\nČetrtek: 10:30 - 14:30\nPetek: 10:00 - 14:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": "od 13.7. do 17.6.2026 bo lokal obratoval do 14.00",
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3036",
+  "name": "Restavracija in maloprodaja Hermine Wech - Koroška perutnina",
+  "address": "Gačnikova pot 2, 2390 Ravne na Koroškem",
+  "city": "Ravne na Koroškem",
+  "latitude": 46.544365,
+  "longitude": 14.962754,
+  "meal_price": 7.8,
+  "subsidy_price": 2.61,
+  "opening_hours": "Med tednom: 08:00 - 18:00\nSobota: 08:00 - 14:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3038",
+  "name": "Restavracija in maloprodaja Hermine Wech - Koroška perutnina",
+  "address": "Ozare, 2380 Slovenj Gradec",
+  "city": "Slovenj Gradec",
+  "latitude": 46.507585,
+  "longitude": 15.076816,
+  "meal_price": 7.8,
+  "subsidy_price": 2.61,
+  "opening_hours": "Med tednom: 08:00 - 17:00\nSobota: 08:00 - 14:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 2
+ },
+ {
+  "id": "2343",
+  "name": "Restavracija in pivnica Zvezda",
+  "address": "Trg zmage 8, 9000 Murska Sobota",
+  "city": "Murska Sobota",
+  "latitude": 46.660916,
+  "longitude": 16.164826,
+  "meal_price": 8.5,
+  "subsidy_price": 3.31,
+  "opening_hours": "Med tednom: 10:00 - 20:00\nSobota: 10:00 - 20:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3389",
+  "name": "Restavracija in prenočišča ČARDA",
+  "address": "Nemčavci 39c, 9221 Martjanci",
+  "city": "Martjanci",
+  "latitude": 46.672667,
+  "longitude": 16.178896,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Ponedeljek: 10:00 - 15:00\nTorek: 10:00 - 15:00\nSreda: 10:00 - 15:00\nČetrtek: 10:00 - 15:00\nPetek: 10:00 - 15:00\nSobota: 10:00 - 15:00\nNedelja: Zaprto",
+  "notice": "12/2",
+  "features": [
+   "Brezmesno",
+   "Solatni bar",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "1195",
+  "name": "Restavracija Interspar Celje",
+  "address": "Mariborska 100, 3000 Celje",
+  "city": "Celje",
+  "latitude": 46.241757,
+  "longitude": 15.276116,
+  "meal_price": 8.76,
+  "subsidy_price": 3.57,
+  "opening_hours": "Med tednom: 10:00 - 18:00\nSobota: 10:00 - 18:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar",
+   "Dostop za invalide",
+   "Študentske ugodnosti",
+   "Prava izbira",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "1369",
+  "name": "Restavracija Interspar Citypark",
+  "address": "Šmartinska 152g, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.070237,
+  "longitude": 14.549039,
+  "meal_price": 8.76,
+  "subsidy_price": 3.57,
+  "opening_hours": "Med tednom: 10:00 - 18:00\nSobota: 10:00 - 18:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar",
+   "Dostop za invalide",
+   "Študentske ugodnosti",
+   "Prava izbira",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "1023",
+  "name": "Restavracija Interspar Koper",
+  "address": "Ankaranska cesta 3A, 6000 Koper/Capodistria",
+  "city": "Koper",
+  "latitude": 45.543218,
+  "longitude": 13.741023,
+  "meal_price": 8.76,
+  "subsidy_price": 3.57,
+  "opening_hours": "Med tednom: 10:00 - 18:00\nSobota: 10:00 - 18:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar",
+   "Dostop za invalide",
+   "Študentske ugodnosti",
+   "Prava izbira",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "1198",
+  "name": "Restavracija Interspar Kranj",
+  "address": "Cesta 1.maja 77, 4000 Kranj",
+  "city": "Kranj",
+  "latitude": 46.231797,
+  "longitude": 14.364596,
+  "meal_price": 8.76,
+  "subsidy_price": 3.57,
+  "opening_hours": "Med tednom: 10:00 - 18:00\nSobota: 10:00 - 18:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar",
+   "Dostop za invalide",
+   "Študentske ugodnosti",
+   "Prava izbira",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "1194",
+  "name": "Restavracija Interspar Maribor Europark",
+  "address": "Pobreška 18, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.554734,
+  "longitude": 15.65348,
+  "meal_price": 8.76,
+  "subsidy_price": 3.57,
+  "opening_hours": "Med tednom: 10:00 - 18:00\nSobota: 10:00 - 18:00\nNedelja: Zaprto",
+  "notice": "Nedelja zaprto.",
+  "features": [
+   "Brezmesno",
+   "Solatni bar",
+   "Dostop za invalide",
+   "Študentske ugodnosti",
+   "Prava izbira",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "1197",
+  "name": "Restavracija Interspar Maribor2 Supernova Qlandia",
+  "address": "Cesta Proletarskih brigad 100, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.546433,
+  "longitude": 15.618417,
+  "meal_price": 8.76,
+  "subsidy_price": 3.57,
+  "opening_hours": "Med tednom: 10:00 - 18:00\nSobota: 10:00 - 18:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar",
+   "Dostop za invalide",
+   "Študentske ugodnosti",
+   "Prava izbira",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "1025",
+  "name": "Restavracija Interspar Nova Gorica",
+  "address": "Cesta 25. junija 1a, 5000 Nova Gorica",
+  "city": "Nova Gorica",
+  "latitude": 45.955509,
+  "longitude": 13.657204,
+  "meal_price": 8.76,
+  "subsidy_price": 3.57,
+  "opening_hours": "Med tednom: 10:00 - 18:00\nSobota: 10:00 - 18:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar",
+   "Dostop za invalide",
+   "Študentske ugodnosti",
+   "Prava izbira",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "1370",
+  "name": "Restavracija Interspar Vič",
+  "address": "Jamova 105, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.039678,
+  "longitude": 14.476703,
+  "meal_price": 8.76,
+  "subsidy_price": 3.57,
+  "opening_hours": "Med tednom: 10:00 - 18:00\nSobota: 10:00 - 18:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar",
+   "Dostop za invalide",
+   "Študentske ugodnosti",
+   "Prava izbira",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2040",
+  "name": "Restavracija Kitajska palača",
+  "address": "Focheva ulica 41, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.545366,
+  "longitude": 15.643939,
+  "meal_price": 8.3,
+  "subsidy_price": 3.11,
+  "opening_hours": "Ponedeljek: 11:00 - 21:00\nTorek: 11:00 - 21:00\nSreda: 11:00 - 21:00\nČetrtek: 11:00 - 21:00\nPetek: 11:00 - 21:00\nSobota: 11:00 - 21:00\nNedelja: 11:00 - 21:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2775",
+  "name": "Restavracija Kitajska palača - DOSTAVA",
+  "address": "Focheva ulica 41, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.545366,
+  "longitude": 15.643939,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Ponedeljek: 11:00 - 21:00\nTorek: 11:00 - 21:00\nSreda: 11:00 - 21:00\nČetrtek: 11:00 - 21:00\nPetek: 11:00 - 21:00\nSobota: 11:00 - 21:00\nNedelja: 11:00 - 21:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostava",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "1768",
+  "name": "Restavracija klub Cankarjevega doma",
+  "address": "Prešernova cesta 10, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.050043,
+  "longitude": 14.498836,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 10:00 - 14:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar",
+   "Dostop za invalide"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "1263",
+  "name": "Restavracija Kolodvorska",
+  "address": "Cesta talcev 37, 3320 Velenje",
+  "city": "Velenje",
+  "latitude": 46.363364,
+  "longitude": 15.103754,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 09:00 - 17:00\nSobota: 09:00 - 15:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3096",
+  "name": "Restavracija Kompliment",
+  "address": "Kidričeva cesta 75, 4220 Škofja Loka",
+  "city": "Škofja Loka",
+  "latitude": 46.170667,
+  "longitude": 14.342255,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 09:00 - 14:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "1713",
+  "name": "Restavracija Letališka",
+  "address": "Letališka cesta 15, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.061963,
+  "longitude": 14.552553,
+  "meal_price": 6.8,
+  "subsidy_price": 1.61,
+  "opening_hours": "Med tednom: 10:00 - 14:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Solatni bar",
+   "Študentske ugodnosti"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2085",
+  "name": "Restavracija Mango",
+  "address": "Turnerjeva ulica 17, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.563169,
+  "longitude": 15.629657,
+  "meal_price": 8.44,
+  "subsidy_price": 3.25,
+  "opening_hours": "Ponedeljek: 11:00 - 21:00\nTorek: 11:00 - 21:00\nSreda: 11:00 - 21:00\nČetrtek: 11:00 - 21:00\nPetek: 11:00 - 21:00\nSobota: 11:00 - 20:00\nNedelja: Zaprto",
+  "notice": "Sprememba delovnega časa do 31.10.: - odprto do 17.00 ure!",
+  "features": [
+   "Brezmesno",
+   "Solatni bar",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2649",
+  "name": "Restavracija McDonalds - Citycenter Celje",
+  "address": "Mariborska cesta 100, 3000 Celje",
+  "city": "Celje",
+  "latitude": 46.241903,
+  "longitude": 15.277407,
+  "meal_price": 7.8,
+  "subsidy_price": 2.61,
+  "opening_hours": "Ponedeljek: 09:00 - 21:00\nTorek: 09:00 - 21:00\nSreda: 09:00 - 21:00\nČetrtek: 09:00 - 21:00\nPetek: 09:00 - 21:00\nSobota: 08:00 - 21:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2759",
+  "name": "Restavracija McDonalds - Ptuj",
+  "address": "Ormoška cesta 3, 2250 Ptuj",
+  "city": "Ptuj",
+  "latitude": 46.418896,
+  "longitude": 15.877108,
+  "meal_price": 7.8,
+  "subsidy_price": 2.61,
+  "opening_hours": "Med tednom: 08:00 - 23:59\nSobota: 08:00 - 23:59\nNedelja: 08:00 - 23:59",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3144",
+  "name": "Restavracija Mensana",
+  "address": "Slomškova ulica 49, 9000 Murska Sobota",
+  "city": "Murska Sobota",
+  "latitude": 46.657991,
+  "longitude": 16.163853,
+  "meal_price": 8.2,
+  "subsidy_price": 3.01,
+  "opening_hours": "Med tednom: 10:00 - 15:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": "Skrajšan delovni čas 31.12.2024, do 13.00 ure!",
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3236",
+  "name": "Restavracija Menza IJS",
+  "address": "Jamova cesta 39, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.042839,
+  "longitude": 14.487633,
+  "meal_price": 8.2,
+  "subsidy_price": 3.01,
+  "opening_hours": "Med tednom: 10:30 - 14:30\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2721",
+  "name": "Restavracija Modri kvadrat",
+  "address": "Davčna ulica 1, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.065008,
+  "longitude": 14.526828,
+  "meal_price": 8.5,
+  "subsidy_price": 3.31,
+  "opening_hours": "Med tednom: 09:00 - 14:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar",
+   "Dostop za invalide"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "1382",
+  "name": "Restavracija Mozart",
+  "address": "Stegne 7, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.081649,
+  "longitude": 14.486736,
+  "meal_price": 8.5,
+  "subsidy_price": 3.31,
+  "opening_hours": "Med tednom: 09:00 - 15:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3172",
+  "name": "Restavracija Mozart P.E. Ekonomska fakulteta",
+  "address": "Kardeljeva ploščad 17, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.074017,
+  "longitude": 14.516449,
+  "meal_price": 8.5,
+  "subsidy_price": 3.31,
+  "opening_hours": "Med tednom: 07:00 - 15:30\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3049",
+  "name": "Restavracija Mr.Falafel",
+  "address": "Gosposka ulica 30, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.559862,
+  "longitude": 15.646785,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 11:00 - 21:00\nSobota: 11:00 - 21:00\nNedelja: 11:00 - 18:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3179",
+  "name": "Restavracija OAZA Pef",
+  "address": "Kardeljeva ploščad 16, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.075416,
+  "longitude": 14.517989,
+  "meal_price": 7.99,
+  "subsidy_price": 2.8,
+  "opening_hours": "Med tednom: 10:30 - 15:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Študentske ugodnosti"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3241",
+  "name": "Restavracija Pergola",
+  "address": "Tomažičeva ulica 10, 6310 Izola/Isola",
+  "city": "Izola",
+  "latitude": 45.532802,
+  "longitude": 13.651023,
+  "meal_price": 8.4,
+  "subsidy_price": 3.21,
+  "opening_hours": "Ponedeljek: 08:00 - 21:00\nTorek: 08:00 - 21:00\nSreda: 08:00 - 21:00\nČetrtek: 08:00 - 21:00\nPetek: 08:00 - 21:00\nSobota: 08:00 - 21:00\nNedelja: 08:00 - 21:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3240",
+  "name": "Restavracija PF, Pravna fakulteta",
+  "address": "Poljanski nasip 2, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.051525,
+  "longitude": 14.511099,
+  "meal_price": 8.62,
+  "subsidy_price": 3.43,
+  "opening_hours": "Ponedeljek: 10:30 - 15:00\nTorek: 10:30 - 15:00\nSreda: 10:30 - 15:00\nČetrtek: 10:30 - 15:00\nPetek: 10:00 - 14:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": "od 13.7. do 17.6.2026 bo lokal obratoval do 14.00",
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3396",
+  "name": "Restavracija Piano",
+  "address": "Koroška cesta 160, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.563898,
+  "longitude": 15.623931,
+  "meal_price": 8.24,
+  "subsidy_price": 3.05,
+  "opening_hours": "Ponedeljek: 10:00 - 15:30\nTorek: 10:00 - 15:30\nSreda: 10:00 - 15:30\nČetrtek: 10:00 - 15:30\nPetek: 10:00 - 14:30\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3376",
+  "name": "Restavracija pizza Bella Napoli",
+  "address": "Moskovska ulica 11, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.065363,
+  "longitude": 14.55022,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 11:00 - 20:30\nSobota: 11:00 - 20:30\nNedelja: 11:00 - 20:30",
+  "notice": null,
+  "features": [
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "1360",
+  "name": "Restavracija Plečnikov hram",
+  "address": "Trg francoske revolucije 2, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.047078,
+  "longitude": 14.503406,
+  "meal_price": 8.8,
+  "subsidy_price": 3.61,
+  "opening_hours": "Med tednom: 09:00 - 18:00\nSobota: 11:00 - 15:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2180",
+  "name": "Restavracija Prestige catering, GZS",
+  "address": "Dimičeva ulica 13, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.07159,
+  "longitude": 14.514827,
+  "meal_price": 7.74,
+  "subsidy_price": 2.55,
+  "opening_hours": "Med tednom: 10:00 - 14:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar",
+   "Dostop za invalide",
+   "Prava izbira"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "1321",
+  "name": "Restavracija Rdeče jabolko",
+  "address": "Tržaška 116, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.039898,
+  "longitude": 14.473018,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Ponedeljek: Zaprto\nTorek: 12:00 - 22:00\nSreda: 12:00 - 22:00\nČetrtek: 12:00 - 22:00\nPetek: 12:00 - 22:00\nSobota: 12:00 - 22:00\nNedelja: 12:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2884",
+  "name": "Restavracija sarajevskih jedi Valter Jesenice",
+  "address": "Cesta Maršala Tita 106, 4270 Jesenice",
+  "city": "Jesenice",
+  "latitude": 46.441619,
+  "longitude": 14.039078,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 10:00 - 22:00\nSobota: 12:00 - 22:00\nNedelja: 12:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "1298",
+  "name": "Restavracija Splošne bolnišnice Novo mesto",
+  "address": "Šmihelska cesta 1, 8000 Novo mesto",
+  "city": "Novo mesto",
+  "latitude": 45.800237,
+  "longitude": 15.163002,
+  "meal_price": 7,
+  "subsidy_price": 1.81,
+  "opening_hours": "Med tednom: 09:00 - 15:00\nSobota: 13:00 - 14:30\nNedelja: 13:00 - 14:30",
+  "notice": null,
+  "features": [
+   "Javni zavod",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3156",
+  "name": "Restavracija Vrtnica",
+  "address": "Kidričeva ulica 11, 5000 Nova Gorica",
+  "city": "Nova Gorica",
+  "latitude": 45.957599,
+  "longitude": 13.648926,
+  "meal_price": 8.02,
+  "subsidy_price": 2.83,
+  "opening_hours": "Med tednom: 10:00 - 15:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3324",
+  "name": "Restavracija Zadružnik Kozje",
+  "address": "Kozje 141a, 3260 Kozje",
+  "city": "Kozje",
+  "latitude": 46.073321,
+  "longitude": 15.559672,
+  "meal_price": 7.22,
+  "subsidy_price": 2.03,
+  "opening_hours": "Med tednom: 09:00 - 13:00\nSobota: 09:00 - 12:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3323",
+  "name": "Restavracija Zadružnik Šmarje",
+  "address": "Obrtniška ulica 3, 3240 Šmarje pri Jelšah",
+  "city": "Šmarje pri Jelšah",
+  "latitude": 46.22989,
+  "longitude": 15.523991,
+  "meal_price": 7.22,
+  "subsidy_price": 2.03,
+  "opening_hours": "Med tednom: 09:00 - 15:00\nSobota: 09:00 - 13:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3336",
+  "name": "Restavracija Zeleni Park",
+  "address": "Cesta Zore Perello - Godina 2, 6000 Koper/Capodistria",
+  "city": "Koper",
+  "latitude": 45.544774,
+  "longitude": 13.726931,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Ponedeljek: 12:00 - 16:30\nTorek: 12:00 - 16:30\nSreda: 12:00 - 16:30\nČetrtek: 12:00 - 16:30\nPetek: 12:00 - 16:30\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2698",
+  "name": "Restavracija Zlata sreča",
+  "address": "Metelkova ulica 29, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.543881,
+  "longitude": 15.638065,
+  "meal_price": 8.16,
+  "subsidy_price": 2.97,
+  "opening_hours": "Med tednom: 11:00 - 21:00\nSobota: 14:00 - 21:00\nNedelja: 14:00 - 21:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3289",
+  "name": "Rex",
+  "address": "Dunajska cesta 123, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.075941,
+  "longitude": 14.509468,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 10:00 - 22:00\nSobota: 12:00 - 22:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3220",
+  "name": "RIKŠA CURRY&WOK",
+  "address": "Resljeva cesta 1, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.052316,
+  "longitude": 14.510093,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 12:00 - 20:30\nSobota: 12:00 - 20:30\nNedelja: 12:00 - 20:30",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2739",
+  "name": "Roza slon",
+  "address": "Trg OF 14, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.057443,
+  "longitude": 14.508752,
+  "meal_price": 7.82,
+  "subsidy_price": 2.63,
+  "opening_hours": "Ponedeljek: 13:00 - 22:00\nTorek: 13:00 - 22:00\nSreda: 13:00 - 22:00\nČetrtek: 13:00 - 22:00\nPetek: 13:00 - 22:00\nSobota: 12:00 - 20:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2859",
+  "name": "Roza slon Bežigrad",
+  "address": "Dunajska 115, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.07502,
+  "longitude": 14.51101,
+  "meal_price": 7.82,
+  "subsidy_price": 2.63,
+  "opening_hours": "Med tednom: 13:00 - 22:00\nSobota: 12:00 - 20:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3225",
+  "name": "Roza slon BTC",
+  "address": "Kajuhova 32/R, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.057764,
+  "longitude": 14.54034,
+  "meal_price": 7.82,
+  "subsidy_price": 2.63,
+  "opening_hours": "Med tednom: 11:00 - 17:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3224",
+  "name": "Roza slon Vič",
+  "address": "Tržaška cesta 116, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.039997,
+  "longitude": 14.472476,
+  "meal_price": 7.82,
+  "subsidy_price": 2.63,
+  "opening_hours": "Med tednom: 10:00 - 17:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3072",
+  "name": "Ruby food",
+  "address": "Igriška ulica 5, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.048082,
+  "longitude": 14.499302,
+  "meal_price": 8.14,
+  "subsidy_price": 2.95,
+  "opening_hours": "Ponedeljek: 10:30 - 16:00\nTorek: 10:30 - 16:00\nSreda: 10:30 - 16:00\nČetrtek: 10:30 - 16:00\nPetek: 10:30 - 16:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2781",
+  "name": "Samopostrežna restavracija Stolpič",
+  "address": "Mariborska cesta 7, 3000 Celje",
+  "city": "Celje",
+  "latitude": 46.233737,
+  "longitude": 15.267788,
+  "meal_price": 8,
+  "subsidy_price": 2.81,
+  "opening_hours": "Med tednom: 09:00 - 14:30\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3340",
+  "name": "SB Nova Gorica",
+  "address": "Ulica padlih borcev 13a, 5290 Šempeter pri Gorici",
+  "city": "Šempeter pri Gorici",
+  "latitude": 45.929296,
+  "longitude": 13.642009,
+  "meal_price": 8,
+  "subsidy_price": 2.81,
+  "opening_hours": "Med tednom: 11:00 - 16:00\nSobota: 11:30 - 12:30\nNedelja: 11:30 - 12:30",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Celiakiji prijazni obroki",
+   "Javni zavod",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3365",
+  "name": "Shaolin",
+  "address": "Hacquetova ulica 5, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.060631,
+  "longitude": 14.514628,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 10:00 - 22:00\nSobota: 10:00 - 22:00\nNedelja: 10:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "1367",
+  "name": "Skriti kot - mestna gostilna",
+  "address": "Ajdovščina 4, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.053703,
+  "longitude": 14.504993,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Ponedeljek: 10:30 - 18:00\nTorek: 10:30 - 18:00\nSreda: 10:30 - 18:00\nČetrtek: 10:30 - 18:00\nPetek: 10:30 - 17:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3069",
+  "name": "Splošna bolnišnica Brežice",
+  "address": "Černelčeva cesta 15, 8250 Brežice",
+  "city": "Brežice",
+  "latitude": 45.90849,
+  "longitude": 15.593572,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 10:00 - 14:00\nSobota: 10:00 - 14:00\nNedelja: 10:00 - 14:00",
+  "notice": null,
+  "features": [
+   "Javni zavod",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2641",
+  "name": "Splošna bolnišnica Izola",
+  "address": "Polje 40, 6310 Izola/Isola",
+  "city": "Izola",
+  "latitude": 45.544424,
+  "longitude": 13.687097,
+  "meal_price": 8,
+  "subsidy_price": 2.81,
+  "opening_hours": "Med tednom: 12:00 - 16:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Javni zavod"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2263",
+  "name": "Srednja šola Izola - Scuola media Isola",
+  "address": "Prekomorskih brigad 7, 6310 Izola/Isola",
+  "city": "Izola",
+  "latitude": 45.535212,
+  "longitude": 13.658361,
+  "meal_price": 8,
+  "subsidy_price": 2.81,
+  "opening_hours": "Med tednom: 11:30 - 15:30\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Javni zavod"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2569",
+  "name": "Stari Grill",
+  "address": "Glavni trg 5, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.557368,
+  "longitude": 15.645041,
+  "meal_price": 8.2,
+  "subsidy_price": 3.01,
+  "opening_hours": "Med tednom: 09:00 - 20:00\nSobota: 09:00 - 20:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3265",
+  "name": "Subway - Bavarc",
+  "address": "Slovenska cesta 56, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.056163,
+  "longitude": 14.506251,
+  "meal_price": 7.24,
+  "subsidy_price": 2.05,
+  "opening_hours": "Med tednom: 08:00 - 23:00\nSobota: 09:00 - 23:00\nNedelja: 09:00 - 23:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Celiakiji prijazni obroki",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2714",
+  "name": "Subway - Center",
+  "address": "Slovenska cesta 1, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.046919,
+  "longitude": 14.500933,
+  "meal_price": 7.24,
+  "subsidy_price": 2.05,
+  "opening_hours": "Med tednom: 08:00 - 23:00\nSobota: 09:00 - 23:00\nNedelja: 09:00 - 23:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Celiakiji prijazni obroki",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2389",
+  "name": "Subway Bežigrad",
+  "address": "Dunajska cesta 107, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.058966,
+  "longitude": 14.506465,
+  "meal_price": 7.1,
+  "subsidy_price": 1.91,
+  "opening_hours": "Med tednom: 08:00 - 22:00\nSobota: 09:00 - 22:00\nNedelja: 09:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Celiakiji prijazni obroki",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2988",
+  "name": "Subway BTC",
+  "address": "Ameriška ulica 13, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.068108,
+  "longitude": 14.542046,
+  "meal_price": 7.1,
+  "subsidy_price": 1.91,
+  "opening_hours": "Med tednom: 08:00 - 21:00\nSobota: 09:00 - 21:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Celiakiji prijazni obroki",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3374",
+  "name": "SUBWAY KOPER",
+  "address": "Ankaranska cesta 2, 6000 Koper/Capodistria",
+  "city": "Koper",
+  "latitude": 45.539983,
+  "longitude": 13.735618,
+  "meal_price": 7.1,
+  "subsidy_price": 1.91,
+  "opening_hours": "Med tednom: 10:00 - 21:00\nSobota: 10:00 - 21:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Celiakiji prijazni obroki",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3363",
+  "name": "Šavirma",
+  "address": "Štefanova ulica 5, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.053295,
+  "longitude": 14.502894,
+  "meal_price": 5.19,
+  "subsidy_price": 0,
+  "opening_hours": "Ponedeljek: 11:00 - 22:00\nTorek: 10:00 - 22:00\nSreda: 10:00 - 22:00\nČetrtek: 10:00 - 22:00\nPetek: 10:00 - 22:00\nSobota: 10:00 - 22:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2092",
+  "name": "Šeherezada",
+  "address": "Trubarjeva cesta 31, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.052526,
+  "longitude": 14.509833,
+  "meal_price": 7.74,
+  "subsidy_price": 2.55,
+  "opening_hours": "Med tednom: 08:00 - 22:00\nSobota: 08:00 - 22:00\nNedelja: 10:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3159",
+  "name": "Šeherezada 2",
+  "address": "Slovenska cesta 55, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.056384,
+  "longitude": 14.50506,
+  "meal_price": 7.74,
+  "subsidy_price": 2.55,
+  "opening_hours": "Med tednom: 08:00 - 22:00\nSobota: 08:00 - 22:00\nNedelja: 10:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "1841",
+  "name": "ŠENDTVIČ",
+  "address": "Prušnikova ulica 87, 1210 Ljubljana - Šentvid",
+  "city": "Ljubljana",
+  "latitude": 46.096536,
+  "longitude": 14.466339,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 09:00 - 17:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3329",
+  "name": "Šiš okrepčevalnica",
+  "address": "Usnjarska ulica 5, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.556561,
+  "longitude": 15.647053,
+  "meal_price": 8.52,
+  "subsidy_price": 3.33,
+  "opening_hours": "Ponedeljek: 10:00 - 22:00\nTorek: 10:00 - 22:00\nSreda: 10:00 - 22:00\nČetrtek: 10:00 - 22:00\nPetek: 10:00 - 23:00\nSobota: 11:00 - 23:00\nNedelja: 11:00 - 23:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Celiakiji prijazni obroki",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2523",
+  "name": "Športni bar SLOVAN",
+  "address": "Gortanova 21, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.050359,
+  "longitude": 14.533207,
+  "meal_price": 6.9,
+  "subsidy_price": 1.71,
+  "opening_hours": "Med tednom: 07:00 - 19:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2213",
+  "name": "Študentski dom Ljubljana - Restavracija",
+  "address": "Svetčeva ulica 9, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.051935,
+  "longitude": 14.487097,
+  "meal_price": 8,
+  "subsidy_price": 2.81,
+  "opening_hours": "Med tednom: 11:00 - 17:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Prava izbira",
+   "Javni zavod"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3202",
+  "name": "Taverna Palermo",
+  "address": "Ulica Heroja Nandeta 31, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.532658,
+  "longitude": 15.673326,
+  "meal_price": 8.76,
+  "subsidy_price": 3.57,
+  "opening_hours": "Ponedeljek: 09:30 - 16:30\nTorek: 09:30 - 16:30\nSreda: 09:30 - 16:30\nČetrtek: 09:30 - 16:30\nPetek: 09:30 - 19:00\nSobota: 11:00 - 19:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3203",
+  "name": "Taverna Palermo - DOSTAVA",
+  "address": "Ulica Heroja Nandeta 31, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.532658,
+  "longitude": 15.673326,
+  "meal_price": 8.76,
+  "subsidy_price": 3.57,
+  "opening_hours": "Ponedeljek: 10:00 - 16:00\nTorek: 10:00 - 16:00\nSreda: 10:00 - 16:00\nČetrtek: 10:00 - 16:00\nPetek: 10:00 - 19:00\nSobota: 11:00 - 19:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostava",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3288",
+  "name": "The Place",
+  "address": "Plečnikov trg 1, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.05027,
+  "longitude": 14.502339,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Ponedeljek: 12:00 - 22:00\nTorek: 12:00 - 22:00\nSreda: 12:00 - 22:00\nČetrtek: 12:00 - 22:00\nPetek: 12:00 - 22:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": "V času od 10.7. do 11.09.2026 bo lokal odprt od 12.00 do 16.00 ure",
+  "features": [
+   "Brezmesno"
+  ],
+  "site_rating": 3
+ },
+ {
+  "id": "3380",
+  "name": "Top Pizza",
+  "address": "Igriška ulica 5, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.047986,
+  "longitude": 14.499489,
+  "meal_price": 8,
+  "subsidy_price": 2.81,
+  "opening_hours": "Med tednom: 10:00 - 21:00\nSobota: 13:30 - 21:00\nNedelja: 13:30 - 21:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3253",
+  "name": "Tvoj Chef Restavracija",
+  "address": "Cesta 9. avgusta 8c, 1410 Zagorje ob Savi",
+  "city": "Zagorje ob Savi",
+  "latitude": 46.134422,
+  "longitude": 14.99528,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Ponedeljek: 08:00 - 15:00\nTorek: 08:00 - 21:00\nSreda: 08:00 - 21:00\nČetrtek: 08:00 - 21:00\nPetek: 08:00 - 21:00\nSobota: 12:00 - 21:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3398",
+  "name": "U Sushi",
+  "address": "Tržaška cesta 65, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.52439,
+  "longitude": 15.650164,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Ponedeljek: 12:00 - 21:00\nTorek: 12:00 - 21:00\nSreda: 12:00 - 21:00\nČetrtek: 12:00 - 21:00\nPetek: 12:00 - 21:00\nSobota: 12:00 - 21:00\nNedelja: 12:00 - 21:00",
+  "notice": null,
+  "features": [
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "1262",
+  "name": "UFO",
+  "address": "Svetčeva ulica 14, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.051198,
+  "longitude": 14.486788,
+  "meal_price": 8.19,
+  "subsidy_price": 3,
+  "opening_hours": "Ponedeljek: 11:00 - 22:00\nTorek: 11:00 - 22:00\nSreda: 11:00 - 22:00\nČetrtek: 11:00 - 22:00\nPetek: 11:00 - 17:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3328",
+  "name": "URNEBES URBAN GRILL",
+  "address": "Koroška cesta 20, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.558041,
+  "longitude": 15.642565,
+  "meal_price": 8,
+  "subsidy_price": 2.81,
+  "opening_hours": "Ponedeljek: 10:00 - 22:00\nTorek: 10:00 - 22:00\nSreda: 10:00 - 22:00\nČetrtek: 10:00 - 22:00\nPetek: 10:00 - 22:00\nSobota: 13:00 - 22:00\nNedelja: 14:00 - 22:00",
+  "notice": "Spremenjen delovni čas od 07.09. do 27.09: - v ponedeljek od 17.00 do 22.00 ure. - od torka do četrtka od 09.00 do 14.30 ure in od 17.00 do 22.00 - v petek od 09.00 do 14.30 in od 17.00 do 23.00!",
+  "features": [
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3226",
+  "name": "Uršin bistro",
+  "address": "Poljanska 22, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.049579,
+  "longitude": 14.516821,
+  "meal_price": 8.8,
+  "subsidy_price": 3.61,
+  "opening_hours": "Ponedeljek: 08:00 - 17:00\nTorek: 08:00 - 17:00\nSreda: 08:00 - 17:00\nČetrtek: 08:00 - 17:00\nPetek: 08:00 - 15:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3356",
+  "name": "Vegetarijanska in veganska restavracija Jamuna",
+  "address": "Ajdovščina 4, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.053552,
+  "longitude": 14.505284,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 11:00 - 18:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "1339",
+  "name": "Vegetarijanska restavracija Radha Govinda",
+  "address": "Žibretova 23, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.062892,
+  "longitude": 14.498973,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 11:00 - 18:00\nSobota: 11:00 - 18:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3348",
+  "name": "Vila de Casa Cafe",
+  "address": "Gosarjeva ulica 5, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.074607,
+  "longitude": 14.515152,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 08:00 - 18:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3117",
+  "name": "Vino & ribe Aleja",
+  "address": "Rakuševa ulica 1, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.07829,
+  "longitude": 14.483678,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 11:00 - 21:00\nSobota: 11:00 - 21:00\nNedelja: 12:00 - 18:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3201",
+  "name": "Vino & ribe Rudnik",
+  "address": "Jurčkova cesta 223, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.021839,
+  "longitude": 14.535914,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 11:00 - 21:00\nSobota: 11:00 - 21:00\nNedelja: 12:00 - 18:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 3
+ },
+ {
+  "id": "2742",
+  "name": "VIVO D125",
+  "address": "Dunajska cesta 125, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.076453,
+  "longitude": 14.511536,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 10:00 - 14:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3304",
+  "name": "Vrt bambus",
+  "address": "Podutiška cesta 56, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.071066,
+  "longitude": 14.470603,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Ponedeljek: 11:00 - 20:00\nTorek: 11:00 - 20:00\nSreda: 11:00 - 20:00\nČetrtek: 11:00 - 20:00\nPetek: 11:00 - 20:00\nSobota: 11:00 - 20:00\nNedelja: 11:00 - 20:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3386",
+  "name": "WHITE SWAN dumpling",
+  "address": "Slovenska cesta 3, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.047233,
+  "longitude": 14.501062,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 11:00 - 22:00\nSobota: 11:00 - 22:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3384",
+  "name": "WHITE SWAN fast food",
+  "address": "Dunajska cesta 107, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.074318,
+  "longitude": 14.510871,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 10:00 - 22:00\nSobota: 10:00 - 22:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3383",
+  "name": "WHITE SWAN fast food",
+  "address": "Kolodvorska ulica 20, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.056892,
+  "longitude": 14.51043,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 11:00 - 22:00\nSobota: 11:00 - 22:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3385",
+  "name": "WHITE SWAN poke bowl",
+  "address": "Miklošičeva cesta 22, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.054636,
+  "longitude": 14.507515,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 11:00 - 22:00\nSobota: 11:00 - 22:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3078",
+  "name": "WOK MIX center",
+  "address": "Vetrinjska ulic 15, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.55937,
+  "longitude": 15.647724,
+  "meal_price": 7.14,
+  "subsidy_price": 1.95,
+  "opening_hours": "Med tednom: 10:00 - 20:00\nSobota: 10:00 - 20:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3273",
+  "name": "Wok&Roll",
+  "address": "Mariborska cesta 1, 3000 Celje",
+  "city": "Celje",
+  "latitude": 46.232335,
+  "longitude": 15.266587,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Ponedeljek: 11:00 - 18:00\nTorek: 11:00 - 18:00\nSreda: 11:00 - 18:00\nČetrtek: 11:00 - 18:00\nPetek: 11:00 - 18:00\nSobota: 12:00 - 16:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3345",
+  "name": "WOOP! arena",
+  "address": "Moskovska ulica 10, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.06548,
+  "longitude": 14.547961,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Ponedeljek: 11:00 - 15:00\nTorek: 11:00 - 19:00\nSreda: 11:00 - 19:00\nČetrtek: 11:00 - 19:00\nPetek: 11:00 - 19:00\nSobota: 11:00 - 19:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3355",
+  "name": "Yimi azijska restavracija",
+  "address": "Slovenska cesta 55, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.056112,
+  "longitude": 14.505015,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 11:00 - 23:59\nSobota: 17:00 - 22:00\nNedelja: 17:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3254",
+  "name": "Zamaro",
+  "address": "Topniška ulica 29a, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.067636,
+  "longitude": 14.511347,
+  "meal_price": 7.74,
+  "subsidy_price": 2.55,
+  "opening_hours": "Med tednom: 11:30 - 15:30\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Solatni bar",
+   "Dostop za invalide"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2952",
+  "name": "Zbornica bar in žar",
+  "address": "Rimska cesta 13, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.047428,
+  "longitude": 14.499858,
+  "meal_price": 9,
+  "subsidy_price": 3.81,
+  "opening_hours": "Med tednom: 12:00 - 21:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3303",
+  "name": "Zmajevo mesto",
+  "address": "Šentjernejska cesta 6, 8000 Novo mesto",
+  "city": "Novo mesto",
+  "latitude": 45.799646,
+  "longitude": 15.182162,
+  "meal_price": 8,
+  "subsidy_price": 2.81,
+  "opening_hours": "Ponedeljek: Zaprto\nTorek: 11:00 - 22:00\nSreda: 11:00 - 22:00\nČetrtek: 11:00 - 22:00\nPetek: 11:00 - 22:00\nSobota: 11:00 - 22:00\nNedelja: 11:00 - 22:00",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2993",
+  "name": "Znanstvena kavarna Mafija",
+  "address": "Jadranska ulica 21, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.04196,
+  "longitude": 14.48993,
+  "meal_price": 5.19,
+  "subsidy_price": 0,
+  "opening_hours": "Med tednom: 07:00 - 15:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Dostop za invalide"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3325",
+  "name": "Žito Celje Prešernova",
+  "address": "Prešernova ulica 25, 3000 Celje",
+  "city": "Celje",
+  "latitude": 46.229278,
+  "longitude": 15.262349,
+  "meal_price": 5.19,
+  "subsidy_price": 0,
+  "opening_hours": "Med tednom: 07:00 - 16:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2009",
+  "name": "Žito Koper",
+  "address": "Pristaniška ulica 2, 6000 Koper/Capodistria",
+  "city": "Koper",
+  "latitude": 45.546168,
+  "longitude": 13.725994,
+  "meal_price": 5.19,
+  "subsidy_price": 0,
+  "opening_hours": "Ponedeljek: 07:00 - 15:00\nTorek: 07:00 - 15:00\nSreda: 07:00 - 15:00\nČetrtek: 07:00 - 15:00\nPetek: 07:00 - 15:00\nSobota: 07:00 - 13:00\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2956",
+  "name": "Žito Leon Štukelj Maribor",
+  "address": "Trg Leona Štuklja 1, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.559239,
+  "longitude": 15.648421,
+  "meal_price": 5.19,
+  "subsidy_price": 0,
+  "opening_hours": "Med tednom: 07:00 - 17:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "2771",
+  "name": "ŽITO Ljubljana Bavarski dvor",
+  "address": "Slovenska cesta 58, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.056911,
+  "longitude": 14.505859,
+  "meal_price": 5.19,
+  "subsidy_price": 0,
+  "opening_hours": "Med tednom: 07:00 - 19:00\nSobota: 07:00 - 12:00\nNedelja: Zaprto",
+  "notice": "na dan 31.12.2025 do lokal odprt 16.00",
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "3320",
+  "name": "ŽITO Ljubljana Kolodvorska",
+  "address": "Kolodvorska 3, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.054898,
+  "longitude": 14.508774,
+  "meal_price": 5.19,
+  "subsidy_price": 0,
+  "opening_hours": "Med tednom: 07:00 - 18:00\nSobota: 07:00 - 12:00\nNedelja: Zaprto",
+  "notice": "Dne 31.12.2025 bo lokal odprt do 15.00 ure",
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "1791",
+  "name": "ŽITO Ljubljana Vodnik",
+  "address": "Vodnikov trg 5, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.050612,
+  "longitude": 14.509226,
+  "meal_price": 5.19,
+  "subsidy_price": 0,
+  "opening_hours": "Med tednom: 07:00 - 15:00\nSobota: 07:00 - 14:00\nNedelja: Zaprto",
+  "notice": "Dne 05.12.2025 bo lokal odprt z skrajšanim delovni časom do 13.00.",
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2535",
+  "name": "ŽITO Ljubljana železniška (kolodvor)",
+  "address": "Trg OF 7, 1000 Ljubljana",
+  "city": "Ljubljana",
+  "latitude": 46.057994,
+  "longitude": 14.511482,
+  "meal_price": 5.19,
+  "subsidy_price": 0,
+  "opening_hours": "Med tednom: 07:00 - 19:00\nSobota: 07:00 - 12:00\nNedelja: Zaprto",
+  "notice": "Dne 31.12.2025 bo lokal odprt do 16.00 ure",
+  "features": [
+   "Brezmesno",
+   "Odprt ob vikendih"
+  ],
+  "site_rating": 5
+ },
+ {
+  "id": "2322",
+  "name": "Žito Maribor Trg revolucije",
+  "address": "Trg revolucije 2, 2000 Maribor",
+  "city": "Maribor",
+  "latitude": 46.554224,
+  "longitude": 15.64617,
+  "meal_price": 5.19,
+  "subsidy_price": 0,
+  "opening_hours": "Med tednom: 07:00 - 16:00\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": null,
+  "features": [
+   "Brezmesno"
+  ],
+  "site_rating": 4
+ },
+ {
+  "id": "3343",
+  "name": "ŽITO Postojna",
+  "address": "Novi trg 7B, 6230 Postojna",
+  "city": "Postojna",
+  "latitude": 45.773493,
+  "longitude": 14.212328,
+  "meal_price": 5.19,
+  "subsidy_price": 0,
+  "opening_hours": "Med tednom: 07:00 - 14:30\nSobota: Zaprto\nNedelja: Zaprto",
+  "notice": "Od 29.06. do 22.08.2026 bo lokal obratoval samo do 14.00 ure.",
+  "features": [
+   "Brezmesno"
+  ],
+  "site_rating": 5
+ }
+]

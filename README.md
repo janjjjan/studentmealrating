@@ -1,36 +1,52 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Študentska prehrana – zemljevid, meniji in ocene
 
-## Getting Started
+Next.js aplikacija z vsemi lokali s [studentska-prehrana.si](https://www.studentska-prehrana.si/sl/restaurant):
+doplačila, polne cene, delovni čas, oznake (brezmesno, dostava …), zemljevid (OpenStreetMap),
+današnji meniji in ocene študentov brez prijave (samo vzdevek).
 
-First, run the development server:
+## Kaj je od kod
+
+| Podatek | Vir |
+| --- | --- |
+| Lokali, naslovi, GPS, cene, delovni čas, oznake | `src/data/locations.json` – ustvari `scrape_and_generate_sql.py` |
+| Današnji meni | živo: `/api/menu/[id]` (bere stran lokala, predpomnjeno 30 min); z bazo tudi dnevno v tabeli `daily_menus` |
+| Ocene uporabnikov | Supabase tabela `reviews`; brez baze samo v brskalniku (localStorage) |
+| »★ X na SP« | ocena lokala na studentska-prehrana.si |
+
+Barva pina na zemljevidu: povprečje ocen uporabnikov, kjer jih še ni, ocena s studentska-prehrana.si;
+siv pin = brez ocene.
+
+## Lokalni zagon
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+npm install
+npm run dev     # http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Aplikacija deluje tudi brez Supabase (ocene se takrat shranijo samo v brskalniku).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Povezava s Supabase (da so ocene vidne vsem)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. V Supabase → **SQL Editor** zaženi `supabase/schema.sql` (ustvari tabele in pravila RLS;
+   izbriše stare tabele iz prejšnje verzije).
+2. Nato zaženi `seed_supabase.sql` (vstavi 355 lokalov).
+3. V `.env.local` (in na Vercelu → Settings → Environment Variables) nastavi:
+   - `NEXT_PUBLIC_SUPABASE_URL` in `NEXT_PUBLIC_SUPABASE_ANON_KEY` (Project Settings → API → *anon public*)
+   - za dnevne menije še `SUPABASE_SERVICE_ROLE_KEY` (*service_role*, samo strežnik!) in `CRON_SECRET`
+     (poljuben dolg naključen niz).
 
-## Learn More
+## Dnevni meniji (Vercel Cron)
 
-To learn more about Next.js, take a look at the following resources:
+`vercel.json` vsak dan ob 8.30 UTC (10.30 poleti / 9.30 pozimi) pokliče `/api/cron/refresh-menus`,
+ki prebere menije vseh lokalov in jih shrani v `daily_menus`. Takrat iskanje po jedeh (npr. »falafel«)
+deluje za vse lokale. Brez tega se meni naloži, ko odpreš lokal.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Osvežitev seznama lokalov
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+python scrape_and_generate_sql.py            # ≈ 2–4 min, z delovnim časom
+python scrape_and_generate_sql.py --no-details
+```
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Posodobi `src/data/locations.json` in `seed_supabase.sql`. Novi `seed_supabase.sql` po želji ponovno
+zaženi v Supabase (obstoječe vrstice posodobi).

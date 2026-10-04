@@ -1,175 +1,151 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import { X, Star, Send, UserCheck } from 'lucide-react';
-import { User } from '@supabase/supabase-js';
+import { useEffect, useState } from 'react';
+import { X, Star, Send, UserCheck, AlertTriangle } from 'lucide-react';
 import { LocationWithDetails, Review } from '@/lib/supabase/types';
-import { createClient } from '@/lib/supabase/client';
+import { submitReview } from '@/lib/data';
+import { isSupabaseConfigured } from '@/lib/supabase/client';
+import { useNickname } from '@/lib/nickname';
 
 interface ReviewModalProps {
   location: LocationWithDetails | null;
-  user: User | null;
   onClose: () => void;
   onAddReview: (locationId: string, newReview: Review) => void;
 }
 
-export function ReviewModal({
-  location,
-  user,
-  onClose,
-  onAddReview,
-}: ReviewModalProps) {
+const LABELS = ['', 'Slabo', 'Povprečno', 'Dobro', 'Zelo dobro', 'Odlično'];
+
+export function ReviewModal({ location, onClose, onAddReview }: ReviewModalProps) {
+  const [nickname, setNickname] = useNickname();
   const [rating, setRating] = useState(5);
   const [hoverRating, setHoverRating] = useState(0);
   const [comment, setComment] = useState('');
   const [authorName, setAuthorName] = useState('');
   const [submitting, setSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
-  // Auto-fill stored name or user email on load
+  // ob odprtju obrazca: predizpolni vzdevek, počisti prejšnje stanje
   useEffect(() => {
-    if (user?.email) {
-      setAuthorName(user.user_metadata?.full_name || user.email.split('@')[0]);
-    } else {
-      const stored = localStorage.getItem('student_reviewer_name');
-      if (stored) {
-        setAuthorName(stored);
-      }
+    if (location) {
+      setAuthorName(nickname);
+      setRating(5);
+      setComment('');
+      setError(null);
     }
-  }, [user]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [location?.id]);
+
+  useEffect(() => {
+    if (!location) return;
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && onClose();
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [location, onClose]);
 
   if (!location) return null;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-
-    const nameToUse = authorName.trim() || 'Anonimni Študent';
-    localStorage.setItem('student_reviewer_name', nameToUse);
-
+    if (submitting) return;
+    const name = authorName.trim() || 'Anonimni študent';
+    setNickname(name);
     setSubmitting(true);
-
+    setError(null);
     try {
-      const supabase = createClient();
-      
-      // Try posting to Supabase `reviews` table if available
-      const { data, error } = await supabase
-        .from('reviews')
-        .insert({
-          location_id: location.id,
-          rating: rating,
-          comment: `${nameToUse}: ${comment.trim()}`,
-        })
-        .select()
-        .single();
-
-      const newReview: Review = {
-        id: data?.id || `rev-${Date.now()}`,
+      const review = await submitReview({
         location_id: location.id,
-        rating: rating,
+        author_name: name,
+        rating,
         comment: comment.trim(),
-        created_at: new Date().toISOString(),
-        author_name: nameToUse,
-        user_email: nameToUse,
-      };
-
-      if (error) {
-        console.warn('Supabase review insert notice (using local state update):', error.message);
-      }
-
-      onAddReview(location.id, newReview);
+      });
+      onAddReview(location.id, review);
       onClose();
-      setComment('');
     } catch (err) {
-      console.error('Submit review error:', err);
+      setError(
+        `Ocene ni bilo mogoče shraniti (${err instanceof Error ? err.message : 'neznana napaka'}). Ste v Supabase zagnali supabase/schema.sql?`
+      );
     } finally {
       setSubmitting(false);
     }
   };
 
+  const shown = hoverRating || rating;
+
   return (
     <div className="modal-overlay" onClick={onClose}>
-      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-        <button className="modal-close" onClick={onClose}>
+      <div className="modal-content" onClick={(e) => e.stopPropagation()} role="dialog" aria-modal="true" aria-label="Dodaj oceno">
+        <button className="modal-close" onClick={onClose} aria-label="Zapri">
           <X size={20} />
         </button>
 
-        <h2 style={{ fontSize: '1.4rem', fontWeight: 800, color: 'white', marginBottom: '4px' }}>
-          Dodaj oceno za bon
-        </h2>
-        <p style={{ color: '#10b981', fontWeight: 600, fontSize: '0.95rem', marginBottom: '20px' }}>
-          {location.name}
-        </p>
+        <h2 style={{ fontSize: '1.4rem', fontWeight: 800, color: 'white', marginBottom: '4px' }}>Oceni lokal</h2>
+        <p style={{ color: '#10b981', fontWeight: 600, fontSize: '0.95rem', marginBottom: '20px' }}>{location.name}</p>
+
+        {!isSupabaseConfigured && (
+          <div className="notice-box">
+            <AlertTriangle size={16} style={{ flexShrink: 0 }} />
+            <span>Baza še ni povezana – ocena bo shranjena samo v tem brskalniku.</span>
+          </div>
+        )}
 
         <form onSubmit={handleSubmit}>
-          {/* Name / Nickname field */}
           <div className="form-group">
-            <label className="form-label" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-              <UserCheck size={16} color="#10b981" /> Vaše ime ali vzdevek:
+            <label className="form-label" htmlFor="author" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+              <UserCheck size={16} color="#10b981" /> Vzdevek
             </label>
             <input
+              id="author"
               type="text"
-              placeholder="Npr. Jan K., Maja ali Študent UL"
+              className="form-input"
+              placeholder="Npr. Jan K. ali Študent FRI"
               value={authorName}
+              maxLength={40}
               onChange={(e) => setAuthorName(e.target.value)}
               required
-              style={{
-                width: '100%',
-                padding: '12px',
-                background: 'rgba(0, 0, 0, 0.3)',
-                border: '1px solid rgba(255, 255, 255, 0.1)',
-                borderRadius: '8px',
-                color: 'white',
-                fontSize: '0.95rem',
-                outline: 'none'
-              }}
             />
           </div>
 
-          {/* Star Rating selector */}
           <div className="form-group">
-            <label className="form-label">Vaša ocena (1 do 5 zvezdic):</label>
-            <div className="star-rating-input">
+            <label className="form-label">Ocena</label>
+            <div className="star-rating-input" onMouseLeave={() => setHoverRating(0)}>
               {[1, 2, 3, 4, 5].map((star) => (
                 <button
                   key={star}
                   type="button"
-                  className={`star-btn ${(hoverRating || rating) >= star ? 'selected' : ''}`}
+                  aria-label={`${star} od 5`}
+                  className={`star-btn ${shown >= star ? 'selected' : ''}`}
                   onClick={() => setRating(star)}
                   onMouseEnter={() => setHoverRating(star)}
-                  onMouseLeave={() => setHoverRating(0)}
                 >
-                  <Star
-                    size={32}
-                    fill={(hoverRating || rating) >= star ? '#f59e0b' : 'none'}
-                  />
+                  <Star size={32} fill={shown >= star ? '#f59e0b' : 'none'} />
                 </button>
               ))}
-              <span style={{ marginLeft: '12px', fontWeight: 700, fontSize: '1.1rem', color: '#f59e0b' }}>
-                {hoverRating || rating} / 5
+              <span style={{ marginLeft: '12px', fontWeight: 700, fontSize: '1rem', color: '#f59e0b' }}>
+                {shown}/5 · {LABELS[shown]}
               </span>
             </div>
           </div>
 
-          {/* Comment field */}
           <div className="form-group">
-            <label className="form-label">Komentar / Mnenje o hrani in ponudbi:</label>
+            <label className="form-label" htmlFor="comment">
+              Komentar <span style={{ color: '#6b7280', fontWeight: 400 }}>(neobvezno)</span>
+            </label>
             <textarea
+              id="comment"
               className="form-textarea"
-              placeholder="Napišite vaše izkušnje (velikost porcije, kakovost hrane, prijaznost osebja, čakalna doba...)"
+              placeholder="Velikost porcije, okus, prijaznost osebja, čakanje …"
               value={comment}
+              maxLength={1000}
               onChange={(e) => setComment(e.target.value)}
-              required
             />
+            <div style={{ textAlign: 'right', fontSize: '0.75rem', color: '#6b7280', marginTop: 4 }}>{comment.length}/1000</div>
           </div>
 
-          {/* Submit button */}
-          <button
-            type="submit"
-            disabled={submitting}
-            className="btn-primary"
-            style={{ width: '100%', padding: '12px' }}
-          >
+          {error && <div className="error-box">{error}</div>}
+
+          <button type="submit" disabled={submitting} className="btn-primary" style={{ width: '100%', padding: '12px' }}>
             <Send size={18} />
-            <span>{submitting ? 'Pošiljanje ocene...' : 'Objavi oceno'}</span>
+            <span>{submitting ? 'Pošiljam …' : 'Objavi oceno'}</span>
           </button>
         </form>
       </div>
