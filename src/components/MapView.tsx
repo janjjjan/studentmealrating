@@ -3,6 +3,8 @@
 import { useEffect, useRef } from 'react';
 import L from 'leaflet';
 import 'leaflet/dist/leaflet.css';
+import 'leaflet.markercluster';
+import 'leaflet.markercluster/dist/MarkerCluster.css';
 import { LocationWithDetails } from '@/lib/supabase/types';
 import { ratingTier, TIER_COLORS, formatEur } from '@/lib/data';
 
@@ -28,7 +30,7 @@ function pinRating(loc: LocationWithDetails): number | null {
 export default function MapView({ locations, onSelectLocation }: MapViewProps) {
   const containerRef = useRef<HTMLDivElement>(null);
   const mapRef = useRef<L.Map | null>(null);
-  const layerRef = useRef<L.LayerGroup | null>(null);
+  const layerRef = useRef<L.MarkerClusterGroup | null>(null);
   const onSelectRef = useRef(onSelectLocation);
   onSelectRef.current = onSelectLocation;
 
@@ -40,7 +42,17 @@ export default function MapView({ locations, onSelectLocation }: MapViewProps) {
       attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
       maxZoom: 19,
     }).addTo(map);
-    layerRef.current = L.layerGroup().addTo(map);
+    layerRef.current = L.markerClusterGroup({
+      maxClusterRadius: 45,
+      spiderfyOnMaxZoom: true, // pri največjem zoomu se popolnoma skupaj ležeči pini razprejo
+      showCoverageOnHover: false,
+      iconCreateFunction: (cluster) =>
+        L.divIcon({
+          className: 'custom-map-cluster',
+          html: `<div class="map-cluster"><span>${cluster.getChildCount()}</span></div>`,
+          iconSize: [40, 40],
+        }),
+    }).addTo(map);
     mapRef.current = map;
     return () => {
       map.remove();

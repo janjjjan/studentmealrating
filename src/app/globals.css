@@ -676,3 +676,11 @@ button {
 .filter-price { padding: 8px 10px 12px; border-bottom: 1px solid var(--border-color); margin-bottom: 4px; }
 .filter-price-label { display: flex; justify-content: space-between; font-size: 0.9rem; margin-bottom: 8px; }
 .filter-price input[type="range"] { width: 100%; accent-color: var(--primary); }
+
+/* Skupine pinov na zemljevidu */
+.custom-map-cluster { background: none; border: none; }
+.map-cluster {
+  width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+  background: var(--primary); color: white; font-weight: 800; font-size: 14px; font-family: var(--font-family);
+  border: 3px solid rgba(255,255,255,0.85); box-shadow: 0 4px 14px rgba(0,0,0,0.35);
+}
