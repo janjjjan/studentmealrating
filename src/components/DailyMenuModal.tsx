@@ -157,9 +157,14 @@ export function DailyMenuModal({ location, onClose, onOpenReviewModal, onMenuLoa
                     </span>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '4px', color: '#f59e0b', fontSize: '0.85rem', fontWeight: 700 }}>
                       <Star size={14} fill="#f59e0b" />
-                      <span>{rev.rating}/5</span>
+                      <span>{rev.rating.toFixed(1)}/5</span>
                     </div>
                   </div>
+                  {rev.rating_quantity != null && (
+                    <div style={{ fontSize: '0.76rem', color: '#9ca3af', marginBottom: 4 }}>
+                      Količina {rev.rating_quantity} · Cena {rev.rating_price} · Kvaliteta {rev.rating_quality}
+                    </div>
+                  )}
                   {rev.comment && <p style={{ fontSize: '0.88rem', color: '#9ca3af', lineHeight: '1.45' }}>{rev.comment}</p>}
                 </div>
               ))}

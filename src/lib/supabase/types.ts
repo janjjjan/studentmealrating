@@ -24,7 +24,10 @@ export interface Review {
   id: string;
   location_id: string;
   author_name: string;
-  rating: number; // 1–5
+  rating_quantity: number; // količina, 1–5
+  rating_price: number; // cena, 1–5
+  rating_quality: number; // kvaliteta, 1–5
+  rating: number; // povprečje treh kategorij
   comment: string | null;
   created_at: string;
   local_only?: boolean; // shranjeno samo v tem brskalniku (Supabase ni povezan)

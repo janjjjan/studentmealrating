@@ -14,11 +14,17 @@ interface ReviewModalProps {
 }
 
 const LABELS = ['', 'Slabo', 'Povprečno', 'Dobro', 'Zelo dobro', 'Odlično'];
+const CATEGORIES = [
+  { key: 'rating_quantity', label: 'Količina', hint: 'velikost porcije' },
+  { key: 'rating_price', label: 'Cena', hint: 'vrednost za denar' },
+  { key: 'rating_quality', label: 'Kvaliteta', hint: 'okus in svežina' },
+] as const;
+type CategoryKey = (typeof CATEGORIES)[number]['key'];
 
 export function ReviewModal({ location, onClose, onAddReview }: ReviewModalProps) {
   const [nickname, setNickname] = useNickname();
-  const [rating, setRating] = useState(5);
-  const [hoverRating, setHoverRating] = useState(0);
+  const [ratings, setRatings] = useState<Record<CategoryKey, number>>({ rating_quantity: 5, rating_price: 5, rating_quality: 5 });
+  const [hover, setHover] = useState<{ key: CategoryKey; value: number } | null>(null);
   const [comment, setComment] = useState('');
   const [authorName, setAuthorName] = useState('');
   const [submitting, setSubmitting] = useState(false);
@@ -28,7 +34,7 @@ export function ReviewModal({ location, onClose, onAddReview }: ReviewModalProps
   useEffect(() => {
     if (location) {
       setAuthorName(nickname);
-      setRating(5);
+      setRatings({ rating_quantity: 5, rating_price: 5, rating_quality: 5 });
       setComment('');
       setError(null);
     }
@@ -55,7 +61,7 @@ export function ReviewModal({ location, onClose, onAddReview }: ReviewModalProps
       const review = await submitReview({
         location_id: location.id,
         author_name: name,
-        rating,
+        ...ratings,
         comment: comment.trim(),
       });
       onAddReview(location.id, review);
@@ -69,7 +75,7 @@ export function ReviewModal({ location, onClose, onAddReview }: ReviewModalProps
     }
   };
 
-  const shown = hoverRating || rating;
+  const average = (ratings.rating_quantity + ratings.rating_price + ratings.rating_quality) / 3;
 
   return (
     <div className="modal-overlay" onClick={onClose}>
@@ -107,22 +113,33 @@ export function ReviewModal({ location, onClose, onAddReview }: ReviewModalProps
 
           <div className="form-group">
             <label className="form-label">Ocena</label>
-            <div className="star-rating-input" onMouseLeave={() => setHoverRating(0)}>
-              {[1, 2, 3, 4, 5].map((star) => (
-                <button
-                  key={star}
-                  type="button"
-                  aria-label={`${star} od 5`}
-                  className={`star-btn ${shown >= star ? 'selected' : ''}`}
-                  onClick={() => setRating(star)}
-                  onMouseEnter={() => setHoverRating(star)}
-                >
-                  <Star size={32} fill={shown >= star ? '#f59e0b' : 'none'} />
-                </button>
-              ))}
-              <span style={{ marginLeft: '12px', fontWeight: 700, fontSize: '1rem', color: '#f59e0b' }}>
-                {shown}/5 · {LABELS[shown]}
-              </span>
+            {CATEGORIES.map(({ key, label, hint }) => {
+              const shown = hover?.key === key ? hover.value : ratings[key];
+              return (
+                <div key={key} style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: 8, marginBottom: 6 }}>
+                  <div style={{ minWidth: 92 }}>
+                    <div style={{ fontWeight: 600, color: '#e5e7eb', fontSize: '0.92rem' }}>{label}</div>
+                    <div style={{ fontSize: '0.72rem', color: '#6b7280' }}>{hint}</div>
+                  </div>
+                  <div className="star-rating-input" onMouseLeave={() => setHover(null)}>
+                    {[1, 2, 3, 4, 5].map((star) => (
+                      <button
+                        key={star}
+                        type="button"
+                        aria-label={`${label}: ${star} od 5`}
+                        className={`star-btn ${shown >= star ? 'selected' : ''}`}
+                        onClick={() => setRatings((r) => ({ ...r, [key]: star }))}
+                        onMouseEnter={() => setHover({ key, value: star })}
+                      >
+                        <Star size={26} fill={shown >= star ? '#f59e0b' : 'none'} />
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              );
+            })}
+            <div style={{ marginTop: 8, fontWeight: 700, color: '#f59e0b' }}>
+              Skupaj: {average.toFixed(1).replace('.', ',')}/5 · {LABELS[Math.round(average)]}
             </div>
           </div>
 

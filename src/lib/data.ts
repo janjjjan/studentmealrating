@@ -36,6 +36,9 @@ export type DataSource =
   | { kind: 'local' }
   | { kind: 'error'; message: string };
 
+const REVIEW_COLUMNS =
+  'id, location_id, author_name, rating_quantity, rating_price, rating_quality, rating, comment, created_at';
+
 const LOCATION_COLUMNS =
   'id, name, address, city, latitude, longitude, meal_price, subsidy_price, opening_hours, notice, features, site_rating';
 
@@ -54,7 +57,7 @@ export async function loadDetails(): Promise<{ locations: LocationWithDetails[];
 
   const [loc, rev, men] = await Promise.all([
     supabase.from('locations').select(LOCATION_COLUMNS).order('name').limit(2000),
-    supabase.from('reviews').select('id, location_id, author_name, rating, comment, created_at').limit(10000),
+    supabase.from('reviews').select(REVIEW_COLUMNS).limit(10000),
     supabase.from('daily_menus').select('location_id, menu_date, dishes').eq('menu_date', todayInSlovenia()),
   ]);
 
@@ -81,7 +84,7 @@ export async function loadDetails(): Promise<{ locations: LocationWithDetails[];
     source: { kind: 'supabase', locationsFromDb },
     locations: combine(
       locationsFromDb ? dbLocations : BASE_LOCATIONS,
-      (rev.data || []) as Review[],
+      ((rev.data || []) as Review[]).map(normalizeReview),
       (men.data || []) as DailyMenu[]
     ),
   };
@@ -94,10 +97,20 @@ function combine(locs: Location[], reviews: Review[], menus: DailyMenu[]): Locat
   return locs.map((l) => withStats(l, byLoc.get(l.id) || [], menuByLoc.get(l.id)));
 }
 
+function normalizeReview(r: Review): Review {
+  return { ...r, rating: Number(r.rating) };
+}
+
+export function averageOf(q: number, p: number, k: number): number {
+  return Math.round(((q + p + k) / 3) * 100) / 100;
+}
+
 export async function submitReview(input: {
   location_id: string;
   author_name: string;
-  rating: number;
+  rating_quantity: number;
+  rating_price: number;
+  rating_quality: number;
   comment: string;
 }): Promise<Review> {
   const supabase = createClient();
@@ -105,14 +118,15 @@ export async function submitReview(input: {
     const { data, error } = await supabase
       .from('reviews')
       .insert(input)
-      .select('id, location_id, author_name, rating, comment, created_at')
+      .select(REVIEW_COLUMNS)
       .single();
     if (error) throw new Error(error.message);
-    return data as Review;
+    return normalizeReview(data as Review);
   }
 
   const review: Review = {
     ...input,
+    rating: averageOf(input.rating_quantity, input.rating_price, input.rating_quality),
     id: `local-${Date.now()}`,
     created_at: new Date().toISOString(),
     local_only: true,

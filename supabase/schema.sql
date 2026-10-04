@@ -41,7 +41,11 @@ create table public.reviews (
   id          uuid primary key default gen_random_uuid(),
   location_id text not null references public.locations(id) on delete cascade,
   author_name text not null check (char_length(btrim(author_name)) between 1 and 40),
-  rating      smallint not null check (rating between 1 and 5),
+  rating_quantity smallint not null check (rating_quantity between 1 and 5), -- količina
+  rating_price    smallint not null check (rating_price between 1 and 5),    -- cena
+  rating_quality  smallint not null check (rating_quality between 1 and 5),  -- kvaliteta
+  -- skupna ocena = povprečje treh kategorij (računa baza sama)
+  rating      numeric(3,2) generated always as ((rating_quantity + rating_price + rating_quality) / 3.0) stored,
   comment     text check (comment is null or char_length(comment) <= 1000),
   created_at  timestamptz not null default now()
 );
@@ -60,7 +64,7 @@ create policy "locations berejo vsi"   on public.locations   for select using (t
 create policy "meniji berejo vsi"      on public.daily_menus for select using (true);
 create policy "ocene berejo vsi"       on public.reviews     for select using (true);
 create policy "ocene lahko doda vsak"  on public.reviews     for insert to anon, authenticated
-  with check (rating between 1 and 5);
+  with check (rating_quantity between 1 and 5 and rating_price between 1 and 5 and rating_quality between 1 and 5);
 
 -- Preprosta zaščita pred spamom: največ 5 ocen istega vzdevka za isti lokal na dan.
 create or replace function public.limit_review_spam() returns trigger
