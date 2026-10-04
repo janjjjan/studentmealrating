@@ -31,41 +31,67 @@ export function initialLocations(): LocationWithDetails[] {
   return BASE_LOCATIONS.map((l) => withStats(l, []));
 }
 
-/**
- * Naloži ocene in današnje menije. Če Supabase ni nastavljen, uporabi ocene,
- * shranjene v tem brskalniku. Seznam lokalov je vedno iz src/data/locations.json
- * (osveži ga scraper), zato baza ne potrebuje tabele lokalov za prikaz.
- */
-export async function loadDetails(): Promise<{ locations: LocationWithDetails[]; source: 'supabase' | 'local' }> {
-  const supabase = createClient();
-  let reviews: Review[] = [];
-  let menus: DailyMenu[] = [];
-  let source: 'supabase' | 'local' = 'local';
+export type DataSource =
+  | { kind: 'supabase'; locationsFromDb: boolean }
+  | { kind: 'local' }
+  | { kind: 'error'; message: string };
 
-  if (supabase) {
-    const [rev, men] = await Promise.all([
-      supabase.from('reviews').select('id, location_id, author_name, rating, comment, created_at').limit(5000),
-      supabase.from('daily_menus').select('location_id, menu_date, dishes').eq('menu_date', todayInSlovenia()),
-    ]);
-    if (!rev.error) {
-      reviews = (rev.data || []) as Review[];
-      source = 'supabase';
-    } else {
-      console.warn('Supabase reviews:', rev.error.message);
-    }
-    if (!men.error) menus = (men.data || []) as DailyMenu[];
+const LOCATION_COLUMNS =
+  'id, name, address, city, latitude, longitude, meal_price, subsidy_price, opening_hours, notice, features, site_rating';
+
+/**
+ * Naloži lokale, ocene in današnje menije iz Supabase.
+ * - Lokali: iz tabele `locations`; če je prazna, iz src/data/locations.json.
+ * - Če Supabase ni nastavljen: ocene iz tega brskalnika.
+ * - Če baza vrne napako (npr. ni zagnan supabase/schema.sql): napako pokažemo, NE preklopimo tiho.
+ */
+export async function loadDetails(): Promise<{ locations: LocationWithDetails[]; source: DataSource }> {
+  const supabase = createClient();
+
+  if (!supabase) {
+    return { source: { kind: 'local' }, locations: combine(BASE_LOCATIONS, readLocalReviews(), []) };
   }
 
-  if (source === 'local') reviews = readLocalReviews();
+  const [loc, rev, men] = await Promise.all([
+    supabase.from('locations').select(LOCATION_COLUMNS).order('name').limit(2000),
+    supabase.from('reviews').select('id, location_id, author_name, rating, comment, created_at').limit(10000),
+    supabase.from('daily_menus').select('location_id, menu_date, dishes').eq('menu_date', todayInSlovenia()),
+  ]);
 
+  const firstError = loc.error || rev.error || men.error;
+  if (firstError) {
+    console.error('Supabase:', firstError);
+    return {
+      source: { kind: 'error', message: firstError.message },
+      locations: combine(BASE_LOCATIONS, [], []),
+    };
+  }
+
+  const dbLocations = ((loc.data || []) as Location[]).map((l) => ({
+    ...l,
+    latitude: l.latitude == null ? null : Number(l.latitude),
+    longitude: l.longitude == null ? null : Number(l.longitude),
+    meal_price: l.meal_price == null ? null : Number(l.meal_price),
+    subsidy_price: l.subsidy_price == null ? null : Number(l.subsidy_price),
+    features: l.features || [],
+  }));
+  const locationsFromDb = dbLocations.length > 0;
+
+  return {
+    source: { kind: 'supabase', locationsFromDb },
+    locations: combine(
+      locationsFromDb ? dbLocations : BASE_LOCATIONS,
+      (rev.data || []) as Review[],
+      (men.data || []) as DailyMenu[]
+    ),
+  };
+}
+
+function combine(locs: Location[], reviews: Review[], menus: DailyMenu[]): LocationWithDetails[] {
   const byLoc = new Map<string, Review[]>();
   for (const r of reviews) byLoc.set(r.location_id, [...(byLoc.get(r.location_id) || []), r]);
   const menuByLoc = new Map(menus.map((m) => [m.location_id, m]));
-
-  return {
-    source,
-    locations: BASE_LOCATIONS.map((l) => withStats(l, byLoc.get(l.id) || [], menuByLoc.get(l.id))),
-  };
+  return locs.map((l) => withStats(l, byLoc.get(l.id) || [], menuByLoc.get(l.id)));
 }
 
 export async function submitReview(input: {

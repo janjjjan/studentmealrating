@@ -4,7 +4,7 @@ import { useState, useEffect, useMemo, useCallback } from 'react';
 import { Search, Filter, Map, LayoutGrid } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import { DailyMenu, LocationWithDetails, Review } from '@/lib/supabase/types';
-import { initialLocations, loadDetails, withStats } from '@/lib/data';
+import { initialLocations, loadDetails, withStats, type DataSource } from '@/lib/data';
 
 import { Header } from '@/components/Header';
 import { LocationCard } from '@/components/LocationCard';
@@ -26,7 +26,7 @@ function normalize(s: string): string {
 
 export default function Home() {
   const [locations, setLocations] = useState<LocationWithDetails[]>(initialLocations);
-  const [dataSource, setDataSource] = useState<'supabase' | 'local' | null>(null);
+  const [dataSource, setDataSource] = useState<DataSource | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCity, setSelectedCity] = useState('Vsi');
   const [sortBy, setSortBy] = useState<'rating' | 'price' | 'name'>('rating');
@@ -42,7 +42,7 @@ export default function Home() {
         setLocations(locations);
         setDataSource(source);
       })
-      .catch((err) => console.warn('Nalaganje ocen ni uspelo:', err));
+      .catch((err) => setDataSource({ kind: 'error', message: err instanceof Error ? err.message : String(err) }));
   }, []);
 
   useEffect(() => setVisibleCount(PAGE_SIZE), [searchQuery, selectedCity, sortBy]);
@@ -194,9 +194,20 @@ export default function Home() {
           </div>
         )}
 
-        {dataSource === 'local' && (
+        {dataSource?.kind === 'local' && (
           <p className="footer-note">
-            Baza Supabase ni povezana – ocene se shranjujejo samo v tem brskalniku. Navodila so v README.md.
+            Baza Supabase ni nastavljena – ocene se shranjujejo samo v tem brskalniku. Navodila so v README.md.
+          </p>
+        )}
+        {dataSource?.kind === 'error' && (
+          <p className="footer-note footer-note--error">
+            Napaka baze Supabase: {dataSource.message}. V Supabase SQL Editorju zaženi supabase/schema.sql in
+            seed_supabase.sql (glej README.md).
+          </p>
+        )}
+        {dataSource?.kind === 'supabase' && !dataSource.locationsFromDb && (
+          <p className="footer-note">
+            Tabela »locations« v Supabase je prazna – lokali so prikazani iz datoteke. Zaženi seed_supabase.sql.
           </p>
         )}
       </section>
