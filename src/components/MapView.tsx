@@ -47,10 +47,9 @@ export default function MapView({ locations, onSelectLocation, selectedCity }: M
         zoomControl: true,
       });
 
-      // 100% Free OpenStreetMap Dark Mode Tiles - No API keys required ever!
-      L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
-        subdomains: 'abcd',
+      // Official 100% Free OpenStreetMap Tiles - Guaranteed NO API key & NO Carto Key required!
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
         maxZoom: 19,
       }).addTo(map);
 
