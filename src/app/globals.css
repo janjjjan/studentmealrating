@@ -722,3 +722,4 @@ button {
 }
 .filter-backdrop { position: fixed; inset: 0; z-index: 1500; background: transparent; }
 @media (max-width: 640px) { .filter-backdrop { background: rgba(0,0,0,0.45); } }
+.filter-hint { margin: 6px 0 0; font-size: 0.78rem; color: var(--text-muted); }

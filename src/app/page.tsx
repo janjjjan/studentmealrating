@@ -174,7 +174,7 @@ export default function Home() {
                       checked={!!openAt}
                       onChange={(e) => setOpenAt(e.target.checked ? nowInSlovenia() : null)}
                     />
-                    <span>Odprto ob</span>
+                    <span>Čas prihoda</span>
                   </label>
                   {openAt && (
                     <div className="filter-open-row">
@@ -190,6 +190,9 @@ export default function Home() {
                       />
                       <button type="button" onClick={() => setOpenAt(nowInSlovenia())}>Zdaj</button>
                     </div>
+                  )}
+                  {openAt && (
+                    <p className="filter-hint">Prikazani so lokali, ki so ob tem času odprti.</p>
                   )}
                 </div>
                 {allTags.map(([tag, n]) => (
