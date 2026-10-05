@@ -12,6 +12,48 @@ export function todayInSlovenia(): string {
   return new Intl.DateTimeFormat('sv-SE', { timeZone: 'Europe/Ljubljana' }).format(new Date());
 }
 
+export const DAYS = ['Ponedeljek', 'Torek', 'Sreda', 'Četrtek', 'Petek', 'Sobota', 'Nedelja'] as const;
+
+/** Trenutni dan (0 = ponedeljek) in čas (HH:MM) v Sloveniji. */
+export function nowInSlovenia(): { day: number; time: string } {
+  const parts = new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'Europe/Ljubljana', weekday: 'long', hour: '2-digit', minute: '2-digit', hour12: false,
+  }).formatToParts(new Date());
+  const get = (t: string) => parts.find((p) => p.type === t)?.value ?? '';
+  const names = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+  return { day: Math.max(0, names.indexOf(get('weekday'))), time: `${get('hour').replace('24', '00')}:${get('minute')}` };
+}
+
+const toMin = (hhmm: string) => {
+  const [h, m] = hhmm.split(':').map(Number);
+  return h * 60 + m;
+};
+
+/** Ali je lokal odprt v dan `day` (0 = ponedeljek) ob času `time` (HH:MM)? Zna tudi čez polnoč. */
+export function isOpenAt(openingHours: string | null, day: number, time: string): boolean {
+  if (!openingHours) return false;
+  const t = toMin(time);
+  const lineFor = (d: number) => {
+    const name = DAYS[d];
+    const lines = openingHours.split(String.fromCharCode(10));
+    return (
+      lines.find((l) => l.startsWith(`${name}:`)) ??
+      (d <= 4 ? lines.find((l) => l.startsWith('Med tednom:')) : undefined)
+    );
+  };
+  const range = (line?: string) => {
+    const m = line?.match(/(\d{1,2}:\d{2})\s*-\s*(\d{1,2}:\d{2})/);
+    return m ? ([toMin(m[1]), toMin(m[2])] as const) : null;
+  };
+  const today = range(lineFor(day));
+  if (today) {
+    const [s, e] = today;
+    if (e > s ? t >= s && t < e : t >= s) return true; // zaključi po polnoči → odprto do konca dneva
+  }
+  const prev = range(lineFor((day + 6) % 7)); // včerajšnji termin, ki se konča po polnoči
+  return !!prev && prev[1] < prev[0] && t < prev[1];
+}
+
 function readLocalReviews(): Review[] {
   try {
     return JSON.parse(localStorage.getItem(LOCAL_REVIEWS_KEY) || '[]');
