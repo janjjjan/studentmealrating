@@ -691,7 +691,7 @@ button {
 .filter-menu-btn { display: flex; align-items: center; gap: 6px; }
 .filter-menu-btn.has-filters { border-color: var(--primary); color: white; }
 .filter-panel {
-  position: absolute; top: calc(100% + 8px); left: 0; z-index: 1000; min-width: 250px;
+  position: absolute; top: calc(100% + 8px); left: 0; z-index: 2000; min-width: 250px;
   background: #111726; border: 1px solid var(--border-color); border-radius: 14px;
   padding: 8px; box-shadow: 0 12px 32px rgba(0,0,0,0.5); text-align: left;
 }

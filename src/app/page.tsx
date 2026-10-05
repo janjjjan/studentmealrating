@@ -4,7 +4,7 @@ import { useState, useEffect, useMemo, useCallback } from 'react';
 import { Search, Filter, SlidersHorizontal, Map as MapIcon, LayoutGrid } from 'lucide-react';
 import dynamic from 'next/dynamic';
 import { DailyMenu, LocationWithDetails, Review } from '@/lib/supabase/types';
-import { DAYS, initialLocations, isOpenAt, loadDetails, nowInSlovenia, withStats, type DataSource } from '@/lib/data';
+import { initialLocations, isOpenAt, loadDetails, nowInSlovenia, withStats, type DataSource } from '@/lib/data';
 
 import { Header } from '@/components/Header';
 import { LocationCard } from '@/components/LocationCard';
@@ -29,7 +29,7 @@ export default function Home() {
   const [dataSource, setDataSource] = useState<DataSource | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
   const [maxSubsidy, setMaxSubsidy] = useState(MAX_SUBSIDY);
-  const [openAt, setOpenAt] = useState<{ day: number; time: string } | null>(null);
+  const [openNow, setOpenNow] = useState(false);
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
   const [sortBy, setSortBy] = useState<'rating' | 'price' | 'name'>('rating');
@@ -48,9 +48,9 @@ export default function Home() {
       .catch((err) => setDataSource({ kind: 'error', message: err instanceof Error ? err.message : String(err) }));
   }, []);
 
-  useEffect(() => setVisibleCount(PAGE_SIZE), [searchQuery, maxSubsidy, selectedTags, openAt, sortBy]);
+  useEffect(() => setVisibleCount(PAGE_SIZE), [searchQuery, maxSubsidy, selectedTags, openNow, sortBy]);
 
-  const activeFilters = selectedTags.length + (maxSubsidy < MAX_SUBSIDY ? 1 : 0) + (openAt ? 1 : 0);
+  const activeFilters = selectedTags.length + (maxSubsidy < MAX_SUBSIDY ? 1 : 0) + (openNow ? 1 : 0);
 
   const toggleTag = (tag: string) =>
     setSelectedTags((prev) => (prev.includes(tag) ? prev.filter((t) => t !== tag) : [...prev, tag]));
@@ -74,10 +74,11 @@ export default function Home() {
 
   const filteredLocations = useMemo(() => {
     const q = normalize(searchQuery.trim());
+    const now = openNow ? nowInSlovenia() : null;
     return locations
       .filter((loc) => {
         if (maxSubsidy < MAX_SUBSIDY && (loc.subsidy_price ?? 0) > maxSubsidy) return false;
-        if (openAt && !isOpenAt(loc.opening_hours, openAt.day, openAt.time)) return false;
+        if (now && !isOpenAt(loc.opening_hours, now.day, now.time)) return false;
         if (selectedTags.some((t) => !loc.features.includes(t))) return false;
         if (!q) return true;
         return (
@@ -95,7 +96,7 @@ export default function Home() {
         const rb = b.avg_rating ?? 0;
         return rb - ra || b.review_count - a.review_count || a.name.localeCompare(b.name, 'sl');
       });
-  }, [locations, searchQuery, maxSubsidy, selectedTags, openAt, sortBy]);
+  }, [locations, searchQuery, maxSubsidy, selectedTags, openNow, sortBy]);
 
   const activeMenuLocation = locations.find((l) => l.id === activeMenuId) || null;
   const activeReviewLocation = locations.find((l) => l.id === activeReviewId) || null;
@@ -167,34 +168,10 @@ export default function Home() {
                     onChange={(e) => setMaxSubsidy(Number(e.target.value))}
                   />
                 </div>
-                <div className="filter-open">
-                  <label className="filter-option" style={{ padding: '4px 0' }}>
-                    <input
-                      type="checkbox"
-                      checked={!!openAt}
-                      onChange={(e) => setOpenAt(e.target.checked ? nowInSlovenia() : null)}
-                    />
-                    <span>Čas prihoda</span>
-                  </label>
-                  {openAt && (
-                    <div className="filter-open-row">
-                      <select value={openAt.day} onChange={(e) => setOpenAt({ ...openAt, day: Number(e.target.value) })}>
-                        {DAYS.map((d, i) => (
-                          <option key={d} value={i}>{d}</option>
-                        ))}
-                      </select>
-                      <input
-                        type="time"
-                        value={openAt.time}
-                        onChange={(e) => e.target.value && setOpenAt({ ...openAt, time: e.target.value })}
-                      />
-                      <button type="button" onClick={() => setOpenAt(nowInSlovenia())}>Zdaj</button>
-                    </div>
-                  )}
-                  {openAt && (
-                    <p className="filter-hint">Prikazani so lokali, ki so ob tem času odprti.</p>
-                  )}
-                </div>
+                <label className="filter-option filter-open">
+                  <input type="checkbox" checked={openNow} onChange={(e) => setOpenNow(e.target.checked)} />
+                  <span>Odprto zdaj</span>
+                </label>
                 {allTags.map(([tag, n]) => (
                   <label key={tag} className="filter-option">
                     <input type="checkbox" checked={selectedTags.includes(tag)} onChange={() => toggleTag(tag)} />
@@ -208,7 +185,7 @@ export default function Home() {
                     onClick={() => {
                       setSelectedTags([]);
                       setMaxSubsidy(MAX_SUBSIDY);
-                      setOpenAt(null);
+                      setOpenNow(false);
                     }}
                   >
                     Počisti filtre
