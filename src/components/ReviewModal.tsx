@@ -26,6 +26,7 @@ export function ReviewModal({ location, onClose, onAddReview }: ReviewModalProps
   const [ratings, setRatings] = useState<Record<CategoryKey, number>>({ rating_quantity: 5, rating_price: 5, rating_quality: 5 });
   const [hover, setHover] = useState<{ key: CategoryKey; value: number } | null>(null);
   const [comment, setComment] = useState('');
+  const [consent, setConsent] = useState(false);
   const [authorName, setAuthorName] = useState('');
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -36,6 +37,7 @@ export function ReviewModal({ location, onClose, onAddReview }: ReviewModalProps
       setAuthorName(nickname);
       setRatings({ rating_quantity: 5, rating_price: 5, rating_quality: 5 });
       setComment('');
+      setConsent(false);
       setError(null);
     }
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -52,7 +54,7 @@ export function ReviewModal({ location, onClose, onAddReview }: ReviewModalProps
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (submitting) return;
+    if (submitting || !consent) return;
     const name = authorName.trim() || 'Anonimni študent';
     setNickname(name);
     setSubmitting(true);
@@ -158,9 +160,20 @@ export function ReviewModal({ location, onClose, onAddReview }: ReviewModalProps
             <div style={{ textAlign: 'right', fontSize: '0.75rem', color: '#6b7280', marginTop: 4 }}>{comment.length}/1000</div>
           </div>
 
+          <label className="consent-row">
+            <input type="checkbox" checked={consent} onChange={(e) => setConsent(e.target.checked)} required />
+            <span>
+              Strinjam se, da se moj vzdevek, ocene in komentar <b>javno objavijo</b>, in sem prebral/a{' '}
+              <a href="/zasebnost" target="_blank" rel="noopener noreferrer">
+                obvestilo o zasebnosti
+              </a>
+              . Ne vpisujem osebnih podatkov, ki jih ne želim objaviti.
+            </span>
+          </label>
+
           {error && <div className="error-box">{error}</div>}
 
-          <button type="submit" disabled={submitting} className="btn-primary" style={{ width: '100%', padding: '12px' }}>
+          <button type="submit" disabled={submitting || !consent} className="btn-primary" style={{ width: '100%', padding: '12px' }}>
             <Send size={18} />
             <span>{submitting ? 'Pošiljam …' : 'Objavi oceno'}</span>
           </button>

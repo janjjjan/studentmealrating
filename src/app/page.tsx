@@ -3,6 +3,7 @@
 import { useState, useEffect, useMemo, useCallback } from 'react';
 import { Search, Filter, SlidersHorizontal, Map as MapIcon, LayoutGrid } from 'lucide-react';
 import dynamic from 'next/dynamic';
+import Link from 'next/link';
 import { DailyMenu, LocationWithDetails, Review } from '@/lib/supabase/types';
 import { initialLocations, isOpenAt, loadDetails, nowInSlovenia, withStats, type DataSource } from '@/lib/data';
 
@@ -276,6 +277,10 @@ export default function Home() {
       />
 
       <ReviewModal location={activeReviewLocation} onClose={closeReview} onAddReview={handleAddReview} />
+
+      <footer className="site-footer">
+        <Link href="/zasebnost">Zasebnost in piškotki</Link>
+      </footer>
     </main>
   );
 }
