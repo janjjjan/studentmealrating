@@ -2,10 +2,11 @@
 
 import { MapPin, Star, Clock, Utensils, MessageSquare, Leaf, Truck, Accessibility, Salad } from 'lucide-react';
 import { LocationWithDetails } from '@/lib/supabase/types';
-import { formatEur } from '@/lib/data';
+import { formatEur, formatDistance, calculateDistanceKm, UserLocation } from '@/lib/data';
 
 interface LocationCardProps {
   location: LocationWithDetails;
+  userLocation?: UserLocation | null;
   onOpenMenuModal: (loc: LocationWithDetails) => void;
   onOpenReviewModal: (loc: LocationWithDetails) => void;
 }
@@ -17,9 +18,13 @@ const FEATURE_ICONS: Record<string, React.ReactNode> = {
   'Solatni bar': <Salad size={12} />,
 };
 
-export function LocationCard({ location, onOpenMenuModal, onOpenReviewModal }: LocationCardProps) {
+export function LocationCard({ location, userLocation, onOpenMenuModal, onOpenReviewModal }: LocationCardProps) {
   const dishes = location.daily_menu?.dishes || [];
   const firstHoursLine = location.opening_hours?.split('\n')[0];
+  const distanceKm =
+    userLocation && location.latitude != null && location.longitude != null
+      ? calculateDistanceKm(userLocation.latitude, userLocation.longitude, location.latitude, location.longitude)
+      : null;
 
   return (
     <div className="glass-panel card">
@@ -30,6 +35,11 @@ export function LocationCard({ location, onOpenMenuModal, onOpenReviewModal }: L
             <div className="location-address">
               <MapPin size={14} color="#10b981" style={{ flexShrink: 0 }} />
               <span>{location.address || 'Neznan naslov'}</span>
+              {distanceKm != null && (
+                <span className="location-distance" title="Oddaljenost od vaše lokacije">
+                  • {formatDistance(distanceKm)}
+                </span>
+              )}
             </div>
           </div>
           <span className="badge-subsidy" title={`Polna cena obroka: ${formatEur(location.meal_price)}`}>

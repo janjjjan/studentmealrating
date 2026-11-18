@@ -5,7 +5,16 @@ import { Search, Filter, SlidersHorizontal, Map as MapIcon, LayoutGrid } from 'l
 import dynamic from 'next/dynamic';
 import Link from 'next/link';
 import { DailyMenu, LocationWithDetails, Review } from '@/lib/supabase/types';
-import { initialLocations, isOpenAt, loadDetails, nowInSlovenia, withStats, type DataSource } from '@/lib/data';
+import {
+  initialLocations,
+  isOpenAt,
+  loadDetails,
+  nowInSlovenia,
+  withStats,
+  type DataSource,
+  type UserLocation,
+  calculateDistanceKm,
+} from '@/lib/data';
 
 import { Header } from '@/components/Header';
 import { LocationCard } from '@/components/LocationCard';
@@ -33,7 +42,8 @@ export default function Home() {
   const [openNow, setOpenNow] = useState(false);
   const [filtersOpen, setFiltersOpen] = useState(false);
   const [selectedTags, setSelectedTags] = useState<string[]>([]);
-  const [sortBy, setSortBy] = useState<'rating' | 'price' | 'name'>('rating');
+  const [userLocation, setUserLocation] = useState<UserLocation | null>(null);
+  const [sortBy, setSortBy] = useState<'rating' | 'price' | 'name' | 'distance'>('rating');
   const [viewMode, setViewMode] = useState<'grid' | 'map'>('map');
   const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
@@ -49,7 +59,7 @@ export default function Home() {
       .catch((err) => setDataSource({ kind: 'error', message: err instanceof Error ? err.message : String(err) }));
   }, []);
 
-  useEffect(() => setVisibleCount(PAGE_SIZE), [searchQuery, maxSubsidy, selectedTags, openNow, sortBy]);
+  useEffect(() => setVisibleCount(PAGE_SIZE), [searchQuery, maxSubsidy, selectedTags, openNow, sortBy, userLocation]);
 
   const activeFilters = selectedTags.length + (maxSubsidy < MAX_SUBSIDY ? 1 : 0) + (openNow ? 1 : 0);
 
@@ -91,13 +101,24 @@ export default function Home() {
         );
       })
       .sort((a, b) => {
+        if (sortBy === 'distance' && userLocation) {
+          const distA =
+            a.latitude != null && a.longitude != null
+              ? calculateDistanceKm(userLocation.latitude, userLocation.longitude, a.latitude, a.longitude)
+              : Infinity;
+          const distB =
+            b.latitude != null && b.longitude != null
+              ? calculateDistanceKm(userLocation.latitude, userLocation.longitude, b.latitude, b.longitude)
+              : Infinity;
+          return distA - distB || (a.subsidy_price ?? 99) - (b.subsidy_price ?? 99);
+        }
         if (sortBy === 'price') return (a.subsidy_price ?? 99) - (b.subsidy_price ?? 99) || a.name.localeCompare(b.name, 'sl');
         if (sortBy === 'name') return a.name.localeCompare(b.name, 'sl');
         const ra = a.avg_rating ?? 0;
         const rb = b.avg_rating ?? 0;
         return rb - ra || b.review_count - a.review_count || a.name.localeCompare(b.name, 'sl');
       });
-  }, [locations, searchQuery, maxSubsidy, selectedTags, openNow, sortBy]);
+  }, [locations, searchQuery, maxSubsidy, selectedTags, openNow, sortBy, userLocation]);
 
   const activeMenuLocation = locations.find((l) => l.id === activeMenuId) || null;
   const activeReviewLocation = locations.find((l) => l.id === activeReviewId) || null;
@@ -210,6 +231,7 @@ export default function Home() {
           <label className="sort-select">
             <span>Razvrsti:</span>
             <select value={sortBy} onChange={(e) => setSortBy(e.target.value as typeof sortBy)}>
+              {userLocation && <option value="distance">Najbližje meni</option>}
               <option value="rating">Najvišja ocena</option>
               <option value="price">Najnižje doplačilo</option>
               <option value="name">Po abecedi</option>
@@ -220,7 +242,12 @@ export default function Home() {
 
       <section className="results-section">
         {viewMode === 'map' ? (
-          <MapView locations={filteredLocations} onSelectLocation={openMenu} />
+          <MapView
+            locations={filteredLocations}
+            onSelectLocation={openMenu}
+            userLocation={userLocation}
+            onUserLocationChange={setUserLocation}
+          />
         ) : (
           <>
             <div className="location-grid" style={{ padding: 0 }}>
@@ -228,6 +255,7 @@ export default function Home() {
                 <LocationCard
                   key={location.id}
                   location={location}
+                  userLocation={userLocation}
                   onOpenMenuModal={openMenu}
                   onOpenReviewModal={openReview}
                 />

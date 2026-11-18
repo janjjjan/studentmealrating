@@ -651,6 +651,165 @@ button {
 }
 .map-popup button:hover { background: #059669; }
 
+/* Lokacija uporabnika na zemljevidu */
+.custom-user-location-marker {
+  background: none;
+  border: none;
+  position: relative;
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.user-location-dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 14px;
+  height: 14px;
+  background: #2563eb;
+  border: 2.5px solid #ffffff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px rgba(37, 99, 235, 0.8), 0 2px 6px rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+.user-location-pulse {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 36px;
+  height: 36px;
+  background: rgba(37, 99, 235, 0.35);
+  border-radius: 50%;
+  animation: user-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  pointer-events: none;
+  z-index: 1;
+}
+
+@keyframes user-pulse {
+  0% {
+    transform: translate(-50%, -50%) scale(0.4);
+    opacity: 0.9;
+  }
+  70% {
+    transform: translate(-50%, -50%) scale(1.6);
+    opacity: 0;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.6);
+    opacity: 0;
+  }
+}
+
+.map-locate-control {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  pointer-events: none;
+}
+
+.map-locate-btn {
+  pointer-events: auto;
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: rgba(17, 23, 38, 0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #f3f4f6;
+  font-size: 0.82rem;
+  font-weight: 600;
+  font-family: var(--font-family);
+  padding: 8px 14px;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+}
+
+.map-locate-btn:hover {
+  background: rgba(28, 36, 56, 0.96);
+  border-color: rgba(255, 255, 255, 0.3);
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+}
+
+.map-locate-btn.has-location {
+  border-color: rgba(59, 130, 246, 0.55);
+  color: #93c5fd;
+  background: rgba(17, 24, 39, 0.94);
+}
+
+.map-locate-btn.has-location:hover {
+  border-color: rgba(59, 130, 246, 0.9);
+  color: #bfdbfe;
+}
+
+.map-locate-btn.is-locating {
+  opacity: 0.85;
+  cursor: wait;
+}
+
+.map-location-error {
+  pointer-events: auto;
+  max-width: 280px;
+  padding: 8px 12px;
+  background: rgba(185, 28, 28, 0.95);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  font-size: 0.78rem;
+  font-weight: 500;
+  border-radius: 10px;
+  border: 1px solid rgba(254, 202, 202, 0.35);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.45);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.map-location-error-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.1rem;
+  line-height: 1;
+  padding: 0 2px;
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.map-location-error-close:hover {
+  opacity: 1;
+}
+
+.map-popup-distance {
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-weight: 700;
+  font-size: 0.78rem;
+  padding: 2px 8px;
+  border-radius: 99px;
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+}
+
+.location-distance {
+  color: #60a5fa;
+  font-weight: 600;
+  font-size: 0.82rem;
+  margin-left: 2px;
+}
+
 @media (max-width: 640px) {
   .results-section { padding: 0 16px 40px; }
   .location-grid { padding: 0; }
@@ -670,6 +829,8 @@ button {
 
   /* večje tipke za prst */
   .filter-menu-btn, .view-toggle button, .sort-select select { min-height: 40px; }
+  .map-locate-control { top: 10px; right: 10px; }
+  .map-locate-btn { min-height: 38px; padding: 7px 11px; font-size: 0.8rem; }
   .leaflet-touch .leaflet-bar a { width: 40px; height: 40px; line-height: 40px; }
   .map-popup { min-width: 0; width: 220px; }
   .map-popup button { padding: 11px 12px; font-size: 0.92rem; }
